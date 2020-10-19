@@ -1,0 +1,421 @@
+.register-merch-page{
+    display: grid;
+    grid-template-areas:    "Hero SignIn"
+                            "Hero Footer";
+    grid-template-columns: 1.5fr 1fr;
+    height:1px;
+    text-align: left;
+    z-index: 3;
+}
+
+.logoHero{
+    position: absolute;
+    width: 250px;
+    height: 65px;
+    margin-left: 50px;
+    top: 50px;
+    z-index: 1;
+}
+
+.side-reg-merch{
+    position: relative;
+    background-color: white;
+}
+
+.hero-reg-merch img{
+    width: 100%;
+    height: 100vh;
+    min-height: 960px;
+    grid-area: Hero;
+    opacity: 70%;
+    background-color: white;
+}
+
+.quotes-reg-merch{
+    width: 80%;
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    color: rgb(5, 5, 5);
+}
+
+.quotes-reg-merch h1{
+    margin-bottom: 10px;
+    text-align: end;
+    font-weight: 700;
+    font-size: 2.1em;
+}
+
+.quotes-reg-merch h2{
+    color: rgb(255, 255, 255);
+    text-align: end;
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+.reg-merch-content #welcome-text{
+    font-size: 2.2em;
+}
+
+.reg-merch-content h2{
+    font-size: 1.5em;
+}
+
+
+.reg-merch-content{
+    padding: 80px 10%;
+    grid-area: SignIn;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+}
+
+.reg-merch-content .backLogo{
+    width: 70px;
+    margin-left: -50px;
+    margin-top: -40px;
+}
+
+.reg-merch-input #welcome-text-reg-merch{
+    color: grey;
+    padding-bottom: 5px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+.reg-merch-input h1 span{
+    color: red;
+}
+
+.reg-merch-input h2{
+    color: rgb(197, 197, 197);
+    padding-bottom: 50px;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.merch-name input{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px 25px;
+    margin-bottom: 25px;
+    margin-left: 10%;
+    border-radius: 0%;
+    font-size: 1em;
+    cursor: auto;
+}
+
+.merch-address input{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px 25px;
+    margin-bottom: 25px;
+    margin-left: 10%;
+    border-radius: 0%;
+    font-size: 1em;
+    cursor: auto;
+}
+
+.reg-merch-button{
+    display: flex;
+    justify-content: center;
+}
+
+.reg-merch-button button{
+    border: none;
+    background-color: red;
+    width: 155px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.reg-merch-button button:hover{
+opacity: 75%;
+}
+
+.invalid-feedback-register{
+    margin-top: -25px;
+    margin-left: 13.5%;
+    margin-bottom: 10px;
+    color: red;
+    font-size: 0.8em;
+}
+
+
+
+.sign-up-button{
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: black;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sign-up-button a:hover{
+    color: gray;
+}
+
+.footer-reg-merch{
+    margin-top: -275px;
+    grid-area: Footer;
+    display: flex;
+    background-color: rgb(241, 241, 241);
+    padding: 45px 20px;
+    justify-content: space-evenly;
+    z-index: 1;
+    height: 270px;
+}
+
+.footer-reg-merch h2{
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.contact-reg-merch{
+    width: 250px;
+    line-height: 20px;
+    margin-right: 45px;
+}
+
+.contact-reg-merch a{
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.contact-reg-merch p{
+    text-align: justify;
+}
+
+.phonenumber-reg-merch p{
+    line-height: 10px;
+    margin-top: 10px;
+}
+
+.phonenumber-reg-merch, .contact-reg-merch a{
+    margin-left: 20px;
+}
+
+.facebookIcon{
+    height: 35px;
+    padding-left: 5px;
+    padding-right: 2px;
+}
+
+.twitterIcon{
+    height: 35px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.instagramIcon{
+    height: 35px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.youtubeIcon{
+    height: 35px;
+    padding-left: 2px;
+}
+
+.phonecontact .phonenumber{
+    line-height: 25px;
+}
+
+.socialmediacontact .social-media-logo{
+    margin-top: 5px;
+}
+
+@media (max-width: 1280px) {
+    .register-merch-page{
+        width: 1280px;
+    }
+}
+@media (max-width:990px){
+
+    .register-merch-page{
+        grid-template-areas:    "Hero"
+                                "SignIn"
+                                "Footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr 1fr;
+        width: 985px;
+    }
+
+    .logoHero{
+        top: 30px;
+        width: 230px;
+        height: 55px;
+        margin-left: 30px;
+    }
+
+    .side-reg-merch{
+        grid-area: Hero;
+    }
+
+    .side-reg-merch .hero-reg-merch img{
+        margin-top: 110px;
+        height: 300px;
+        min-height: 0px;
+    }
+
+    .side-reg-merch{
+        background-color: #f2f2f2;
+    }
+
+    .quotes-reg-merch{
+        top: 290px;
+    }
+
+    .quotes-reg-merch h1{
+        font-size: 1.7em;
+    }
+
+    .quotes-reg-merch h2{
+        font-size: 1.3em !important;
+        width: 300px;
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .backLogo{
+        text-align: left;
+    }
+
+    .reg-merch-content{
+        grid-area: SignIn;
+        background-color: white;
+        padding-top:80px;
+    }
+
+    .reg-merch-button{
+        margin-left: 0px;
+    }
+
+
+    .footer-reg-merch{
+        margin-top: auto;
+        min-height: 10px;
+        flex-direction: row;
+        grid-area: Footer;
+        padding-top: 50px;
+    }
+
+    .contact{
+        width: 60%;
+    }
+
+    .findUs{
+        width: 40%;
+    }
+}
+/* 
+
+@media (max-width: 1048px){ 
+
+    .backLogo{
+        margin-left: -15px !important;
+    }
+
+    .reg-merch-input #welcome-text-reg-merch{
+    font-size:2.3em;
+    }
+
+    .reg-merch-input h2{
+        font-size: 1.2em !important;
+    }
+
+    .quotes-reg-merch{
+        width: 75%;
+        position: absolute;
+        top: 750px;
+        color: rgb(5, 5, 5);
+        font-size: 0.8em;
+    }
+
+    .reg-merch-content #welcome-text{
+        font-size: 2.2em;
+    }
+
+    .reg-merch-content h2{
+        font-size: 1.5em;
+    }
+
+    .merch-name input{
+        font-size: 0.8em;
+    }
+    
+    .merch-address input{
+        font-size: 0.8em;
+    }
+
+
+    .sign-up-button{
+        letter-spacing: 1px;
+        font-size: 0.9em;
+        color: black;
+
+        margin-top: 30px;
+    }
+    
+    
+    .footer-reg-merch{
+        flex-direction: column;
+        margin-top: -300px;
+        padding: 20px 50px;
+        height: 295px;
+    }
+    
+}
+
+
+
+@media (max-width:600px){
+    .logoHero{
+        margin-left: 25px;
+        width: 200px;
+        height: 50px;
+        top: 30px;
+    }
+
+    .reg-merch-content .backLogo{
+        margin-left: -40px;
+    }
+
+    .footer-reg-merch{
+        flex-direction: column;
+        height: 330px;
+    }
+
+    .contact-reg-merch{
+        width: 100%;
+    }
+
+    .findUsSI{
+        margin-left: 0px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .reg-merch-content .input{
+        margin-left: 30px;
+    }
+
+} */
+
+

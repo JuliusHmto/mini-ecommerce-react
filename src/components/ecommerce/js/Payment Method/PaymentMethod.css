@@ -1,0 +1,624 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0%;
+}
+
+input{
+    cursor: pointer;
+}
+
+.payment-method-page{
+    margin-top: 135px;
+    min-height: 50vh;
+    height: fit-content;
+    width: 100%;
+    padding: 50px 75px;
+}
+
+.top-side-payment{
+    display: flex;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.top-side-payment h2{
+    min-width: 775px;
+    width: 70%;
+    margin-right: 50px;
+}
+
+.page-nav-payment {
+    display: flex;
+    width: 350px !important;
+    min-width: 375px;
+    margin-left: auto;
+    margin-top: 30px;
+    justify-content: space-around;
+    white-space: nowrap;
+}
+
+.page-nav-payment h4{
+    font-size: 1em;
+    color: rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+.page-nav-payment h4:hover{
+    color: red;
+}
+
+.page-nav-payment .active{
+    font-weight: 600;
+    width: 90px;
+}
+
+.page-nav-payment img{
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 15px;
+    margin-top: 3px;
+}
+
+
+.payment-method-page .payment-method-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-method-page h2{
+    font-weight: 500;
+    font-size: 2em;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    color: rgb(88, 88, 88);
+    min-width: 750px;
+    width: 65%;
+    margin-right: 50px;
+}
+
+.left-side-payment{
+  min-width: 760px;
+  width: 60%;
+  margin-right: 50px;
+}
+
+.left-side-payment h3{
+    color: rgb(168, 168, 168);
+    font-size: 1.4em;
+    margin-bottom: 0px;
+}
+
+.title-payment-method{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.title-payment-method img{
+    height: 15px;
+    width: 15px;
+    margin-top: 10px;
+}
+
+.hr-line-payment{
+    width: 100px;
+    margin-top: 5px;
+    border-bottom: 2px solid red;
+}
+
+.collapse{
+    padding-bottom: 10px;
+}
+
+.bank-transfer-method, .credit-card-method,.other-method{
+    padding: 20px 30px 10px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0px 5px 5px rgba(194, 194, 194, 0.164), 0 6px 10px 0 rgba(204, 204, 204, 0.19);
+    background-color: rgb(255, 255, 255);
+    height: fit-content;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.bank-transfer-method h3{
+    cursor: pointer;
+}
+
+.bank-transfer-method h4{
+    font-size: 1.2em;
+}
+
+.virtual-account-transfer img, .manual-transfer img{
+    width: 200px;
+    margin-left: 30px;
+}
+
+.virtual-account-transfer{
+    margin-bottom: 40px;
+}
+
+.bank-transfer-method span{
+    display: flex;
+}
+
+.bank-transfer-method h5{
+    font-size: 0.9em;
+    margin-left: 10px;
+    margin-top: 4px;
+    color: rgb(199, 199, 199);
+}
+
+.virtual-account-transfer,.manual-transfer,.credit-card-img{
+    padding-left: 10px;
+}
+
+.credit-card-method{
+    height: fit-content !important;
+}
+
+.credit-card-img{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#credit-card-radio{
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.credit-card-img img{
+    width: 70px;
+    height: 46px;
+    margin-right: 25px;
+}
+
+.credit-card-method h3{
+    cursor: pointer;
+}
+
+#GPN{
+    width: 55px !important;
+}
+
+.credit-card-input{
+    padding-left: 40px;
+    display: flex;
+}
+
+.card-number{
+    border-bottom: 1px solid rgb(196, 196, 196);
+    width: 100%;
+    min-width: 300px !important;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    white-space: nowrap;
+}
+
+.card-number img{
+    height: 20px;
+    margin-top: -2px;
+    margin-right: 15px;
+}
+
+.card-number input{
+    border: none;
+    margin-left: 10px;
+    cursor: auto;
+    outline: none;
+    width: 80%;
+    margin-top: 0px;
+}
+
+
+.card-holder{
+    border-bottom: 1px solid rgb(196, 196, 196);
+    width: 100%;
+    min-width: 300px !important;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    white-space: nowrap;
+}
+
+.card-holder img{
+    height: 20px;
+    width: 28px;
+    margin-top: -2px;
+    margin-right: 15px;
+}
+
+.card-holder input{
+    border: none;
+    margin-left: 10px;
+    cursor: auto;
+    outline: none;
+    width: 80%;
+    margin-top: 0px;
+}
+
+
+.card-date{
+    width: 250px;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.card-date img{
+    height: 20px;
+    width: 28px;
+    margin-top: -2px;
+    margin-right: 25px;
+}
+
+.card-date input{
+    border: none;
+    margin-left: 0px;
+    cursor: auto;
+    outline: none;
+    width: 20px;
+    margin-top: 0px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    text-align: center;
+}
+
+.card-date h5{
+    margin: 0px 10px;
+}
+
+.credit-card-left span{
+    display: flex;
+}
+
+.cvv{
+    width: 150px;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+     white-space: nowrap;
+}
+
+
+.cvv img{
+    height: 30px;
+    width: 30px;
+    margin-top: -2px;
+    margin-right: 15px;
+}
+
+.cvv input{
+    border: none;
+    margin-left: 0px;
+    cursor: auto;
+    outline: none;
+    width: 60px;
+    margin-top: 0px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    text-align: left;
+    padding-left: 2px;
+}
+
+.credit-card-left{
+    width: 40%;
+    min-width: 250px;
+    margin-right: 100px;
+}
+
+.installment-option{
+    width: 100%;
+    min-width: 300px !important;
+    cursor: pointer;
+}
+
+.credit-card-right{
+    background-color: rgb(223, 223, 223);
+    width: 350px !important;
+    height: 200px;
+    border-radius: 10px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credit-card-right .bank-logo-cc{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 150px;
+}
+
+.vendor-logo-cc{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 75px;
+}
+
+.chip{
+    position: absolute;
+    width: 40px;
+    left: 20px;
+    top: 75px;
+}
+
+#card-number-cc{
+    position: absolute;
+    top: 115px;
+    left: 20px;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    bottom: auto;
+}
+
+#cardholder-cc{
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.8em;
+    left: 20px;
+}
+
+#date-title-cc{
+    position: absolute;
+    font-size: 0.6em;
+    bottom: 40px;
+    right: 125px;
+}
+
+#date-cc{
+    position: absolute;
+    bottom: 15px;
+    right: 130px;
+}
+
+.other-method h3{
+    cursor: pointer;
+}
+
+.other-method h4{
+    font-size: 1.2em;
+}
+
+.other-method span{
+    display: flex;
+}
+
+.other-method h5{
+    font-size: 0.9em;
+    margin-left: 10px;
+    margin-top: 4px;
+    color: rgb(199, 199, 199);
+}
+
+.eMoney-method{
+    margin-bottom: 30px;
+}
+
+.eMoney-method img{
+    margin-left: 30px;
+    width: 175px;
+    height: 50px;
+}
+
+.Digital-Wallet{
+    display: flex;
+    flex-direction: column;
+}
+
+.Digital-Wallet img{
+    width: 100px;
+    margin-left: 23px;
+    margin-top: -5px;
+}
+
+.ovo img{
+ height: 40px;
+}
+
+.ovo, .gopay, .dana{
+    margin-bottom: 30px;
+}
+
+.gopay img{
+    margin-left: 25px;
+}
+
+.QRIS-method{
+    margin-bottom: 30px;
+}
+
+.QRIS-method img{
+    width: 200px;
+    margin-left: 30px;
+}
+
+.thirdParty-method img{
+    width: 150px;
+    margin-left: 30px;
+}
+
+.total-payment-card-payment{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0px 5px 5px rgba(194, 194, 194, 0.164), 0 6px 10px 0 rgba(204, 204, 204, 0.19);
+    width: 26% !important;
+    min-width: 375px;
+    height: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.total-payment-card-payment h3{
+    color: rgb(168, 168, 168);
+    font-size: 1.4em;
+    margin-bottom: 0px;
+}
+
+.horizontal-line-payment{
+    border-bottom: 2px solid red;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.total-product-price-payment, .total-shipping-price-payment, .total-price-to-pay-payment span{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.total-payment-payment{
+    border-bottom: 1px solid rgb(197, 197, 197);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#total-price-amount{
+    font-weight: 600;
+    color: red;
+}
+
+.total-price-to-pay-payment{
+    border-bottom: 1px solid gainsboro;
+    padding: 5px;
+    padding-bottom: 20px;
+}
+
+.promo-button-payment{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100%;
+    padding: 10px;
+    min-width: 150px;
+    height: 40px !important;
+    border: 1px solid rgb(228, 16, 16) !important;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    outline: red;
+}
+
+.promo-button-payment h6{
+    color: rgb(192, 192, 192);
+    font-weight: 600;
+}
+
+.promo-button-payment:hover{
+    opacity: 70%;
+  }
+
+.proceed-button-payment{
+  background-color: rgb(250, 39, 39);
+  border: none;
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-left: auto !important;
+  cursor: pointer;
+}
+
+.proceed-button-payment h6{
+    margin-left: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.proceed-button-payment:hover{
+    opacity: 80%;
+}
+
+@media(max-width:1280px){
+    .payment-method-page{
+        width: 1260px;
+        padding: 0px 50px;
+    }
+    
+}
+
+   
+@media (max-width:990px){
+    .payment-method-page{
+      width: 960px !important;
+      min-width: 960px;
+    }
+
+    .payment-method-content{
+        flex-direction: column;
+        padding: 0px 10px;
+    }
+
+    .top-side-payment{
+        display: inline;
+    }
+
+    .page-nav-payment{
+        margin-right: 0px;
+        margin-left: 10px !important;
+        margin-bottom: 30px;
+    }
+
+    .Check-Out-Page h2{
+        width: fit-content;
+        min-width: 250px;
+    }
+
+    .top-side-checkout{
+        margin-bottom: 0px;        
+        width: 100% !important;
+        flex-direction: column;
+    }
+
+    .top-side-checkout h2{
+        width: 150px;
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .page-nav{
+        margin-right: 0px;
+        margin-left: 10px !important;
+        margin-bottom: 30px;
+    }
+
+    .left-side-payment{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .total-payment-card-payment{
+        width: 100%;
+        min-width: 100%;
+        padding: 30px;
+        margin-bottom: 150px;
+        height: fit-content;
+        background-color: rgb(255, 255, 255);
+    }
+ 
+    .total-payment-payment{
+        width: 450px;
+        margin-left: auto !important;
+    }
+    
+    .total-price-to-pay-payment{
+        width: 450px;
+        margin-left: auto;
+    }
+
+    .total-price-to-pay-payment span{
+        padding: 0px;
+    }
+
+    .promo-button-payment{
+        width: 440px;
+    }
+
+    .proceed-button-payment{
+        width: 440px;
+        margin-left: 335px!important;
+    }
+}

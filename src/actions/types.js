@@ -1,0 +1,38 @@
+export const GET_ERRORS = "GET_ERRORS";
+
+//USER
+export const LOGIN_USER = "LOGIN_USER";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const GET_CURRENT_USER = "GET_CURRENT_USER";
+export const ADD_ADDRESS = "ADD_ADDRESS";
+
+//CATEGORY
+export const GET_CATEGORY = "GET_CATEGORY";
+
+//CATALOG
+export const GET_ITEMS = "GET_ITEMS";
+export const GET_ITEM_DETAIL = "GET_ITEM_DETAIL";
+export const GET_CART = "GET_CART";
+export const ADD_TO_CART = "ADD_TO_CART";
+
+//cart
+export const ADD_QTY = "ADD_QTY";
+export const SUB_QTY = "SUB_QTY";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const PROCESS_ORDER = "PLACE_ORDER";
+
+//MERCHANT
+export const GET_CURRENT_MERCHANT = "GET_CURRENT_MERCHANT";
+export const GET_CURRENT_MERCHANT_ITEMS = "GET_CURRENT_MERCHANT_ITEMS";
+export const CREATE_PRODUCT = "CREATE_PRODUCT";
+export const GET_CURRENT_PRODUCT = "GET_CURRENT_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
+
+//TESTIMONIAL
+export const CREATE_RATING = "CREATE_RATING";
+export const GET_RATING = "GET_RATING";
+export const CREATE_COMMENT = "CREATE_COMMENT";
+export const GET_COMMENT = "GET_COMMENT";
+
+//INVOICE
+export const GET_ALL_INVOICES = "GET_INVOICES";

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="PaymentMethod.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+</head>
+<body>
+    <div class="payment-method-page">
+        <div class="top-side-payment">
+            <h2>Payment Method</h2>
+            
+            <div class="page-nav-payment">
+                <h4>Cart</h4>
+                <img src="long-arrow-png.png">
+                <h4>Check-Out</h4>
+                <img src="long-arrow-png.png">
+                <h4  class="active">Payment</h4>
+            </div>
+        </div>
+        <div class="payment-method-content">
+            <div class="left-side-payment accordion" id="accordionExample">
+                <div class="bank-transfer-method">
+                    <div class="title-payment-method" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h3>Bank Transfer</h3>
+                        <img class="drop-arrow" src="../CheckOut/u0.png">
+                    </div>
+                    <hr class="hr-line-payment">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="virtual-account-transfer">
+                            <span><h4><input type="radio" name="payment" value="primary">&nbsp;&nbsp;&nbsp;&nbsp;Virtual Account Transfer</h4><h5>(We will send a primary code for you to pay by virtual account)</h5></span>
+                            <img src="./image/Bank-Logo.png">
+                        </div>
+    
+                        <div class="manual-transfer">
+                            <span><h4><input type="radio" name="payment" value="primary">&nbsp;&nbsp;&nbsp;&nbsp;Transfer</h4><h5>(You can manually transfer and upload the payment receipt)</h5></span>
+                            <img src="./image/Bank-Logo.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="credit-card-method">
+                    <div class="title-payment-method collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h3>Credit Card</h3>
+                        <img src="../CheckOut/u0.png">
+                    </div>
+                    <hr class="hr-line-payment">
+
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="credit-card-img">
+                            <input type="radio" name="payment" id="credit-card-radio" value="primary">
+                            <img src="./image/Visa Logo.png">
+                            <img src="./image/mastercard-logo.png">
+                            <img src="./image/JCB Logo.png">
+                            <img id="GPN" src="./image/GPN Logo.png">
+                        </div>
+                        
+                        <div class="credit-card-input" >
+                            <div class="credit-card-left">
+                                <div class="card-number">
+                                    <img src="./image/card-number-logo.png"> 
+                                    <input placeholder="Card Number">
+                                </div>
+        
+                                <div class="card-holder">
+                                    <img src="./image/card-holder-logo.png"> 
+                                    <input placeholder="Cardholder's Name">
+                                </div>
+        
+                                <span>
+                                    <div class="card-date">
+                                        <img src="./image/card-date-logo.png"> 
+                                        <input placeholder="00" maxlength="2"><h5>/</h5><input placeholder="00" maxlength="2">
+                                    </div>
+            
+                                    <div class="cvv">
+                                        <img src="./image/cvv-logo.png"> 
+                                        <input type="password" placeholder="CVV" maxlength="3">
+                                    </div>
+                                </span>
+    
+                                <select class="form-control installment-option" id="sel1">
+                                    <option>Full Payment</option>
+                                    <option>3 Months Installment x (Jumlah cicilan)</option>
+                                    <option>6 Months Installment x (Jumlah cicilan</option>
+                                    <option>12 Months Installment x (Jumlah cicilan)</option>
+                                  </select>
+            
+                            </div>
+    
+                            <div class="credit-card-right">
+                                <img class ="bank-logo-cc"src="./image/Bank-Logo.png">
+                                <img class ="chip"src="./image/u23.png">
+                                <h4 id="card-number-cc">**** **** **** ****</h4>
+                                <h5 id="cardholder-cc">Cardholder's Name</h5>
+                                <h5 id="date-title-cc">Valid Thru</h5>
+                                <h5 id="date-cc">**/**</h5>
+                                <img class="vendor-logo-cc" src="./image/mastercard-logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="other-method">
+                    <div class="title-payment-method" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <h3>Others Payment</h3>
+                        <img src="../CheckOut/u0.png">
+                    </div>
+                    <hr class="hr-line-payment">
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="eMoney-method">
+                            <span><h4><input type="radio" name="payment" value="primary">&nbsp;&nbsp;&nbsp;&nbsp;Simas E-Money</h4><h5>(Pay with your simas e-money in Simobi+ app)</h5></span>
+                            <img src="./image/simas-emoney.PNG">
+                        </div>
+    
+                        <div class="Digital-Wallet">
+                                <div class="ovo">
+                                    <input type="radio" name="payment" value="primary"><img src="./image/ovo.png">
+                                </div>
+
+                                <div class="gopay">
+                                    <input type="radio" name="payment" value="primary"><img src="./image/gopay.png">
+                                </div>
+
+                                <div class="dana">
+                                    <input type="radio" name="payment" value="primary"><img src="./image/dana.png">
+                                </div>
+                        </div>
+
+                        <div class="QRIS-method">
+                            <h4><input type="radio" name="payment">&nbsp;&nbsp;&nbsp;&nbsp;QRIS (Quick Response Code Indonesian Standard)</h4>
+                            <img src="./image/qris.png">
+                        </div>
+
+                        <div class="thirdParty-method">
+                            <h4><input type="radio" name="payment">&nbsp;&nbsp;&nbsp;&nbsp;Third Party</h4>
+                            <img src="./image/alfamart.png">
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+    
+            <div class="total-payment-card-payment">
+                <h3>Total Payment</h3>
+                <hr class="horizontal-line-payment">
+                <div class="total-payment-payment">
+                    <div class="total-product-price-payment">
+                        <h6>Total Price</h6>
+                        <h6>Rp.5.000.000</h6>
+                    </div>
+                    <div class="total-shipping-price-payment">
+                        <h6>Total Shipping</h6>
+                        <h6>Rp.100.000</h6>
+                    </div>
+                </div>
+                <div class="total-price-to-pay-payment">
+                    <span>
+                    <h6>Total</h6>
+                    <h6 id="total-price-amount">Rp.5.100.000</h6>
+                    </span>
+                    <button class="promo-button-payment"><h6>Add Promo Code or Voucher</h6></button>      
+                </div>
+                <button class="proceed-button-payment"><h6>Proceed Payment</h6></button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

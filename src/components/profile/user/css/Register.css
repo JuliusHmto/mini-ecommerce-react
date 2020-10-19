@@ -1,0 +1,429 @@
+.sign-up-page {
+    display: grid;
+    grid-template-areas:    "Hero SignUp"
+                            "Hero Footer";
+    grid-template-columns: 1.5fr 1fr;
+    height: 1px;
+    z-index: 3 ;
+    text-align: left;
+}
+
+.logoHero{
+    position: absolute;
+    width: 250px;
+    height: 65px;
+    margin-left: 50px;
+    top: 50px;
+    z-index: 1;
+}
+
+.sideSU{
+    position: relative;
+    background-color: white;
+}
+
+.HeroSU img{
+    width: 100%;
+    height: 100vh;
+    min-height: 960px;
+    grid-area: Hero;
+    opacity: 70%;
+    background-color: white;
+}
+
+.quotesSU{
+    width: 80%;
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    color: rgb(5, 5, 5);
+}
+
+.quotesSU h1{
+    margin-bottom: 10px;
+    text-align: end;
+    font-weight: 700;
+    font-size: 2.1em;
+}
+
+.quotesSU h2{
+    color: rgb(189, 189, 189);
+    text-align: end;
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+.sign-up-content{
+    padding: 80px 10%;
+    grid-area: SignUp;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+}
+
+.sign-up-content .backLogo{
+    width: 70px;
+    margin-left: -50px;
+    margin-top: -40px;
+}
+
+.sign-up-content #welcome-text{
+    color: grey;
+    padding-bottom: 5px;
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 2.2em;
+}
+
+.sign-up-content h1 span{
+    color: red;
+}
+
+.sign-up-content h2{
+    color: rgb(197, 197, 197);
+    margin-bottom: 30px;
+    font-weight: 700;
+    margin-top: -10px;
+    font-size: 1.3em;
+}
+
+.usernameSU input{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0%;
+    font-size: 1em;
+    margin-bottom: 25px;
+    cursor: auto;
+}
+
+.emailSU input{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0%;
+    font-size: 1em;
+    margin-bottom: 25px;
+    cursor: auto;
+}
+
+.passwordSU input{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0%;
+    font-size: 1em;
+    margin-bottom: 25px;
+    cursor: auto;
+}
+
+.sign-up-buttonSU{
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background-color: red;
+    width: 125px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sign-in-buttonSU{
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: black;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.sign-up-buttonSU a:hover{
+    color: gray;
+}
+
+.term-and-cond{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.term-and-cond a{
+    cursor: pointer;
+    color: rgb(163, 4, 4)!important;
+}
+
+
+.term-and-cond a:hover{
+    color: rgb(250, 0, 0) !important;
+}
+
+.invalid-feedback-signup{
+    margin-top: -25px;
+    margin-left: 17%;
+    margin-bottom: 10px;
+    color: red;
+    font-size: 0.8em;
+}
+
+.footer-log-SU{
+    margin-top: -220px;
+    grid-area: Footer;
+    display: flex;
+    background-color: rgb(241, 241, 241);
+    padding: 45px 20px;
+    justify-content: space-evenly;
+    z-index: 1;
+    height: 220px;
+    margin-left: -5px;
+}
+
+.footer-log-SU h2{
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+@media(max-width: 1531px){
+    .sign-up-content #welcome-text{
+        font-size: 2em;
+    }
+
+    .usernameSU input{
+        margin-top: -20px;
+    }
+
+}
+
+
+@media (max-width: 1280px) {
+    .sign-up-page{
+        width: 1280px;
+    }
+}
+
+/* @media (max-width: 11048px){
+    .sign-up-content #welcome-text{
+        font-size: 1.7em;
+    }
+
+    .sign-up-content h2{
+        font-size: 1em;
+    }
+
+    .footer-log-SU{
+        flex-direction: column;
+        margin-top: -300px;
+        padding: 20px 50px;
+        height: 295px;
+    }
+} */
+@media (max-width:990px){
+
+    .sign-up-page{
+        grid-template-areas:    "Hero"
+                                "SignIn"
+                                "Footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr 1fr;
+        width: 980px;
+    }
+
+    .HeroSU img{
+        min-height: 0px;
+    }
+
+    .logoHero{
+        top: 30px !important;
+        width: 200px !important;
+        height: 50px !important;
+        margin-left: 30px;
+    }
+
+    .sideSU{
+        grid-area: Hero;
+    }
+
+    .sideSU .HeroSU img{
+        margin-top: 110px;
+        height: 300px;
+    }
+
+    .sideSU{
+        background-color: #f2f2f2;
+    }
+
+    .quotesSU{
+        top: 290px;
+    }
+
+    .quotesSU h1{
+        font-size: 1.7em;
+    }
+
+    .quotesSU h2{
+        font-size: 1.3em !important;
+        width: 300px;
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .backLogo{
+        text-align: left;
+    }
+
+    .sign-up-content{
+        grid-area: SignIn;
+        background-color: white;
+        padding-top:80px;
+    }
+
+    .sign-in-buttonSU{
+        margin-left: 0px;
+    }
+
+    .usernameSU{
+        margin-top: 50px;
+    }
+
+    .footer-log-SU{
+        margin-top: auto;
+        flex-direction: row;
+        grid-area: Footer;
+        padding-top: 50px;
+    }
+
+
+}
+/* 
+@media (max-width:800px){
+    .sign-up-page{
+        grid-template-areas:    "Hero"
+                                "SignIn"
+                                "Footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1.5fr 1fr;
+        width: 100%;
+    }
+
+    .sideSU{
+        grid-area: Hero;
+    }
+
+    .sideSU .HeroSU img{
+        margin-top: 110px;
+        width: 100%;
+        height: 300px;
+    }
+
+    .sideSU{
+        background-color: #f2f2f2;
+    }
+
+    .quotesSU{
+        top: 290px;
+    }
+
+    .quotesSU h1{
+        font-size: 1.7em;
+    }
+
+    .quotesSU h2{
+        font-size: 1.3em !important;
+        width: 300px;
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .backLogo{
+        text-align: left;
+    }
+
+    .sign-up-content{
+        grid-area: SignIn;
+        background-color: white;
+        padding-top:80px;
+    }
+
+
+    .sign-in-button{
+        margin-left: 12%;
+    }
+    
+
+    .footer-log-SU{
+        margin-top: auto;
+        min-height: 10px;
+        flex-direction: row;
+        grid-area: Footer;
+        padding-top: 50px;
+    }
+
+    .contactSI{
+        width: 60%;
+    }
+
+    .findUsSI{
+        width: 40%;
+    }
+}
+
+@media (max-width:600px){
+    .logoHero{
+        margin-left: 25px;
+        width: 200px;
+        height: 50px;
+        top: 30px;
+    }
+
+    .sign-up-content .backLogo{
+        margin-left: -40px;
+    }
+
+    .footer-log-SU{
+        flex-direction: column;
+        height: 330px;
+    }
+
+    .contactSI{
+        width: 100%;
+    }
+
+    .findUsSI{
+        margin-left: 0px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .sign-up-content .input{
+        margin-left: 30px;
+    }
+
+} */

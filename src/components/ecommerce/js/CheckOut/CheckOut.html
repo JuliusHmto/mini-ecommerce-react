@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CheckOut.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut Page</title>
+</head>
+<body>
+    <div class="Check-Out-Page">
+        <div class="top-side-checkout">
+            <h2>Checkout Page</h2>
+            
+            <div class="page-nav">
+                <h4>Cart</h4>
+                <img src="long-arrow-png.png">
+                <h4 class="active">Check-Out</h4>
+                <img src="long-arrow-png.png">
+                <h4>Payment</h4>
+            </div>
+        </div>
+        <div class="check-out-content">
+            <div class="left-side-check-out">
+                <div class="buyer-detail">
+                    <h3>Where to Send</h3>
+                    <hr class="horizontal-line-checkout">
+                    <div class="primary-address">
+                        <input type="radio" id="address" value="primary">&nbsp;Use Primary / Default Address</input>  
+                        
+                        <div class="primary-address-detail">
+                            <span><h4 class="buyer-name">Kevin Samuel</h4><h4 class="strip-sign">-</h4><h4 class="buyer-phone">+62894328249</h4></span>
+                            <div class="buyer-address-detail">
+                                <h4>Jalan Kemanggisan Raya No 6B, RT 012/005</h4>
+                                <h4>Kemanggisan, Jakarta Barat</h4>
+                                <h4>DKI Jakarta, 10610</h4>
+                                <h4>Indonesia</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-checkout">
+                    <span><h3>Product to Buy</h3> <h4 class="total-product-checkout">(2 Products)</h4></span>
+                    <hr class="horizontal-line-checkout">
+
+                    <div class="product-detail-checkout">
+                        <div class="seller-detail">
+                            <h5 id="seller-name">Toko_Sneakers</h5>
+                            <h5 id="seller-address">Jakarta Pusat</h5>
+                        </div>
+
+                        <div class="item-detail-checkout">
+                            <img class="item-img-checkout" src="item1.jpg">
+                            <div class="column2-checkout">
+                                <h4 class="item-name-checkout">Nike Air Jordan 1 University Grey/Red and White Rare</h4>
+                                <h5 class="item-price-checkout">Rp.2.500.000,-</h5>
+                                <h5 class="note-checkout">Note <span><i>Tolong dipack dengan rapih dan aman agar sampai barangnya tidak rusak</i></span></h5>
+                            </div>
+
+                            <div class="column3-checkout">
+                                <h5 class="item-weight-checkout">2 pcs (2 kg)</h5>
+                            </div>
+
+                            <div class="column4-checkout">
+                                <h5>Rp.5.000.000,-</h5>
+                            </div>
+                        </div>
+
+                        <div class="logistic-option">
+                            <h5>Shipping Logistic</h5>
+                            <select id="logistic" name="logistic">
+                                <option value="JNE">JNE</option>
+                                <option value="TIKI">TIKI</option>
+                                <option value="SiCepat">SiCepat</option>
+                                <option value="JNT">J&T</option>
+                              </select>
+                        </div>
+
+                        <div class="price-detail-checkout">
+                            <h5>Product Summary 1</h5>
+                            <div class="price">
+                                <p class="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Total Rp.5.050.000,- <img src="./u0.png">
+                                </p>
+                                <div class="collapse" id="collapseExample">
+                                      <div class="total-item-price-summary">
+                                          <p>Item Price ( 2 pcs )</p>
+                                          <p>Rp.5.000.000</p>
+                                      </div>
+                                      <div class="total-shipping-price-summary">
+                                          <p>Shipping ( 2 kgs )</p>
+                                          <p>Rp.50.000</p>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+                <div class="total-payment-card-checkout">
+                    <h3>Total Payment</h3>
+                    <hr class="horizontal-line-checkout">
+                    <div class="total-payment-checkout">
+                        <div class="total-product-price-checkout">
+                            <h6>Total Price</h6>
+                            <h6>Rp.5.000.000</h6>
+                        </div>
+                        <div class="total-shipping-price-checkout">
+                            <h6>Total Shipping</h6>
+                            <h6>Rp.100.000</h6>
+                        </div>
+                    </div>
+                    <div class="total-price-to-pay-checkout">
+                        <span>
+                        <h6>Total</h6>
+                        <h6 id="total-price-amount">Rp.5.100.000</h6>
+                        </span>
+                        <button class="promo-button-checkout"><h6>Add Promo Code or Voucher</h6></button>      
+                    </div>
+                    <button class="proceed-button-checkout"><h6>Proceed to Payment</h6></button>
+                </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

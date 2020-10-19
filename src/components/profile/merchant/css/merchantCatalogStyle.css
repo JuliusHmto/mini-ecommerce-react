@@ -1,0 +1,646 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.containerMerch{
+  display: grid;
+  grid-template-areas: 'navside MainContent';
+  grid-template-columns: auto 80%;
+  grid-template-rows: 1fr;
+  background-color: rgb(248, 248, 248);
+  margin-top: 138px;
+}
+
+.navsideMerch{
+  grid-area: navside;
+  background-color: rgb(246, 38, 38);
+  color: white;
+  padding: 20px;
+  min-width: 300px;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  /* Position of the navigation section */
+  position:sticky;
+ /* Ensuring its attached to the top of the page */
+  top:150px;
+ /* Ensuring the height of to equal to the viewport's height */
+  height:700px;
+}
+
+.store-info{
+  display: flex;
+  border-bottom: 2px solid white;
+  padding-bottom: 15px;
+  margin-top: 20px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.store-info img{
+  width: 55px;
+  height: 56px;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+
+.store-info h4{
+  font-size: 22;
+  margin-bottom: -1px;
+}
+
+.store-info h5{
+  font-size: 0.9em !important;
+  color: #959595;
+}
+
+.Dashboard-option, .MyShop-option,
+.Listing-option, .Order-option,
+.CS-option, .Financial-option,
+.StoreSettings-option
+{
+  display: flex;
+  margin-top: 20px;
+  margin-left: 30px;
+  text-align: left;
+  width: 70%;
+} 
+
+.Dashboard-option img, .MyShop-option img,
+.Listing-option img, .Order-option img, .Financial-option img,
+.StoreSettings-option img, .CS-option img
+{
+  width: 30px;
+  height: 28px;
+  margin-right: 20px;
+  margin-top: -3px;
+} 
+
+.optionList h5{
+  font-size: 1.2em;
+}
+
+.CS-option h5{
+  margin-top: -10px;
+}
+
+.CS-option{
+  margin-bottom: -10px;
+}
+
+.Dashboard-option:hover, .MyShop-option:hover,
+.Listing-option:hover, .Order-option:hover,
+.CS-option:hover, .Financial-option:hover,
+.StoreSettings-option:hover
+{
+  color: gray;
+  cursor: pointer;
+  opacity: 80%;
+} 
+
+.wrapperMerch {
+  display: grid;
+  grid-area: MainContent;
+  grid-template-areas:  'TitleMerch'
+                        'FilterMerch'
+                        'ProductContent';
+  grid-template-columns: 100%;
+  grid-template-rows: 50px 50px auto;
+  width: 85%;
+  min-height: 85vh;
+  height: fit-content;
+  margin: 25px auto 50px auto;
+  padding: 20px 40px;
+  background-color: white;
+  border-radius: 2px;
+  border: 0.1px solid rgb(238, 238, 238);
+  overflow: hidden;
+}
+
+.wrapperMerch h1{
+  grid-area: TitleMerch;
+  color: red;
+  /* position: fixed;
+  top: 80px; */
+  font-size: 2em;
+  width: 100%;
+  text-align: left;
+  height: 130px;
+  /* padding-top: 20px;
+  left: 300px; 
+  padding-left: 50px;
+  margin-top: 50px;*/
+}
+
+.dropDownFilterMerchant{
+  top: 200px;
+  grid-area: FilterMerch;
+  /* position: fixed;
+  padding: 10px;
+  left: 340px; */
+}
+
+.dropDownFilterMerchant select{
+  color: rgb(187, 187, 187);
+  width: 100px;
+  height: 35px;
+  border: 2px solid  rgb(187, 187, 187);
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 600;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.tableProductMerchant {
+  grid-area: ProductContent;
+  padding-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(1, [col] 100%);
+  grid-template-rows: repeat(auto-fill, [row] 200px);
+  grid-gap: 30px;
+  width: 100%;
+}
+
+.AddProductMerch a{
+  text-decoration: none !important;
+}
+
+.AddProductText{
+  margin-bottom: 50px;
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+  border: 2px solid rgb(167, 167, 167);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 15px 20px;
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+.AddProductText span{
+  font-weight: bold;
+  font-size: 1.6em;
+  margin-left: 30px;
+  color: rgb(167, 167, 167);
+}
+
+.AddProductText:hover{
+ opacity: 70%;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(161, 161, 161); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(112, 112, 112); 
+}
+
+@media (max-width: 1280px) {
+  .containerMerch{
+      width: 1280px;
+  }
+
+  .wrapperMerch {
+    width: 80%;
+  }
+
+  .containerMerch{
+    display: grid;
+    grid-template-areas: 'navside MainContent';
+    grid-template-columns: 300px auto;
+  }
+
+  .tableProductMerchant {
+    grid-area: ProductContent;
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(1, [col] 100%);
+    grid-template-rows: repeat(auto-fill, [row] 275px);
+    grid-gap: 30px;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 990px) {
+  .containerMerch{
+      width: 980px;
+  }
+
+  .wrapperMerch {
+    width: 90%;
+  }
+
+  .containerMerch{
+    display: grid;
+    grid-template-areas: 'navside MainContent';
+    grid-template-columns: 300px auto;
+  }
+
+  .tableProductMerchant {
+    grid-area: ProductContent;
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(1, [col] 100%);
+    grid-template-rows: repeat(auto-fill, [row] 275px);
+    grid-gap: 30px;
+    width: 100%;
+  }
+}
+
+/*
+@media (max-width: 1270px) {
+
+  .wrapperMerch {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .cardProductMerchant{
+    width:800px;
+    grid-template-areas:  'ProdImg ProdTitle ProdButton'
+                          'ProdImg ProdPrice ProdButton'
+                          'ProdImg ProdCategory ProdButton'
+                          'ProdImg ProdStocks ProdButton';
+    grid-template-columns: 210px 1fr 150px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    overflow-x: auto;
+  }
+
+  .AddProductMerch{
+    width:830px;
+  }
+
+  .cardProductMerchant .textProperty .productStock{
+    grid-area: ProdStocks;
+    text-align: left;
+    margin-left: 0px;
+    margin-top: 70px;
+    font-weight: 0;
+  }
+  
+  .search{
+    width: 90%;
+    height: 35px;
+    padding:15px;
+    background:rgba(50, 50, 50, 0.2);
+    border:0px solid #dbdbdb;
+    border-radius: 5px;
+  }
+
+}
+/*
+@media (max-width: 1200px) {
+  .wrapper {
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, [col] 200px);
+  }
+
+  .tables {
+    grid-column: col 2 / span 4;
+    grid-template-columns: repeat(4, [col] 200px);
+  }
+}
+
+@media (max-width: 850px) {
+  .wrapperMerch{
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .navsideMerch{
+    display: none;
+  }
+
+  .containerMerch{
+    display: grid;
+    grid-template-areas:'MainContent';
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
+  }
+  
+  .wrapperMerch h1{
+    left: 0px;
+    padding-left: 30px;
+    top: 50px;
+  }
+
+  .search-menu{
+    left: 30px;
+    width: 75%;
+    top:160px;
+  }
+
+  .search{
+    width: 100%;
+  }
+
+  .search-menu .btn {
+    margin-left: 10px;
+  }
+
+  .dropDownFilterMerchant{
+    left: 20px;
+    top: 200px;
+  }
+
+  .cardProductMerchant{
+    margin-left: 30px;
+    width:90%;
+    height: 260px;
+    grid-template-areas:  'ProdImg ProdTitle ProdStocks'
+                          'ProdImg ProdPrice ProdStocks'
+                          'ProdImg ProdCategory ProdStocks'
+                          'ProdButton ProdButton ProdButton';
+    grid-template-columns: 210px 1fr 20px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    border-radius: 5px;
+    overflow-y: hidden;
+  }
+
+  .cardProductMerchant img{
+    width: 170px;
+    height: 160px;
+    margin-right: 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .cardProductMerchant .textProperty .productName{
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+  
+  .cardProductMerchant .textProperty .productPrice{
+    font-size: 1.3em;
+    margin-left: -10px;
+  }
+  
+  .cardProductMerchant .textProperty .productCategory{
+    margin-left: -10px;
+  }
+  
+  .cardProductMerchant .textProperty .productStock{
+    grid-area: ProdStocks;
+    text-align: end;
+    margin-left: 0px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+  
+  .buttonProductMerchant{
+    grid-area: ProdButton;
+    border-left: none;
+    width: 100%;
+    text-align: left;
+    height: 170px;
+    border-top: 2px solid rgb(170, 170, 170);
+    margin-left: 3px;
+    padding-left: 0px;
+    width: 99%;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 12px;
+  }
+  
+  .buttonProductMerchant button{
+    border: none;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: -20px;
+    padding-left: 20px;
+  }
+  
+  .buttonProductMerchant button:hover{
+    opacity: 80%;
+  }
+  
+  .buttonProductMerchant .EditProduct{
+    background-color: transparent;
+    color: gray;
+    margin: 0px;
+  }
+  
+  .buttonProductMerchant .EditProduct:hover{
+  opacity: 70%;
+  }
+  
+  
+  .buttonProductMerchant .DeleteProduct{
+    background-color: transparent;
+    color: gray;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+  
+  .buttonProductMerchant .SetProduct{
+    background-color: transparent;
+    color: gray;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .verticalLine{
+    border-left: 2px solid rgb(170, 170, 170);
+    height: 40px;
+    margin-top: -3px;
+  }
+  
+  .AddProductMerch{
+    grid-area: AddProductMerchant;
+    width: 100%;
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+  
+  .AddProductText{
+    grid-area: AddProductMerchant;
+    margin-bottom: 50px;
+    width: 90%;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid rgb(167, 167, 167);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin-left: -40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+  }
+  
+  .AddProductText span{
+    font-weight: bold;
+    font-size: 1.6em;
+    margin-left: 30px;
+    color: rgb(167, 167, 167);
+  }
+}
+@media (max-width: 565px) {
+  .wrapperMerch{
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .navsideMerch{
+    display: none;
+  }
+
+  .containerMerch{
+    display: grid;
+    grid-template-areas:'MainContent';
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
+  }
+  
+  .wrapperMerch h1{
+    left: 0px;
+    padding-left: 30px;
+  }
+
+  .search-menu{
+    left: 30px;
+    width: 80%;
+  }
+
+  .search{
+    width: 90%;
+  }
+
+
+  .dropDownFilterMerchant{
+    left: 20px;
+  }
+
+  .cardProductMerchant{
+    margin-left: 30px;
+    width:90%;
+    height: 240px;
+    grid-template-areas:  'ProdImg ProdTitle ProdStocks'
+                          'ProdImg ProdPrice ProdStocks'
+                          'ProdImg ProdCategory ProdStocks'
+                          'ProdButton ProdButton ProdButton';
+    grid-template-columns: 180px 1fr 20px;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    border-radius: 5px;
+    overflow-y: hidden;
+  }
+
+  .cardProductMerchant img{
+    width: 150px;
+    height: 140px;
+  }
+  
+  .cardProductMerchant .textProperty .productName{
+    font-size: 1.6em;
+  }
+  
+  .cardProductMerchant .textProperty .productPrice{
+    font-size: 1em;
+    margin-top: 18px;
+  }
+  
+  .cardProductMerchant .textProperty .productCategory{
+    font-size: 0.9em;
+    margin-top: -5px;
+    margin-bottom: 0px;
+  }
+  
+  .cardProductMerchant .textProperty .productStock{
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    margin-top: 60px;
+  }
+  
+  .buttonProductMerchant{
+    height: 100px;
+    padding-top: 5px;
+  }
+  
+  .buttonProductMerchant button{
+    border: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-left: -20px;
+    padding-left: 20px;
+  }
+  
+  .buttonProductMerchant button:hover{
+    opacity: 80%;
+  }
+  
+  .buttonProductMerchant .EditProduct{
+    background-color: transparent;
+    color: gray;
+    margin: 0px;
+  }
+  
+  .buttonProductMerchant .EditProduct:hover{
+  opacity: 70%;
+  }
+  
+  
+  .buttonProductMerchant .DeleteProduct{
+    background-color: transparent;
+    color: gray;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+  
+  .buttonProductMerchant .SetProduct{
+    background-color: transparent;
+    color: gray;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .verticalLine{
+    border-left: 2px solid rgb(170, 170, 170);
+    height: 33px;
+    margin-top: 2px;
+  }
+  
+  .AddProductMerch{
+    grid-area: AddProductMerchant;
+    width: 100%;
+    height: 30px;
+  }
+  
+  .AddProductText{
+    font-size: 1.2em;
+  }
+  
+  .AddProductText span{
+    font-weight: bold;
+    font-size: 1em;
+    margin-left: 10px;
+    color: rgb(167, 167, 167);
+  }
+} */

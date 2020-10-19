@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.invoiceDetails {
+  margin-top: 2%;
+  margin-left: -75%;
+  margin-bottom: 1%;
+  color: red;
+}
+
+hr {
+  width: 94%;
+}
+
+.buyerTable {
+  background-color: #ecebeb;
+  width: 21%;
+  margin-left: 5%;
+  margin-top: 2%;
+  text-align: left;
+  padding-left: 2px;
+}
+
+.billTo {
+  background-color: #dbdada;
+  height: 2.5%;
+  text-align: left;
+  padding-top: 13px;
+  padding-left: 25px;
+  font-size: 24;
+}
+
+.buyer {
+  float: left;
+}
+
+.buyerDetail {
+  height: 12%;
+  padding-top: 1%;
+  padding-left: 25px;
+}
+
+.buyerDetail h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 23;
+  font-weight: 700;
+}
+
+.title {
+  background-color: rgb(185, 185, 185);
+  padding-left: 1%;
+  font-weight: bolder;
+}
+
+.buyerTable tr td {
+  padding-left: 3%;
+}
+
+.addressDetail .addressline1,
+.addressline2,
+.addressline3,
+.addressline4 {
+  font-size: 20;
+  padding-bottom: 10px;
+  margin-left: 0%;
+}
+
+.invoice {
+  height: 21%;
+  width: 20%;
+  margin-top: 20px;
+  margin-left: 77%;
+}
+
+.column1 {
+  background: #dbdada;
+  padding-left: 5px;
+  font-size: 20;
+  font-weight: bold;
+}
+
+.column2 {
+  background: #ecebeb;
+  padding-left: 5px;
+  font-size: 20;
+}
+
+.itemDetail2 {
+  width: 70%;
+  margin-left: 3%;
+  margin-top: 2%;
+}
+
+.itemDetail2 tr td {
+  padding-left: 0.5%;
+  font-size: 20;
+}
+
+.description td {
+  font-weight: bolder;
+}
+
+.description {
+  background: #dbdada;
+  height: 50px;
+}
+
+.item {
+  background: #ecebeb;
+  height: 100px;
+}
+
+.totalPay {
+  margin-left: 51.7%;
+  height: 6%;
+  width: 21.3%;
+}
+
+.totalPay tr .column1 {
+  width: 43.5%;
+  font-weight: bold;
+  font-size: 18;
+}
+
+.totalPay tr td {
+  padding-left: 1%;
+  font-size: 20;
+}
+
+.paid {
+  height: 20%;
+  width: 18%;
+  margin-left: 77%;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+.cf {
+  *zoom: 1;
+}

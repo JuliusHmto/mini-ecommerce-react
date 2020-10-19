@@ -1,0 +1,482 @@
+.login-page{
+    display: grid;
+    grid-template-areas:    "Hero SignIn"
+                            "Hero Footer";
+    grid-template-columns: 1.5fr 1fr;
+    height:0px;
+    text-align: left;
+    z-index: 3 !important;
+}
+
+.logoHero{
+    position: absolute;
+    width: 250px;
+    height: 65px;
+    margin-left: 50px;
+    top: 50px;
+    z-index: 1;
+}
+
+.side{
+    position: relative;
+    background-color: white;
+}
+
+.Hero img{
+    width: 100%;
+    height: 100vh;
+    min-height: 960px;
+    grid-area: Hero;
+    opacity: 70%;
+    background-color: white;
+}
+
+.quotes{
+    width: 80%;
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    color: rgb(5, 5, 5);
+}
+
+.quotes h1{
+    margin-bottom: 10px;
+    text-align: end;
+    font-weight: 700;
+    font-size: 2.1em;
+}
+
+.quotes h2{
+    color: rgb(255, 255, 255);
+    text-align: end;
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+.sign-in-content #welcome-text{
+    font-size: 2.2em;
+}
+
+.sign-in-content h2{
+    font-size: 1.5em;
+}
+
+
+.sign-in-content{
+    padding: 80px 10%;
+    grid-area: SignIn;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+}
+
+.sign-in-content .backLogo{
+    width: 70px;
+    margin-left: -50px;
+    margin-top: -40px;
+}
+
+.sign-in-content #welcome-text{
+    color: grey;
+    padding-bottom: 5px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+.sign-in-content h1 span{
+    color: red;
+}
+
+.sign-in-content h2{
+    color: rgb(197, 197, 197);
+    padding-bottom: 50px;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.email input{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px 25px;
+    margin-bottom: 25px;
+    margin-left: 10%;
+    border-radius: 0%;
+    font-size: 1em;
+    cursor: auto;
+}
+
+.password input{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px 25px;
+    margin-bottom: 25px;
+    margin-left: 10%;
+    border-radius: 0%;
+    font-size: 1em;
+    cursor: auto;
+}
+
+.sign-in-button{
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-button button{
+    border: none;
+    background-color: red;
+    width: 125px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+
+.sign-up-button{
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: black;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sign-up-button a:hover{
+    color: gray;
+}
+
+.footer-log{
+    margin-top: -275px;
+    grid-area: Footer;
+    display: flex;
+    background-color: rgb(241, 241, 241);
+    padding: 45px 20px;
+    justify-content: space-evenly;
+    z-index: 1;
+    height: 270px;
+}
+
+.footer-log h2{
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.contactSI{
+    width: 250px;
+    line-height: 20px;
+    margin-right: 45px;
+}
+
+.contactSI a{
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.contact p{
+    text-align: justify;
+}
+
+.phonenumberSI p{
+    line-height: 10px;
+    margin-top: 10px;
+}
+
+.phonenumberSI, .contactSI a{
+    margin-left: 20px;
+}
+
+.facebookIcon{
+    height: 35px;
+    padding-left: 5px;
+    padding-right: 2px;
+}
+
+.twitterIcon{
+    height: 35px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.instagramIcon{
+    height: 35px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.youtubeIcon{
+    height: 35px;
+    padding-left: 2px;
+}
+
+.phonecontact .phonenumber{
+    line-height: 25px;
+}
+
+.socialmediacontact .social-media-logo{
+    margin-top: 5px;
+}
+
+.invalid-feedback-signin{
+    margin-top: -25px;
+    margin-left: 14%;
+    margin-bottom: 20px;
+    color: red;
+    font-size: 0.8em;
+}
+
+@media (max-width: 1530px) {
+
+    .email input{
+        margin-top: 0px;
+    }
+}
+
+
+
+@media (max-width: 1280px) {
+    .login-page{
+        width: 1280px;
+    }
+
+}
+
+
+/* 
+@media (max-width: 1148px){ 
+    .quotes{
+        width: 75%;
+        position: absolute;
+        top: 750px;
+        color: rgb(5, 5, 5);
+        font-size: 0.8em;
+    }
+
+    .sign-in-content #welcome-text{
+        font-size: 2.2em;
+    }
+
+    .sign-in-content h2{
+        font-size: 1.5em;
+    }
+
+    .email input{
+        font-size: 0.8em;
+    }
+    
+    .password input{
+        font-size: 0.8em;
+    }
+
+
+    .sign-up-button{
+        letter-spacing: 1px;
+        font-size: 0.9em;
+        color: black;
+
+        margin-top: 30px;
+    }
+    
+    
+    .footer-log{
+        flex-direction: column;
+        margin-top: -300px;
+        padding: 20px 50px;
+        height: 295px;
+    }
+    
+} */
+
+@media (max-width:990px){
+
+    .login-page{
+        grid-template-areas:    "Hero"
+                                "SignIn"
+                                "Footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr 1fr;
+        width: 985px;
+    }
+
+    .logoHero{
+        top: 30px !important;
+        width: 200px !important;
+        height: 50px !important;
+        margin-left: 30px;
+    }
+
+    .side{
+        grid-area: Hero;
+    }
+
+    .side .Hero img{
+        margin-top: 110px;
+        height: 300px;
+        min-height: 0px;
+    }
+
+    .side{
+        background-color: #f2f2f2;
+    }
+
+    .quotes{
+        top: 290px;
+    }
+
+    .quotes h1{
+        font-size: 1.7em;
+    }
+
+    .quotes h2{
+        font-size: 1.3em !important;
+        width: 300px;
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .backLogo{
+        text-align: left;
+    }
+
+    .sign-in-content{
+        grid-area: SignIn;
+        background-color: white;
+        padding-top:80px;
+    }
+
+    .sign-in-button{
+        margin-left: 0px;
+    }
+
+
+    .footer-log{
+        margin-top: auto;
+        flex-direction: row;
+        grid-area: Footer;
+        padding-top: 50px;
+    }
+
+
+}
+
+/* 
+@media (max-width:800px){
+
+    .login-page{
+        grid-template-areas:    "Hero"
+                                "SignIn"
+                                "Footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr 1fr;
+    }
+
+    .logoHero{
+        top: 30px;
+        width: 230px;
+        height: 55px;
+        margin-left: 30px;
+    }
+
+    .side{
+        grid-area: Hero;
+    }
+
+    .side .Hero img{
+        margin-top: 110px;
+        height: 300px;
+    }
+
+    .side{
+        background-color: #f2f2f2;
+    }
+
+    .quotes{
+        top: 290px;
+    }
+
+    .quotes h1{
+        font-size: 1.7em;
+    }
+
+    .quotes h2{
+        font-size: 1.3em !important;
+        width: 300px;
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .backLogo{
+        text-align: left;
+    }
+
+    .sign-in-content{
+        grid-area: SignIn;
+        background-color: white;
+        padding-top:80px;
+    }
+
+    .sign-in-button{
+        margin-left: 0px;
+    }
+
+
+    .footer-log{
+        margin-top: auto;
+        min-height: 10px;
+        flex-direction: row;
+        grid-area: Footer;
+        padding-top: 50px;
+    }
+
+    .contact{
+        width: 60%;
+    }
+
+    .findUs{
+        width: 40%;
+    }
+} */
+/* 
+@media (max-width:600px){
+    .logoHero{
+        margin-left: 25px;
+        width: 200px;
+        height: 50px;
+        top: 30px;
+    }
+
+    .sign-in-content .backLogo{
+        margin-left: -40px;
+    }
+
+    .footer-log{
+        flex-direction: column;
+        height: 330px;
+    }
+
+    .contactSI{
+        width: 100%;
+    }
+
+    .findUsSI{
+        margin-left: 0px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .sign-in-content .input{
+        margin-left: 30px;
+    }
+
+} */

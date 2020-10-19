@@ -1,0 +1,28 @@
+.be-merch-button a{
+    text-decoration: none;
+    color: rgb(170, 170, 170);
+}
+
+.be-merch-button a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.merch-button a{
+    text-decoration: none;
+    color: rgb(170, 170, 170);
+    margin-left: -20px;
+}
+
+.merch-button a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width:1400px){
+    
+    .be-merch-button{
+        margin-top: 0px !important;
+    }
+
+}
