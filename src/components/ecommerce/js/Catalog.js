@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import MetaTags from "react-meta-tags";
 import { getItems } from "../../../actions/catalogActions";
 import { addToCart } from "../../../actions/cartActions";
-import { trackUserOrder } from "../../../actions/userActions";
 import { getCategory } from "../../../actions/categoryActions";
 
 class Catalog extends Component {
@@ -16,24 +15,10 @@ class Catalog extends Component {
       filterStr: "",
     };
     this.addProductToCart = this.addProductToCart.bind(this);
-    this.checkTrackOrder = this.checkTrackOrder.bind(this);
-  }
-
-  checkTrackOrder() {
-    const trackOrder = this.props.user.user.trackOrder;
-    const userID = this.props.user.user.id;
-    const userData = {
-      email: this.props.user.user.email,
-      username: this.props.user.user.username,
-      password: this.props.user.user.password,
-    };
-    if (trackOrder == null) {
-      this.props.trackUserOrder(userID, userData);
-    }
+    
   }
 
   componentDidMount() {
-    this.checkTrackOrder();
     this.props.getItems();
     this.props.getCategory();
   }
@@ -246,9 +231,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    trackUserOrder: (userID, userData) => {
-      dispatch(trackUserOrder(userID, userData));
-    },
     getCategory: () => {
       dispatch(getCategory());
     },

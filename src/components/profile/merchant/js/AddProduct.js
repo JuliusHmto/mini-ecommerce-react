@@ -74,7 +74,9 @@ class AddProduct extends Component {
               <div className="productImageInput">
                 <div className="inputImage">
                   <input
-                    className="inputImageButton"
+                    className={classnames("inputImageButton", {
+                      "is-invalid": errors.file,
+                    })}
                     type="file"
                     id="img"
                     name="img"
@@ -90,6 +92,9 @@ class AddProduct extends Component {
                     }
                   />
                   <h4 id="primaryImage">Primary Image</h4>
+                  {errors.file && (
+                    <div className="invalid-feedback">{errors.file}</div>
+                  )}
                 </div>
                 <div className="inputImage">
                   <input
@@ -98,7 +103,7 @@ class AddProduct extends Component {
                     id="img"
                     name="img"
                     accept="image/*"
-                  ></input>
+                  /><img/>
                 </div>
                 <div className="inputImage">
                   <input
@@ -107,7 +112,7 @@ class AddProduct extends Component {
                     id="img"
                     name="img"
                     accept="image/*"
-                  ></input>
+                  /><img/>
                 </div>
                 <div className="inputImage">
                   <input
@@ -116,7 +121,7 @@ class AddProduct extends Component {
                     id="img"
                     name="img"
                     accept="image/*"
-                  ></input>
+                  /><img/>
                 </div>
                 <div className="inputImage">
                   <input
@@ -125,7 +130,7 @@ class AddProduct extends Component {
                     id="img"
                     name="img"
                     accept="image/*"
-                  ></input>
+                  /><img/>
                 </div>
               </div>
             </div>
@@ -244,7 +249,6 @@ class AddProduct extends Component {
               </div>
 
             </div>
-
 
             <div className="ButtonAddProducts">
               <button

@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import MetaTags from "react-meta-tags";
-import { logout, getUserData } from "../../actions/userActions";
-import { getMerchant } from "../../actions/merchantActions";
+import { logout } from "../../actions/userActions";
 import MerchantStoreButton from "../profile/merchant/js/MerchantStoreButton";
 import "./HeaderStyle.css";
 
@@ -16,7 +15,6 @@ class Header extends Component {
       isOpen: false,
     };
     this.logout = this.logout.bind(this);
-    this.getUserAndMerchantData = this.getUserAndMerchantData.bind(this);
   }
 
   onChange = (event) => {
@@ -35,14 +33,9 @@ class Header extends Component {
     });
   };
 
-  getUserAndMerchantData = (id) => {
-    this.props.getUserData(id);
-    this.props.getMerchant(id);
-  };
-
   logout = () => {
     this.props.logout();
-    window.location.href = "/home";
+    window.location.href = "/";
   };
 
   render() {
@@ -83,7 +76,7 @@ class Header extends Component {
           </li>
           <div class="dropdown-divider"></div>
           <li className="nav-item logout">
-            <Link to="/home" className="nav-link" onClick={this.logout}>
+            <Link to="/" className="nav-link" onClick={this.logout}>
               <button>
                 Logout
               </button>
@@ -94,25 +87,6 @@ class Header extends Component {
     );
 
     let headerLinks;
-
-    // const userProfileAuthenticated = (
-    //   <div class="dropdown option user-profile-authentic">
-    //     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    //       {user.username}
-    //     </a>
-    //       <ul className="dropdown-menu">
-    //         <li className="nav-item be-merch-comp">
-    //             <MerchantStoreButton user={user} />
-    //         </li>
-    //       </ul>
-    // </div>
-    // );
-
-    // const userProfileIsNotAuthenticated = (
-    //     <div></div>
-    // );
-
-    // let userProfileShown;
 
     if (validToken && user) {
       headerLinks = userIsAuthenticated;
@@ -226,13 +200,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => {
       dispatch(logout());
-    },
-    getUserData: (id) => {
-      dispatch(getUserData(id));
-    },
-    getMerchant: (id) => {
-      dispatch(getMerchant(id));
-    },
+    }
   };
 };
 

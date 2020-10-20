@@ -22,6 +22,7 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 
 //import user e-commerce
+import Home from "./components/ecommerce/js/Home";
 import Catalog from "./components/ecommerce/js/Catalog";
 import ItemDetail from "./components/ecommerce/js/ItemDetail";
 import CartContainer from "./components/ecommerce/js/CartContainer";
@@ -38,6 +39,7 @@ import RegisterMerchant from "./components/profile/merchant/js/RegisterMerchant"
 import MerchantCatalog from "./components/profile/merchant/js/MerchantCatalog";
 import AddProduct from "./components/profile/merchant/js/AddProduct";
 import EditProduct from "./components/profile/merchant/js/EditProduct";
+
 
 const jwtToken = localStorage.jwtToken;
 
@@ -89,7 +91,7 @@ class App extends Component {
                 exact
                 path="/home"
                 render={(props) => (
-                  <Landing {...props} searchValue={this.state.searchValue} />
+                  <Home {...props} searchValue={this.state.searchValue} />
                 )}
               />
               <Route exact path="/register" component={Register}></Route>

@@ -18,7 +18,6 @@ export const createNewUser = (newUser, history) => async (dispatch) => {
       payload: {},
     });
   } catch (err) {
-    console.log(err.response);
     dispatch({
       type: GET_ERRORS,
       payload: err.response.data,

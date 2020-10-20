@@ -24,7 +24,7 @@ class MerchantStoreButton extends Component {
       <div className="be-merch-button nav-item">
         <Link to={"/my-shop/register"}>
           <button>
-            Be a merchant
+            Be a Merchant
           </button>
         </Link>
       </div>
