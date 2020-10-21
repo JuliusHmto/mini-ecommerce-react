@@ -67,13 +67,14 @@ export const getMerchantItems = (merchantID) => async (dispatch) => {
 };
 
 //create new product from current merchant
-export const createProduct = (merchantID, formData) => async (dispatch) => {
+export const createProduct = (merchantID, formData, history) => async (dispatch) => {
   try {
     const res = await axios.post(
       `/api/product/createProduct/${merchantID}`,
       formData,
       { headers: { "Content-Type": "multipart/form-data" } }
     );
+    history.push("/my-shop/catalog");
     dispatch({
       type: CREATE_PRODUCT,
       payload: res.data,

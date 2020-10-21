@@ -53,7 +53,7 @@ class AddProduct extends Component {
     formData.append("productStock", this.state.productStock);
     formData.append("file", this.state.file);
 
-    this.props.createProduct(merchantID, formData);
+    this.props.createProduct(merchantID, formData, this.props.history);
   };
 
   handleChange = (event) => {
@@ -299,8 +299,8 @@ const mapDispatchToProps = (dispatch) => {
     getCategory: () => {
       dispatch(getCategory());
     },
-    createProduct: (merchantID, formData) => {
-      dispatch(createProduct(merchantID, formData));
+    createProduct: (merchantID, formData, history) => {
+      dispatch(createProduct(merchantID, formData, history));
     },
   };
 };

@@ -9,7 +9,7 @@ class MerchantItemCatalog extends Component {
       <div className="cardProductMerchant">
         <img
           className="imageProperty"
-          src={require("../../../layout/images/dummy/example-image.jpg")}
+          src={merchantItem.filePath}
           alt=""
         ></img>
         <div className="textPropertyMerch">

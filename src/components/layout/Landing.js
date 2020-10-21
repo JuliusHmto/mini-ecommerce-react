@@ -47,7 +47,7 @@ class Landing extends Component {
                 >
                   <img
                     className="item-image"
-                    src={require("../layout/images/dummy/example-image.jpg")}
+                    src={item.filePath}
                     alt=""
                   ></img>
 
