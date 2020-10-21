@@ -1,0 +1,244 @@
+.invoice-page{
+    width: 75%;
+    /* min-width: ; */
+    margin-left: auto;
+    margin-right: auto;
+    padding:75px 50px;
+}
+
+.invoice-page img{
+    width: 250px;
+    margin-bottom: 50px;
+}
+
+.invoice-page h2{
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.top-side-invoice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipient-detail-invoice{
+    margin-right: 100px;
+}
+
+.recipient-invoice h3{
+    font-size: 1.5em;
+    color: #999999;
+}
+
+.horizontal-line-inv{
+    width: 80px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-bottom: 2px solid red;
+}
+
+.recipient-name{
+    font-size: 1.3em;
+    color: red;
+}
+
+.recipient-address h4{
+    white-space: nowrap;
+    font-weight: 100;
+    font-size: 1.1em;
+    color: #999999;
+}
+
+.recipient-phone{
+    font-weight: 100;
+    font-size: 1.1em;
+    color: #999999;
+}
+
+
+.invoice-detail h3{
+    font-size: 1.5em;
+    color: #999999;
+}
+
+.invoice-detail h4{
+    font-size: 1.1em;;
+}
+
+.invoice-id, .merchant-detail-inv, .date-inv, .payment-method-inv{
+    display: flex;
+}
+
+.text-format{
+    width: 150px;
+    color: black !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    cursor: context-menu !important;
+    border-bottom: none !important;
+}
+
+.invoice-number{
+    color: red;
+}
+
+.invoice-detail p{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #999999;
+    cursor: context-menu;
+}
+
+.merchant-detail-inv, .date-inv{
+    margin-bottom: 7px;
+}
+
+.merchant-detail-inv h4{
+    color: red;
+    font-weight: 100;
+    border-bottom: 1px solid red;
+    cursor: pointer;
+}
+
+.payment-type-inv{
+    width: 200px;
+}
+
+.date-inv h4, .payment-method-inv h4{
+    color:  #999999;
+    font-weight: 100;
+}
+
+table{
+    empty-cells: hide;
+}
+
+.product-detail-table-inv{
+    margin-top: 100px;
+    width: 100%;
+}
+
+.format-row{
+    width: 100%;
+    background-color: #f73c3c;
+    height: 40px;
+    padding-left: 30px;
+}
+
+.format-row th{
+    font-size: 1.2em;
+    color: white;
+    font-weight: 100;
+    padding: 0px 20px;
+}
+
+.format-row th:nth-child(1){
+    width: 40%;
+    text-align: left;
+}
+
+.format-row th:nth-child(2){
+    width: 25%;
+    text-align: center;
+}
+
+.format-row th:nth-child(3){
+    width: 25% !important;
+    text-align: left;
+}
+
+.format-row th:nth-child(4){
+    width: 25%;
+    text-align: right;
+}
+
+.product-detail-row{
+    border-bottom: 2px solid rgb(207, 207, 207);
+    height: 120px;
+}
+
+.product-detail-row td h4{
+    font-size: 1.2em;
+    color: #999999;
+}
+
+.product-detail-row td:nth-child(1){
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.product-detail-row td:nth-child(2){
+    text-align: center;
+}
+
+.product-detail-row td:nth-child(3){
+    text-align: left;
+}
+
+.product-detail-row td:nth-child(4){
+    text-align: right;
+    padding-right: 20px;
+}
+
+.product-name-inv{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.shipping-inv td:nth-child(3){
+    padding-top: 20px;
+    border-bottom: 2px solid rgb(207, 207, 207);
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.shipping-inv td:nth-child(4){
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 60px;
+    border-bottom: 2px solid rgb(207, 207, 207);
+    padding-bottom: 20px;
+}
+
+.shipping-inv h4{
+    font-size: 1.2em;
+    color: #999999;
+    font-weight: 100;
+}
+
+.shipping-type{
+    font-weight: 600 !important;
+}
+
+.shipping-price-inv{
+    font-weight: 600 !important;
+
+}
+
+.total-pay td:nth-child(3){
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+}
+
+.total-pay td:nth-child(4){
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.total-pay h4{
+    font-size: 1.2em;
+    color: #999999;
+    font-weight: 100;
+}
+
+.total-price-inv{
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    color: red !important;
+}

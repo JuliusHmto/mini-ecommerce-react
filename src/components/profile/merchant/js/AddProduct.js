@@ -250,7 +250,6 @@ class AddProduct extends Component {
               <button
                 className="cancelButtonAP"
                 type="submit"
-                onClick={this.submitNewProduct}
               >
                 Cancel
               </button>
