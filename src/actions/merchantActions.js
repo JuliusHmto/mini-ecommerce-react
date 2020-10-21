@@ -18,7 +18,7 @@ export const createNewMerchant = (
       `/api/merchant/createMerchantToUserId/${userID}`,
       newMerchant
     );
-    history.push("/catalog");
+    history.push("/home");
     dispatch({
       type: GET_CURRENT_MERCHANT,
       payload: res.data,

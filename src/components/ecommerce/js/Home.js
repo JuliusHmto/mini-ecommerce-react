@@ -17,25 +17,22 @@ class Landing extends Component {
   }
 
   checkTrackOrder() {
-    const trackOrder = this.props.user.user.trackOrder;
     const userID = this.props.user.user.id;
     const userData = {
       email: this.props.user.user.email,
       username: this.props.user.user.username,
       password: this.props.user.user.password,
     };
-    if (trackOrder == null) {
       this.props.trackUserOrder(userID, userData);
-    }
   }
 
   componentDidMount() {
+    this.checkTrackOrder();
     if (this.props.user.validToken) {
       this.props.history.push("/home");
     } else {
       this.props.getItems();
     }
-    this.checkTrackOrder();
   }
 
   render() {
