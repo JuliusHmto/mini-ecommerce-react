@@ -14,7 +14,7 @@ export const getItems = () => async (dispatch) => {
 
 export const getItemDetail = (productID) => async (dispatch) => {
   const res = await axios.get(
-    `/api/product/findProduct/${productID}`
+    `/api/product/loadSpecificProduct/${productID}`
   );
   dispatch({
     type: GET_ITEM_DETAIL,

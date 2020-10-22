@@ -15,7 +15,7 @@
               <div class="primary-picture-detail">
                 <img
                   class="picture-detail-1"
-                  src="item1.jpg"
+                  src={itemDetail.filePath}
                   alt=""
                 ></img>
               </div>
@@ -41,7 +41,7 @@
               <div class="secondary-picture-detail">
                 <img
                     class="item-image-2 image-active"
-                    src="item1.jpg"
+                    src={itemDetail.filePath}
                     alt=""
                 ></img>
                 <img
@@ -68,10 +68,10 @@
 
           </div>
           <div class="item-detail-text">
-            <h3 class="productCategory-detail">Clothes</h3>
-            <h2 class="productName-detail">Air Jordan 1 RED/WHITE UNIVERSITY RARE</h2>
-            <h3 class="productPrice-detail">Rp. 200000,-</h3>
-            <p class="productStock-detail">Availibility : <b>in stock (>5)</b></p>
+            <h3 class="productCategory-detail">{itemDetail.productCategoryName}</h3>
+            <h2 class="productName-detail">{itemDetail.productName}</h2>
+            <h3 class="productPrice-detail">Rp. {itemDetail.productPrice} ,-</h3>
+            <p class="productStock-detail">Availibility : <b>in stock ({itemDetail.productStock})</b></p>
 
             <div class="productInfo-detail">
                 <h3>Product Info</h3>
@@ -204,7 +204,7 @@
 
                 <div class="response-time">
                   <p>Response Time</p>
-                  <h4> < 5 Minutes</h4>
+                  <h4> ± 5 Minutes</h4>
                 </div>
 
                 <div class="seller-follower">
@@ -220,36 +220,8 @@
           <div class="productDescription-detail">
               <h2>Product Description</h2>
               <hr class="horizontal-line-detail-3">
-              <p><b>Deskripsi Nike Air Jordan</b></p>
-              <p>Keyboard Gaming Legionare MX3.2
-                Tampilan sederhana nan elegan masih menjadi tren utama dalam desain perangkat gaming modern. Desain maskulin, elegan, fungsional, dan dengan balutan warna gelap jadi identitas keyboard gaming Rexus Legionare MX3.2. Keyboard ini merupakan penerus MX3.1.
-                10 Mode LED
-                Rexus Legionare MX3.2 menggunakan LED yang mempunyai 10 mode pencahayaan dan 12 mode tombol cepat multimedia. Perubahan mode LED dapat dilakukan dengan “Fn + Insert”.
-                
-                104 Tombol yang full Anti-ghosting
-                Keyboard gaming ini merupakan full size keyboard dengan 104 tombol, dengan full anti-ghost conflict, dengan kecepatan respon per tombol sekitar 1mikrodetik, sehingga tidak ada lag antara ketukan.
-                
-                Berat Keyboard Ideal dengan Bahan Berkualitas
-                Keyboard mechanical ini mengedapankan sisi ketangguhan dalam desain dan bentuknya secara keseluruhan. Pelindung berupa logam campuran aluminium akan melidungi bagian dalam keyboard saat terjadi benturan. Dengan berat lebih dari 1 kilogram, 
-                Legionare MX3.2 akan membuat permainan Anda lebih mantap.
-                
-                Switch Content Berdaya Tahan 50 juta klik!
-                Rexus Legionare MX3.2 mempercayakan komponen utamanya, yaitu switch atau tombol, pada merek Content. Jenis switch ini berdiri secara independen dan mempunyai sistem hot detachable switch sehingga dapat dengan mudah diganti dan masing-masing switch memiliki daya tahan hingga 50 juta.
-                
-                Magnetic Palm-rest yang Mudah Copot-pasang
-                Keyboard gaming mechanical ini dilengkapi dengan dudukan penyangga telapak tangan yang mudah dicopot bila tidak diperlukan (removable) dan dipasang lagi karena dilengkapi dengan sistem magnetic connector yang tinggal ditempelkan pada badan keyboard.
-                
-                Spesifikasi
-                Tipe Keyboard: Keyboard mekanikal
-                Jumlah Tombol: 104 tombol, Full Anti Ghosting
-                Jenis Tombol: Mekanikal
-                Tipe Konektor: USB V 2.0
-                Durabilitas tombol: 50.000.000 klik
-                Kecepatan Respon: 1ms
-                Keycaps: Molding dua warna
-                LED: 10 mode warna
-                Material: Metal
-              </p>
+              <p><b>Deskripsi {itemDetail.productName}</b></p>
+              <p>{itemDetail.productDescription}</p>
           </div>
 
           <!-- Bagian Rating -->
@@ -323,27 +295,4 @@
         </div>
       </div>
 </body>
-<!-- 
-<script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
-}
-
-function displayResult() {
-  document.getElementById("myHeader").innerHTML = "Added To Favourite";
-  document.getElementById("myHeader").style.color ="red"
-}
-</script> -->
 </html>

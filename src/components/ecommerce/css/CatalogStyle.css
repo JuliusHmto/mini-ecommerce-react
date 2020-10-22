@@ -1,9 +1,8 @@
-*{
+* {
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
-.wrap-cat{
+.wrap-cat {
   display: grid;
   grid-template-areas: "filter-catalog content-catalog";
   grid-template-columns: 0.2fr 1fr;
@@ -25,14 +24,13 @@
   top: 155px;
 }
 
-.catalog-content{
+.catalog-content {
   grid-area: content-catalog;
   margin-top: 155px;
   padding-left: 50px;
 }
 
-
-.text h5{
+.text h5 {
   color: rgb(255, 255, 255);
   font-weight: 500;
   letter-spacing: 1.5px;
@@ -48,14 +46,14 @@
   display: flex;
 }
 
-.categoryFilter h5{
+.categoryFilter h5 {
   padding: 10px 10px;
   font-size: 1.2em;
   font-weight: 500;
   color: rgb(184, 184, 184);
 }
 
-.categoryFilter select{
+.categoryFilter select {
   margin-left: 20px;
   margin-top: 2px;
   width: 75px;
@@ -64,12 +62,12 @@
   border-bottom: 2px solid rgb(255, 255, 255);
 }
 
-.categoryFilter select{
+.categoryFilter select {
   color: white;
   background-color: rgb(246, 38, 38);
 }
 
-.priceFilter h5{
+.priceFilter h5 {
   padding: 10px 20px;
   font-size: 1.2em;
   font-weight: 500;
@@ -77,16 +75,17 @@
   text-align: left;
 }
 
-label{
+label {
   color: white;
   padding-left: 20px;
 }
 
-.inputPriceFilter span{
+.inputPriceFilter span {
   margin-left: 20px;
 }
 
-.InputMin, .InputMax {
+.InputMin,
+.InputMax {
   background: #f62b2b;
   border: 0px;
   width: 150px;
@@ -96,12 +95,12 @@ label{
   margin-bottom: 10px;
 }
 
-.button{
+.button {
   display: flex;
   justify-content: center;
 }
 
-.AddFilter{
+.AddFilter {
   width: 115px;
   height: 35px;
   padding: 5px 10px;
@@ -114,7 +113,7 @@ label{
   border: 1px solid rgb(177, 177, 177);
 }
 
-.ResetFilter{
+.ResetFilter {
   padding: 5px 10px;
   width: 115px;
   height: 35px;
@@ -124,35 +123,35 @@ label{
   border-radius: 3px;
   font-size: 1em;
   border: 1px solid rgb(177, 177, 177);
-  
 }
 
-.ResetFilter:hover, .AddFilter:hover{
+.ResetFilter:hover,
+.AddFilter:hover {
   opacity: 70%;
 }
 
-.catalog-navs{
+.catalog-navs {
   height: 40px;
 }
 
-.product-total{
+.product-total {
   width: 300px;
 }
 
-.dropdown-catalog{
+.dropdown-catalog {
   width: 120px;
   margin-top: 10px;
 }
 
-.catalog-navs h2{
+.catalog-navs h2 {
   color: red;
 }
 
-.catalog-navs span{
+.catalog-navs span {
   font-weight: 600;
 }
 
-.dropdown-catalog button{
+.dropdown-catalog button {
   background-color: transparent;
   color: #000;
   width: 120px;
@@ -161,13 +160,12 @@ label{
   text-align: left;
 }
 
-.dropdown button:hover{
+.dropdown button:hover {
   background-color: rgb(252, 6, 6);
   color: white;
 }
 
-
-.dropdown button:visited{
+.dropdown button:visited {
   background-color: rgb(252, 6, 6);
   color: white;
 }
@@ -177,23 +175,25 @@ label{
   display: grid;
   grid-template-columns: repeat(auto-fill, [col] 200px);
   grid-template-rows: repeat(auto-fill, [row] 350px);
-  grid-gap:50px;
+  grid-gap: 50px;
   margin-top: 55px;
   margin-left: 5px;
   padding-bottom: 100px !important;
   margin-right: 20px;
 }
 
-.card{
+/* css buat product card */
+.card {
   height: 360px;
   padding: 5px;
   width: 210px;
   position: relative;
   border: none !important;
-  box-shadow: 0 4px 8px 0 rgba(116, 116, 116, 0.2), 0 6px 20px 0 rgba(160, 160, 160, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(116, 116, 116, 0.2),
+    0 6px 20px 0 rgba(160, 160, 160, 0.19);
 }
 
-.product-detail-card img{
+.product-detail-card img {
   height: 175px;
   width: 80%;
   display: block;
@@ -201,7 +201,7 @@ label{
   margin-right: auto;
 }
 
-.product-detail-card .detail-button-wrapper{
+.product-detail-card .detail-button-wrapper {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -211,12 +211,12 @@ label{
   top: 0px;
   padding: 5px;
   background-color: rgb(185, 185, 185);
-  opacity:20%;
+  opacity: 20%;
   height: 53%;
   display: none;
 }
 
-.product-detail-card span .view-detail-button{
+.product-detail-card span .view-detail-button {
   border: 2px solid rgb(248, 62, 62);
   color: rgb(248, 62, 62);
   width: 150px;
@@ -224,7 +224,7 @@ label{
   font-weight: 600;
 }
 
-.product-detail-card span{
+.product-detail-card span {
   text-align: center;
   position: absolute;
   margin-left: auto;
@@ -237,14 +237,13 @@ label{
   display: none;
 }
 
-.product-detail-card:hover span{
+.product-detail-card:hover span {
   display: block;
 }
 
-.product-detail-card:hover .detail-button-wrapper{
+.product-detail-card:hover .detail-button-wrapper {
   display: block;
 }
-
 
 .item-text {
   text-align: left;
@@ -268,7 +267,7 @@ label{
   font-weight: 600;
 }
 
-.productCategoryCat{
+.productCategoryCat {
   color: rgb(196, 196, 196);
   margin-left: 5px;
   font-weight: 100 !important;
@@ -276,8 +275,7 @@ label{
   font-size: 0.9em;
 }
 
-
-.button-product{
+.button-product {
   border-top: 1px solid rgb(204, 204, 204);
   width: 90%;
   padding-top: 10px;
@@ -292,9 +290,8 @@ label{
   justify-content: space-around;
 }
 
-.bn-button{
-  background-image: linear-gradient(to right,#e43a15, 
-  #e65245);
+.bn-button {
+  background-image: linear-gradient(to right, #e43a15, #e65245);
   color: white;
   padding: 5px;
   font-weight: 600;
@@ -306,12 +303,11 @@ label{
   height: 30px;
 }
 
-.bn-button:hover{
-  background-image: linear-gradient(to left,#cb2d3e, 
-  #ef473a);
+.bn-button:hover {
+  background-image: linear-gradient(to left, #cb2d3e, #ef473a);
 }
 
-.addToCart-button{
+.addToCart-button {
   background-color: rgb(255, 255, 255);
   color: rgb(248, 62, 62);
   padding: 5px;
@@ -324,64 +320,60 @@ label{
   border-radius: 5px;
 }
 
-.ATC-image{
+.ATC-image {
   width: 95%;
   height: 100%;
 }
 
-.addToCart-button:hover{
+.addToCart-button:hover {
   opacity: 70%;
 }
+/*SAMPAI SINI */
 
-h6{
-  margin-top: 10px;
-  margin-left: 40px;
-}
-
-@media (max-width: 1280px){
+@media (max-width: 1280px) {
   /* .filter-options {
     width: 320px !important;
   } */
 
-  .wrap-cat{
+  .wrap-cat {
     width: 1280px;
   }
-
 
   .tables {
     grid-area: product;
     display: grid;
     grid-template-columns: repeat(4, [col] 200px);
     grid-template-rows: repeat(auto-fill, [row] 350px);
-    grid-gap:20px;
+    grid-gap: 20px;
   }
-
 }
 
-@media (max-width: 990px){
-  .wrap-cat{
+@media (max-width: 990px) {
+  .wrap-cat {
     width: 980px;
     grid-template-columns: 245px 2fr;
   }
-  
+
   .filter-options {
     width: 270px !important;
   }
 
-  .InputMin,.InputMax{
+  .InputMin,
+  .InputMax {
     width: 50%;
   }
 
-  .product-total h2{
+  .product-total h2 {
     margin-left: 0px;
     font-size: 1.7em;
   }
 
-  .dropdown-catalog button{
+  .dropdown-catalog button {
     margin-left: 0px;
   }
 
-  .ResetFilter, .AddFilter{
+  .ResetFilter,
+  .AddFilter {
     padding: 2px;
     width: 100px;
     height: 30px;
@@ -392,53 +384,50 @@ h6{
     margin-left: 0px;
     grid-template-columns: repeat(4, [col] 160px) !important;
     grid-template-rows: repeat(auto-fill, [row] 350px);
-    grid-gap:10px;
+    grid-gap: 10px;
     margin-right: 0px;
   }
 
-
-  .card{
+  .card {
     height: 330px;
     width: 160px;
   }
-  
-  .product-detail-card img{
+
+  .product-detail-card img {
     height: 130px;
   }
-  
-  .product-detail-card .detail-button-wrapper{
+
+  .product-detail-card .detail-button-wrapper {
     height: 145px;
   }
-  
-  .product-detail-card span .view-detail-button{
+
+  .product-detail-card span .view-detail-button {
     font-size: 0.8em;
     width: 120px;
   }
-  
-  .product-detail-card span{
+
+  .product-detail-card span {
     top: 60px;
   }
 
-  .item-text{
+  .item-text {
     margin-top: 20px;
   }
-  
+
   .productName {
     font-size: 0.8em;
     margin-top: 5px;
   }
-  
+
   .productPrice {
     font-size: 0.8em !important;
   }
-  
-  .productCategoryCat{
+
+  .productCategoryCat {
     font-size: 0.8em;
   }
-  
-  
 
-/* 
+  /* 
 
 
 
@@ -465,8 +454,6 @@ h6{
   .dropdown-catalog{
     margin-left: 17px;
   } */
-
-
 }
 
 /* 

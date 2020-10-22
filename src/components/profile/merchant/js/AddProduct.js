@@ -16,7 +16,6 @@ class AddProduct extends Component {
       productDesciption: "",
       productPrice: "",
       productStock: "",
-      productImage: null,
       errors: {},
     };
     this.handleChange = this.handleChange.bind(this);
