@@ -1,10 +1,6 @@
 .invoice-page{
     width: 75%;
-<<<<<<< Updated upstream
-    /* min-width: ; */
-=======
     min-width: 1000px;
->>>>>>> Stashed changes
     margin-left: auto;
     margin-right: auto;
     padding:75px 50px;
@@ -23,10 +19,6 @@
 
 .top-side-invoice{
     display: flex;
-<<<<<<< Updated upstream
-    justify-content: space-between;
-=======
->>>>>>> Stashed changes
 }
 
 .recipient-detail-invoice{
@@ -63,12 +55,9 @@
     color: #999999;
 }
 
-<<<<<<< Updated upstream
-=======
 .invoice-detail{
     margin-left: auto;
 }
->>>>>>> Stashed changes
 
 .invoice-detail h3{
     font-size: 1.5em;
@@ -144,21 +133,12 @@ table{
     font-size: 1.2em;
     color: white;
     font-weight: 100;
-<<<<<<< Updated upstream
-    padding: 0px 20px;
-}
-
-.format-row th:nth-child(1){
-    width: 40%;
-    text-align: left;
-=======
 }
 
 .format-row th:nth-child(1){
     width: 35%;
     text-align: left;
     padding-left: 20px;
->>>>>>> Stashed changes
 }
 
 .format-row th:nth-child(2){
@@ -169,19 +149,13 @@ table{
 .format-row th:nth-child(3){
     width: 25% !important;
     text-align: left;
-<<<<<<< Updated upstream
-=======
     padding-left: 20px !important;
->>>>>>> Stashed changes
 }
 
 .format-row th:nth-child(4){
     width: 25%;
     text-align: right;
-<<<<<<< Updated upstream
-=======
     padding-right: 20px;
->>>>>>> Stashed changes
 }
 
 .product-detail-row{
@@ -205,10 +179,7 @@ table{
 
 .product-detail-row td:nth-child(3){
     text-align: left;
-<<<<<<< Updated upstream
-=======
     padding-left: 20px !important;
->>>>>>> Stashed changes
 }
 
 .product-detail-row td:nth-child(4){
@@ -221,8 +192,6 @@ table{
     cursor: pointer;
 }
 
-<<<<<<< Updated upstream
-=======
 .subtotal-pay td:nth-child(3){
     padding-top: 30px;
     padding-left: 20px;
@@ -249,7 +218,6 @@ table{
     color: #999999;
     font-weight: 600 !important;
 }
->>>>>>> Stashed changes
 
 .shipping-inv td:nth-child(3){
     padding-top: 20px;
@@ -261,11 +229,7 @@ table{
 .shipping-inv td:nth-child(4){
     text-align: right;
     padding-right: 20px;
-<<<<<<< Updated upstream
-    padding-top: 60px;
-=======
     padding-top: 50px;
->>>>>>> Stashed changes
     border-bottom: 2px solid rgb(207, 207, 207);
     padding-bottom: 20px;
 }
@@ -309,8 +273,6 @@ table{
     font-weight: 600 !important;
     color: red !important;
 }
-<<<<<<< Updated upstream
-=======
 
 .contact-inv{
     text-align: center;
@@ -385,4 +347,3 @@ table{
         font-size: 1em !important;
     }
 }
->>>>>>> Stashed changes

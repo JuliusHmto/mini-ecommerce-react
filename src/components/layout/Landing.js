@@ -222,9 +222,25 @@ class Landing extends Component {
           </ul>
         </div> */}
 
-        <div className="event-category">
+        <div className="event-category-container">
+          <h4>See all event here</h4>
+          <hr className="comp-info-hr-landing"></hr>
+          <div className="event-category">
+            <ul>
+              <li id="first-option-event" class="active" value="">Flash Sale</li>
+              <li value="">Discount</li>
+              <li value="">New Release</li>
+            </ul>
+            <img
+              className="event-image"
+              src={require("../layout/images/landing/flash-sale.png")}
+              alt=""
+            ></img>
+          </div>
 
         </div>
+
+        <hr id="divider"></hr>
 
         <div className="shop-by-category">
           <h4>Shop by Category</h4>
@@ -270,6 +286,36 @@ class Landing extends Component {
               </span> */}
               <div className="card-body">
                 <h5 className="card-title">Food</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
                 {/* <p className="card-text">
                   Search any kind of healthy and your favourite food in here
                 </p> */}

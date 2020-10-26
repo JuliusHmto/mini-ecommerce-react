@@ -1,7 +1,7 @@
 .containerLanding{
     margin-bottom: 200px;
 }
-
+/* 
 .category-landing{
     background-color: rgb(211, 24, 24) !important;
     width: 100%;
@@ -33,7 +33,7 @@
     border-bottom-style: solid;
     border-bottom-width: 3px;
     border-bottom-color: rgb(255, 255, 255);
-}
+} */
 
 .landing-banner{
     display: flex;
@@ -115,6 +115,68 @@ div.overlay {
     z-index: 1 !important;
 }
 
+
+.event-category ul{
+    display: flex;
+    list-style: none;
+}
+
+.event-category ul li{
+    color: white;
+    list-style: none;
+    margin: 10px 30px;
+    font-size: 1em;
+    font-weight: 560;
+    width: 150px;
+    text-align: center;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+.active{
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(255, 255, 255)
+}
+
+#first-option-event{
+    margin-left: 10px !important;
+}
+
+.event-category ul li:hover{
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(255, 255, 255);
+}
+
+.event-category-container h4{
+    color: rgb(172, 172, 172);
+    margin-bottom: 10px;
+}
+
+.event-category-container{
+    width: 1230px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+.event-category{
+    /* background-image: linear-gradient(to right, #ff5537,  #ff4a59); */
+    background-image: linear-gradient(to right, #e74c4a,  #d16c6a);
+    height: 500px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px 2px rgba(116, 116, 116, 0.2), 0 6px 20px 0 rgba(160, 160, 160, 0.19);
+}
+
+#divider{
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .shop-by-category{
     margin-top: 40px;
     width: fit-content;
@@ -138,7 +200,6 @@ div.overlay {
     display: grid;
     grid-template-columns: repeat(6, [col] 205px);
     grid-template-rows: repeat(2, [row] 200px);
-    grid-gap: 0px;
 }
 
 .category-landing-2 .card{
@@ -181,6 +242,13 @@ div.overlay {
     font-size: 1.2em;
     font-weight: 600;
 }
+
+.card:hover div.overlay{
+    opacity: .3;
+    background-color: black;
+}
+
+
 
 /* span .view-detail-button-landing{
   border: 2px solid rgb(248, 62, 62);
