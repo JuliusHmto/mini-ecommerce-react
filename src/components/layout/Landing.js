@@ -231,11 +231,44 @@ class Landing extends Component {
               <li value="">Discount</li>
               <li value="">New Release</li>
             </ul>
-            <img
-              className="event-image"
-              src={require("../layout/images/landing/flash-sale.png")}
-              alt=""
-            ></img>
+            <div id="carouselExampleIndicators" class="carousel carousel-event slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    className="img-event"
+                    src={require("./images/landing/img-event-1.jpg")}
+                    alt=""
+                  ></img>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    className="img-event"
+                    src={require("./images/landing/img-event-2.jpg")}
+                    alt=""
+                  ></img>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    className="img-event"
+                    src={require("./images/landing/img-event-2.jpg")}
+                    alt=""
+                  ></img>
+                </div>
+              </div>
+              {/* <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a> */}
+            </div>
           </div>
 
         </div>
@@ -429,7 +462,7 @@ class Landing extends Component {
           </div>
         </div>
 
-        <h2 className="land-prod-title">PRODUCTS</h2>
+        <hr id="divider"></hr>
 
         <div className="shop-by-recent">
           <h4>Recent Seen</h4>

@@ -165,11 +165,26 @@ div.overlay {
 .event-category{
     /* background-image: linear-gradient(to right, #ff5537,  #ff4a59); */
     background-image: linear-gradient(to right, #e74c4a,  #d16c6a);
-    height: 500px;
+    height: fit-content;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0px 2px 5px 2px rgba(116, 116, 116, 0.2), 0 6px 20px 0 rgba(160, 160, 160, 0.19);
 }
+
+.carousel-event{
+    width: 350px;
+    margin-left: auto;
+    border: none !important;
+    border-radius: 5px;
+}
+
+.img-event{
+    border: none !important;
+    width: 500px;
+    height: 400px !important;
+    border-radius: 2px;
+}
+
 
 #divider{
     width: 1250px;
@@ -178,7 +193,8 @@ div.overlay {
 }
 
 .shop-by-category{
-    margin-top: 40px;
+    margin-top: 50px;
+    margin-bottom: 75px;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -301,10 +317,11 @@ div.overlay {
 
 .shop-by-recent, .category-option{
     min-height: 350px;
-    margin-top: 40px;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-top: 50px;
+    margin-bottom: 75px;
+    width: 1230px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product-navbar{
