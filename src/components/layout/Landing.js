@@ -114,7 +114,7 @@ class Landing extends Component {
             </ol>
             <div className="carousel-inner">
               <div className="carousel-item active" id="container">
-                <div className="overlay"></div>
+                <div className="overlay-car"></div>
                 <img src={require("./images/dummy/Banner1.jpg")} alt=""></img>
                 <div className="carousel-caption d-none d-md-block">
                   <h5>First slide label</h5>
@@ -124,7 +124,7 @@ class Landing extends Component {
                 </div>
               </div>
               <div className="carousel-item" id="container">
-                <div className="overlay"></div>
+                <div className="overlay-car"></div>
                 <img src={require("./images/dummy/Banner2.jpg")} alt=""></img>
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Second slide label</h5>
@@ -134,7 +134,7 @@ class Landing extends Component {
                 </div>
               </div>
               <div className="carousel-item" id="container">
-                <div className="overlay"></div>
+                <div className="overlay-car"></div>
                 <img src={require("./images/dummy/Banner3.jpg")} alt=""></img>
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Third slide label</h5>
@@ -174,7 +174,7 @@ class Landing extends Component {
           <div className="side-banner">
             <Link>
               <div id="container" className="side-banner-1">
-                <div className="overlay"></div>
+                <div className="overlay-car"></div>
                 <img
                   className="side-banner-img-1"
                   src={require("./images/dummy/Banner4.jpg")}
@@ -191,7 +191,7 @@ class Landing extends Component {
 
             <Link>
               <div id="container" className="side-banner-2">
-                <div className="overlay"></div>
+                <div className="overlay-car"></div>
                 <img
                   className="side-banner-img-2"
                   src={require("./images/dummy/Banner1.jpg")}
@@ -209,7 +209,7 @@ class Landing extends Component {
         </div>
 
         {/* Second Navbar */}
-        <div
+        {/* <div
           className="category-landing"
           value={filterStr}
           onChange={(e) => this.setState({ filterStr: e.target.value })}
@@ -220,6 +220,10 @@ class Landing extends Component {
             <li value="">Discount</li>
             <li value="">New Release</li>
           </ul>
+        </div> */}
+
+        <div className="event-category">
+
         </div>
 
         <div className="shop-by-category">
@@ -228,47 +232,152 @@ class Landing extends Component {
           <div className="category-landing-2">
             <Link className="card">
               <div className="overlay"></div>
-              <span>
+              {/* <span>
                 <button className="view-detail-button-landing">
                   VIEW DETAILS
                 </button>
-              </span>
+              </span> */}
               <div className="card-body">
                 <h5 className="card-title">All Products</h5>
-                <p className="card-text">
+                {/* <p className="card-text">
                   Find what you need in a second only at Sinarmas Market
-                </p>
+                </p> */}
               </div>
             </Link>
 
             <Link className="card">
               <div className="overlay"></div>
-              <span>
+              {/* <span>
                 <button className="view-detail-button-landing">
                   VIEW DETAILS
                 </button>
-              </span>
+              </span> */}
               <div className="card-body">
                 <h5 className="card-title">Clothes</h5>
-                <p className="card-text">
+                {/* <p className="card-text">
                   Look different from the others with new collection in Sinarmas
                   Market
-                </p>
+                </p> */}
               </div>
             </Link>
 
             <Link className="card">
               <div className="overlay"></div>
-              <span>
+              {/* <span>
                 <button className="view-detail-button-landing">
                   VIEW DETAILS
                 </button>
-              </span>
+              </span> */}
               <div className="card-body">
                 <h5 className="card-title">Food</h5>
-                <p className="card-text">
+                {/* <p className="card-text">
                   Search any kind of healthy and your favourite food in here
-                </p>
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
+              </div>
+            </Link>
+
+            <Link className="card">
+              <div className="overlay"></div>
+              {/* <span>
+                <button className="view-detail-button-landing">
+                  VIEW DETAILS
+                </button>
+              </span> */}
+              <div className="card-body">
+                <h5 className="card-title">*category*</h5>
+                {/* <p className="card-text">
+                  Search any kind of healthy and your favourite food in here
+                </p> */}
               </div>
             </Link>
           </div>

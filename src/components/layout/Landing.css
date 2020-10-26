@@ -76,6 +76,15 @@
     position: relative;
 }
 
+div.overlay-car {
+    opacity: .5;
+    background-color: black;
+    position: absolute;
+    left: 0; top: 0px;     
+    width: 100%;
+    height: 100%;
+}
+
 div.overlay {
     opacity: .5;
     background-color: black;
@@ -83,6 +92,7 @@ div.overlay {
     left: 0; top: 0px;     
     width: 100%;
     height: 100%;
+    border-radius: 10px;
 }
 
 .carousel-control-prev{
@@ -107,9 +117,9 @@ div.overlay {
 
 .shop-by-category{
     margin-top: 40px;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .comp-info-hr-landing{
@@ -125,47 +135,54 @@ div.overlay {
 }
 
 .category-landing-2{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(6, [col] 205px);
+    grid-template-rows: repeat(2, [row] 200px);
+    grid-gap: 0px;
 }
 
 .category-landing-2 .card{
-    width: 350px !important;
-    height: 300px;
+    width: 180px !important;
+    height: 180px;
     text-decoration: none;
+    background-size: 180px 180px;
+    border-radius: 10px;
 }
 
 .category-landing-2 .card:nth-child(1){
     background-image: url(../layout/images/dummy/all-card.jpg);
     background-repeat: no-repeat;
-    background-size: 350px 300px;
+    /* background-size: 350px 300px; */
 }
 
 .category-landing-2 .card:nth-child(2){
     background-image: url(../layout/images/dummy/clothes.jpg);
     background-repeat: no-repeat;
-    background-size: 350px 300px;
 }
 
 .category-landing-2 .card:nth-child(3){
     background-image: url(../layout/images/dummy/food-card.jpg);
     background-repeat: no-repeat;
-    background-size: 350px 300px;
+}
+
+.category-landing-2 .card{
+    background-image: url(../layout/images/dummy/all-card.jpg);
+    background-repeat: no-repeat;
 }
 
 .card-body{
     color: white;
     z-index: 1 !important;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .card-title{
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
-span .view-detail-button-landing{
+/* span .view-detail-button-landing{
   border: 2px solid rgb(248, 62, 62);
   background-color: rgb(248, 62, 62);
   color: rgb(255, 255, 255);
@@ -186,8 +203,8 @@ span .view-detail-button-landing{
   margin-top: auto;
   margin-bottom: auto;
   display: none;
-}
-
+} */
+/* 
 .card:hover span{
   display: block;
 }
@@ -198,7 +215,7 @@ span .view-detail-button-landing{
 }
 .card:hover .card-text{
   display: none;
-}
+} */
 
 .containerLanding h2{
     text-align: center;
@@ -276,7 +293,6 @@ span .view-detail-button-landing{
     grid-template-columns: repeat(auto-fill, [col] 205px);
     grid-template-rows: repeat(2, [row] auto);
     grid-gap: 30px;
-
     padding-bottom: 60px;
     width: 100%;
     min-height: 50px !important;
