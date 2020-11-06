@@ -74,6 +74,13 @@ class Header extends Component {
               <MerchantStoreButton user={user} />
             </button>
           </li>
+          <li className="nav-item">
+          <Link to={`/profile/${user.username}`} className="nav-link">
+            <button>
+             My Profile 
+            </button>
+          </Link>
+        </li>
           <div class="dropdown-divider"></div>
           <li className="nav-item logout">
             <Link to="/" className="nav-link" onClick={this.logout}>
@@ -135,7 +142,7 @@ class Header extends Component {
                     onChange={this.onChange.bind(this)}
                   />
                   <Link
-                    to="/"
+                    to="/catalog"
                     className="btn"
                     type="submit"
                     onClick={this.submitSearch.bind(this)}
@@ -169,7 +176,7 @@ class Header extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Your Account
+                  Account
                 </a>
                 <div
                   class="dropdown-menu account-dropdown"

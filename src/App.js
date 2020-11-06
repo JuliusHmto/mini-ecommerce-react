@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import jwt_decode from "jwt-decode";
 import setJWTToken from "./securuityUtils/setJWTToken";
 import { SET_CURRENT_USER } from "./actions/types";
-//import SecuredRoute from "./securuityUtils/securedRoute";
+import SecuredRoute from "./securuityUtils/securedRoute";
 
 //header footer
 import Header from "./components/layout/Header";
@@ -26,6 +26,7 @@ import Home from "./components/ecommerce/js/Home";
 import Catalog from "./components/ecommerce/js/Catalog";
 import ItemDetail from "./components/ecommerce/js/ItemDetail";
 import CartContainer from "./components/ecommerce/js/CartContainer";
+import Checkout from "./components/ecommerce/js/Checkout";
 import Invoice from "./components/ecommerce/js/Invoice";
 import UserProfile from "./components/profile/user/js/UserProfile";
 
@@ -76,32 +77,18 @@ class App extends Component {
         <Router>
           <Header passSearchData={this.handleSearchData} />
           <div className="body">
+          <Switch>
             {
               //Public Routes
             }
-            <Switch>
-            <Route
+              <Route
                 exact
                 path="/"
                 render={(props) => (
-                  <Landing {...props} searchValue={this.state.searchValue} />
-                )}
-              />
-              <Route
-                exact
-                path="/home"
-                render={(props) => (
-                  <Home {...props} searchValue={this.state.searchValue} />
-                )}
-              />
+                <Landing {...props} searchValue={this.state.searchValue} />
+              )}/>
               <Route exact path="/register" component={Register}></Route>
               <Route exact path="/login" component={Login}></Route>
-
-              {
-                //Private Routes
-              }
-
-              {/*user */}
               <Route
                 exact
                 path="/catalog"
@@ -114,24 +101,32 @@ class App extends Component {
                 path="/details/:productName"
                 component={ItemDetail}
               />
-              <Route exact path="/cart" component={CartContainer} />
+              {
+                //Private Routes
+              }
+
+              {/*user */}
+            
+              <SecuredRoute exact path="/home" component={Home} />
+              <SecuredRoute exact path="/cart" component={CartContainer} />
               <Redirect exact from="/cart/reload" to="/cart" />
-              <Route exact path="/invoice" component={Invoice} />
-              <Route exact path="/profile/:username" component={UserProfile} />
+              <SecuredRoute exact path="/checkout" component={Checkout}/>
+              <SecuredRoute exact path="/invoice" component={Invoice} />
+              <SecuredRoute exact path="/profile/:username" component={UserProfile} />
 
               {/*merchant */}
-              <Route
+              <SecuredRoute
                 exact
                 path="/my-shop/register"
                 component={RegisterMerchant}
               />
-              <Route
+              <SecuredRoute
                 exact
                 path="/my-shop/catalog"
                 component={MerchantCatalog}
               />
-              <Route exact path="/my-shop/add" component={AddProduct} />
-              <Route exact path="/my-shop/edit/:id" component={EditProduct} />
+              <SecuredRoute exact path="/my-shop/add" component={AddProduct} />
+              <SecuredRoute exact path="/my-shop/edit/:id" component={EditProduct} />
             </Switch>
           </div>
           <div className="foot">

@@ -45,61 +45,66 @@ class CartItem extends Component {
   render() {
     const { cartItem } = this.props;
     return (
-      <div className="content cf" key={cartItem.id}>
-        <table>
-          <tbody>
-            <tr className="row2A">
-              <td className="column1A">
-                <img
-                  className="productImage"
-                  src={require("../../layout/images/dummy/example-image.jpg")}
-                  alt=""
-                ></img>
-              </td>
-              <td className="column2A">
-                {cartItem.p_Name}
-                <br />
-                <textarea
-                  name="text"
-                  className="inputNotes"
-                  placeholder=" Additional Notes..."
-                ></textarea>
-              </td>
-              <td>x {cartItem.quantity}</td>
-              <td className="column3A">Rp. {cartItem.p_price}</td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="item-detail"  key={cartItem.id}>
+        <h5 className="shop-name"><input type="checkbox" id="shop-input"></input> &nbsp; {cartItem.merchantName}</h5>
+        <h6 className="shop-location">Jakarta Utara</h6>
+          <span className="product-to-buy">
 
-        <div>
-          <button
-            type="button"
-            className="btn btn-danger btn-circle btn-sm"
-            onClick={() => {
-              this.subQty(cartItem.p_id);
-            }}
-          >
-            -
-          </button>
-          <button
-            type="button"
-            className="btn btn-success btn-circle btn-sm"
-            onClick={() => {
-              this.addQty(cartItem.p_id);
-            }}
-          >
-            +
-          </button>
-        </div>
+            <div className="column1">
+              <input id="select-item" type="checkbox"></input>
+              <img
+                className="productImage"
+                src={require("../../layout/images/dummy/example-image.jpg")}
+                alt=""
+              ></img>                
+            </div>
 
-        <div
-          className="btn btn-danger"
-          onClick={() => {
-            this.removeProduct(cartItem.p_id);
-          }}
-        >
-          Remove
-        </div>
+            <div className="column2">
+              <h3>{cartItem.p_name}</h3>
+              <h3 className="item-price">Rp.{cartItem.p_price},-</h3> 
+              <textarea
+              name="text"
+              className="inputNotes"
+              placeholder="Additional Notes..."
+               ></textarea>
+            </div>
+
+            <div className="column3" id="qty-span">
+              <button
+                type="button"
+                className="min-btn"
+                onClick={() => {
+                  this.subQty(cartItem.p_id);
+                }}
+              >
+              -
+              </button>
+              <label type="number" id="quantity" name="quantity" aria-valuemin="1">{cartItem.quantity}</label>
+              <button
+                type="button"
+                className="plus-btn"
+                onClick={() => {
+                this.addQty(cartItem.p_id);}}
+              >
+              +
+              </button>
+            </div>
+
+            <div className="total-price">
+              <h6>Total Price</h6>
+              <h3>Rp.{cartItem.p_price * cartItem.quantity},-</h3>            
+            </div>
+
+          </span>
+
+          <div className="cart-interaction">  
+            <img
+              className="delete-product"
+              src={require("../../layout/images/cart/trash-bin.png")}
+              onClick={() => {
+              this.handleRemove(cartItem.p_id); }}
+            ></img>
+          </div>
       </div>
     );
   }

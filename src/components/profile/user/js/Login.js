@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { login } from "../../../../actions/userActions.js";
-import "../css/Login.css"
+import "../css/Login.css";
 
 class Login extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class Login extends Component {
       <React.Fragment>
         <div className="login-page">
           <div className="side">
-            <Link to="/home" data-abc="true">
+            <Link to="/" data-abc="true">
               <img
                 className="logoHero"
                 src={require("../../../layout/images/header/logo.png")}
@@ -73,7 +73,7 @@ class Login extends Component {
           </div>
 
           <div className="sign-in-content">
-          <Link to="/home" data-abc="true">
+          <Link to="/" data-abc="true">
               <img
                 className="backLogo"
                 src={require("../../../layout/images/dummy/back-arrow (2).png")}

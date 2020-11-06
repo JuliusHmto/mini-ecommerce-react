@@ -7,6 +7,7 @@ import {
   ADD_TO_CART,
   ADD_QTY,
   SUB_QTY,
+  COURIER_SELECTED,
   PROCESS_ORDER,
 } from "./types";
 
@@ -95,6 +96,22 @@ export const removeFromCart = (productID, orderNum, history) => async (
     payload: {},
   });
 };
+
+export const selectCourier = (orderIdentifier, courierChoice, history) => async (dispatch) => {
+  try {
+    await axios.post(`api/cart/selectCourier/${orderIdentifier}`, courierChoice);
+    history.push("/invoice");
+    dispatch({
+      type: COURIER_SELECTED,
+      payload: {},
+    })
+  } catch (err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data,
+    }) 
+  }
+}
 
 export const processOrder = (
   orderIdentifier,

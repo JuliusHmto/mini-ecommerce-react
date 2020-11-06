@@ -24,6 +24,7 @@ class Landing extends Component {
       password: this.props.user.user.password,
     };
       this.props.trackUserOrder(userID, userData);
+      this.addProductToCart = this.addProductToCart.bind(this);
   }
 
   componentDidMount() {
@@ -35,19 +36,17 @@ class Landing extends Component {
     }
   }
 
+  addProductToCart(productID) {
+    const userID = this.props.user.user.id;
+    const orderNum = {
+      orderIdentifier: this.props.user.user.trackOrder,
+    };
+    this.props.addToCart(productID, userID, orderNum, this.props.history);
+  }
+
   render() {
     const { items } = this.props.items;
-    const { filterStr } = this.state;
-    const searchedItem = this.props.searchValue.toLowerCase();
-
-    //search bar item
-    const searchedList = items.filter((item) =>
-      item.productName.toLowerCase().includes(searchedItem)
-    );
-
-    const filteredItemsList = searchedList
-      .filter((item) => item.productCategoryName.includes(filterStr))
-      .map((item) => {
+    const filteredItemsList = items.map((item) => {
         return (
           <div className="card card-cont" key={item.product_id}>
             <div className="product-detail-cards-land">
@@ -223,10 +222,7 @@ class Landing extends Component {
 
         {/* Second Navbar */}
         <div
-          className="category-landing"
-          value={filterStr}
-          onChange={(e) => this.setState({ filterStr: e.target.value })}
-        >
+          className="category-landing">
           <ul>
             <li value="">All</li>
             <li value="">Flash Sale</li>

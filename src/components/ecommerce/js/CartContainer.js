@@ -3,9 +3,9 @@ import "../css/CartStyle.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { getCart } from "../../../actions/cartActions";
-import { processOrder } from "../../../actions/cartActions";
 
 class CartContainer extends Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class CartContainer extends Component {
     this.state = {
       errors: {},
     };
-    this.placeOrder = this.placeOrder.bind(this);
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -24,15 +23,6 @@ class CartContainer extends Component {
 
   componentDidMount() {
     this.props.getCart(this.props.user.user.trackOrder);
-  }
-
-  placeOrder() {
-    const orderIdentifier = this.props.user.user.trackOrder;
-    const userID = this.props.user.user.id;
-    let [cartDetail] = this.props.cart.cartItems;
-    const history = this.props.history;
-    console.log(JSON.stringify(cartDetail));
-    this.props.processOrder(orderIdentifier, userID, cartDetail, history);
   }
 
   render() {
@@ -89,13 +79,11 @@ class CartContainer extends Component {
                   </span>
                 <button><h6>Add Promo Code or Voucher</h6></button>
                 </div>
-
-                <button className="checkout-button"
-                onClick={() => {
-                this.placeOrder();}}
-                >
-                  <h6>Check Out</h6>
-                </button>
+                <Link to="/checkout">
+                  <button className="checkout-button">
+                    <h6>Check Out</h6>
+                  </button>
+                </Link>
             </div>
           </div>
 
@@ -137,10 +125,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getCart: (trackOrder) => {
       dispatch(getCart(trackOrder));
-    },
-    processOrder: (orderIdentifier, userID, cartDetail, history) => {
-      dispatch(processOrder(orderIdentifier, userID, cartDetail, history));
-    },
+    }
   };
 };
 

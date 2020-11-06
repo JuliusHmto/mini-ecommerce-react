@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { getItemDetail } from "../../../actions/catalogActions";
 import { addToCart } from "../../../actions/cartActions";
 import "../css/ItemDetail/ItemDetail.css";
@@ -38,22 +37,20 @@ class ItemDetail extends Component {
                 <img
                   class="picture-detail-1"
                   src={itemDetail.filePath}
-                  alt=""
+                  alt="nopic"
                 ></img>
               </div>
 
               <div class="interaction">
                 <button class="fav-detail">
-                  <img src={require("../css/ItemDetail/fav-icon.png")}>
-                  </img>
+                  <img src={require("../css/ItemDetail/fav-icon.png")} alt="nopic"/>
                   <p>Add to Favourite</p>
                 </button>
 
               <div class="border-purpose"></div>
 
                 <button class="share-detail">
-                  <img src={require("../css/ItemDetail/share-icon.png")}>
-                  </img>
+                  <img src={require("../css/ItemDetail/share-icon.png")} alt="nopic"/>
                   <p>Share</p>
                 </button>
               </div>
@@ -67,22 +64,22 @@ class ItemDetail extends Component {
                 <img
                   class="item-image-2"
                   src={require("../css/ItemDetail/item2.jpg")}
-                  alt=""
+                  alt="nopic"
                 ></img>
                 <img
                   class="item-image-2"
                   src={require("../css/ItemDetail/item3.jpg")}
-                  alt=""
+                  alt="nopic"
                 ></img>
                 <img
                   class="item-image-2"
                   src={require("../css/ItemDetail/item4.jpg")}
-                  alt=""
+                  alt="nopic"
                 ></img>
                 <img
                   class="item-image-2"
                   src={require("../css/ItemDetail/item5.jpg")}
-                  alt=""
+                  alt="nopic"
                 ></img>
               </div>
             </div>
@@ -106,7 +103,7 @@ class ItemDetail extends Component {
                   <div class="product-rate">
                     <p>Rating</p>
                     <div class="review-total">
-                      <img src={require("../css/ItemDetail/star-icon.png")}></img>
+                      <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
                       <h4>4.5 / 5 <span id="buyer-total">( 500 Buyer )</span></h4>
                     </div>
                   </div>
@@ -124,9 +121,9 @@ class ItemDetail extends Component {
                   <hr class="horizontal-line-detail"></hr>
                   
                   <div class="input-qty">
-                    <img class="minus-icon" src={require("../css/ItemDetail/min-icon-qty.png")}></img>
-                    <input type="number" id="quantity" name="quantity" min="1"></input>
-                    <img class="plus-icon" src={require("../css/ItemDetail/plus-icon-qty.png")}></img>
+                    <img class="minus-icon" src={require("../css/ItemDetail/min-icon-qty.png")} alt="nopic"/>
+                    <input type="number" id="quantity" name="quantity" min="1"/>
+                    <img class="plus-icon" src={require("../css/ItemDetail/plus-icon-qty.png")} alt="nopic"/>
                   </div>
                 </div>
 
@@ -142,7 +139,7 @@ class ItemDetail extends Component {
 
                     <div class="city-2">
                       <p>To</p>
-                      <input placeholder="Jakarta"></input>
+                      <input placeholder="Jakarta"/>
                     </div>
                   </div>
 
@@ -187,7 +184,7 @@ class ItemDetail extends Component {
 
             <div class="seller-info-detail"> 
               <div class="seller-info-detail-1">
-                <img src={require("../css/ItemDetail/def-icon.png")}></img>
+                <img src={require("../css/ItemDetail/def-icon.png")} alt="nopic"/>
 
                 <div class="seller-data">
                   <h3>Toko_SneakersKu</h3>
@@ -207,7 +204,7 @@ class ItemDetail extends Component {
               <div class="seller-info-detail-2">
                 <div class="seller-rating">
                   <p>Seller Rating</p>
-                  <span><img src="star-icon.png"></img><h4>5/5</h4></span>
+                  <span><img src="star-icon.png" alt="nopic"/><h4>5/5</h4></span>
                 </div>
 
                 <div class="total-product">
@@ -244,11 +241,11 @@ class ItemDetail extends Component {
                   <p class="number">5</p>
 
                   <div class="value-rate">
-                    <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                    <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                    <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                    <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                    <img src={require("../css/ItemDetail/star-icon.png")}></img>
+                    <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                    <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                    <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                    <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                    <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
     
                     <p class="total-user-rate">From 100 review</p>
                   </div>
@@ -282,14 +279,14 @@ class ItemDetail extends Component {
               </div>
 
               <div class="review">
-                <img src={require("../css/ItemDetail/def-icon.png")}></img>
+                <img src={require("../css/ItemDetail/def-icon.png")} alt="nopic"/>
                 <div class="review-text">
                   <h4>Alexander</h4>
-                  <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                  <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                  <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                  <img src={require("../css/ItemDetail/star-icon.png")}></img>
-                  <img src={require("../css/ItemDetail/star-icon.png")}></img>
+                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
+                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
                   <p class="review-date">Tanggal 29-07-2020</p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eos ad enim natus at impedit. Culpa assumenda explicabo minus natus facere, dolorem sapiente iure, a omnis cupiditate, fugiat doloribus. Ad?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa quo commodi sapiente odit maiores? Nulla, voluptatem iure maxime magni dicta quod distinctio praesentium doloribus quis eius nesciunt autem accusantium.

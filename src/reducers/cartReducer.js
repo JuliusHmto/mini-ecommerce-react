@@ -1,4 +1,4 @@
-import { GET_CART, ADD_TO_CART } from "../actions/types";
+import { GET_CART } from "../actions/types";
 
 const initialState = {
   cartItems: [],

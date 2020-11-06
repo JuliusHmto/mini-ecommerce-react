@@ -6,6 +6,7 @@ import { getMerchant, getMerchantItems } from "../../../../actions/merchantActio
 import MerchantItemCatalog from "./MerchantItemCatalog";
 import { getCategory } from "../../../../actions/categoryActions";
 import "../css/merchantCatalogStyle.css";
+import Sidebar from "./MerchantSideBar";
 
 class MerchantCatalog extends Component {
   constructor(props) {
@@ -34,70 +35,7 @@ class MerchantCatalog extends Component {
 
     return (
       <div className="containerMerch">
-        <div className="navsideMerch">
-          <div className="store-info">
-            <img
-              src={require("../../../layout/images/dummy/profileimage.png")}
-              alt=""
-            ></img>
-            <div className="store-name">
-              <h4>Store's Name</h4>
-              <h5>Trusted Seller</h5>
-            </div>
-          </div>
-          <div className="optionList">
-            <div className="Dashboard-option">
-              <img
-                src={require("../../../layout/images/merchant/DashboardIcon.png")}
-                alt=""
-              ></img>
-              <h5>Dashboard</h5>
-            </div>
-            <div className="MyShop-option">
-              <img
-                src={require("../../../layout/images/merchant/HomeIcon.png")}
-                alt=""
-              ></img>
-              <h5>My Shop</h5>
-            </div>
-            <div className="Listing-option">
-              <img
-                src={require("../../../layout/images/merchant/ListingIcon.png")}
-                alt=""
-              ></img>
-              <h5>Listing</h5>
-            </div>
-            <div className="Order-option">
-              <img
-                src={require("../../../layout/images/merchant/OrdersIcon.png")}
-                alt=""
-              ></img>
-              <h5>Orders</h5>
-            </div>
-            <div className="CS-option">
-              <img
-                src={require("../../../layout/images/merchant/CustomerSatisficationIcon.png")}
-                alt=""
-              ></img>
-              <h5>Customer Satisfication</h5>
-            </div>
-            <div className="Financial-option">
-              <img
-                src={require("../../../layout/images/merchant/FinancialsIcon.png")}
-                alt=""
-              ></img>
-              <h5>Financial</h5>
-            </div>
-            <div className="StoreSettings-option">
-              <img
-                src={require("../../../layout/images/merchant/SettingIcon.png")}
-                alt=""
-              ></img>
-              <h5>Store Setting</h5>
-            </div>
-          </div>
-        </div>
-
+        <Sidebar/>
         <div className="wrapperMerch">
           <h1>Your Products</h1>
           

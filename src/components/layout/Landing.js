@@ -24,17 +24,7 @@ class Landing extends Component {
 
   render() {
     const { items } = this.props.items;
-    const { filterStr } = this.state;
-    const searchedItem = this.props.searchValue.toLowerCase();
-
-    //search bar item
-    const searchedList = items.filter((item) =>
-      item.productName.toLowerCase().includes(searchedItem)
-    );
-
-    const filteredItemsList = searchedList
-      .filter((item) => item.productCategoryName.includes(filterStr))
-      .map((item) => {
+    const filteredItemsList = items.map((item) => {
         return (
           <div className="card card-cont" key={item.product_id}>
             <div className="product-detail-cards-land">
@@ -211,8 +201,6 @@ class Landing extends Component {
         {/* Second Navbar */}
         <div
           className="category-landing"
-          value={filterStr}
-          onChange={(e) => this.setState({ filterStr: e.target.value })}
         >
           <ul>
             <li value="">All</li>

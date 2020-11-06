@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getUserData } from "../../../../actions/userActions";
 import { getMerchant } from "../../../../actions/merchantActions";
-import MerchantStoreButton from "../../merchant/js/MerchantStoreButton";
 
 class UserProfile extends Component {
   componentDidMount() {
@@ -16,9 +15,16 @@ class UserProfile extends Component {
 
     return (
       <React.Fragment>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
         <form>
-          <MerchantStoreButton user={user} />
-          <br />
+          <button>Edit Profile</button>
+          <br/>
           <p>{user.username}</p>
           <br />
           <p>{user.email}</p>
