@@ -19,11 +19,8 @@ class ItemDetail extends Component {
 
   addProductToCart(productID) {
     const userID = this.props.user.user.id;
-    const orderNum = {
-      orderIdentifier: this.props.user.user.trackOrder,
-    };
-    console.log(this.props.history);
-    this.props.addToCart(productID, userID, orderNum, this.props.history);
+    const orderID = this.props.user.user.trackOrder;
+    this.props.addToCart(productID, userID, orderID, this.props.history);
   }
 
   render() {
@@ -323,8 +320,8 @@ const mapDispatchToProps = (dispatch) => {
     getItemDetail: (productID) => {
       dispatch(getItemDetail(productID));
     },
-    addToCart: (productID, userID, orderNum, history) => {
-      dispatch(addToCart(productID, userID, orderNum, history));
+    addToCart: (productID, userID, orderID, history) => {
+      dispatch(addToCart(productID, userID, orderID, history));
     },
   };
 };

@@ -74,6 +74,7 @@ class Header extends Component {
               <MerchantStoreButton user={user} />
             </button>
           </li>
+          <div class="dropdown-divider"></div>
           <li className="nav-item">
           <Link to={`/profile/${user.username}`} className="nav-link">
             <button>

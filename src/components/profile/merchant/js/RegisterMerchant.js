@@ -10,6 +10,7 @@ class registerMerchant extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      file: "",
       merchantName: "",
       merchantAddress: "",
       errors: {},
@@ -30,12 +31,11 @@ class registerMerchant extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const newMerchant = {
-      merchantName: this.state.merchantName,
-      merchantAddress: this.state.merchantAddress,
-    };
+    const formData = new FormData();
+    formData.append("merchantName", this.state.merchantName);
+    formData.append("merchantAddress", this.state.merchantAddress);
     this.props.createNewMerchant(
-      newMerchant,
+      formData,
       this.props.user.user.id,
       this.props.history
     );

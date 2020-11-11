@@ -21,20 +21,19 @@ export const getCart = (trackOrder) => async (dispatch) => {
   });
 };
 
-export const addToCart = (productID, userID, orderNum, history) => async (
+export const addToCart = (productID, userID, orderID, history) => async (
   dispatch
 ) => {
   try {
     await axios.post(
-      `/api/cart/addProduct/${productID}/${userID}`,
-      orderNum
-    );
+      `/api/cart/addProduct/${productID}/${userID}/${orderID}`, {});
     history.push("/cart");
     dispatch({
       type: ADD_TO_CART,
       payload: {},
     });
   } catch (err) {
+    console.log( err.response.request );
     dispatch({
       type: GET_ERRORS,
       payload: err.response.data,
@@ -42,14 +41,12 @@ export const addToCart = (productID, userID, orderNum, history) => async (
   }
 };
 
-export const addQuantity = (productID, userID, orderNum, history) => async (
+export const addQuantity = (productID, userID, orderID, history) => async (
   dispatch
 ) => {
   try {
     await axios.post(
-      `/api/cart/addProduct/${productID}/${userID}`,
-      orderNum
-    );
+      `/api/cart/addProduct/${productID}/${userID}/${orderID}`, {});
     history.push("/cart/reload");
     dispatch({
       type: ADD_QTY,
