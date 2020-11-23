@@ -111,6 +111,7 @@ class App extends Component {
               <SecuredRoute exact path="/cart" component={CartContainer} />
               <Redirect exact from="/cart/reload" to="/cart" />
               <SecuredRoute exact path="/checkout" component={Checkout}/>
+              <Redirect exact from="/checkout/reload" to="/checkout" />
               <SecuredRoute exact path="/invoice" component={Invoice} />
               <SecuredRoute exact path="/profile/:username" component={UserProfile} />
 
@@ -125,6 +126,7 @@ class App extends Component {
                 path="/my-shop/catalog"
                 component={MerchantCatalog}
               />
+              <Redirect exact from="/my-shop/catalog/reload" to="/my-shop/catalog" />
               <SecuredRoute exact path="/my-shop/add" component={AddProduct} />
               <SecuredRoute exact path="/my-shop/edit/:id" component={EditProduct} />
             </Switch>

@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import  {selectCourier, getCart} from "../../../actions/cartActions";
+import { getCouriers, selectCourier } from "../../../actions/courierActions";
+import { getCart, processOrder } from "../../../actions/cartActions";
 import appendScript from "../../../utils/appendScript";
-import { processOrder } from "../../../actions/cartActions";
+import "../css/CheckOut/CheckOut.css";
 
 class Checkout extends Component {
     constructor(props) {
@@ -13,17 +14,24 @@ class Checkout extends Component {
           errors: {},
         };
         this.placeOrder = this.placeOrder.bind(this);
+        this.chooseCourier = this.chooseCourier.bind(this);
       }
+    
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+        this.setState({ errors: nextProps.errors });
+        }
+    }
 
-    componentDidMount(){
+    componentDidMount() {
+        this.props.getCouriers();
+        this.props.getCart(this.props.user.user.trackOrder);
         appendScript("https://code.jquery.com/jquery-3.2.1.slim.min.js");
         appendScript("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
         appendScript("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js");
-        this.props.getCart(this.props.user.user.trackOrder);
     }
 
-    chooseCourier(courierName, merchantName){
-        const orderIdentifier = this.user.user.trackOrder;
+    chooseCourier(orderIdentifier, courierName, merchantName){
         const courierChoice = {
             courierName: courierName,
             merchantName: merchantName,
@@ -37,13 +45,14 @@ class Checkout extends Component {
         const userID = this.props.user.user.id;
         let [cartDetail] = this.props.cart.cartItems;
         const history = this.props.history;
-        console.log(JSON.stringify(cartDetail));
         this.props.processOrder(orderIdentifier, userID, cartDetail, history);
       }
 
     render() { 
-        const { checkoutItems } = this.props.cart;
+        const { cartItems } = this.props.cart;
+        const { courierList } = this.props.courier;
         const user = this.props.user;
+
         return ( 
             <React.Fragment>
             <div class="Check-Out-Page">
@@ -63,7 +72,7 @@ class Checkout extends Component {
                         <h3>Where to Send</h3>
                         <hr class="horizontal-line-checkout"/>
                         <div class="primary-address">
-                            <input type="radio" id="address" value="primary">&nbsp;Use Primary / Default Address</input>  
+                        <input type="radio" id="address" value="primary"/>&nbsp; Use Primary / Default Address 
                             
                             <div class="primary-address-detail">
                                 <span><h4 class="buyer-name">{user.username}</h4><h4 class="strip-sign">-</h4><h4 class="buyer-phone">+62894328249</h4></span>
@@ -80,17 +89,17 @@ class Checkout extends Component {
                     <div class="item-checkout">
                         <span><h3>Product to Buy</h3> <h4 class="total-product-checkout">(2 Products)</h4></span>
                         <hr class="horizontal-line-checkout"/>
-
-                        {checkoutItems.map((checkoutItem) => {
+                        
+                        {cartItems.map((checkoutItem) => {
                             return (
-                                <div class="product-detail-checkout">
+                                <div class="product-detail-checkout" key={checkoutItem.cart_id}>
                                     <div class="seller-detail">
                                         <h5 id="seller-name">{checkoutItem.merchantName}</h5>
                                         <h5 id="seller-address">Jakarta Pusat</h5>
                                     </div>
 
                                     <div class="item-detail-checkout">
-                                        <img class="item-img-checkout" src={require("../css/CheckOut/item1.jpg")} alt=""/>
+                                        <img class="item-img-checkout" src={checkoutItem.p_filePath} alt="nopic"/>
                                             <div class="column2-checkout">
                                             <h4 class="item-name-checkout">{checkoutItem.p_name}</h4>
                                             <h5 class="item-price-checkout">Rp.{checkoutItem.p_price},-</h5>
@@ -98,22 +107,32 @@ class Checkout extends Component {
                                         </div>
 
                                         <div class="column3-checkout">
-                                            <h5 class="item-weight-checkout">{checkoutItem.p_qty} pcs (2 kg)</h5>
+                                            <h5 class="item-weight-checkout">{checkoutItem.quantity} pcs (2 kg)</h5>
                                         </div>
 
                                         <div class="column4-checkout">
-                                            <h5>Rp.{checkoutItem.p_price * checkoutItem.quantity},-</h5>
+                                            <h5>Rp.{checkoutItem.total_price},-</h5>
                                         </div>
                                     </div>
 
                                     <div class="logistic-option">
                                         <h5>Shipping Logistic</h5>
-                                        <select id="logistic" name="logistic">
-                                            <option value="JNE">JNE</option>
-                                            <option value="TIKI">TIKI</option>
-                                            <option value="SiCepat">SiCepat</option>
-                                            <option value="JNT">J&T</option>
-                                            </select>
+                                        <select 
+                                            id="logistic"
+                                            name="logistic"
+                                            onChange={(e) => this.chooseCourier(checkoutItem.orderIdentifier, e.target.value, checkoutItem.merchantName)}
+                                        >
+                                            <option>{checkoutItem.courierName ? checkoutItem.courierName : "Select Courier"}</option>
+                                            <option>---</option>
+                                            {courierList.map((courier) => (
+                                                <option
+                                                    key={courier.courier_id}
+                                                    value={courier.courierName}
+                                                >
+                                                    {courier.courierName}
+                                                </option>
+                                                ))}
+                                        </select>
                                     </div>
 
                                     <div class="price-detail-checkout">
@@ -180,17 +199,20 @@ Checkout.propTypes = {
 const mapStateToProps = (state) => ({
     cart: state.cart,
     user: state.user,
-    merchant: state.merchant,
+    courier: state.courier,
     errors: state.errors
 })
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      getCart: (trackOrder) => {
-        dispatch(getCart(trackOrder));
-      },
-      selectCourier: (orderIdentifier, courierChoice) => {
-        dispatch(selectCourier(orderIdentifier, courierChoice));
+        getCouriers: () => {
+            dispatch(getCouriers());
+        },
+        getCart: (trackOrder) => {
+            dispatch(getCart(trackOrder));
+        },
+      selectCourier: (orderIdentifier, courierChoice, history) => {
+        dispatch(selectCourier(orderIdentifier, courierChoice, history));
       },
       processOrder: (orderIdentifier, userID, cartDetail, history) => {
         dispatch(processOrder(orderIdentifier, userID, cartDetail, history));
@@ -198,5 +220,4 @@ const mapDispatchToProps = (dispatch) => {
     };
   };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Checkout));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Checkout));

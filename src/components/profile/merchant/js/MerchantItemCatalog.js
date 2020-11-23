@@ -1,8 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { deleteProduct } from "../../../../actions/merchantActions";
 import "../css/merchantItemCatalog.css";
 
 class MerchantItemCatalog extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { };
+    this.deleteItem = this.deleteItem.bind(this);
+  }
+
+  deleteItem(productID) {
+    this.props.deleteProduct(productID, this.props.history);
+  }
+
   render() {
     const { merchantItem } = this.props;
     return (
@@ -23,11 +38,29 @@ class MerchantItemCatalog extends Component {
               <button className="EditProductMerch">Edit Product</button>
             </Link>
               <button className="SetProductMerch">Set Non-Active</button>
-              <button className="DeleteProductMerch">Delete Product</button>
+              <button className="DeleteProductMerch" onClick={() => {
+                this.deleteItem(merchantItem.product_id);
+              }}>Delete Product</button>
           </div>
       </div>
     );
   }
 }
 
-export default MerchantItemCatalog;
+MerchantItemCatalog.propTypes = {
+  errors: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  errors: state.errors,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteProduct: (productID, history) => {
+      dispatch(deleteProduct(productID, history));
+    },
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MerchantItemCatalog));

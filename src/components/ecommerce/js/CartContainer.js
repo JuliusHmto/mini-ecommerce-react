@@ -3,9 +3,8 @@ import "../css/CartStyle.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-import { getCart } from "../../../actions/cartActions";
+import { getCart, checkOut } from "../../../actions/cartActions";
 
 class CartContainer extends Component {
   constructor(props) {
@@ -25,9 +24,12 @@ class CartContainer extends Component {
     this.props.getCart(this.props.user.user.trackOrder);
   }
 
+  checkoutItems(){
+    this.props.checkOut(this.props.history);
+  }
+
   render() {
     const { cartItems } = this.props.cart;
-
     return (
       <React.Fragment>
         <div className="cart">
@@ -79,11 +81,13 @@ class CartContainer extends Component {
                   </span>
                 <button><h6>Add Promo Code or Voucher</h6></button>
                 </div>
-                <Link to="/checkout">
-                  <button className="checkout-button">
+                
+                  <button className="checkout-button" onClick={() => {
+                    this.checkoutItems();
+                  }}>
                     <h6>Check Out</h6>
                   </button>
-                </Link>
+                
             </div>
           </div>
 
@@ -125,6 +129,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getCart: (trackOrder) => {
       dispatch(getCart(trackOrder));
+    },
+    checkOut: (history) => {
+      dispatch(checkOut(history));
     }
   };
 };

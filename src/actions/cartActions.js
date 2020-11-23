@@ -7,8 +7,8 @@ import {
   ADD_TO_CART,
   ADD_QTY,
   SUB_QTY,
-  COURIER_SELECTED,
   PROCESS_ORDER,
+  CHECK_OUT,
 } from "./types";
 
 export const getCart = (trackOrder) => async (dispatch) => {
@@ -94,20 +94,12 @@ export const removeFromCart = (productID, orderNum, history) => async (
   });
 };
 
-export const selectCourier = (orderIdentifier, courierChoice, history) => async (dispatch) => {
-  try {
-    await axios.post(`api/cart/selectCourier/${orderIdentifier}`, courierChoice);
-    history.push("/invoice");
-    dispatch({
-      type: COURIER_SELECTED,
-      payload: {},
-    })
-  } catch (err) {
-    dispatch({
-      type: GET_ERRORS,
-      payload: err.response.data,
-    }) 
-  }
+export const checkOut = (history) => async (dispatch) => {
+  history.push("/checkout");
+  dispatch({
+    type:CHECK_OUT,
+    payload: {},
+  });
 }
 
 export const processOrder = (

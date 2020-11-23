@@ -52,8 +52,8 @@ class CartItem extends Component {
               <input id="select-item" type="checkbox"></input>
               <img
                 className="productImage"
-                src={require("../../layout/images/dummy/example-image.jpg")}
-                alt=""
+                src={cartItem.p_filePath}
+                alt="nopic"
               ></img>                
             </div>
 
@@ -90,7 +90,7 @@ class CartItem extends Component {
 
             <div className="total-price">
               <h6>Total Price</h6>
-              <h3>Rp.{cartItem.p_price * cartItem.quantity},-</h3>            
+              <h3>Rp.{cartItem.total_price},-</h3>            
             </div>
 
           </span>

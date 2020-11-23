@@ -5,6 +5,8 @@ import {
   GET_CURRENT_MERCHANT_ITEMS,
   GET_CURRENT_PRODUCT,
   CREATE_PRODUCT,
+  UPDATE_PRODUCT,
+  DELETE_PRODUCT,
 } from "./types";
 
 //new merchant from current user
@@ -120,7 +122,7 @@ export const updateCurrentProduct = (
     );
     history.push("/my-shop/catalog");
     dispatch({
-      type: GET_ERRORS,
+      type: UPDATE_PRODUCT,
       payload: {},
     });
   } catch (err) {
@@ -130,3 +132,19 @@ export const updateCurrentProduct = (
     });
   }
 };
+
+export const deleteProduct = (productID, history) => async (dispatch)  => {
+  try {
+    await axios.delete(`/api/product/deleteProduct/${productID}`);
+    history.push("/my-shop/catalog/reload");
+    dispatch({
+      type: DELETE_PRODUCT,
+      payload: {},
+    });
+  } catch (err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data,
+    });
+  }
+}

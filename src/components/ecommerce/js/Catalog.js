@@ -56,7 +56,7 @@ class Catalog extends Component {
               <img
                 className="item-image"
                 src={item.filePath}
-                alt=""
+                alt="nopic"
               />
 
                 <div className="detail-button-wrapper"></div>
