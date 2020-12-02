@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_ALL_INVOICES, GET_ERRORS } from "./types";
+import { GET_ALL_ORDERS, GET_ERRORS } from "./types";
 
 export const getAllInvoice = (userID) => async (dispatch) => {
   try {
@@ -8,7 +8,7 @@ export const getAllInvoice = (userID) => async (dispatch) => {
       `/api/order/loadAllOrder/${userID}`
     );
     dispatch({
-      type: GET_ALL_INVOICES,
+      type: GET_ALL_ORDERS,
       payload: res.data,
     });
   } catch (err) {

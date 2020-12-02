@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./UserTransaction.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Transaction</title>
+</head>
+<body>
+    <div class="user-transaction-page">
+        <!-- bagian filter untuk user -->
+        <div class="filter-side-user">
+
+            <!-- bagian user-profile -->
+            <div class="user-profile">
+                <img src="./def-icon.png">
+                <span>
+                    <h3>Kevin Wijaya</h3>
+                    <p>Verified Account</p>
+                </span>
+            </div>
+
+            <hr>
+
+            <!-- opsi untuk user -->
+            <div class="filter-user-option">
+                <div class="option">
+                    <img src="./user-profile-icon.png">
+                    <h4>Your Account</h4>
+                </div>
+    
+                <div class="option">
+                    <img src="./user-order-icon.png">
+                    <h4>Transaction</h4>
+                </div>
+    
+                <div class="option">
+                    <img src="./user-wishlist-icon.png">
+                    <h4>Wishlist</h4>
+                </div>
+
+                <div class="option">
+                    <img src="./user-wishlist-icon.png">
+                    <h4>Wishlist</h4>
+                </div>
+
+                <div class="option">
+                    <img src="./user-wishlist-icon.png">
+                    <h4>Wishlist</h4>
+                </div>
+
+                <div class="option">
+                    <img src="./user-wishlist-icon.png">
+                    <h4>Wishlist</h4>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="transaction-content">
+            <div class="top-side-transaction">
+                <h3>Maintain Your Transaction</h3>
+
+                <div class="transaction-status-bar">
+                    <a class="active">
+                        <h4>All Transaction</h4>
+                        <hr id="horizontal-line-transaction">
+                    </a>
+    
+                    <a>
+                        <h4>Need To Pay</h4>
+                        <hr id="horizontal-line-transaction">
+                    </a>                    
+                    
+                    <a>
+                        <h4>Need Confirmation</h4>
+                        <hr id="horizontal-line-transaction">
+                    </a> 
+                    
+                    <a>
+                        <h4>Processed</h4>
+                        <hr id="horizontal-line-transaction">
+                    </a> 
+                    
+                    <a>
+                        <h4>Shipped</h4>
+                        <hr id="horizontal-line-transaction">
+                    </a> 
+                    
+                    <a>
+                        <h4>Finished</h4>
+                        <hr id="horizontal-line-transaction">
+                    </a> 
+                </div>
+            </div>
+
+            <div class="filter-side-transaction">
+                <h6>Filter</h6>
+                <div class="filter-content">
+
+                    <!-- filter tanggal -->
+                    <div class="transaction-date-filter">
+                        <div class="min-date">
+                            <p>From</p>
+                            <input></input>
+                        </div>
+
+                        <h5 class="divider-date">-</h5>
+
+                        <div class="max-date">
+                            <p>To</p>
+                            <input></input>
+                        </div>
+                    </div>
+
+                    <div class="transaction-sort-filter">
+                        <p>Sort by</p>
+                        <div class="dropdown show">
+                            <a class="dropdown-toggle dropdown-transaction" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Sort Transaction
+                            </a>
+                          
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="#">Newest</a>
+                              <a class="dropdown-item" href="#">.....</a>
+                              <a class="dropdown-item" href="#">....</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-transaction-filter">
+                        <p>Find Transaction</p>
+                        <input placeholder="Type product, invoice, or seller name"></input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-side-transaction">
+                <div class="transaction">
+                    <div class="transaction-order-detail">
+                        <div class="seller-column">
+                            <p>Sold By</p>
+                            <h6 id="seller-name-transaction">Toko-SneakersKu</h6>
+                        </div>
+
+                        <div>
+                            <p>Invoice no</p>
+                            <h6>13413432423</h6>
+                        </div>
+
+                        <div>
+                            <p>Order Date</p>
+                            <h6>20 Aug 2020</h6> 
+                        </div>
+
+                        <div>
+                            <p>Status</p>
+                            <h6>Awaiting Payment</h6>
+                        </div>
+
+                        <button class="order-detail-button">Order Detail</button>
+                    </div>
+
+                    <div class="transaction-product">
+                        <div class="transaction-product-detail">
+                            <img class="product-image-transaction" src="../../../layout/images/dummy/example-image.jpg">
+    
+                            <span class="product-detail-transaction">
+                                <h5>Nike Air Jordan Retro 12"FIBA White/University Red</h5>
+                                <h6>Rp.2,400,000</h6>
+                            </span>
+    
+                            <span class="quantity-transaction">
+                                <h5>2 Pcs</h5>
+                            </span>
+                            
+                            <span class="subtotal-transaction">
+                                <p>Sub-Total</p>
+                                <h5>Rp.4,800,000</h5>
+                            </span>
+                        </div>
+
+                        <hr>
+
+                        <div class="price-transaction-detail">
+                            <div class="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <p>Order Total </p>
+                                
+                                <span>
+                                    <h5>Rp.4,850,000,- </h5>
+                                    <img src="./u0.png">
+                                </span>
+                            </div>
+
+                            <div class="collapse" id="collapseExample">
+                                  <div class="total-item-price-summary-transaction">
+                                      <p>Item Price ( 2 pcs )</p>
+                                      <p>Rp.4,800,000</p>
+                                  </div>
+                                  <div class="total-shipping-price-summary-transaction">
+                                      <p>Shipping ( 2 kgs )</p>
+                                      <p>Rp.50,000</p>
+                                  </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

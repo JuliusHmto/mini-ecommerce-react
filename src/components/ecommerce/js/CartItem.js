@@ -42,12 +42,13 @@ class CartItem extends Component {
 
   render() {
     const { cartItem } = this.props;
+    console.log(cartItem);
     return (
-      <div className="item-detail"  key={cartItem.id}>
+      <div className="item-detail"  key={cartItem.merchantName}>
         <h5 className="shop-name"><input type="checkbox" id="shop-input"></input> &nbsp; {cartItem.merchantName}</h5>
         <h6 className="shop-location">Jakarta Utara</h6>
           <span className="product-to-buy">
-
+          
             <div className="column1">
               <input id="select-item" type="checkbox"></input>
               <img

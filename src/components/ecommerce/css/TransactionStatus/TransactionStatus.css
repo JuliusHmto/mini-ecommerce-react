@@ -1,0 +1,430 @@
+.user-transaction-page {
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  display: flex;
+}
+.filter-side-user {
+  border-radius: 5px;
+  width: 320px;
+  height: 750px;
+  padding: 20px 20px 30px 20px;
+  margin-right: 50px;
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
+  position: sticky;
+  top: 150px;
+}
+
+.user-profile {
+  display: flex;
+  padding: 20px 10px;
+}
+
+.user-profile img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.user-profile span h3 {
+  font-weight: 700;
+  color: red;
+  font-size: 1.4em;
+  margin-bottom: 0px;
+}
+
+.user-profile span p {
+  font-size: 0.8em;
+}
+
+.filter-side-user hr {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.filter-user-option .option {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.filter-user-option .option img {
+  width: 25px;
+  height: 25px;
+  margin-right: 35px;
+}
+
+.filter-user-option .option h4 {
+  color: #999;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.transaction-content {
+  width: 1000px;
+  margin-left: auto;
+  min-height: 750px;
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 6px 10px 0 rgba(160, 160, 160, 0.19);
+  border-radius: 5px;
+  position: relative;
+}
+
+.top-side-transaction {
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.034),
+    0 6px 10px 0 rgba(160, 160, 160, 0.19);
+  position: absolute;
+  width: 100%;
+  height: 170px;
+  padding: 40px 50px;
+}
+
+.top-side-transaction h3 {
+  color: red;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+}
+
+.top-side-transaction .transaction-status-bar {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+}
+
+.top-side-transaction .transaction-status-bar a {
+  margin-right: 75px !important;
+  cursor: pointer;
+  position: relative;
+}
+
+.top-side-transaction .transaction-status-bar h4 {
+  font-size: 1.3em;
+  color: rgb(211, 211, 211);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+#horizontal-line-transaction {
+  width: 75px;
+  margin-left: 0px;
+  margin-top: -5px;
+  border-top: 3px solid red;
+  display: none;
+  overflow: auto;
+  margin-bottom: 0px;
+}
+
+.top-side-transaction .transaction-status-bar .active h4,
+.top-side-transaction
+  .transaction-status-bar
+  .active
+  #horizontal-line-transaction {
+  color: rgb(172, 172, 172);
+  display: block;
+}
+
+.top-side-transaction
+  .transaction-status-bar
+  a:hover
+  #horizontal-line-transaction {
+  display: block;
+  position: absolute;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(161, 161, 161);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(112, 112, 112);
+}
+
+/* bagian filter */
+.filter-side-transaction {
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.034),
+    0 6px 10px 0 rgba(160, 160, 160, 0.19);
+  height: fit-content;
+  margin-top: 160px;
+  padding: 30px 50px;
+}
+
+.filter-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-side-transaction h6 {
+  font-size: 1.2em;
+}
+
+.transaction-date-filter {
+  display: flex;
+}
+
+.transaction-date-filter p {
+  margin-bottom: 0px;
+  font-size: 0.9em;
+}
+
+.transaction-date-filter input {
+  width: 105px;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  padding: 5px 10px;
+  color: #666;
+  font-weight: 500;
+  font-size: 0.9em;
+  height: 30px;
+}
+
+.divider-date {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-top: 20px;
+  font-weight: 100;
+}
+
+.transaction-sort-filter p {
+  margin-bottom: 4px;
+  font-size: 0.9em;
+}
+
+.dropdown-transaction {
+  border: 1px solid gainsboro;
+  height: 30px !important;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.dropdown-transaction {
+  font-size: 0.9em;
+  color: #666;
+  text-decoration: none !important;
+}
+
+.search-transaction-filter p {
+  margin-bottom: 0px;
+  font-size: 0.9em;
+}
+
+.search-transaction-filter input {
+  border: none;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+
+@media (max-width: 1405px) {
+  .user-transaction-page {
+    width: 1280px;
+    margin-top: 150px;
+    display: flex;
+  }
+
+  .filter-side-user {
+    margin-right: 25px;
+  }
+
+  .transaction-content {
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 990px) {
+  .user-transaction-page {
+    width: 980px;
+  }
+
+  .filter-side-user {
+    margin-right: 25px;
+    width: 250px !important;
+  }
+
+  .user-profile img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .user-profile span h3 {
+    font-size: 1.2em;
+  }
+
+  .filter-user-option .option img {
+    margin-right: 25px;
+  }
+
+  .filter-user-option .option h4 {
+    font-size: 1em;
+  }
+
+  .transaction-content {
+    width: 680px;
+    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+      0 6px 10px 0 rgba(160, 160, 160, 0.19);
+    border-radius: 5px;
+    position: relative;
+    margin-right: 20px;
+  }
+
+  .top-side-transaction h3 {
+    font-size: 1.5em;
+  }
+
+  .top-side-transaction {
+    padding: 40px 30px;
+  }
+
+  .top-side-transaction .transaction-status-bar {
+    margin: 0px 0px;
+  }
+
+  .top-side-transaction .transaction-status-bar a {
+    margin-right: 50px !important;
+  }
+
+  .top-side-transaction .transaction-status-bar h4 {
+    font-size: 1em;
+  }
+
+  .filter-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filter-side-transaction {
+    padding: 30px;
+  }
+
+  .filter-side-transaction h6 {
+    font-size: 1em;
+  }
+
+  .transaction-date-filter p,
+  .search-transaction-filter p {
+    margin-bottom: 0px;
+    font-size: 0.7em;
+  }
+
+  .transaction-date-filter input {
+    width: 87px;
+    font-size: 0.7em;
+  }
+
+  .transaction-sort-filter p {
+    margin-bottom: 1px;
+    font-size: 0.7em;
+  }
+
+  .dropdown-transaction {
+    padding: 6.5px 10px;
+    font-size: 0.7em;
+  }
+
+  .search-transaction-filter input {
+    font-size: 0.7em;
+    width: 210px;
+  }
+
+  .content-side-transaction {
+    padding: 50px 30px;
+  }
+
+  .transaction-order-detail {
+    padding: 20px 20px;
+  }
+
+  .transaction-order-detail p {
+    font-size: 0.7em;
+  }
+
+  .transaction-order-detail h6 {
+    margin-bottom: 0px;
+    font-size: 0.8em;
+    color: #999999;
+    font-weight: 400;
+  }
+
+  .seller-column {
+    border-right: 1px solid gainsboro;
+    padding-right: 25px;
+  }
+
+  .order-detail-button {
+    font-size: 0.8em;
+    margin-top: -3px;
+  }
+
+  .transaction-product-detail {
+    padding: 20px 20px !important;
+  }
+
+  .product-image-transaction {
+    width: 100px;
+    height: 100px;
+  }
+
+  .product-detail-transaction {
+    width: 185px;
+  }
+
+  .product-detail-transaction h5,
+  .quantity-transaction h5,
+  .subtotal-transaction h5 {
+    font-size: 0.9em;
+  }
+
+  .product-detail-transaction h6 {
+    font-size: 0.8em;
+  }
+
+  .price-transaction-detail {
+    padding: 0px 20px;
+  }
+
+  .price-transaction-detail .total-price-summary span {
+    display: flex;
+  }
+
+  .price-transaction-detail .total-price-summary span h5 {
+    font-size: 1em;
+    color: red;
+  }
+
+  .total-price-summary {
+    margin-bottom: 0px;
+    height: 30px;
+  }
+
+  .price-transaction-detail .total-price-summary span img {
+    width: 8px;
+    height: 8px;
+    margin-top: 7px;
+  }
+
+  .total-item-price-summary-transaction p,
+  .total-shipping-price-summary-transaction p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    padding-right: 20px;
+  }
+}

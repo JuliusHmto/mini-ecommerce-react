@@ -3,6 +3,7 @@ import "../css/CartStyle.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { getCart, checkOut } from "../../../actions/cartActions";
 
@@ -56,9 +57,10 @@ class CartContainer extends Component {
           <div className="cart-body">
             <div className="item-summary">
                 {cartItems.map((cartItem) => {
-                return <CartItem key={cartItem.p_id} cartItem={cartItem} />;
+                return <CartItem key={cartItem.merchantName} cartItem={cartItem} />;
               })}
               <div>
+                  <Link to="/catalog">
                   <button className="add-another-product-button">
                   <img
                     className="add-img"
@@ -66,7 +68,8 @@ class CartContainer extends Component {
                     alt=""
                   ></img>    
                     Add Another Product
-                  </button>          
+                  </button>
+                  </Link>          
               </div>
             </div>
 

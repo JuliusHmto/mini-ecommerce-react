@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../css/InvoiceStyle.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getAllInvoice } from "../../../actions/invoiceActions";
+import { getAllInvoice } from "../../../actions/transactionActions";
 
 class Invoice extends Component {
   componentDidMount() {
@@ -16,12 +16,12 @@ class Invoice extends Component {
 
 Invoice.propTypes = {
   getAllInvoice: PropTypes.func.isRequired,
-  invoices: PropTypes.object.isRequired,
+  transactions: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  invoices: state.invoice,
+  transactions: state.transaction,
 });
 
 const mapDispatchToProps = (dispatch) => {

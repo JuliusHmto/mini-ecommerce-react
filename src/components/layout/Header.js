@@ -62,9 +62,9 @@ class Header extends Component {
       <div>
         <ul className="navbar-nav-acc ml-4 user-authentic">
           <li className="nav-item">
-            <Link to="/invoice" className="nav-link">
+            <Link to="/transaction" className="nav-link">
               <button>
-               Invoice 
+               Transactions 
               </button>
             </Link>
           </li>

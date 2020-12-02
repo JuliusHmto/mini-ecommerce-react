@@ -55,28 +55,28 @@ class Checkout extends Component {
 
         return ( 
             <React.Fragment>
-            <div class="Check-Out-Page">
-            <div class="top-side-checkout">
+            <div className="Check-Out-Page">
+            <div className="top-side-checkout">
                 <h2>Checkout Page</h2>    
-                <div class="page-nav">
+                <div className="page-nav">
                     <h4>Cart</h4>
                     <img src={require("../css/CheckOut/long-arrow-png.png")} alt=""/>
-                    <h4 class="active">Check-Out</h4>
+                    <h4 className="active">Check-Out</h4>
                     <img src={require("../css/CheckOut/long-arrow-png.png")} alt=""/>
                     <h4>Payment</h4>
                 </div>
             </div>
-            <div class="check-out-content">
-                <div class="left-side-check-out">
-                    <div class="buyer-detail">
+            <div className="check-out-content">
+                <div className="left-side-check-out">
+                    <div className="buyer-detail">
                         <h3>Where to Send</h3>
-                        <hr class="horizontal-line-checkout"/>
-                        <div class="primary-address">
+                        <hr className="horizontal-line-checkout"/>
+                        <div className="primary-address">
                         <input type="radio" id="address" value="primary"/>&nbsp; Use Primary / Default Address 
                             
-                            <div class="primary-address-detail">
-                                <span><h4 class="buyer-name">{user.username}</h4><h4 class="strip-sign">-</h4><h4 class="buyer-phone">+62894328249</h4></span>
-                                <div class="buyer-address-detail">
+                            <div className="primary-address-detail">
+                                <span><h4 className="buyer-name">{user.username}</h4><h4 className="strip-sign">-</h4><h4 className="buyer-phone">+62894328249</h4></span>
+                                <div className="buyer-address-detail">
                                     <h4>Jalan Kemanggisan Raya No 6B, RT 012/005</h4>
                                     <h4>Kemanggisan, Jakarta Barat</h4>
                                     <h4>DKI Jakarta, 10610</h4>
@@ -86,36 +86,36 @@ class Checkout extends Component {
                         </div>
                     </div>
 
-                    <div class="item-checkout">
-                        <span><h3>Product to Buy</h3> <h4 class="total-product-checkout">(2 Products)</h4></span>
-                        <hr class="horizontal-line-checkout"/>
+                    <div className="item-checkout">
+                        <span><h3>Product to Buy</h3> <h4 className="total-product-checkout">(2 Products)</h4></span>
+                        <hr className="horizontal-line-checkout"/>
                         
                         {cartItems.map((checkoutItem) => {
                             return (
-                                <div class="product-detail-checkout" key={checkoutItem.cart_id}>
-                                    <div class="seller-detail">
+                                <div className="product-detail-checkout" key={checkoutItem.cart_id}>
+                                    <div className="seller-detail">
                                         <h5 id="seller-name">{checkoutItem.merchantName}</h5>
                                         <h5 id="seller-address">Jakarta Pusat</h5>
                                     </div>
 
-                                    <div class="item-detail-checkout">
-                                        <img class="item-img-checkout" src={checkoutItem.p_filePath} alt="nopic"/>
-                                            <div class="column2-checkout">
-                                            <h4 class="item-name-checkout">{checkoutItem.p_name}</h4>
-                                            <h5 class="item-price-checkout">Rp.{checkoutItem.p_price},-</h5>
-                                            <h5 class="note-checkout">Note <span><i>Tolong dipack dengan rapih dan aman agar sampai barangnya tidak rusak</i></span></h5>
+                                    <div className="item-detail-checkout">
+                                        <img className="item-img-checkout" src={checkoutItem.p_filePath} alt="nopic"/>
+                                            <div className="column2-checkout">
+                                            <h4 className="item-name-checkout">{checkoutItem.p_name}</h4>
+                                            <h5 className="item-price-checkout">Rp.{checkoutItem.p_price},-</h5>
+                                            <h5 className="note-checkout">Note <span><i>Tolong dipack dengan rapih dan aman agar sampai barangnya tidak rusak</i></span></h5>
                                         </div>
 
-                                        <div class="column3-checkout">
-                                            <h5 class="item-weight-checkout">{checkoutItem.quantity} pcs (2 kg)</h5>
+                                        <div className="column3-checkout">
+                                            <h5 className="item-weight-checkout">{checkoutItem.quantity} pcs (2 kg)</h5>
                                         </div>
 
-                                        <div class="column4-checkout">
+                                        <div className="column4-checkout">
                                             <h5>Rp.{checkoutItem.total_price},-</h5>
                                         </div>
                                     </div>
 
-                                    <div class="logistic-option">
+                                    <div className="logistic-option">
                                         <h5>Shipping Logistic</h5>
                                         <select 
                                             id="logistic"
@@ -135,18 +135,18 @@ class Checkout extends Component {
                                         </select>
                                     </div>
 
-                                    <div class="price-detail-checkout">
+                                    <div className="price-detail-checkout">
                                         <h5>Product Summary 1</h5>
-                                        <div class="price">
-                                            <p class="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <div className="price">
+                                            <p className="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                 Total Rp.5.050.000,- <img src={require("../css/CheckOut/u0.png")} alt=""/>
                                                 </p>
-                                            <div class="collapse" id="collapseExample">
-                                                <div class="total-item-price-summary">
+                                            <div className="collapse" id="collapseExample">
+                                                <div className="total-item-price-summary">
                                                     <p>Item Price ( 2 pcs )</p>
                                                     <p>Rp.5.000.000</p>
                                                 </div>
-                                                <div class="total-shipping-price-summary">
+                                                <div className="total-shipping-price-summary">
                                                     <p>Shipping ( 2 kgs )</p>
                                                     <p>Rp.50.000</p>
                                                 </div>
@@ -159,27 +159,27 @@ class Checkout extends Component {
                     </div>
                 </div>
         
-                    <div class="total-payment-card-checkout">
+                    <div className="total-payment-card-checkout">
                         <h3>Total Payment</h3>
-                        <hr class="horizontal-line-checkout"/>
-                        <div class="total-payment-checkout">
-                            <div class="total-product-price-checkout">
+                        <hr className="horizontal-line-checkout"/>
+                        <div className="total-payment-checkout">
+                            <div className="total-product-price-checkout">
                                 <h6>Total Price</h6>
                                 <h6>Rp.5.000.000</h6>
                             </div>
-                            <div class="total-shipping-price-checkout">
+                            <div className="total-shipping-price-checkout">
                                 <h6>Total Shipping</h6>
                                 <h6>Rp.100.000</h6>
                             </div>
                         </div>
-                        <div class="total-price-to-pay-checkout">
+                        <div className="total-price-to-pay-checkout">
                             <span>
                             <h6>Total</h6>
                             <h6 id="total-price-amount">Rp.5.100.000</h6>
                             </span>
-                            <button class="promo-button-checkout"><h6>Add Promo Code or Voucher</h6></button>      
+                            <button className="promo-button-checkout"><h6>Add Promo Code or Voucher</h6></button>      
                         </div>
-                        <button class="proceed-button-checkout"><h6>Proceed to Payment</h6></button>
+                        <button className="proceed-button-checkout"><h6>Proceed to Payment</h6></button>
                     </div>
                 </div>
             </div>

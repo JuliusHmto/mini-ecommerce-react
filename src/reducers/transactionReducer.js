@@ -1,15 +1,15 @@
-import { GET_ALL_INVOICES } from "../actions/types";
+import { GET_ALL_ORDERS } from "../actions/types";
 
 const initialState = {
-  invoices: [],
+  orders: [],
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case GET_ALL_INVOICES:
+    case GET_ALL_ORDERS:
       return {
         ...state,
-        invoices: action.payload,
+        orders: action.payload,
       };
 
     default:

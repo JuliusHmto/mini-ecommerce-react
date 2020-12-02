@@ -41,4 +41,4 @@ export const CREATE_COMMENT = "CREATE_COMMENT";
 export const GET_COMMENT = "GET_COMMENT";
 
 //INVOICE
-export const GET_ALL_INVOICES = "GET_INVOICES";
+export const GET_ALL_ORDERS = "GET_ORDERS";

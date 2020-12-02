@@ -6,7 +6,7 @@ import courierReducer from "./courierReducer";
 import userReducer from "./userReducer";
 import merchantReducer from "./merchantReducer";
 import merchantItemReducer from "./merchantItemReducer";
-import invoiceReducer from "./invoiceReducer";
+import transactionReducer from "./transactionReducer";
 import cartReducer from "./cartReducer";
 import testimonialReducer from "./testimonialReducer";
 
@@ -16,7 +16,7 @@ export default combineReducers({
   ecommerce: ecommReducer,
   courier: courierReducer,
   cart: cartReducer,
-  invoice: invoiceReducer,
+  transaction: transactionReducer,
   user: userReducer,
   merchant: merchantReducer,
   merchantItem: merchantItemReducer,
