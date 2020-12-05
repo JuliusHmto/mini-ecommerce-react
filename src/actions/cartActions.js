@@ -1,4 +1,5 @@
 import axios from "axios";
+import { forEach, groupBy } from "lodash";
 
 import {
   GET_CART,
@@ -124,4 +125,19 @@ export const processOrder = (
       payload: err.response.data,
     });
   }
+};
+
+
+export const sortCart = (cartItems) => {
+  let newCart = [];
+  forEach(cartItems, (item) => {
+    const newKey = item.merchantName;
+    newCart = [...newCart, {...item, newKey: newKey}];
+  });
+  const merchantList = groupBy(newCart, 'newKey');
+  let filteredCart = [];
+  forEach(merchantList, (value)=> {
+    const merchantType = value[0].key;
+    filteredCart = [...filteredCart, {merchantType, listByType: value}];
+  });
 };

@@ -5,7 +5,9 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-import { getCart, checkOut } from "../../../actions/cartActions";
+import { getCart, checkOut, sortCart } from "../../../actions/cartActions";
+import result from 'lodash/result';
+import { groupBy } from "lodash";
 
 class CartContainer extends Component {
   constructor(props) {
@@ -31,6 +33,8 @@ class CartContainer extends Component {
 
   render() {
     const { cartItems } = this.props.cart;
+    const cart = groupBy(cartItems, 'merchantName');
+    console.log(cart);
     return (
       <React.Fragment>
         <div className="cart">

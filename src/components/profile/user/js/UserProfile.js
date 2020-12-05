@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getUserData } from "../../../../actions/userActions";
-import { getMerchant } from "../../../../actions/merchantActions";
 
 class UserProfile extends Component {
   componentDidMount() {
     this.props.getUserData(this.props.user.user.id);
-    this.props.getMerchant(this.props.merchant.merchant.id);
   }
 
   render() {
@@ -21,7 +19,7 @@ class UserProfile extends Component {
 
               {/*<!-- bagian user-profile -->*/}
               <div class="user-profile">
-                  <img src="./def-icon.png"/>
+                  <img src={require("../css/UserProfile/def-icon.png")}/>
                   <span>
                       <h3>Kevin Wijaya</h3>
                       <p>Verified Account</p>
@@ -33,32 +31,32 @@ class UserProfile extends Component {
               {/*<!-- opsi untuk user -->*/}
               <div class="filter-user-option">
                   <div class="option">
-                      <img src="./profile-icon.png"/>
+                      <img src={require("../css/UserProfile/profile-icon.png")}/>
                       <h4>Your Account</h4>
                   </div>
       
                   <div class="option">
-                      <img src="./order-icon.png"/>
+                      <img src={require("../css/UserProfile/order-icon.png")}/>
                       <h4>Transaction</h4>
                   </div>
       
                   <div class="option">
-                      <img src="./wishlist-icon.png"/>
+                      <img src={require("../css/UserProfile/wishlist-icon.png")}/>
                       <h4>Wishlist</h4>
                   </div>
 
                   <div class="option">
-                      <img src="./wishlist-icon.png"/>
+                      <img src={require("../css/UserProfile/wishlist-icon.png")}/>
                       <h4>Wishlist</h4>
                   </div>
 
                   <div class="option">
-                      <img src="./wishlist-icon.png"/>
+                      <img src={require("../css/UserProfile/wishlist-icon.png")}/>
                       <h4>Wishlist</h4>
                   </div>
 
                   <div class="option">
-                      <img src="./wishlist-icon.png"/>
+                      <img src={require("../css/UserProfile/wishlist-icon.png")}/>
                       <h4>Wishlist</h4>
                   </div>
               </div>
@@ -97,7 +95,7 @@ class UserProfile extends Component {
                   {/*<!-- untuk edit bagian profile image -->*/}
                   <div class="user-profile-input">
                       <div class="image-input">
-                          <img src="./def-icon.png"/>
+                          <img src={require("../css/UserProfile/def-icon.png")}/>
                           <a></a>
                       </div>  
 
