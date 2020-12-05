@@ -23,21 +23,16 @@ class CartItem extends Component {
 
   addQty(productID) {
     const userID = this.props.user.user.id;
-    const orderID = this.props.user.user.trackOrder;
-    this.props.addQuantity(productID, userID, orderID, this.props.history);
+    this.props.addQuantity(productID, userID, this.props.history);
   }
 
   subQty(productID) {
     const userID = this.props.user.user.id;
-    const orderNum = {
-      orderIdentifier: this.props.user.user.trackOrder,
-    };
-    this.props.subQuantity(productID, userID, orderNum, this.props.history);
+    this.props.subQuantity(productID, userID, this.props.history);
   }
 
   removeProduct(productID) {
-    const orderIdentifier = this.props.user.user.trackOrder;
-    this.props.removeFromCart(productID, orderIdentifier, this.props.history);
+    this.props.removeFromCart(productID, this.props.history);
   }
 
   render() {

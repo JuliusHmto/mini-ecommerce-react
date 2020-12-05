@@ -6,7 +6,6 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { getCart, checkOut, sortCart } from "../../../actions/cartActions";
-import result from 'lodash/result';
 import { groupBy } from "lodash";
 
 class CartContainer extends Component {

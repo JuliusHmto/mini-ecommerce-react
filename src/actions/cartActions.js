@@ -12,9 +12,9 @@ import {
   CHECK_OUT,
 } from "./types";
 
-export const getCart = (trackOrder) => async (dispatch) => {
+export const getCart = () => async (dispatch) => {
   const res = await axios.get(
-    `/api/cart/getCartDetail/${trackOrder}`
+    `/api/cart/getCartDetail`
   );
   dispatch({
     type: GET_CART,
@@ -22,12 +22,12 @@ export const getCart = (trackOrder) => async (dispatch) => {
   });
 };
 
-export const addToCart = (productID, userID, orderID, history) => async (
+export const addToCart = (productID, userID, history) => async (
   dispatch
 ) => {
   try {
     await axios.post(
-      `/api/cart/addProduct/${productID}/${userID}/${orderID}`, {});
+      `/api/cart/addProduct/${productID}/${userID}`, {});
     history.push("/cart");
     dispatch({
       type: ADD_TO_CART,
@@ -42,12 +42,12 @@ export const addToCart = (productID, userID, orderID, history) => async (
   }
 };
 
-export const addQuantity = (productID, userID, orderID, history) => async (
+export const addQuantity = (productID, userID, history) => async (
   dispatch
 ) => {
   try {
     await axios.post(
-      `/api/cart/addProduct/${productID}/${userID}/${orderID}`, {});
+      `/api/cart/addProduct/${productID}/${userID}`, {});
     history.push("/cart/reload");
     dispatch({
       type: ADD_QTY,
@@ -61,14 +61,12 @@ export const addQuantity = (productID, userID, orderID, history) => async (
   }
 };
 
-export const subQuantity = (productID, userID, orderNum, history) => async (
+export const subQuantity = (productID, userID, history) => async (
   dispatch
 ) => {
   try {
     await axios.post(
-      `/api/cart/subProduct/${productID}/${userID}`,
-      orderNum
-    );
+      `/api/cart/subProduct/${productID}/${userID}`, {});
     history.push("/cart/reload");
     dispatch({
       type: SUB_QTY,
@@ -82,11 +80,11 @@ export const subQuantity = (productID, userID, orderNum, history) => async (
   }
 };
 
-export const removeFromCart = (productID, orderNum, history) => async (
+export const removeFromCart = (productID, history) => async (
   dispatch
 ) => {
   await axios.delete(
-    `/api/cart/deleteProductFromCart/${productID}/${orderNum}`
+    `/api/cart/deleteProductFromCart/${productID}`
   );
   history.push("/cart/reload");
   dispatch({
