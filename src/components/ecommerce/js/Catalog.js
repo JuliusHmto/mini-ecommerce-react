@@ -7,6 +7,7 @@ import MetaTags from "react-meta-tags";
 import { getItems } from "../../../actions/catalogActions";
 import { addToCart } from "../../../actions/cartActions";
 import { getCategory } from "../../../actions/categoryActions";
+import { getUserData } from "../../../actions/userActions";
 
 class Catalog extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Catalog extends Component {
   }
 
   componentDidMount() {
+    this.props.getUserData(this.props.user.user.id);
     this.props.getItems();
     this.props.getCategory();
   }
@@ -228,6 +230,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    getUserData: (id) => {
+      dispatch(getUserData(id));
+    },
     getCategory: () => {
       dispatch(getCategory());
     },

@@ -25,7 +25,7 @@ class Checkout extends Component {
 
     componentDidMount() {
         this.props.getCouriers();
-        this.props.getCart(this.props.user.user.trackOrder);
+        this.props.getCart(this.props.user.user.id);
         appendScript("https://code.jquery.com/jquery-3.2.1.slim.min.js");
         appendScript("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
         appendScript("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js");
@@ -208,8 +208,8 @@ const mapDispatchToProps = (dispatch) => {
         getCouriers: () => {
             dispatch(getCouriers());
         },
-        getCart: (trackOrder) => {
-            dispatch(getCart(trackOrder));
+        getCart: (userID) => {
+            dispatch(getCart(userID));
         },
       selectCourier: (orderIdentifier, courierChoice, history) => {
         dispatch(selectCourier(orderIdentifier, courierChoice, history));

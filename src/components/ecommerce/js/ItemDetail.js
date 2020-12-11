@@ -19,8 +19,7 @@ class ItemDetail extends Component {
 
   addProductToCart(productID) {
     const userID = this.props.user.user.id;
-    const orderID = this.props.user.user.trackOrder;
-    this.props.addToCart(productID, userID, orderID, this.props.history);
+    this.props.addToCart(productID, userID, this.props.history);
   }
 
   render() {

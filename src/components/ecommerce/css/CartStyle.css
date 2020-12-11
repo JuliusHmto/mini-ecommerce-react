@@ -22,8 +22,8 @@ a {
   width: 100%;
   margin-bottom: 5px;
   padding: 50px 75px 0px 75px;
-  box-shadow: 0 4px 5px 0px rgba(206, 206, 206, 0.295),
-    0 6px 10px 0 rgba(204, 204, 204, 0.19);
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
 }
 
 .cart #cart-title {
@@ -98,11 +98,11 @@ a {
   margin-right: 50px;
 }
 
-.order-summary {
+.order-summaryy {
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0px 5px 5px rgba(194, 194, 194, 0.164),
-    0 6px 10px 0 rgba(204, 204, 204, 0.19);
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
   width: 26% !important;
   min-width: 375px;
   height: fit-content;
@@ -110,13 +110,13 @@ a {
   margin-left: auto;
 }
 
-.order-summary hr {
+.order-summaryy hr {
   border-bottom: 2px solid red;
   width: 100px;
   margin-top: 5px;
 }
 
-.order-summary #order-summary-title {
+.order-summaryy #order-summary-titlee {
   color: rgb(168, 168, 168);
   font-size: 1.4em;
   margin-bottom: 0px;
@@ -133,7 +133,7 @@ a {
   background-color: transparent;
   color: rgb(156, 156, 156);
   font-size: 1.8em;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .add-img {
@@ -141,7 +141,7 @@ a {
   margin-top: -5px;
 }
 
-.total-price-summary {
+.total-price-summaryy {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: white;
@@ -153,26 +153,26 @@ a {
   padding: 10px 10px;
 }
 
-.total-price-summary h5 {
+.total-price-summaryy h5 {
   font-size: 1em;
   text-align: left;
 }
 
-.total-price-summary h6 {
+.total-price-summaryy h6 {
   margin-left: 0px;
 }
 
-.total-price-summary h6 b {
+.total-price-summaryy h6 b {
   margin-left: 0px;
   color: red;
 }
 
-.total-price-summary span {
+.total-price-summaryy span {
   display: flex;
   justify-content: space-between !important;
 }
 
-.total-price-summary button {
+.total-price-summaryy button {
   margin-left: auto !important;
   margin-right: auto !important;
   width: 100%;
@@ -186,16 +186,16 @@ a {
   margin-top: 15px;
 }
 
-.total-price-summary button:hover {
+.total-price-summaryy button:hover {
   opacity: 70%;
 }
 
-.total-price-summary button h6 {
+.total-price-summaryy button h6 {
   color: rgb(192, 192, 192);
   font-weight: 600;
 }
 
-.checkout-button {
+.checkout-buttonn {
   background-color: rgb(250, 39, 39);
   border: none;
   padding: 10px;
@@ -208,11 +208,11 @@ a {
   margin-right: 5px;
 }
 
-.checkout-button:hover {
+.checkout-buttonn:hover {
   opacity: 80%;
 }
 
-.checkout-button h6 {
+.checkout-buttonn h6 {
   margin-left: 0px;
   margin-bottom: 0px;
   color: white;

@@ -1,0 +1,739 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.merchant-profile-page{
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(161, 161, 161); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(112, 112, 112); 
+  }
+
+
+.filter-side-merchant{
+    background-color: rgb(247, 247, 247);
+    min-width: 350px;
+    width: 350px;
+    height: 100vh;
+    min-height: 100vh;
+    position: sticky;
+    top: 0px;
+    margin-right: 25px;
+}
+
+.filter-side-merchant .logo-image{
+    width: 280px;
+    height: 110px;
+    margin-left: 26px;
+    margin-right: 20px;
+    margin-top: 13px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.merchant-profile{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+.merchant-profile:hover .header-overlay{ 
+    background-color: #7a0000;
+}
+
+.header-merchant-image{
+    width: 100%;
+    height: 100%;
+}
+
+.header-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: gainsboro;
+    position: absolute;
+    top: 0px;
+    background-color: #460000;
+    opacity: 40%;
+}
+
+.merchant-profile-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    text-align: center;
+    padding: 35px 10px 10px 10px;
+    color: white;
+}
+
+.merchant-profile-front img{
+    width: 70px;
+    margin-bottom: 5px;
+}
+
+.merchant-profile-front h4{
+    margin-bottom: 4px;
+}
+
+.merchant-profile-front .loc{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7em;
+}
+
+.merchant-profile-front span p:nth-child(1){
+    border-right: 1px solid white;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.merchant-profile-front .merchant-filter-insight{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.merchant-filter-insight h5{
+    margin-bottom: 0px;
+    font-size: 1.3em;
+}
+
+.merchant-profile-front .merchant-filter-insight span:nth-child(3) img{
+    width: 20px;
+}
+
+.merchant-profile-front .merchant-filter-insight span:nth-child(3) p{
+    margin-top: -3px;
+}
+
+.filter-merchant-option{
+    padding: 10px 30px 20px 50px;
+    overflow-y: auto;
+    height: 550px;
+}
+
+.filter-merchant-option .option{
+    height: fit-content;
+    margin-top: 30px;
+}
+
+.filter-merchant-option .option span{
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+.filter-merchant-option .option img{
+    width: 30px;
+    height: 25px;
+    margin-right: 35px;
+}
+
+.filter-merchant-option .option h4{
+    color:  #999;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+#arrow-button-filter{
+    width: 10px;
+    height: 10px;
+    margin-top: 7px;
+    position: absolute;
+    right: -30px;
+}
+
+.filter-merchant-option .option .product-collapse,
+.filter-merchant-option .option .order-collapse,
+.filter-merchant-option .option .option-collapse{
+    font-weight: 300 !important;
+    margin-left: 25px;
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+.filter-merchant-option .option .product-collapse li h5,
+.filter-merchant-option .option .order-collapse li h5,
+.filter-merchant-option .option .option-collapse li h5{
+    color:  #999;
+    font-size: 1.1em;
+    font-weight: 200 !important;
+    cursor: pointer;
+}
+
+.filter-merchant-option .option .product-collapse li h5:hover,
+.filter-merchant-option .option .order-collapse li h5:hover,
+.filter-merchant-option .option .option-collapse li h5:hover,
+.filter-merchant-option .option span:hover h4{ 
+    color:  rgb(255, 0, 0);
+
+}
+
+.filter-merchant-option .option .product-collapse li:nth-child(1) h5,
+.filter-merchant-option .option .order-collapse li:nth-child(1) h5,
+.filter-merchant-option .option .option-collapse li:nth-child(1) h5{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.filter-merchant-option .option .product-collapse li:nth-child(2) h5,
+.filter-merchant-option .option .order-collapse li:nth-child(2) h5,
+.filter-merchant-option .option .option-collapse li:nth-child(2) h5{
+    margin-bottom: 0px;
+}
+
+.merchant-profile-content{
+    width: 1000px;
+    min-height: 150px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 140px;
+}
+
+.top-side-merchant-profile{
+    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
+    width: 100%;
+    height: 170px;
+    padding: 40px 50px;
+    position: sticky;
+    background-color: white;
+    z-index: 3;
+    top: 140px;
+}
+
+.top-side-merchant-profile h3{
+    color: red;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.top-side-merchant-profile .merchant-profile-option-bar{
+    display: flex;
+    overflow-x:auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+}
+
+.top-side-merchant-profile .merchant-profile-option-bar a{
+    margin-right: 75px !important;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+}
+
+.top-side-merchant-profile .merchant-profile-option-bar h4{
+    font-size: 1.4em;
+    color: rgb(211, 211, 211);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+#horizontal-line-transaction{
+    width: 75px;
+    margin-left: 0px;
+    margin-top: -5px;
+    border-top: 3px solid red;
+    display: none;
+    overflow: auto;
+}
+
+.top-side-merchant-profile .merchant-profile-option-bar a:hover h4{
+    color: rgb(172, 172, 172);
+}
+
+.top-side-merchant-profile .merchant-profile-option-bar a:hover #horizontal-line-transaction{
+    display: block;
+}
+
+.top-side-merchant-profile .merchant-profile-option-bar .active h4, 
+.top-side-merchant-profile .merchant-profile-option-bar .active #horizontal-line-transaction{
+    color: rgb(172, 172, 172);
+    display: block
+}
+
+.merch-profile-content, .merch-address-content{
+    padding: 30px 50px;
+    margin-left: auto;
+    height: fit-content;
+    min-height: 375px;
+    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
+    border-radius: 5px;
+}
+
+.merch-profile-content h4, .merch-address-content h4, .user-password-content h4{
+    font-size: 1.4em;
+    color: rgb(172, 172, 172);
+    font-weight: 400;
+}
+
+#horizontal-line-transaction-active{
+    width: 75px;
+    margin-left: 0px;
+    margin-top: -5px;
+    border-top: 3px solid red;
+    overflow: auto;
+}
+
+.merch-profile-content .merchant-input{
+    margin-top: 50px !important;
+    display: flex;
+}
+
+.merchant-profile-insight{
+    margin-right: 50px;
+    width: 350px;
+    min-width: 350px;
+    height: fit-content;
+    min-height: 375px;
+    position: relative;
+    text-align: center !important;
+    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
+}
+
+.merchant-profile-insight .header-merch-profile-image{
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    left: 0px;
+}
+
+.merchant-profile-insight h7{
+    background-color: rgba(95, 95, 95, 0.425);
+    position: absolute;
+    padding: 5px 10px;
+    color: white;
+    font-size: 0.6em;
+    font-weight: 600;
+    right: 0;
+    top: 0px;
+    cursor: pointer;
+}
+
+.merchant-profile-insight .merch-profile-image{
+    position: absolute;
+    width: 110px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 50px;
+}
+
+.merchant-profile-insight .merch-profile-image img{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.merchant-profile-insight .merch-profile-image a{
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    width: 35px;
+    height: 35px;
+    bottom: -5px;
+    background-color:rgb(243, 52, 52) ;
+    border-radius: 100%;
+    background-image: url(./edit-image-icon.png) !important;
+    background-position: 8px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+.merch-profile-insight-data{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 160px;
+}
+
+.merch-profile-insight-data .merchant-shop-name{
+    color: red;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.merch-profile-insight-data .join-date{
+    font-size: 0.8em;
+    margin-top: 0px;
+    color: #999;
+}
+
+.insight{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: fit-content;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.insight p{
+    font-size: 0.8em;
+    text-align: left;
+    margin-bottom: 0px;
+    color: #333333;
+    font-weight: 200;
+}
+
+.insight h5{
+    font-weight: 400;
+    color: #999999;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.total-product, .total-follower, .response-time, .rating{
+    width: fit-content;
+    min-width: 120px;
+}
+
+.response-time, .rating{
+    margin-top: 10px;
+}
+
+.rating span{
+    display: flex;
+}
+
+.rating span img{
+    margin-top: 2px;
+    width: 20px;
+    height: 18px;
+    margin-left: 10px;
+}
+
+.merchant-profile-data{
+    padding: 10px;
+}
+
+.merchant-profile-data .data{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.merchant-profile-data .data p:nth-child(1){
+    min-width: 130px;
+}
+
+.merchant-profile-data .merchant-profile-name #change-button{
+    color: red !important;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.merchant-profile-data .data input{
+    border:  1px solid gainsboro;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: -3px;
+    outline: none;
+}
+
+.merchant-profile-data .domain #domain-input{
+    margin-left: 10px;
+    width: 100px;
+    margin-top: -3px;
+}
+
+.merchant-profile-data .merchant-desc textarea{
+    width: 100%;
+    height: 175px !important;
+    padding: 5px 10px;
+    border:  1px solid gainsboro;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+}
+
+.merchant-profile-data .merchant-desc p{
+    margin-top: 5px;
+}
+
+.merch-address-content{
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+
+.default-address{
+    background-color: rgb(235, 235, 235);
+    margin-top: 40px;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.default-address .top-bar-address, .second-address .top-bar-address{
+    display: flex;
+}
+
+.default-address .top-bar-address .title h5{
+    font-size: 1.2em;
+    color: #999;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.top-bar-address .address-status{
+    font-size: 0.8em;
+    background-color: #ff010169;
+    padding: 2px 8px;
+    height: 20px;
+    color: red;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+.top-bar-address .address-option{
+    display: flex;
+    margin-left: auto;
+}
+
+.top-bar-address .address-option p{
+    color: #169BD5;
+    height: 20px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.default-address .top-bar-address .address-option p:nth-child(1){
+    border-right: 1px solid black;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.address-detail-profile span{
+    display: flex;   
+    color: #999999;
+}
+
+.address-detail-profile span p:nth-child(1){
+    width: 150px;
+}
+
+.address-detail-profile .name-address p:nth-child(2){
+    font-weight: 600;
+    color: black;
+}
+
+.buyer-address-detail p, .address-detail-profile span:nth-child(3) p:nth-child(2){
+    width: fit-content !important;
+    margin-bottom: 0px;
+    color: black !important;
+}
+
+.address-detail-profile span:nth-child(3){
+    margin-top: 16px;
+}
+
+.second-address{
+   box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
+    border-radius: 5px;
+    margin-top: 50px;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.second-address .top-bar-address .title h5{
+    font-size: 1.2em;
+    color: #999;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.second-address .top-bar-address .address-option p:nth-child(2){
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    margin:0px 10px;
+    padding: 0px 10px;
+}
+
+@media(max-width:1408px){
+
+    .merchant-profile-page{
+        width: 100%;
+        min-width: 1270px;
+    }
+
+    .filter-side-merchant{
+        background-color: rgb(247, 247, 247);
+        min-width: 325px;
+        width: 325px;
+    }
+
+    .merchant-profile-content{
+        width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .merch-profile-content .merchant-input{
+        flex-direction: column;
+    }
+
+    .merchant-profile-insight{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
+}
+
+@media(max-width:990px){
+    .merchant-profile-page{
+        width: 100%;
+        min-width: 980px;
+    }
+
+
+    .filter-side-merchant{
+        width: 275px;
+        min-width: 275px !important;
+        margin-right: 20px;
+    }
+
+    .filter-side-merchant .logo-image{
+        width: 250px;
+        height: 100px;
+    }
+
+    .filter-merchant-option{
+        padding: 10px 30px 30px 40px;
+        font-size: 0.9em;
+    }
+    .merchant-profile-front{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        text-align: center;
+        padding: 35px 10px 10px 10px;
+        color: white;
+    }
+    
+    .merchant-profile-front img{
+        width: 60px;
+    }
+    
+    .merchant-profile-front h4{
+        font-size: 1.4em;
+    }
+    
+    
+    .merchant-filter-insight h5{
+        margin-bottom: 0px;
+        font-size: 1.2em;
+    }
+    
+    
+    .merchant-profile-front .merchant-filter-insight span p{
+        font-size: 0.8em;
+    }
+
+
+    .merchant-profile-content{
+        width: 650px;
+        border-radius: 5px;
+        position: relative;
+        margin-right: auto;
+        margin-left:auto;
+    }
+
+    .top-side-merchant-profile{
+        padding: 40px 30px;
+        height: 140px;
+    }
+
+    .top-side-merchant-profile h3{
+        font-size: 1.5em;
+    }
+    
+    .top-side-merchant-profile .merchant-profile-option-bar h4{
+        font-size: 1em;
+    }
+ 
+    
+    .merch-profile-content, .merch-address-content{
+        padding: 30px 30px;
+    }
+
+    
+    .merchant-profile-insight{
+        width: 275px;
+        min-width: 275px;
+        min-height: 350px;
+    }
+
+    
+    .merch-profile-insight-data .merchant-shop-name{
+        color: red;
+        font-size: 1.2em;
+        margin-bottom: 0px;
+    }
+    
+    .merch-profile-insight-data .join-date{
+        font-size: 0.7em;
+        margin-top: 0px;
+        color: #999;
+    }
+    
+    .insight{
+        margin-top: 30px;
+    }
+    
+    .insight p{
+        font-size: 0.7em;
+    }
+    
+    .insight h5{
+        font-size: 1em;
+    }
+    
+    .rating span img{
+        width: 15px;
+        height: 15px;
+    }
+    
+    .default-address{
+        padding: 20px 30px;
+        height: 250px;
+    }
+    
+    
+    .address-detail-profile span p{
+        font-size: 0.9em;
+    }
+    
+
+    .second-address{
+        margin-top: 40px;
+        padding: 20px 30px;
+    }
+
+}

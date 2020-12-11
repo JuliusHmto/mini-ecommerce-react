@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { trackUserOrder } from "../../../actions/userActions";
+import { getUserData } from "../../../actions/userActions";
 import { getItems } from "../../../actions/catalogActions";
 import { getCategory } from "../../../actions/categoryActions";
 import "../css/Home.css";
@@ -13,24 +13,13 @@ class Landing extends Component {
     this.state = {
       filterStr: "",
     };
-    this.checkTrackOrder = this.checkTrackOrder.bind(this);
-  }
-
-  checkTrackOrder() {
-    const userID = this.props.user.user.id;
-    const userData = {
-      email: this.props.user.user.email,
-      username: this.props.user.user.username,
-      password: this.props.user.user.password,
-    };
-      this.props.trackUserOrder(userID, userData);
-      this.addProductToCart = this.addProductToCart.bind(this);
+    this.addProductToCart = this.addProductToCart.bind(this);
   }
 
   componentDidMount() {
-    this.checkTrackOrder();
     if (this.props.user.validToken) {
       this.props.history.push("/home");
+      this.props.getUserData(this.props.user.user.id);
     } else {
       this.props.getItems();
     }
@@ -38,10 +27,7 @@ class Landing extends Component {
 
   addProductToCart(productID) {
     const userID = this.props.user.user.id;
-    const orderNum = {
-      orderIdentifier: this.props.user.user.trackOrder,
-    };
-    this.props.addToCart(productID, userID, orderNum, this.props.history);
+    this.props.addToCart(productID, userID, this.props.history);
   }
 
   render() {
@@ -335,8 +321,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    trackUserOrder: (userID, userData) => {
-      dispatch(trackUserOrder(userID, userData));
+    getUserData: (id) => {
+      dispatch(getUserData(id));
     },
     getCategory: () => {
       dispatch(getCategory());

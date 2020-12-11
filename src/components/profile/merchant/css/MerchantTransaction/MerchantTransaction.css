@@ -1,0 +1,795 @@
+
+.merchant-transaction-page{
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(161, 161, 161); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(112, 112, 112); 
+  }
+
+
+.filter-side-merchant{
+    background-color: rgb(247, 247, 247);
+    min-width: 350px;
+    width: 350px;
+    height: 100vh;
+    min-height: 100vh;
+    position: sticky !important;
+    top: 0px;
+    margin-right: 25px;
+}
+
+.filter-side-merchant .logo-image{
+    width: 280px;
+    height: 110px;
+    margin-left: 26px;
+    margin-right: 20px;
+    margin-top: 13px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.merchant-profile{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+.merchant-profile:hover .header-overlay{ 
+    background-color: #7a0000;
+}
+
+.header-merchant-image{
+    width: 100%;
+    height: 100%;
+}
+
+.header-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: gainsboro;
+    position: absolute;
+    top: 0px;
+    background-color: #460000;
+    opacity: 40%;
+}
+
+.merchant-profile-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    text-align: center;
+    padding: 35px 10px 10px 10px;
+    color: white;
+}
+
+.merchant-profile-front img{
+    width: 70px;
+    margin-bottom: 5px;
+}
+
+.merchant-profile-front h4{
+    margin-bottom: 4px;
+}
+
+.merchant-profile-front .loc{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7em;
+}
+
+.merchant-profile-front span p:nth-child(1){
+    border-right: 1px solid white;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.merchant-profile-front .merchant-filter-insight{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.merchant-filter-insight h5{
+    margin-bottom: 0px;
+    font-size: 1.3em;
+}
+
+.merchant-profile-front .merchant-filter-insight span:nth-child(3) img{
+    width: 20px;
+}
+
+.merchant-profile-front .merchant-filter-insight span:nth-child(3) p{
+    margin-top: -3px;
+}
+
+.filter-merchant-option{
+    padding: 10px 30px 20px 50px;
+    overflow-y: auto;
+    height: 550px;
+}
+
+.filter-merchant-option .option{
+    margin-top: 30px;
+}
+
+.filter-merchant-option .option span{
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+.filter-merchant-option .option img{
+    width: 30px;
+    height: 25px;
+    margin-right: 35px;
+}
+
+.filter-merchant-option .option h4{
+    color:  #999;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+#arrow-button-filter{
+    width: 10px;
+    height: 10px;
+    margin-top: 7px;
+    position: absolute;
+    right: -30px;
+}
+
+.filter-merchant-option .option .product-collapse,
+.filter-merchant-option .option .order-collapse,
+.filter-merchant-option .option .option-collapse{
+    font-weight: 300 !important;
+    margin-left: 25px;
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+.filter-merchant-option .option .product-collapse li h5,
+.filter-merchant-option .option .order-collapse li h5,
+.filter-merchant-option .option .option-collapse li h5{
+    color:  #999;
+    font-size: 1.1em;
+    font-weight: 200 !important;
+    cursor: pointer;
+}
+
+.filter-merchant-option .option .product-collapse li h5:hover,
+.filter-merchant-option .option .order-collapse li h5:hover,
+.filter-merchant-option .option .option-collapse li h5:hover,
+.filter-merchant-option .option span:hover h4{ 
+    color:  rgb(255, 0, 0);
+
+}
+
+.filter-merchant-option .option .product-collapse li:nth-child(1) h5,
+.filter-merchant-option .option .order-collapse li:nth-child(1) h5,
+.filter-merchant-option .option .option-collapse li:nth-child(1) h5{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.filter-merchant-option .option .product-collapse li:nth-child(2) h5,
+.filter-merchant-option .option .order-collapse li:nth-child(2) h5,
+.filter-merchant-option .option .option-collapse li:nth-child(2) h5{
+    margin-bottom: 0px;
+}
+
+
+.merchant-transaction-content{
+    width: 1000px;;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 750px;
+    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 6px 10px 0 rgba(160, 160, 160, 0.19);
+    border-radius: 5px;
+    position: relative;
+}
+
+.top-side-merchant-transaction{
+    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.034), 0 6px 10px 0 rgba(160, 160, 160, 0.19);
+    position: absolute;
+    width: 100%;
+    height: 170px;
+    padding: 40px 50px;
+}
+
+.top-side-merchant-transaction h3{
+    color: red;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.top-side-merchant-transaction .transaction-status-bar{
+    display: flex;
+    overflow-x:auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+}
+
+.top-side-merchant-transaction .transaction-status-bar a{
+    margin-right: 75px !important;
+    cursor: pointer;
+    position: relative;
+}
+
+.top-side-merchant-transaction .transaction-status-bar h4{
+    font-size: 1.3em;
+    color: rgb(211, 211, 211);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+#horizontal-line-transaction{
+    width: 75px;
+    margin-left: 0px;
+    margin-top: -5px;
+    border-top: 3px solid red;
+    display: none;
+    overflow: auto;
+    margin-bottom: 0px;
+}
+
+.top-side-merchant-transaction .transaction-status-bar .active h4, 
+.top-side-merchant-transaction .transaction-status-bar .active #horizontal-line-transaction{
+    color: rgb(172, 172, 172);
+    display: block
+}
+
+.top-side-merchant-transaction .transaction-status-bar a:hover h4{
+    color: rgb(172, 172, 172);
+}
+
+.top-side-merchant-transaction .transaction-status-bar a:hover #horizontal-line-transaction{
+    display: block;
+    position: absolute;
+}
+
+
+/* bagian filter */
+.filter-side-transaction{
+    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.034), 0 6px 10px 0 rgba(160, 160, 160, 0.19);
+    height: fit-content;
+    margin-top: 160px;
+    padding: 30px 50px;
+}
+
+.filter-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-side-transaction h6{
+    font-size: 1.2em;
+}
+
+.transaction-date-filter{
+    display: flex;
+}
+
+.transaction-date-filter p{
+    margin-bottom: 0px;
+    font-size: 0.9em;
+}
+
+.transaction-date-filter input{
+    width: 160px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    padding: 5px 10px;
+    color: #666;
+    font-weight: 500;
+    font-size: 0.9em;
+    height: 30px;
+}
+
+.divider-date{
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 20px;
+    font-weight: 100;
+}
+
+.transaction-sort-filter p{
+    margin-bottom: 4px;
+    font-size: 0.9em;
+}
+
+.dropdown-transaction{
+    border: 1px solid gainsboro;
+    height: 30px !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.dropdown-transaction{
+    font-size: 0.9em;
+    color: #666;
+    text-decoration: none !important;
+}
+
+.search-transaction-filter p{
+    margin-bottom: 0px;
+    font-size: 0.9em;
+}
+
+.search-transaction-filter input{
+    border: none;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.content-side-transaction{
+    padding: 50px 50px;
+}
+
+.transaction{
+    width: 100%;
+    border-radius: 5px;
+    height: fit-content;
+    box-shadow: 0 2px 5px 10px rgba(85, 85, 85, 0.034), 0 6px 10px 0 rgba(160, 160, 160, 0.19);
+}
+
+.transaction-order-detail{
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px 10px rgba(85, 85, 85, 0.034), 0 6px 10px 0 rgba(160, 160, 160, 0.19);
+}
+
+.respond-time{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: rgba(248, 93, 93, 0.685);
+    padding: 2px 5px;
+    font-size: 0.8em;
+}
+
+.transaction-order-detail p{
+    margin-bottom: 0px;
+    font-size: 0.8em;
+}
+
+.transaction-order-detail h6{
+    margin-bottom: 0px;
+    font-size: 0.9em;
+    color: #999999;
+    font-weight: 400;
+}
+
+.seller-column{
+    border-right: 1px solid gainsboro;
+    padding-right: 0px;
+    width: 16%;
+}
+
+#seller-name-transaction{
+    color: red;
+    font-weight: 600;
+}
+
+.order-detail-button{
+    border: none;
+    background-color: rgb(241, 75, 75);
+    color: white;
+    border-radius: 5px;
+    height: 35px;
+    margin-top: 5px;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.transaction-product-detail{
+    padding: 20px 30px !important;
+    display: flex;
+}
+
+.product-image-transaction{
+    width: 130px;
+    height: 130px;
+    margin-right: 20px;
+}
+
+.product-detail-transaction{
+    width: 250px;
+}
+
+.product-detail-transaction h5{
+    font-size: 1em;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.product-detail-transaction h6{
+    color: red;
+    font-size: 0.9em;
+}
+
+.product-detail-transaction #quantity{
+    color: rgb(182, 182, 182);
+    font-weight: 200;
+}
+
+.quantity-transaction{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quantity-transaction h5{
+    font-weight: 200;
+    color: #999;
+    font-size: 1em;
+    padding-top: 5px;
+}
+
+.address-transaction{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.address-transaction p{
+    margin-bottom: 0px;
+    font-size: 0.7em;
+    color: #999;
+}
+
+.address-transaction h5{
+    margin-bottom: 0px;
+    font-size: 0.9em;
+    color: rgb(107, 107, 107);
+    font-weight: 400;
+}
+
+#nama-jalan{
+    white-space: pre-line;
+}
+
+.subtotal-transaction p{
+    margin-bottom: 0px;
+    font-size: 0.7em;
+    color: #999;
+    text-align: right;
+}
+
+.subtotal-transaction h5{
+    font-size: 1em;
+    color: red;
+}
+
+.transaction-product hr{
+    border-top: 1px solid rgba(204, 204, 204, 0.308);
+}
+
+.price-transaction-detail{
+    padding: 0px 30px;
+}
+
+.price-transaction-detail .total-price-summary{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.price-transaction-detail .total-price-summary span{
+    display: flex;
+}
+
+.price-transaction-detail .total-price-summary span h5{
+    font-size: 1.2em;
+    color: red;
+}
+
+.price-transaction-detail .total-price-summary span img{
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+.total-item-price-summary-transaction, .total-shipping-price-summary-transaction{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(172, 172, 172);
+}
+
+
+.total-price-summary{
+    margin-bottom: 0px;
+    height: 35px;
+}
+
+
+.total-item-price-summary-transaction p, .total-shipping-price-summary-transaction p{
+    margin-bottom: 5px;
+    padding-right: 20px;
+}
+
+@media(max-width:1408px){
+
+    .merchant-transaction-page{
+        width: 100%;
+        min-width: 1280px;
+    }
+
+    .filter-side-merchant{
+        background-color: rgb(247, 247, 247);
+        min-width: 325px;
+        width: 325px;
+        margin-right: 0px;
+    }
+
+    .search-transaction-filter input{
+        width: 250px;
+    }
+
+    .merchant-transaction-content{
+        width: 870px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .order-detail-button{
+        width: 130px;
+    }
+
+    .product-image-transaction{
+        width: 120px;
+        height: 120px;
+    }
+
+    .product-detail-transaction{
+        width: 175px;
+    }
+
+    .product-detail-transaction h5{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+}
+
+
+@media(max-width:990px){
+    .merchant-transaction-page{
+        width: 100%;
+        min-width: 980px;
+    }
+
+    .filter-side-merchant{
+        width: 275px;
+        min-width: 275px !important;
+        margin-right: 20px;
+    }
+
+    .filter-side-merchant .logo-image{
+        width: 250px;
+        height: 100px;
+    }
+
+    .filter-merchant-option{
+        padding: 10px 30px 30px 40px;
+        font-size: 0.9em;
+    }
+
+    .merchant-profile-front{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        text-align: center;
+        padding: 35px 10px 10px 10px;
+        color: white;
+    }
+    
+    .merchant-profile-front img{
+        width: 60px;
+    }
+    
+    .merchant-profile-front h4{
+        font-size: 1.4em;
+    }
+    
+    
+    .merchant-filter-insight h5{
+        margin-bottom: 0px;
+        font-size: 1.2em;
+    }
+    
+    
+    .merchant-profile-front .merchant-filter-insight span p{
+        font-size: 0.8em;
+    }
+
+
+    .merchant-transaction-content{
+        width: 650px;
+        border-radius: 5px;
+        position: relative;
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+    
+    .top-side-merchant-transaction h3{
+        font-size: 1.5em;
+    }
+
+    .top-side-merchant-transaction{
+        padding: 40px 30px;
+        height: 150px;
+    }
+    
+
+    .top-side-merchant-transaction .transaction-status-bar{
+        margin: 0px 0px;
+    }
+
+    .top-side-merchant-transaction .transaction-status-bar a{
+        margin-right: 50px !important;
+    }
+
+    .top-side-merchant-transaction .transaction-status-bar h4{
+        font-size: 1em;
+    }
+
+    .filter-content{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .filter-side-transaction{
+        padding: 30px;
+    }
+
+    .filter-side-transaction h6{
+        font-size: 1em;
+    }
+
+    .transaction-date-filter p, .search-transaction-filter p{
+        margin-bottom: 0px;
+        font-size: 0.7em;
+    }
+
+    .transaction-date-filter input{
+        width: 87px;
+        font-size: 0.7em;
+    }
+
+
+    .transaction-sort-filter p{
+        margin-bottom: 1px;
+        font-size: 0.7em;
+    }
+
+    .dropdown-transaction{
+        padding: 6.5px 10px;
+        font-size: 0.7em;
+    }
+
+    .search-transaction-filter input{
+        font-size: 0.7em;
+        width: 210px;
+    }
+
+    .content-side-transaction{
+        padding: 50px 30px;
+    }
+
+    .transaction-order-detail{
+        padding: 20px 20px;
+    }
+
+    .transaction-order-detail p{
+        font-size: 0.7em;
+    }
+
+    .transaction-order-detail h6{
+        margin-bottom: 0px;
+        font-size: 0.75em;
+        color: #999999;
+        font-weight: 400;
+    }
+
+    .seller-column{
+        border-right: 1px solid gainsboro;
+        padding-right: 0px;
+    }
+
+    .order-detail-button{
+        height: 35px;
+        margin-top: 0px;
+        font-size: 0.7em;
+        padding: 0px 0px;
+        width: 100px;
+    }
+
+    .transaction-product-detail{
+        padding: 20px 20px !important;
+    }
+
+    .product-image-transaction{
+        width: 100px;
+        height: 100px;
+    }
+
+    .product-detail-transaction{
+        width: 120px;
+    }
+
+    .product-detail-transaction h5,  .quantity-transaction h5, .subtotal-transaction h5{
+        font-size: 0.9em;
+    }
+
+    .product-detail-transaction h6, .product-detail-transaction #quantity,     
+    .address-transaction h5{
+        font-size: 0.8em;
+    }
+
+    .address-transaction{
+        width: 150px;
+    }
+
+
+    .price-transaction-detail{
+        padding: 0px 20px;
+    }
+
+    .price-transaction-detail .total-price-summary span{
+        display: flex;
+    }
+
+    .price-transaction-detail .total-price-summary span h5{
+        font-size: 1em;
+        color: red;
+    }
+
+    .total-price-summary{
+        margin-bottom: 0px;
+        height: 30px;
+    }
+
+    .price-transaction-detail .total-price-summary span img{
+        width: 8px;
+        height: 8px;
+        margin-top: 7px;
+    }
+
+    .total-item-price-summary-transaction p, .total-shipping-price-summary-transaction p{
+        font-size: 0.9em;
+        margin-bottom: 5px;
+        padding-right: 20px;
+    }
+
+}

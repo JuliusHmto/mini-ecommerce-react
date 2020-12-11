@@ -37,67 +37,60 @@ class CartItem extends Component {
 
   render() {
     const { cartItem } = this.props;
-    return (
-      <div className="item-detail"  key={cartItem.merchantName}>
-        <h5 className="shop-name"><input type="checkbox" id="shop-input"></input> &nbsp; {cartItem.merchantName}</h5>
-        <h6 className="shop-location">Jakarta Utara</h6>
-          <span className="product-to-buy">
-          
-            <div className="column1">
-              <input id="select-item" type="checkbox"></input>
+    console.log(cartItem);
+    const cartItemDetail = cartItem.cart_detail.map((itemDetail) =>
+    {
+      return(
+        <div className="product-container" key={itemDetail.cart_id}>
+          <div className="column1">
+            <input id="select-item" type="checkbox"></input>
               <img
                 className="productImage"
-                src={cartItem.p_filePath}
+                src={itemDetail.p_filePath}
                 alt="nopic"
               ></img>                
-            </div>
+          </div>
 
-            <div className="column2">
-              <h3>{cartItem.p_name}</h3>
-              <h3 className="item-price">Rp.{cartItem.p_price},-</h3> 
-              <textarea
+          <div className="column2">
+            <h3>{itemDetail.p_name}</h3>
+            <h3 className="item-price">Rp.{itemDetail.p_price},-</h3> 
+            <textarea
               name="text"
               className="inputNotes"
               placeholder="Additional Notes..."
-               ></textarea>
-            </div>
+            ></textarea>
+          </div>
 
-            <div className="column3" id="qty-span">
-              <button
-                type="button"
-                className="min-btn"
-                onClick={() => {
-                  this.subQty(cartItem.p_id);
-                }}
-              >
-              -
-              </button>
-              <label type="number" id="quantity" name="quantity" aria-valuemin="1">{cartItem.quantity}</label>
-              <button
-                type="button"
-                className="plus-btn"
-                onClick={() => {
-                this.addQty(cartItem.p_id);}}
-              >
-              +
-              </button>
-            </div>
+          <div className="column3" id="qty-minplus">
+            <button className="qty-min-btn" onClick={() => {this.subQty(itemDetail.p_id);}}>-</button>
+            <label type="number" id="qty" name="quantity" aria-valuemin="1">{itemDetail.quantity}</label>
+            <button className="qty-plus-btn" onClick={() => {this.addQty(itemDetail.p_id);}}>+</button>
+          </div>
 
-            <div className="total-price">
-              <h6>Total Price</h6>
-              <h3>Rp.{cartItem.total_price},-</h3>            
-            </div>
+          <div className="total-price">
+            <h6>Total Price</h6>
+            <h3>Rp.{itemDetail.total_price},-</h3>            
+          </div>
 
-          </span>
-
-          <div className="cart-interaction">  
+          <div className="cart-del-product">  
             <img
-              className="delete-product"
               src={require("../../layout/images/cart/trash-bin.png")}
               onClick={() => {
-              this.handleRemove(cartItem.p_id); }}
+              this.removeProduct(itemDetail.p_id); }}
             ></img>
           </div>
+
+        </div>
+      );
+    });
+
+    return (
+      <div className="item-detail"  key={cartItem.id}>
+        <h5 className="shop-name"><input type="checkbox" id="shop-input"></input> &nbsp; {cartItem.merchantName}</h5>
+        <h6 className="shop-location">Jakarta Utara</h6>
+        <div className="product-to-buy">
+          {cartItemDetail}
+        </div>
       </div>
     );
   }

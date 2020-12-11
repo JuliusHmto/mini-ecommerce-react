@@ -75,25 +75,6 @@ export const getUserData = (id) => async (dispatch) => {
   });
 };
 
-//check current user invoice
-export const trackUserOrder = (userID, userData) => async (dispatch) => {
-  try {
-    const res = await axios.post(
-      `/api/user/trackOrder/${userID}`,
-      userData
-    );
-    dispatch({
-      type: GET_CURRENT_USER,
-      payload: res.data,
-    });
-  } catch (err) {
-    dispatch({
-      type: GET_ERRORS,
-      payload: err.response.data,
-    });
-  }
-};
-
 export const addNewAddress = (userID, addressData) => async (dispatch) => {
   try {
     const res = await axios.post(

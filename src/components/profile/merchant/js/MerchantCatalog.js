@@ -32,6 +32,15 @@ class MerchantCatalog extends Component {
   render() {
     const { merchantItems } = this.props.merchantItem;
     const { categories } = this.props.category;
+    const { filterStr } = this.state;
+
+    const merchantProducts = merchantItems.filter((merchantItem) =>
+    merchantItem.productCategoryName.includes(filterStr)).map((merchantItem) =>
+    {
+      return  (
+        <MerchantItemCatalog key={merchantItem.product_id} merchantItem={merchantItem}/>
+      );
+    });
 
     return (
       <div className="containerMerch">
@@ -44,6 +53,7 @@ class MerchantCatalog extends Component {
               value={this.state.filterStr}
               onChange={(e) => this.setState({ filterStr: e.target.value })}
             >
+              <option value="">All</option>
               {categories.map((category) => (
                 <option
                   key={category.category_id}
@@ -57,14 +67,9 @@ class MerchantCatalog extends Component {
           </div>
 
           <div className="tableProductMerchant">
-            {merchantItems.map((merchantItem) => {
-              return (
-                <MerchantItemCatalog
-                  key={merchantItem.product_id}
-                  merchantItem={merchantItem}
-                />
-              );
-            })}
+
+            {merchantProducts}
+
             <div className="AddProductMerch">
               <Link to={"/my-shop/add"}>
                 <button className="AddProductText">

@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
-
-class MerchantProfile extends Component {
-  componentDidMount() {
-    appendScript("https://code.jquery.com/jquery-3.2.1.slim.min.js");
-    appendScript("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
-    appendScript("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js");
-  }
-
-  render() { 
-    return (
-      <React.Fragment>
-      <div class="merchant-profile-page">
-        {/*<!-- bagian filter untuk merchant -->*/}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./MerchantProfile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Profile</title>
+</head>
+<body>
+    <div class="merchant-profile-page">
+        <!-- bagian filter untuk merchant -->
         <div class="filter-side-merchant">
-            <img class="logo-image" src="./logo.png"/>
+            <img class="logo-image" src="./logo.png">
 
             <div class="merchant-profile">
-                <img class="header-merchant-image" src="header-def-img.png"/>
+                <img class="header-merchant-image" src="header-def-img.png">
                 <div class="header-overlay"></div>
 
                 <div class="merchant-profile-front">
-                    <img src="./def-icon.png"/>
+                    <img src="./def-icon.png">
                     <h4>Bata Shop</h4>
                     <span class="loc"><p>Jakarta Pusat</p> <p>Since 2017</p></span>
 
@@ -36,7 +34,7 @@ class MerchantProfile extends Component {
                         </span>
 
                         <span>
-                            <h5><img src="./star-icon.png"/> 5</h5>
+                            <h5><img src="./star-icon.png"> 5</h5>
                             <p>Ratings</p>
                         </span>
                     </div>
@@ -46,20 +44,20 @@ class MerchantProfile extends Component {
             <div class="filter-merchant-option">
                 <div class="option">
                     <span>
-                        <img src="./dashboard-icon.png"/>
+                        <img src="./dashboard-icon.png">
                         <h4>Dashboard</h4>
                     </span>
                 </div>
 
                 <div class="option">
                     <span class="primary" data-toggle="collapse" href="#collapseProduct" role="button" aria-expanded="false" aria-controls="collapseProduct">
-                        <img src="./product-icon.png"/>
+                        <img src="./product-icon.png">
 
                         <h4>
                           Products
                         </h4>
 
-                        <img id="arrow-button-filter"  src="./u0.png"/>
+                        <img id="arrow-button-filter"  src="./u0.png">
                     </span>
 
                     <ul class="collapse product-collapse" id="collapseProduct">
@@ -70,13 +68,13 @@ class MerchantProfile extends Component {
 
                 <div class="option">
                     <span class="primary" data-toggle="collapse" href="#collapseOrder" role="button" aria-expanded="false" aria-controls="collapseOrder">
-                        <img src="./order-icon.png"/>
+                        <img src="./order-icon.png">
 
                         <h4>
                           Order
                         </h4>
 
-                        <img id="arrow-button-filter"  src="./u0.png"/>
+                        <img id="arrow-button-filter"  src="./u0.png">
                     </span>
 
                     <ul class="collapse order-collapse" id="collapseOrder">
@@ -87,27 +85,27 @@ class MerchantProfile extends Component {
 
                 <div class="option">
                     <span>
-                        <img src="./customer-satisfication-icon.png"/>
+                        <img src="./customer-satisfication-icon.png">
                         <h4>Feedback</h4>
                     </span>
                 </div>
 
                 <div class="option">
                     <span>
-                        <img src="./financial-icon.png"/>
+                        <img src="./financial-icon.png">
                         <h4>Financial</h4>
                     </span>
                 </div>
 
                 <div class="option">
                     <span  class="primary" data-toggle="collapse" href="#collapseOption" role="button" aria-expanded="false" aria-controls="collapseOption">
-                        <img src="./setting-icon.png"/>
+                        <img src="./setting-icon.png">
 
                         <h4>
                           Manage Shop
                         </h4>
 
-                        <img id="arrow-button-filter" src="./u0.png"/>
+                        <img id="arrow-button-filter" src="./u0.png">
                     </span>
 
                     <ul class="collapse option-collapse" id="collapseOption">
@@ -120,35 +118,35 @@ class MerchantProfile extends Component {
         </div>
 
         <div class="merchant-profile-content">
-            {/*<!-- bagian top atau untuk pilih opsi shop profile dll -->*/}
+            <!-- bagian top atau untuk pilih opsi shop profile dll -->
             <div class="top-side-merchant-profile">
                 <h3>More About Your Shop</h3>
                 <div class="merchant-profile-option-bar">
                     <a class="active">
                         <h4>Shop Profile</h4>
-                        <hr id="horizontal-line-transaction"/>
+                        <hr id="horizontal-line-transaction">
                     </a>
     
                     <a>
                         <h4 >Shop Address</h4>
-                        <hr id="horizontal-line-transaction"/>
+                        <hr id="horizontal-line-transaction">
                     </a>                    
                 </div>
             </div>
 
-            {/*<!-- bagin dimana user / seller bisa input data toko -->*/}
+            <!-- bagin dimana user / seller bisa input data toko -->
             <div class="merch-profile-content">
                 <h4>Shop Profile</h4>
-                <hr id="horizontal-line-transaction-active"/>
+                <hr id="horizontal-line-transaction-active">
 
                 <div class="merchant-input">
-                    {/*<!-- untuk edit bagian profile image -->*/}
+                    <!-- untuk edit bagian profile image -->
                     <div class="merchant-profile-insight" >
-                        <img class="header-merch-profile-image" src="./header-def-img.png"/>
+                        <img class="header-merch-profile-image" src="./header-def-img.png"></img>
                         <h7>Change Header</h7>
 
                         <div class="merch-profile-image">
-                            <img src="./header-def-img.png"/>
+                            <img src="./header-def-img.png">
                             <a></a>
                         </div>
 
@@ -177,7 +175,7 @@ class MerchantProfile extends Component {
                                     <P>Rating</P>
                                     <span>
                                         <h5>5 / 5</h5>
-                                        <img src="./star-icon.png"/>
+                                        <img src="./star-icon.png">
                                     </span>
                                 </div>
                             </div>
@@ -194,12 +192,12 @@ class MerchantProfile extends Component {
                         <div class="data domain">
                             <p>Domain</p>
                             <p>www.bank-sinarmasmarket.com /</p>
-                            <input id="domain-input"/>
+                            <input id="domain-input">
                         </div>
 
                         <div class="data">
                             <p>Slogan</p>
-                            <input/> 
+                            <input> 
                         </div>
 
                         <div class="data merchant-desc">
@@ -211,17 +209,17 @@ class MerchantProfile extends Component {
             </div>
 
             <div class="merch-address-content">
-                {/*<!-- bagian pertama atau tulisan judul -->*/}
+                <!-- bagian pertama atau tulisan judul -->
                 <h4>User Address</h4>
-                <hr id="horizontal-line-transaction-active"/>
+                <hr id="horizontal-line-transaction-active">
 
-                {/*<!-- alamat pertama atau yang jadi default adress -->*/}
+                <!-- alamat pertama atau yang jadi default adress -->
                 <div class="default-address">
 
                     <div class="top-bar-address">
                         <div class="title">
                             <h5>Alamat Rumah</h5>
-                            <hr id="horizontal-line-transaction-active"/>
+                            <hr id="horizontal-line-transaction-active">
                         </div>
 
                         <h5 class="address-status">Default Address</h5>
@@ -255,12 +253,12 @@ class MerchantProfile extends Component {
                     </div>
                 </div>
 
-                {/*<!-- alamat kedua atau yang jadi opsi -->*/}
+                <!-- alamat kedua atau yang jadi opsi -->
                 <div class="second-address">
                     <div class="top-bar-address">
                         <div class="title">
                             <h5>Alamat Gudang</h5>
-                            <hr id="horizontal-line-transaction-active"/>
+                            <hr id="horizontal-line-transaction-active">
                         </div>
 
                         <div class="address-option">
@@ -294,11 +292,11 @@ class MerchantProfile extends Component {
                 </div>
             </div>
         </div>
-      </div>
-      </React.Fragment>
-            
-    );
-  }
-}
- 
-export default MerchantProfile;
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

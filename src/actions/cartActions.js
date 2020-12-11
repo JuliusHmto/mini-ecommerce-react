@@ -12,9 +12,9 @@ import {
   CHECK_OUT,
 } from "./types";
 
-export const getCart = () => async (dispatch) => {
+export const getCart = (userID) => async (dispatch) => {
   const res = await axios.get(
-    `/api/cart/getCartDetail`
+    `/api/order/loadAllCart/${userID}`
   );
   dispatch({
     type: GET_CART,
@@ -124,7 +124,6 @@ export const processOrder = (
     });
   }
 };
-
 
 export const sortCart = (cartItems) => {
   let newCart = [];
