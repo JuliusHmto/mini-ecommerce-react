@@ -1,4 +1,4 @@
-import { GET_CURRENT_MERCHANT, GET_CURRENT_PRODUCT } from "../actions/types";
+import { GET_CURRENT_MERCHANT, GET_CURRENT_PRODUCT_FOR_UPDATE } from "../actions/types";
 
 const initialState = {
   merchant: {},
@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
         ...state,
         merchant: action.payload,
       };
-    case GET_CURRENT_PRODUCT:
+    case GET_CURRENT_PRODUCT_FOR_UPDATE:
       return {
         ...state,
         currentItem: action.payload,

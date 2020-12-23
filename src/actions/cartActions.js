@@ -1,5 +1,4 @@
 import axios from "axios";
-import { forEach, groupBy } from "lodash";
 
 import {
   GET_CART,
@@ -8,6 +7,7 @@ import {
   ADD_TO_CART,
   ADD_QTY,
   SUB_QTY,
+  GET_TOTAL,
   PROCESS_ORDER,
   CHECK_OUT,
 } from "./types";
@@ -22,6 +22,16 @@ export const getCart = (userID) => async (dispatch) => {
   });
 };
 
+export const getTotal = (userID) => async (dispatch) => {
+  const res = await axios.get(
+    `/api/order/getTotal/${userID}`
+  );
+  dispatch({
+    type: GET_TOTAL,
+    payload: res.data
+  });
+}
+
 export const addToCart = (productID, userID, history) => async (
   dispatch
 ) => {
@@ -34,7 +44,6 @@ export const addToCart = (productID, userID, history) => async (
       payload: {},
     });
   } catch (err) {
-    console.log( err.response.request );
     dispatch({
       type: GET_ERRORS,
       payload: err.response.data,
@@ -102,17 +111,15 @@ export const checkOut = (history) => async (dispatch) => {
 }
 
 export const processOrder = (
-  orderIdentifier,
   userID,
-  cartDetail,
   history
 ) => async (dispatch) => {
   try {
     await axios.post(
-      `/api/order/processItem/${orderIdentifier}/${userID}`,
-      cartDetail
+      `/api/order/checkout/${userID}`,
+      {}
     );
-    history.push("/invoice");
+    history.push("/transaction");
     dispatch({
       type: PROCESS_ORDER,
       payload: {},
@@ -123,18 +130,4 @@ export const processOrder = (
       payload: err.response.data,
     });
   }
-};
-
-export const sortCart = (cartItems) => {
-  let newCart = [];
-  forEach(cartItems, (item) => {
-    const newKey = item.merchantName;
-    newCart = [...newCart, {...item, newKey: newKey}];
-  });
-  const merchantList = groupBy(newCart, 'newKey');
-  let filteredCart = [];
-  forEach(merchantList, (value)=> {
-    const merchantType = value[0].key;
-    filteredCart = [...filteredCart, {merchantType, listByType: value}];
-  });
 };

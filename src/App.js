@@ -29,6 +29,7 @@ import CartContainer from "./components/ecommerce/js/CartContainer";
 import Checkout from "./components/ecommerce/js/Checkout";
 import Invoice from "./components/ecommerce/js/Invoice";
 import UserProfile from "./components/profile/user/js/UserProfile";
+import TransactionStatus from "./components/ecommerce/js/TransactionStatus";
 
 //import user profile
 import Register from "./components/profile/user/js/Register";
@@ -40,7 +41,9 @@ import RegisterMerchant from "./components/profile/merchant/js/RegisterMerchant"
 import MerchantCatalog from "./components/profile/merchant/js/MerchantCatalog";
 import AddProduct from "./components/profile/merchant/js/AddProduct";
 import EditProduct from "./components/profile/merchant/js/EditProduct";
-import TransactionStatus from "./components/ecommerce/js/TransactionStatus";
+import MerchantTransaction from "./components/profile/merchant/js/MerchantTransaction";
+import MerchantProfile from "./components/profile/merchant/js/MerchantProfile";
+import MerchantDashboard from "./components/profile/merchant/js/MerchantDashboard";
 
 
 const jwtToken = localStorage.jwtToken;
@@ -97,11 +100,7 @@ class App extends Component {
                   <Catalog {...props} searchValue={this.state.searchValue} />
                 )}
               />
-              <Route
-                exact
-                path="/details/:productName"
-                component={ItemDetail}
-              />
+              <Route exact path="/details/:productName" component={ItemDetail} />
               {
                 //Private Routes
               }
@@ -113,24 +112,18 @@ class App extends Component {
               <Redirect exact from="/cart/reload" to="/cart" />
               <SecuredRoute exact path="/checkout" component={Checkout}/>
               <Redirect exact from="/checkout/reload" to="/checkout" />
-              <Route path="/transaction" component={TransactionStatus}/>
+              <SecuredRoute path="/transaction" component={TransactionStatus}/>
               <SecuredRoute exact path="/invoice" component={Invoice} />
-              <SecuredRoute exact path="/profile/:username" component={UserProfile} />
+              <SecuredRoute path="/profile" component={UserProfile} />
 
               {/*merchant */}
-              <SecuredRoute
-                exact
-                path="/my-shop/register"
-                component={RegisterMerchant}
-              />
-              <SecuredRoute
-                exact
-                path="/my-shop/catalog"
-                component={MerchantCatalog}
-              />
+              <SecuredRoute exact path="/my-shop/register" component={RegisterMerchant}/>
+              <SecuredRoute exact path="/my-shop/catalog" component={MerchantCatalog}/>
               <Redirect exact from="/my-shop/catalog/reload" to="/my-shop/catalog" />
               <SecuredRoute exact path="/my-shop/add" component={AddProduct} />
               <SecuredRoute exact path="/my-shop/edit/:id" component={EditProduct} />
+              <SecuredRoute path="/my-shop/transaction" component={MerchantTransaction} />
+              <SecuredRoute path="/my-shop/profile" component={MerchantProfile} />
             </Switch>
           </div>
           <div className="foot">

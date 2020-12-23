@@ -4,6 +4,8 @@ import {
   SET_CURRENT_USER,
   GET_CURRENT_USER,
   ADD_ADDRESS,
+  GET_ADDRESS,
+  REGISTER
 } from "./types";
 import setJWTToken from "../securuityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
@@ -14,7 +16,7 @@ export const createNewUser = (newUser, history) => async (dispatch) => {
     await axios.post("/api/user/register", newUser);
     history.push("/login");
     dispatch({
-      type: GET_ERRORS,
+      type: REGISTER,
       payload: {},
     });
   } catch (err) {
@@ -75,15 +77,15 @@ export const getUserData = (id) => async (dispatch) => {
   });
 };
 
-export const addNewAddress = (userID, addressData) => async (dispatch) => {
+export const addNewAddress = (userID, newAddress) => async (dispatch) => {
   try {
-    const res = await axios.post(
+    await axios.post(
       `/api/user/addAddress/${userID}`,
-      addressData
+      newAddress
     );
     dispatch({
       type: ADD_ADDRESS,
-      payload: res.data,
+      payload: {},
     });
   } catch (err) {
     dispatch({
@@ -91,4 +93,14 @@ export const addNewAddress = (userID, addressData) => async (dispatch) => {
       payload: err.response.data,
     });
   }
+};
+
+export const loadAllAddress = () => async (dispatch) => {
+  const res = await axios.get(
+    `/api/user/loadAllAddress`
+  );
+  dispatch({
+    type: GET_ADDRESS,
+    payload: res.data,
+  });
 };

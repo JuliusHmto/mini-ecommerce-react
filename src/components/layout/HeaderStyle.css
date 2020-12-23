@@ -19,12 +19,12 @@
   padding: 25px;
 }
 
-.navbar-nav ul li{
+.navbar-nav ul li {
   list-style: none;
   padding: 10px;
 }
 
-.nav-item-si a{
+.nav-item-si a {
   font-size: 0.9em;
   letter-spacing: 2px;
   padding-left: 10px;
@@ -35,11 +35,11 @@
   border-radius: 5px;
 }
 
-.nav-item-si a:hover{
+.nav-item-si a:hover {
   background-color: rgb(238, 238, 238);
 }
-  
-.nav-item-su a{
+
+.nav-item-su a {
   font-size: 0.9em;
   letter-spacing: 2px;
   margin-top: -10px;
@@ -49,29 +49,30 @@
   border-radius: 5px;
 }
 
-.nav-item-su a:hover{
+.nav-item-su a:hover {
   background-color: rgb(226, 58, 58);
 }
 
-.dropdown-menu{
+.dropdown-menu {
   width: 135px;
+  z-index: 5;
 }
 
-.navbar-nav{
+.navbar-nav {
   margin-left: auto;
 }
 
-.option{
+.option {
   margin-right: 35px;
 }
 
-.user-authentic li{
+.user-authentic li {
   margin-left: -15px;
   margin-top: -10px;
   margin-bottom: -10px;
 }
 
-.user-authentic li button{
+.user-authentic li button {
   text-align: left;
   width: 100%;
   border: none;
@@ -80,22 +81,22 @@
   color: #a0a0a0;
 }
 
-.user-authentic .logout button{
+.user-authentic .logout button {
   color: red !important;
 }
 
-.be-merch{
+.be-merch {
   padding-left: 7px;
 }
 
-
-.user-authentic li button:hover{
+.user-authentic li button:hover {
   background-color: transparent;
-  color: #050505;;
+  color: #050505;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   min-width: 125px !important;
+  z-index: 5;
 }
 
 .dropdown-divider {
@@ -112,20 +113,19 @@
   width: 70%;
 }
 
-
-.search{
+.search {
   width: 50%;
   height: 35px;
-  padding:15px;
-  background:rgba(50, 50, 50, 0.2);
-  border:0px solid #dbdbdb;
+  padding: 15px;
+  background: rgba(50, 50, 50, 0.2);
+  border: 0px solid #dbdbdb;
   border-radius: 5px;
 }
 
 .search-menu .btn {
   text-align: center;
   background-color: red;
-  color:#fafafa;
+  color: #fafafa;
   font-size: small;
   height: 35px;
   width: 75px;
@@ -139,20 +139,16 @@
   color: white;
 }
 
-.logout a{
+.logout a {
   color: red !important;
 }
 
-.logout a:hover{
+.logout a:hover {
   opacity: 70%;
 }
 
-
-
-
 @media (max-width: 1400px) {
-
-  .navbar-nav{
+  .navbar-nav {
     width: 450px;
     position: relative;
     right: 0px;
@@ -166,27 +162,21 @@
     left: -55px;
   }
 
-  .search{
+  .search {
     width: 100% !important;
   }
 
-
-  .be-merch-comp{
+  .be-merch-comp {
     margin-top: 0px;
   }
-
-
-  
-
 }
 
 @media (max-width: 990px) {
-
-  .navbar-nav{
+  .navbar-nav {
     margin-right: 0px;
-      width: 98%;
-      position: static;
-      right: 0px;
+    width: 98%;
+    position: static;
+    right: 0px;
   }
 
   .dropdown-divider {
@@ -199,69 +189,67 @@
     margin-left: 0px;
   }
 
-  .search-menu{
+  .search-menu {
     position: static;
     margin-top: 0px;
     margin-bottom: 20px;
     width: 98%;
     margin-right: 35px;
- }
- 
- 
- .search{
-   width: 100% !important;
-   height: 35px;
-   padding:15px;
-   background:rgba(50, 50, 50, 0.2);
-   border:0px solid #dbdbdb;
-   border-radius: 5px;
- }
- 
- .search-menu .btn {
-   text-align: center;
-   background-color: red;
-   color:#fafafa;
-   font-size: small;
-   height: 35px;
-   width: 75px;
-   border-radius: 5px;
-   border: none;
-   margin-left: 10px;
- }
+  }
 
-  .search-menu input{
+  .search {
+    width: 100% !important;
+    height: 35px;
+    padding: 15px;
+    background: rgba(50, 50, 50, 0.2);
+    border: 0px solid #dbdbdb;
+    border-radius: 5px;
+  }
+
+  .search-menu .btn {
+    text-align: center;
+    background-color: red;
+    color: #fafafa;
+    font-size: small;
+    height: 35px;
+    width: 75px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+  }
+
+  .search-menu input {
     width: 100%;
   }
 
-  .nav-item{
+  .nav-item {
     margin-top: 0px;
-}
-  .option{
+  }
+  .option {
     width: 98%;
     padding-left: 10px;
   }
 
-
-  .option:nth-child(2){
-    border-bottom: 2px solid rgb(197, 197, 197);    
-    border-top: 2px solid  rgb(197, 197, 197);
+  .option:nth-child(2) {
+    border-bottom: 2px solid rgb(197, 197, 197);
+    border-top: 2px solid rgb(197, 197, 197);
   }
 
-  .option:nth-child(3){
-    border-bottom: 2px solid rgb(197, 197, 197);    
+  .option:nth-child(3) {
+    border-bottom: 2px solid rgb(197, 197, 197);
   }
 
-  .option:nth-child(4){
-    border-bottom: 2px solid rgb(197, 197, 197);    
+  .option:nth-child(4) {
+    border-bottom: 2px solid rgb(197, 197, 197);
   }
 
-  .user-profile-authentic{
-    border-top: 2px solid  rgb(197, 197, 197);
+  .user-profile-authentic {
+    border-top: 2px solid rgb(197, 197, 197);
     margin-left: -10px;
     width: 101.4%;
   }
 
-  .option:hover{
+  .option:hover {
     background-color: rgb(238, 238, 238);
   }
 
@@ -269,39 +257,65 @@
     margin: 0 auto;
   }
 
-  .navbar-nav{
+  .navbar-nav {
     text-align: left;
     margin-left: 30px;
   }
 
-  .collapse ul li a{
+  .collapse ul li a {
     text-align: left;
   }
 
-  .dropdown-menu{
+  .dropdown-menu {
     margin-left: 0px !important;
     width: 99%;
+    z-index: 5;
   }
 
-  .nav-item-si a, .nav-item-su a{
+  .nav-item-si a,
+  .nav-item-su a {
     padding: 10px;
     padding-left: 10px !important;
   }
 
-  .be-merch-comp{
+  .be-merch-comp {
     margin-left: 10px;
     color: gray;
   }
 
-  .be-merch{
+  .be-merch {
     padding-left: 0px;
   }
 }
+.be-merch-button a {
+  text-decoration: none;
+  color: rgb(170, 170, 170);
+}
 
-@media (max-width:850px) {
-  .search-menu{
+.be-merch-button a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.merch-button a {
+  text-decoration: none;
+  color: rgb(170, 170, 170);
+  margin-left: -20px;
+}
+
+.merch-button a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 1400px) {
+  .be-merch-button {
+    margin-top: 0px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .search-menu {
     width: 98% !important;
   }
-
-  
 }

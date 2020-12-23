@@ -3,7 +3,7 @@ import {
   GET_ERRORS,
   GET_CURRENT_MERCHANT,
   GET_CURRENT_MERCHANT_ITEMS,
-  GET_CURRENT_PRODUCT,
+  GET_CURRENT_PRODUCT_FOR_UPDATE,
   CREATE_PRODUCT,
   UPDATE_PRODUCT,
   DELETE_PRODUCT,
@@ -20,7 +20,7 @@ export const createNewMerchant = (
       `/api/merchant/createMerchantToUserId/${userID}`,
       newMerchant
     );
-    history.push("/home");
+    history.push("/my-shop/catalog");
     dispatch({
       type: GET_CURRENT_MERCHANT,
       payload: res.data,
@@ -91,17 +91,16 @@ export const createProduct = (merchantID, formData, history) => async (dispatch)
 };
 
 //Get Product untuk di update
-export const getProduct = (productID, history) => async (dispatch) => {
+export const getProduct = (productID) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `/api/product/findProduct/${productID}`
+      `/api/product/loadSpecificProduct/${productID}`
     );
     dispatch({
-      type: GET_CURRENT_PRODUCT,
+      type: GET_CURRENT_PRODUCT_FOR_UPDATE,
       payload: res.data,
     });
   } catch (err) {
-    history.push("/my-shop/catalog");
     dispatch({
       type: GET_ERRORS,
       payload: err.response.data,
@@ -112,13 +111,13 @@ export const getProduct = (productID, history) => async (dispatch) => {
 //update product
 export const updateCurrentProduct = (
   merchantID,
-  editedProduct,
+  updatedProduct,
   history
 ) => async (dispatch) => {
   try {
     await axios.post(
       `/api/merchant/updateProduct/${merchantID}`,
-      editedProduct
+      updatedProduct
     );
     history.push("/my-shop/catalog");
     dispatch({

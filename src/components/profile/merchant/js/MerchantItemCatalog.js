@@ -34,10 +34,9 @@ class MerchantItemCatalog extends Component {
           <p className="productStockMerch">Stock&nbsp;<b>{merchantItem.productStock}</b> pcs</p>
         </div>
         <div className="buttonProductMerchant">        
-            <Link to={`/my_shop/edit/${merchantItem.id}`}>
+            <Link to={`/my-shop/edit/${merchantItem.product_id}`}>
               <button className="EditProductMerch">Edit Product</button>
             </Link>
-              <button className="SetProductMerch">Set Non-Active</button>
               <button className="DeleteProductMerch" onClick={() => {
                 this.deleteItem(merchantItem.product_id);
               }}>Delete Product</button>

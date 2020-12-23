@@ -26,7 +26,7 @@ html {
   background: rgb(112, 112, 112);
 }
 
-.filter-side-merchant1 {
+.filter-side-merchantt {
   background-color: rgb(230, 230, 230);
   min-width: 350px;
   width: 350px;
@@ -34,7 +34,6 @@ html {
   min-height: 100vh;
   position: relative;
   top: 0px;
-  margin-top: 135px;
 }
 
 .merchant-profile {

@@ -1,15 +1,17 @@
-import { GET_CART } from "../actions/types";
+import { GET_ADDRESS } from "../actions/types";
 
 const initialState = {
-  cartItems: [],
+  addresses: [],
 };
+
 export default function (state = initialState, action) {
   switch (action.type) {
-    case GET_CART:
+    case GET_ADDRESS:
       return {
         ...state,
-        cartItems: action.payload,
+        addresses: action.payload,
       };
+    
     default:
       return state;
   }

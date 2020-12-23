@@ -37,7 +37,6 @@ class CartItem extends Component {
 
   render() {
     const { cartItem } = this.props;
-    console.log(cartItem);
     const cartItemDetail = cartItem.cart_detail.map((itemDetail) =>
     {
       return(

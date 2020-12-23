@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER, GET_CURRENT_USER } from "../actions/types";
+import { SET_CURRENT_USER, GET_CURRENT_USER} from "../actions/types";
 
 const initialState = {
   validToken: false,
@@ -27,6 +27,7 @@ export default function (state = initialState, action) {
         ...state,
         user: action.payload,
       };
+    
     default:
       return state;
   }

@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import MetaTags from "react-meta-tags";
 import { logout } from "../../actions/userActions";
-import MerchantStoreButton from "../profile/merchant/js/MerchantStoreButton";
 import "./HeaderStyle.css";
 
 class Header extends Component {
@@ -41,6 +40,32 @@ class Header extends Component {
   render() {
     const { validToken, user } = this.props.user;
 
+    const userIsMerchant = (
+      <div>
+        <ul className="navbar-nav-acc ml-4 user-authentic merch-button">
+          <li className="nav-item">
+            <Link to={"/my-shop/catalog"}>
+              <button>
+                My Store
+              </button>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    );
+
+    const userIsNotMerchant = (
+      <div className="be-merch-button nav-item">
+        <Link to={"/my-shop/register"}>
+          <button>
+            Be a Merchant
+          </button>
+        </Link>
+      </div>
+    );
+
+    const merchantStore = user.hasMerchant ? userIsMerchant : userIsNotMerchant;
+
     const userIsNotAuthenticated = (
       <div className="navbar-button search-field">
         <ul className="navbar-nav-acc">
@@ -71,12 +96,12 @@ class Header extends Component {
           <div class="dropdown-divider"></div>
           <li className="nav-item">
             <button className="be-merch">
-              <MerchantStoreButton user={user} />
+              {merchantStore}
             </button>
           </li>
           <div class="dropdown-divider"></div>
           <li className="nav-item">
-          <Link to={`/profile/${user.username}`} className="nav-link">
+          <Link to={"/profile"} className="nav-link">
             <button>
              My Profile 
             </button>

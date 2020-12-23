@@ -1,523 +1,551 @@
-.user-profile-page{
-    width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
-    display: flex;
-    margin-bottom: 25px;
-    min-height: 2275px;
+.user-profile-page {
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  display: flex;
+  margin-bottom: 25px;
+  min-height: 2275px;
 }
 
 /* bagian filter */
-.filter-side-user{
-    border-radius: 5px;
-    width: 320px;
-    height: 750px;
-    padding: 20px 20px 30px 20px;
-    margin-right: 50px;
-    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
-    position: sticky;
-    top: 150px;
+.filter-side-user {
+  border-radius: 5px;
+  width: 320px;
+  height: 750px;
+  padding: 20px 20px 30px 20px;
+  margin-right: 50px;
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
+  position: sticky;
+  top: 150px;
 }
 
-.user-profile{
-    display: flex;
-    padding: 20px 10px;
+.user-profile {
+  display: flex;
+  padding: 20px 10px;
 }
 
-.user-profile img{
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
+.user-profile img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
 }
 
-.user-profile span h3{
-    font-weight: 700;
-    color: red;
-    font-size: 1.4em;
-    margin-bottom: 0px;
+.user-profile span h3 {
+  font-weight: 700;
+  color: red;
+  font-size: 1.4em;
+  margin-bottom: 0px;
 }
 
-.user-profile span p{
-    font-size: 0.8em;
+.user-profile span p {
+  font-size: 0.8em;
 }
 
-.filter-side-user hr{
-    margin-top: 20px;
-    margin-bottom: 30px;
+.filter-side-user hr {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-.filter-user-option .option{
-    display: flex;
-    margin-bottom: 10px;
-    padding:10px 20px;
-    cursor: pointer;
+.filter-user-option .option {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.filter-user-option .option img{
-    width: 25px;
-    height: 25px;
-    margin-right: 35px;
+.filter-user-option .option img {
+  width: 25px;
+  height: 25px;
+  margin-right: 35px;
 }
 
-.filter-user-option .option h4{
-    color:  #999;
-    font-size: 1.1em;
-    font-weight: 400;
+.filter-user-option .option h4 {
+  color: #999;
+  font-size: 1.1em;
+  font-weight: 400;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(161, 161, 161); 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(112, 112, 112); 
-  }
-
-
-.filter-user-option .option:hover h4{
-    color: red;
-    cursor: pointer;
+  width: 5px;
+  height: 5px;
 }
 
-.profile-content{
-    width: 1000px;
-    margin-left: auto;
-    min-height: 750px;
-    border-radius: 5px;
-    position: relative;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(161, 161, 161);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(112, 112, 112);
+}
+
+.filter-user-option .option:hover h4 {
+  color: red;
+  cursor: pointer;
+}
+
+.profile-content {
+  width: 1000px;
+  margin-left: auto;
+  min-height: 750px;
+  border-radius: 5px;
+  position: relative;
 }
 
 /* bagian konten untuk yang pilih" bagian profile,address, atau password */
-.top-side-profile{
-    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
-    width: 100%;
-    height: 170px;
-    padding: 40px 50px;
-    position: sticky;
-    top: 150px;
-    background-color: white;
-    z-index: 3;
+.top-side-profile {
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
+  width: 100%;
+  height: 170px;
+  padding: 40px 50px;
+  top: 150px;
+  background-color: white;
+  z-index: 3;
 }
 
-.top-side-profile h3{
-    color: red;
-    margin-bottom: 30px;
-    font-size: 1.8em;
+.top-side-profile h3 {
+  color: red;
+  margin-bottom: 30px;
+  font-size: 1.8em;
 }
 
-.top-side-profile .profile-option-bar{
-    display: flex;
-    overflow-x:auto;
-    overflow-y: hidden;
-    padding-bottom: 10px;
+.top-side-profile .profile-option-bar {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
 }
 
-.top-side-profile .profile-option-bar a{
-    margin-right: 75px !important;
-    cursor: pointer;
-    position: relative;
+.top-side-profile .profile-option-bar a {
+  margin-right: 75px !important;
+  cursor: pointer;
+  position: relative;
 }
 
-.top-side-profile .profile-option-bar h4{
-    font-size: 1.4em;
-    color: rgb(211, 211, 211);
-    font-weight: 400;
-    white-space: nowrap;
+.top-side-profile .profile-option-bar h4 {
+  font-size: 1.4em;
+  color: rgb(211, 211, 211);
+  font-weight: 400;
+  white-space: nowrap;
 }
 
-#horizontal-line-transaction{
-    width: 75px;
-    margin-left: 0px;
-    margin-top: -5px;
-    border-top: 3px solid red;
-    display: none;
-    overflow: auto;
+#horizontal-line-transaction {
+  width: 75px;
+  margin-left: 0px;
+  margin-top: -5px;
+  border-top: 3px solid red;
+  display: none;
+  overflow: auto;
 }
 
-.top-side-profile .profile-option-bar a:hover h4{
-    color: rgb(172, 172, 172);
+.top-side-profile .profile-option-bar a:hover h4 {
+  color: rgb(172, 172, 172);
 }
 
-.top-side-profile .profile-option-bar a:hover #horizontal-line-transaction{
-    display: block;
-    position: absolute;
+.top-side-profile .profile-option-bar a:hover #horizontal-line-transaction {
+  display: block;
+  position: absolute;
 }
 
-.top-side-profile .profile-option-bar .active h4, 
-.top-side-profile .profile-option-bar .active #horizontal-line-transaction{
-    color: rgb(172, 172, 172);
-    display: block
+.top-side-profile .profile-option-bar .active h4,
+.top-side-profile .profile-option-bar .active #horizontal-line-transaction {
+  color: rgb(172, 172, 172);
+  display: block;
 }
-
 
 /* bagian kontennya buat semuanya */
-.user-profile-content, .user-address-content, .user-password-content{
-    padding: 30px 50px;
-    margin-left: auto;
-    height: fit-content;
-    min-height: 375px;
-    box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
-    border-radius: 5px;
+.user-profile-content,
+.user-address-content,
+.user-password-content {
+  padding: 30px 50px;
+  margin-left: auto;
+  height: fit-content;
+  min-height: 375px;
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
+  border-radius: 5px;
 }
 
-.user-profile-content h4, .user-address-content h4, .user-password-content h4{
-    font-size: 1.4em;
-    color: rgb(172, 172, 172);
-    font-weight: 400;
+.user-profile-content {
+  margin-top: 50px;
 }
 
-#horizontal-line-transaction-active{
-    width: 75px;
-    margin-left: 0px;
-    margin-top: -5px;
-    border-top: 3px solid red;
-    overflow: auto;
+.user-profile-content h4,
+.user-address-content h4,
+.user-password-content h4 {
+  font-size: 1.4em;
+  color: rgb(172, 172, 172);
+  font-weight: 400;
+}
+
+#horizontal-line-transaction-active {
+  width: 75px;
+  margin-left: 0px;
+  margin-top: -5px;
+  border-top: 3px solid red;
+  overflow: auto;
 }
 
 /* bagian konten untuk user profile */
-.user-profile-input{
-    margin-top: 40px;
-    padding: 0px 20px;
-    display: flex;
+.user-profile-input {
+  margin-top: 40px;
+  padding: 0px 20px;
+  display: flex;
 }
 
-.user-profile-input .image-input{
-    position: relative;
-    height: 110px;
-    width: 115px;
-    margin-right: 25px;
+.user-profile-input .image-input {
+  position: relative;
+  height: 110px;
+  width: 115px;
+  margin-right: 25px;
 }
 
-.user-profile-input .image-input img{
-    height: 110px;
-    width: 110px;
-    border: none;
+.user-profile-input .image-input img {
+  height: 110px;
+  width: 110px;
+  border: none;
 }
 
-.image-input a{
-    cursor: pointer;
-    position: absolute;
-    bottom: 0px;
-    right: 10px;
-    width: 35px;
-    height: 35px;
-    background-color:rgb(243, 52, 52) ;
-    border-radius: 100%;
-    background-image: url(./edit-image-icon.png) !important;
-    background-position: 8px;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
+.image-input a {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(243, 52, 52);
+  border-radius: 100%;
+  background-image: url(./edit-image-icon.png) !important;
+  background-position: 8px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
 }
 
-.user-profile-input .profile-name{
-    margin-top: 15px !important;
+.user-profile-input .profile-name {
+  margin-top: 15px !important;
 }
 
-.user-profile-input .profile-name h3{
-    color: red;
-    font-size: 1.4em;
-    font-weight: 650;
-    margin-bottom: 0px;
+.user-profile-input .profile-name h3 {
+  color: red;
+  font-size: 1.4em;
+  font-weight: 650;
+  margin-bottom: 0px;
 }
 
-.user-profile-input .profile-name p{
-    font-size: 0.8em;
+.user-profile-input .profile-name p {
+  font-size: 0.8em;
 }
 
-.user-profile-input-2{
-    padding: 0px 40px;
-    margin-top: 30px;
+.user-profile-input-2 {
+  padding: 0px 40px;
+  margin-top: 30px;
 }
 
-.user-profile-input-2 .input{
-    display: flex !important;
-    margin-bottom: 20px;
+.user-profile-input-2 .input {
+  display: flex !important;
+  margin-bottom: 20px;
 }
 
-.user-profile-input-2 .input #text-format-profile{
-    width: 150px;
-    margin-right: 25px;
-    color: rgb(179, 179, 179) !important;
+.user-profile-input-2 .input #text-format-profile {
+  width: 150px;
+  margin-right: 25px;
+  color: rgb(179, 179, 179) !important;
 }
 
-.user-profile-input-2 .input #text-content-profile{
-    font-weight: 450;
-    width: fit-content;
-    padding-left: 10px !important;
+.user-profile-input-2 .input #text-content-profile {
+  font-weight: 450;
+  width: fit-content;
+  padding-left: 10px !important;
 }
 
-.box-for-name{
-    border: 1px solid rgb(196, 196, 196);
-    border-radius: 5px;
-    padding: 0px 10px;
-    margin-top: -2px !important;
-    height: 35px;
-    width: 70%;
-    margin-left: 10px;
+.box-for-name {
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 5px;
+  padding: 0px 10px;
+  margin-top: -2px !important;
+  height: 35px;
+  width: 70%;
+  margin-left: 10px;
 }
 
-.user-profile-input-2 .input a{
-    margin-left: 20px;
-    font-size: 0.8em;
-    margin-top: 3px;
-    color: red !important;
-    cursor: pointer;
+.user-profile-input-2 .input a {
+  margin-left: 20px;
+  font-size: 0.8em;
+  margin-top: 3px;
+  color: red !important;
+  cursor: pointer;
 }
 
-.input input{
-    margin-top: 6px ;
-    margin-right: 20px;
-    margin-left: 10px;
+.input input {
+  margin-top: 6px;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
-.user-profile-input-2 .input #option-1-gender{
-    margin-right: 50px !important;
+.user-profile-input-2 .input #option-1-gender {
+  margin-right: 50px !important;
 }
 
-.user-profile-input-2 .input select{
-    margin-right: 5px;
-    height: 35px;
-    border: 1px solid rgb(196, 196, 196);
-    border-radius: 5px;
-    padding: 0px 4px;
-    margin-left: 10px;
-    margin-top: -2px;
-    width: 100px;
+.user-profile-input-2 .input select {
+  margin-right: 5px;
+  height: 35px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 5px;
+  padding: 0px 4px;
+  margin-left: 10px;
+  margin-top: -2px;
+  width: 100px;
 }
-
 
 /* bagian konten untuk address */
-.user-address-content{
-    margin-top: 50px;
+.user-address-content {
+  margin-top: 50px;
 }
 
-.default-address{
-    background-color: rgb(235, 235, 235);
-    margin-top: 40px;
-    padding: 20px 50px;
-    border-radius: 10px;
+.default-address {
+  background-color: rgb(235, 235, 235);
+  margin-top: 40px;
+  padding: 20px 50px;
+  border-radius: 10px;
 }
 
-.default-address .top-bar-address, .second-address .top-bar-address{
-    display: flex;
+.default-address .top-bar-address,
+.second-address .top-bar-address {
+  display: flex;
 }
 
-.default-address .top-bar-address .title h5{
-    font-size: 1.2em;
-    color: #999;
-    margin-bottom: 10px;
-    margin-right: 20px;
+.default-address .top-bar-address .title h5 {
+  font-size: 1.2em;
+  color: #999;
+  margin-bottom: 10px;
+  margin-right: 20px;
 }
 
-.top-bar-address .address-status{
-    font-size: 0.8em;
-    background-color: #ff010169;
-    padding: 2px 8px;
-    height: 20px;
-    color: red;
-    border-radius: 5px;
-    margin-top: 2px;
+.top-bar-address .address-status {
+  font-size: 0.8em;
+  background-color: #ff010169;
+  padding: 2px 8px;
+  height: 20px;
+  color: red;
+  border-radius: 5px;
+  margin-top: 2px;
 }
 
-.top-bar-address .address-option{
-    display: flex;
-    margin-left: auto;
+.top-bar-address .address-option {
+  display: flex;
+  margin-left: auto;
 }
 
-.top-bar-address .address-option p{
-    color: #169BD5;
-    height: 20px;
-    cursor: pointer;
-    font-size: 0.8em;
+.top-bar-address .address-option p {
+  color: #169bd5;
+  height: 20px;
+  cursor: pointer;
+  font-size: 0.8em;
 }
 
-.default-address .top-bar-address .address-option p:nth-child(1){
-    border-right: 1px solid black;
-    padding-right: 10px;
-    margin-right: 10px;
+.default-address .top-bar-address .address-option p:nth-child(1) {
+  border-right: 1px solid black;
+  padding-right: 10px;
+  margin-right: 10px;
 }
 
-.address-detail-profile span{
-    display: flex;   
-    color: #999999;
+.address-detail-profile span {
+  display: flex;
+  color: #999999;
 }
 
-.address-detail-profile span p:nth-child(1){
-    width: 150px;
+.address-detail-profile span p:nth-child(1) {
+  width: 150px;
 }
 
-.address-detail-profile .name-address p:nth-child(2){
-    font-weight: 600;
-    color: black;
+.address-detail-profile .name-address p:nth-child(2) {
+  font-weight: 600;
+  color: black;
 }
 
-.buyer-address-detail p, .address-detail-profile span:nth-child(3) p:nth-child(2){
-    width: fit-content !important;
-    margin-bottom: 0px;
-    color: black !important;
+.buyer-address-detail p,
+.address-detail-profile span:nth-child(3) p:nth-child(2) {
+  width: fit-content !important;
+  margin-bottom: 0px;
+  color: black !important;
 }
 
-.address-detail-profile span:nth-child(3){
-    margin-top: 16px;
+.address-detail-profile span:nth-child(3) {
+  margin-top: 16px;
 }
 
-.second-address{
-   box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2), 0 10px 10px 1px rgba(160, 160, 160, 0.19);
-    border-radius: 5px;
-    margin-top: 50px;
-    padding: 20px 50px;
-    border-radius: 10px;
+.second-address {
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 20px 50px;
+  border-radius: 10px;
 }
 
-.second-address .top-bar-address .title h5{
-    font-size: 1.2em;
-    color: #999;
-    margin-bottom: 10px;
-    margin-right: 20px;
+.second-address .top-bar-address .title h5 {
+  font-size: 1.2em;
+  color: #999;
+  margin-bottom: 10px;
+  margin-right: 20px;
 }
 
-.second-address .top-bar-address .address-option p:nth-child(2){
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    margin:0px 10px;
-    padding: 0px 10px;
+.second-address .top-bar-address .address-option p:nth-child(1) {
+  border-right: 1px solid black;
+  padding-right: 10px;
+  margin-right: 10px;
 }
-
 
 /* bagian konten untuk password */
-.user-password-content{
-    margin-top: 50px;
+.user-password-content {
+  margin-top: 50px;
 }
 
-.user-password-content{
-    position: relative;
+.user-password-content {
+  position: relative;
 }
 
-.user-password-content .password-input-content{
-    padding: 0px 0px;
-    margin-top: 40px;
+.user-password-content .password-input-content {
+  padding: 0px 0px;
+  margin-top: 40px;
 }
 
-.user-password-content .password-input-content span{
+.user-password-content .password-input-content span {
+  display: flex;
+}
+
+.user-password-content .password-input-content #text-format-profile {
+  width: 150px;
+  margin-right: 25px;
+  color: rgb(179, 179, 179) !important;
+}
+
+.user-password-content .password-input-content span {
+  margin-bottom: 20px;
+}
+
+.user-password-content .password-input-content span input {
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 5px;
+  padding: 0px 10px;
+  margin-top: -2px !important;
+  height: 35px;
+  width: 50%;
+  margin-left: 10px;
+}
+
+.user-password-content .new-address button {
+  padding: 5px 25px;
+  background-color: rgb(253, 42, 42);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  right: 50px;
+  font-size: 1em;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
+  z-index: 1000;
+  border-radius: 15px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 1408px) {
+  .user-profile-page {
+    width: 1280px;
+    margin-top: 150px;
     display: flex;
-}
+  }
 
-.user-password-content .password-input-content #text-format-profile{
-    width: 150px;
+  .filter-side-user {
     margin-right: 25px;
-    color: rgb(179, 179, 179) !important;
+  }
+
+  .profile-content {
+    margin-right: 25px;
+  }
 }
 
-.user-password-content .password-input-content span{
-    margin-bottom: 20px;
-}
+@media (max-width: 990px) {
+  .user-profile-page {
+    width: 980px;
+  }
 
-.user-password-content .password-input-content span input{
-    border: 1px solid rgb(196, 196, 196);
-    border-radius: 5px;
-    padding: 0px 10px;
-    margin-top: -2px !important;
-    height: 35px;
-    width: 50%;
-    margin-left: 10px;
-}
+  .filter-side-user {
+    margin-right: 25px;
+    width: 250px !important;
+  }
 
-.user-password-content button{
-    padding: 5px 25px;
-    background-color: rgb(253, 42, 42);
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    color: white;
-    position: absolute;
-    right: 50px;
+  .user-profile img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .user-profile span h3 {
+    font-size: 1.2em;
+  }
+
+  .filter-user-option .option img {
+    margin-right: 25px;
+  }
+
+  .filter-user-option .option h4 {
     font-size: 1em;
-    margin-top: 25px;
-    cursor: pointer;
-}
+  }
 
+  .profile-content {
+    width: 680px;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 20px;
+  }
 
-@media(max-width:1408px){
+  .top-side-profile h3 {
+    font-size: 1.5em !important;
+  }
 
-    .user-profile-page{
-        width: 1280px;
-        margin-top: 150px;
-        display: flex;
-    }
-    
-    .filter-side-user{
-        margin-right: 25px;
-    }
-    
-    .profile-content{
-        margin-right: 25px;
-    }
+  .top-side-profile {
+    padding: 40px 30px;
+    height: 140px;
+  }
 
-}
+  .top-side-profile .profile-option-bar h4 {
+    font-size: 1em;
+  }
 
-@media(max-width:990px){
-    .user-profile-page{
-        width: 980px;
-    }
-
-    .filter-side-user{
-        margin-right: 25px;
-        width: 250px !important;
-    }
-
-    .user-profile img{
-        width: 50px;
-        height: 50px;
-    }
-    
-    .user-profile span h3{
-        font-size: 1.2em;
-    }
-
-    .filter-user-option .option img{
-        margin-right: 25px;
-    }
-
-    .filter-user-option .option h4{
-        font-size: 1em;
-    }
-    
-    .profile-content{
-        width: 680px;
-        border-radius: 5px;
-        position: relative;
-        margin-right: 20px;
-    }
-
-    
-    .top-side-profile h3{
-        font-size: 1.5em !important;
-    }
-
-    .top-side-profile{
-        padding: 40px 30px;
-        height: 140px;
-    }
-
-    .top-side-profile .profile-option-bar h4{
-        font-size: 1em;
-    }
-
-    .user-profile-content, .user-address-content, .user-password-content{
-        padding: 20px 30px;
-    }
-
+  .user-profile-content,
+  .user-address-content,
+  .user-password-content {
+    padding: 20px 30px;
+  }
 }

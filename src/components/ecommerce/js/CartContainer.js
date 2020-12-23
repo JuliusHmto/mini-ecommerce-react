@@ -3,10 +3,8 @@ import "../css/CartStyle.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-import { getCart, checkOut } from "../../../actions/cartActions";
-
+import { getCart, checkOut, getTotal } from "../../../actions/cartActions";
 
 class CartContainer extends Component {
   constructor(props) {
@@ -24,6 +22,7 @@ class CartContainer extends Component {
 
   componentDidMount() {
     this.props.getCart(this.props.user.user.id);
+    this.props.getTotal(this.props.user.user.id);
   }
 
   checkoutItems(){
@@ -32,13 +31,14 @@ class CartContainer extends Component {
 
   render() {
     const { cartItems } = this.props.cart;
+    const { total } = this.props.total;
+
     return (
       <React.Fragment>
       <div className="cart">
       <div className="top-side-cart">
         <div className="top-left-side">
           <h2 id="cart-title">Shopping Cart</h2>
-          <h3 id="total-item-in-cart">You have 2 products on your cart</h3>
         </div>
 
         <div class="page-nav-cart">
@@ -79,9 +79,9 @@ class CartContainer extends Component {
               <h5>Sub-Total</h5>
               <span>
                 <h6>Items (2)</h6>
-                <h6><b>Rp. 200.000</b></h6>
+                <h6><b>Rp. {cartItems.total_price}</b></h6>
               </span>
-            <button><h6>Add Promo Code or Voucher</h6></button>
+              <button><h6>Add Promo Code or Voucher</h6></button>
             </div>
 
             <button className="checkout-buttonn"
@@ -107,13 +107,16 @@ class CartContainer extends Component {
   }
 }
 CartContainer.propTypes = {
-  getCart: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired,
+  getCart: PropTypes.func,
+  user: PropTypes.object,
+  errors: PropTypes.object,
+  total: PropTypes.object,
+  cart: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({
   cart: state.cart,
+  total: state.total,
   user: state.user,
   errors: state.errors,
 });
@@ -122,6 +125,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getCart: (userID) => {
       dispatch(getCart(userID));
+    },
+    getTotal: (userID) => {
+      dispatch(getTotal(userID));
     },
     checkOut: (history) => {
       dispatch(checkOut(history));

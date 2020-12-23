@@ -6,7 +6,7 @@ import { getMerchant, getMerchantItems } from "../../../../actions/merchantActio
 import MerchantItemCatalog from "./MerchantItemCatalog";
 import { getCategory } from "../../../../actions/categoryActions";
 import "../css/merchantCatalogStyle.css";
-import Sidebar from "./MerchantSideBar";
+import MerchantDashboardForProduct from "./MerchantDashboardForProduct";
 
 class MerchantCatalog extends Component {
   constructor(props) {
@@ -17,16 +17,16 @@ class MerchantCatalog extends Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
-  }
-
   componentDidMount() {
     this.props.getMerchant(this.props.user.user.id);
     this.props.getMerchantItems(this.props.merchant.merchant.id);
     this.props.getCategory();
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
   }
 
   render() {
@@ -44,7 +44,8 @@ class MerchantCatalog extends Component {
 
     return (
       <div className="containerMerch">
-        <Sidebar/>
+        <MerchantDashboardForProduct/>
+        {/*<Sidebar/>*/}
         <div className="wrapperMerch">
           <h1>Your Products</h1>
           

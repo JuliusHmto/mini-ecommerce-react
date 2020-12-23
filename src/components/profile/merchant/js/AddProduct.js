@@ -11,6 +11,7 @@ class AddProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      file:"",
       productName: "",
       productCategory: "",
       productDesciption: "",
@@ -139,7 +140,6 @@ class AddProduct extends Component {
                 <h3>Product Information</h3>
                   <div className="product-name">
                     <p>Product Name</p>
-                    
                     <input
                       type="text"
                       className={classnames("form-control", {

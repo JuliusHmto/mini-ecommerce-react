@@ -1,42 +1,42 @@
-*{
-  font-family: 'Courier New', Courier, monospace;
+* {
+  font-family: "Courier New", Courier, monospace;
 }
 
-.footer{
+.footer {
   z-index: 2 !important;
   width: 100%;
 }
 
-.social-media-bar{
+.social-media-bar {
   display: flex;
   background-color: rgb(211, 54, 36);
   justify-content: space-around;
   height: 65px;
 }
 
-.social-media-bar h6{
+.social-media-bar h6 {
   margin: auto 0;
   color: white;
   margin-right: 15%;
   margin-left: 20px;
 }
 
-.social-media-icon{
+.social-media-icon {
   margin: auto 0;
   margin-left: 15%;
 }
 
-.social-media-icon a img{
+.social-media-icon a img {
   height: 20px;
   margin-right: 20px;
   width: 25px;
 }
 
-.social-media-icon a img:hover{
+.social-media-icon a img:hover {
   opacity: 40%;
 }
 
-.footer-content{
+.footer-content {
   background-color: rgb(192, 192, 192);
   padding: 50px;
   justify-content: space-evenly;
@@ -45,156 +45,154 @@
   color: white;
 }
 
-.company-info h4{
+.company-info h4 {
   font-weight: 550;
   width: 250px;
 }
 
-.comp-info-hr{
+.comp-info-hr {
   width: 100px;
   margin-left: 0px;
   margin-top: -5px;
   border-top: 2px solid red;
 }
 
-.provide{
+.provide {
   display: flex;
 }
 
-.logo-icon{
+.logo-icon {
   height: 40px;
   margin-left: 10px;
   margin-top: 5px;
 }
 
-.download-icon{
+.download-icon {
   width: 300px;
   margin-top: 40px;
 }
 
-.question-list{
+.question-list {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-.question-list h4{
+.question-list h4 {
   font-weight: 550;
 }
 
-.question-list li a{
+.question-list li a {
   text-decoration: none;
   color: white;
   line-height: 40px;
   margin-left: 20px;
 }
 
-.contact{
+.contact {
   width: 400px;
 }
 
-.contact h4{
+.contact h4 {
   font-weight: 550;
 }
 
-.location{
+.location {
   display: flex;
   margin-top: 20px;
 }
 
-.home-icon{
+.home-icon {
   height: 20px;
 }
 
-.location p{
+.location p {
   margin-top: -4px;
   margin-left: 15px;
   text-align: justify;
 }
 
-.mail{
+.mail {
   margin-top: -10px;
 }
 
-.mail-icon{
+.mail-icon {
   height: 20px;
 }
 
-.mail a{
+.mail a {
   text-decoration: none;
   color: white;
   margin-left: 15px;
 }
 
-.phone{
+.phone {
   margin-top: 15px;
 }
 
-.phonenumber{
+.phonenumber {
   display: flex;
 }
 
-.phone-icon{
+.phone-icon {
   height: 20px;
 }
 
-.phone p{
+.phone p {
   text-align: left !important;
   margin-left: 25px;
 }
 
-.copyright{
+.copyright {
   height: 50px;
   background-color: rgb(167, 167, 167);
-  color: white; 
+  color: white;
   display: flex;
 }
 
-.copyright p{
+.copyright p {
   margin: auto 0;
   margin-left: 20px;
 }
 
-.copyright a{
+.copyright a {
   color: white;
   margin: auto 0;
 }
 
-.copyright a:hover{
+.copyright a:hover {
   color: rgb(255, 0, 0);
   text-decoration: none;
 }
 
 @media (max-width: 1280px) {
-  .footer{
-      width: 1280px;
+  .footer {
+    width: 1280px;
   }
 }
 
-@media (max-width:990px){
-  .footer{
+@media (max-width: 990px) {
+  .footer {
     width: 980px;
   }
 
-  .footer-content{
+  .footer-content {
     height: 585px;
     position: relative;
   }
 
-  .company-info{
+  .company-info {
     width: 500px;
     margin-left: 25px;
     margin-right: 100px;
   }
 
-  .question-list{
+  .question-list {
     position: absolute;
     left: 48px;
     top: 320px;
   }
-
-
 }
-  /* .footer-content{
+/* .footer-content{
     height: 750px;
     flex-direction: column;
     text-align: center;

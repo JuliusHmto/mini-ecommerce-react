@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Route, Switch, NavLink } from 'react-router-dom'
 import appendScript from "../../../utils/appendScript";
 import TransactionStatusItem from "../js/TransactionStatusItem";
-
+import SecuredRoute from "../../../securuityUtils/securedRoute";
 
 class TransactionStatus extends Component {
   componentDidMount() {
@@ -115,6 +115,7 @@ class TransactionStatus extends Component {
                         {tabsData.map((data, i) => {
                             return (
                                 <NavLink
+                                style={{ textDecoration: 'none' }}
                                 key={i}
                                 to={data.path}
                                 activeClassName="active"
@@ -135,22 +136,6 @@ class TransactionStatus extends Component {
                 <div className ="filter-side-transaction">
                     <h6>Filter</h6>
                     <div className ="filter-content">
-
-                        {/*<!-- filter tanggal -->*/}
-                        <div className ="transaction-date-filter">
-                            <div className ="min-date">
-                                <p>From</p>
-                                <input/>
-                            </div>
-
-                            <h5 className ="divider-date">-</h5>
-
-                            <div className ="max-date">
-                                <p>To</p>
-                                <input/>
-                            </div>
-                        </div>
-
                         <div className ="transaction-sort-filter">
                             <p>Sort by</p>
                             <div className ="dropdown show">
@@ -178,7 +163,7 @@ class TransactionStatus extends Component {
                     <Switch>
                         {tabsData.map((data, i) => {
                         return (
-                            <Route 
+                            <SecuredRoute 
                             key={i}
                             component={() => data.content} 
                             exact 

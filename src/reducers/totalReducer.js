@@ -1,14 +1,14 @@
-import { GET_CART } from "../actions/types";
+import { GET_TOTAL } from "../actions/types";
 
 const initialState = {
-  cartItems: [],
+  total:[]
 };
 export default function (state = initialState, action) {
-  switch (action.type) {
-    case GET_CART:
+  switch (action.type) {    
+    case GET_TOTAL:
       return {
         ...state,
-        cartItems: action.payload,
+        total: action.payload,
       };
     default:
       return state;

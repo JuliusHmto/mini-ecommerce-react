@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import appendScript from "../../../../utils/appendScript";
+import MerchantDashboard from './MerchantDashboard';
 
 class MerchantProfile extends Component {
   componentDidMount() {
@@ -11,114 +13,7 @@ class MerchantProfile extends Component {
     return (
       <React.Fragment>
       <div class="merchant-profile-page">
-        {/*<!-- bagian filter untuk merchant -->*/}
-        <div class="filter-side-merchant">
-            <img class="logo-image" src="./logo.png"/>
-
-            <div class="merchant-profile">
-                <img class="header-merchant-image" src="header-def-img.png"/>
-                <div class="header-overlay"></div>
-
-                <div class="merchant-profile-front">
-                    <img src="./def-icon.png"/>
-                    <h4>Bata Shop</h4>
-                    <span class="loc"><p>Jakarta Pusat</p> <p>Since 2017</p></span>
-
-                    <div class="merchant-filter-insight">
-                        <span>
-                            <h5>160</h5>
-                            <p>Followers</p>
-                        </span>
-
-                        <span>
-                            <h5>100</h5>
-                            <p>Products</p>
-                        </span>
-
-                        <span>
-                            <h5><img src="./star-icon.png"/> 5</h5>
-                            <p>Ratings</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-merchant-option">
-                <div class="option">
-                    <span>
-                        <img src="./dashboard-icon.png"/>
-                        <h4>Dashboard</h4>
-                    </span>
-                </div>
-
-                <div class="option">
-                    <span class="primary" data-toggle="collapse" href="#collapseProduct" role="button" aria-expanded="false" aria-controls="collapseProduct">
-                        <img src="./product-icon.png"/>
-
-                        <h4>
-                          Products
-                        </h4>
-
-                        <img id="arrow-button-filter"  src="./u0.png"/>
-                    </span>
-
-                    <ul class="collapse product-collapse" id="collapseProduct">
-                        <li><h5>My Product List</h5></li>
-                        <li><h5>Add New Product</h5></li>
-                    </ul>
-                </div>
-
-                <div class="option">
-                    <span class="primary" data-toggle="collapse" href="#collapseOrder" role="button" aria-expanded="false" aria-controls="collapseOrder">
-                        <img src="./order-icon.png"/>
-
-                        <h4>
-                          Order
-                        </h4>
-
-                        <img id="arrow-button-filter"  src="./u0.png"/>
-                    </span>
-
-                    <ul class="collapse order-collapse" id="collapseOrder">
-                        <li><h5>New Orders</h5></li>
-                        <li><h5>Need To Ship</h5></li>
-                    </ul>
-                </div>
-
-                <div class="option">
-                    <span>
-                        <img src="./customer-satisfication-icon.png"/>
-                        <h4>Feedback</h4>
-                    </span>
-                </div>
-
-                <div class="option">
-                    <span>
-                        <img src="./financial-icon.png"/>
-                        <h4>Financial</h4>
-                    </span>
-                </div>
-
-                <div class="option">
-                    <span  class="primary" data-toggle="collapse" href="#collapseOption" role="button" aria-expanded="false" aria-controls="collapseOption">
-                        <img src="./setting-icon.png"/>
-
-                        <h4>
-                          Manage Shop
-                        </h4>
-
-                        <img id="arrow-button-filter" src="./u0.png"/>
-                    </span>
-
-                    <ul class="collapse option-collapse" id="collapseOption">
-                        <li><h5>My Product List</h5></li>
-                        <li><h5>Add New Product</h5></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
+        <MerchantDashboard/>
         <div class="merchant-profile-content">
             {/*<!-- bagian top atau untuk pilih opsi shop profile dll -->*/}
             <div class="top-side-merchant-profile">
@@ -159,22 +54,22 @@ class MerchantProfile extends Component {
                             
                             <div class="insight">
                                 <div class="total-product">
-                                    <P>Total Product</P>
+                                    <p>Total Product</p>
                                     <h5>150 Products</h5>
                                 </div>
 
                                 <div class="total-follower">
-                                    <P>Total Followers</P>
+                                    <p>Total Followers</p>
                                     <h5>157 Followers</h5>
                                 </div>
 
                                 <div class="response-time">
-                                    <P>Response Time</P>
+                                    <p>Response Time</p>
                                     <h5>Under an hour</h5>
                                 </div>
 
                                 <div class="rating">
-                                    <P>Rating</P>
+                                    <p>Rating</p>
                                     <span>
                                         <h5>5 / 5</h5>
                                         <img src="./star-icon.png"/>
