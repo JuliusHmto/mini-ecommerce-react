@@ -5,7 +5,7 @@
   margin-top: 150px;
   display: flex;
   margin-bottom: 25px;
-  min-height: 2275px;
+  min-height: 500px;
 }
 
 /* bagian filter */
@@ -311,25 +311,6 @@
   margin-top: 50px;
 }
 
-.default-address {
-  background-color: rgb(235, 235, 235);
-  margin-top: 40px;
-  padding: 20px 50px;
-  border-radius: 10px;
-}
-
-.default-address .top-bar-address,
-.second-address .top-bar-address {
-  display: flex;
-}
-
-.default-address .top-bar-address .title h5 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 10px;
-  margin-right: 20px;
-}
-
 .top-bar-address .address-status {
   font-size: 0.8em;
   background-color: #ff010169;
@@ -399,12 +380,6 @@
   margin-right: 20px;
 }
 
-.second-address .top-bar-address .address-option p:nth-child(1) {
-  border-right: 1px solid black;
-  padding-right: 10px;
-  margin-right: 10px;
-}
-
 /* bagian konten untuk password */
 .user-password-content {
   margin-top: 50px;
@@ -457,27 +432,108 @@
   cursor: pointer;
 }
 
-.Modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 200px;
-  padding-right: 200px;
-  z-index: 1000;
-  border-radius: 15px;
+.new-address h2 {
+  color: red;
+  top: 90px;
+  font-size: 2em;
+  width: 100%;
+  font-weight: 600;
 }
 
-.Overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+.paddings {
+  width: 500px;
+}
+
+.detail-form {
+  padding-bottom: 5px;
+}
+
+.form-group p {
+  font-size: 1.1em;
+  color: gray;
+  line-height: 35px;
+  display: inline;
+  min-width: 180px;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+.emptyWrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.emptyText {
+  color: rgb(196, 196, 196);
+}
+
+.buttonLocation {
+  text-align: center;
+}
+
+.buttonSave {
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  width: 200px;
+  background-color: rgb(243, 11, 11);
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 0.9em;
+  height: 50px;
+}
+
+.buttonWrapper {
+  text-align: center;
+}
+
+.buttonNewAddress {
+  display: inline-block;
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  width: 200px;
+  background-color: rgb(243, 11, 11);
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 0.9em;
+  height: 50px;
+  margin-top: 40px;
+}
+
+.buttonWrapper {
+  text-align: center;
+}
+
+.buttonUpdateAddress {
+  display: inline-block;
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  width: 72px;
+  background-color: rgb(243, 11, 11);
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 0.9em;
+  height: 38px;
+}
+
+.buttonUpdateAddress:active {
+  outline: none;
+}
+
+.buttonDeleteAddress {
+  margin-left: 5px;
+  display: inline-block;
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  width: 72px;
+  background-color: rgb(161, 161, 161);
+  color: black;
+  font-weight: 600;
+  font-size: 0.9em;
+  height: 38px;
+}
+
+.buttonDeleteAddress:active {
+  outline: none;
 }
 
 @media (max-width: 1408px) {

@@ -1,6 +1,5 @@
 import React from "react";
-import "../css/addUserAddress.css";
-import 'reactjs-popup/dist/index.css';
+import '../css/addressPopup.css'
 
 const AddressPopup = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal d-block" : "modal d-none";
@@ -9,10 +8,13 @@ const AddressPopup = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <div className="Overlay">
         <div className="Modal">
-          {children}
-          <button className="modal-close" onClick={handleClose}>
-            close
+        <div className="header">
+          <button className="xButton">
+            <img src={require("../../../layout/images/main/x-mark.png")} className="closeIcon" onClick={handleClose}/>
           </button>
+        </div>
+
+          {children}
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export const getCouriers = () => async (dispatch) => {
 
 export const selectCourier = (courierChoice, history) => async (dispatch) => {
     try {
-      await axios.post("api/cart/selectCourier", courierChoice);
+      await axios.post("/api/cart/selectCourier", courierChoice);
       history.push("/checkout/reload");
       dispatch({
         type: COURIER_SELECTED,

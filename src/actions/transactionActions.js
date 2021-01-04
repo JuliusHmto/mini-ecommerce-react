@@ -2,10 +2,10 @@ import axios from "axios";
 
 import { GET_ALL_ORDERS, GET_ERRORS } from "./types";
 
-export const getAllInvoice = (userID) => async (dispatch) => {
+export const getAllTransactions = (userID) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `/api/order/loadAllOrder/${userID}`
+      `/api/order/loadAllHistory/${userID}`
     );
     dispatch({
       type: GET_ALL_ORDERS,

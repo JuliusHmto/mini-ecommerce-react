@@ -6,6 +6,7 @@ import classnames from "classnames";
 import {
   getProduct,
   updateCurrentProduct,
+  updateCurrentProductWithImage
 } from "../../../../actions/merchantActions.js";
 import { getCategory } from "../../../../actions/categoryActions";
 import "../css/EditProduct.css";
@@ -14,16 +15,18 @@ class editProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
+      product_id: "",
       productName: "",
       productDescription: "",
       productPrice: "",
       productStock: "",
-      productCategory: "",
+      productCategoryName: "",
       filePath:"",
+      imagePreview: "",
       errors: {},
     };
-    this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.updateProductWithNewImage = this.updateProductWithNewImage.bind(this);
     this.updateProduct = this.updateProduct.bind(this);
     this.handleUploadClick = this.handleUploadClick.bind(this);
   }
@@ -33,7 +36,7 @@ class editProduct extends Component {
       this.setState({ errors: nextProps.errors });
     }
     const {
-      id,
+      product_id,
       productName,
       productDescription,
       productPrice,
@@ -43,7 +46,7 @@ class editProduct extends Component {
     } = nextProps.currentItem;
 
     this.setState({
-      id,
+      product_id,
       productName,
       productDescription,
       productPrice,
@@ -56,7 +59,7 @@ class editProduct extends Component {
   handleUploadClick = (event) => {
     let file = event.target.files[0];
     this.setState({
-      filePath: file,
+      filePreview: file,
       imagePreview: URL.createObjectURL(file),
     });
   };
@@ -67,11 +70,11 @@ class editProduct extends Component {
     this.props.getCategory();
   }
 
-  onChange = (event) => {
+  handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  updateProduct = (event) => {
+  updateProductWithNewImage = (event) => {
     event.preventDefault();
     const merchantID = this.props.merchant.merchant.id;
     const formData = new FormData();
@@ -80,11 +83,34 @@ class editProduct extends Component {
     formData.append("productDescription", this.state.productDescription);
     formData.append("productPrice", this.state.productPrice);
     formData.append("productStock", this.state.productStock);
-    formData.append("filePath", this.state.filePath);
-
-    this.props.updateCurrentProduct(
+    formData.append("file", this.state.filePreview);
+    formData.append("product_id", this.state.product_id);
+    this.props.updateCurrentProductWithImage(
       merchantID,
       formData,
+      this.props.history
+    );
+  };
+
+  updateProduct = (event) => {
+    event.preventDefault();
+    const merchantID = this.props.merchant.merchant.id;
+    const data ={
+      productCategoryName: this.state.productCategoryName,
+      productName: this.state.productName,
+      productDescription: this.state.productDescription,
+      productPrice: this.state.productPrice,
+      productStock: this.state.productStock,
+      file: this.state.filePreview,
+      product_id: this.state.product_id,
+      fileName: this.props.currentItem.fileName,
+      filePath: this.props.currentItem.filePath,
+      fileType: this.props.currentItem.fileType,
+      fileSize: this.props.currentItem.fileSize,
+    }
+    this.props.updateCurrentProduct(
+      merchantID,
+      data,
       this.props.history
     );
   };
@@ -110,15 +136,14 @@ class editProduct extends Component {
                   id="img"
                   name="img"
                   accept="image/*"
-                  src={this.state.filePath}
                   onChange={this.handleUploadClick}
                 >                                    
                 </input>                   
                 <img className="submitted-img"
                   src={
-                    this.state.imagePreview !== null
+                    this.state.imagePreview !== ""
                       ? this.state.imagePreview
-                      : null
+                      : this.state.filePath
                   }
                 />
                 <h4 id="primaryImage">Primary Image</h4>
@@ -268,16 +293,6 @@ class editProduct extends Component {
                   <div className="invalid-feedback">{errors.productStock}</div>
                 )}
               </div>
-
-              <div className="productWeight">
-                <p>Weight</p>
-                <input>
-                </input>
-                <select>
-                  <option>Kg</option>
-                  <option>g</option>
-                </select>
-              </div>
             </div>
 
           </div>
@@ -292,7 +307,7 @@ class editProduct extends Component {
             <button
               className="Save"
               type="submit"
-              onClick={this.updateProduct}
+              onClick={this.state.imagePreview !== "" ? this.updateProductWithImage : this.updateProduct}
             >
               Update Product
             </button>
@@ -329,8 +344,11 @@ const mapDispatchToProps = (dispatch) => {
     getCategory: () => {
       dispatch(getCategory());
     },
-    updateCurrentProduct: (merchantID, updatedProduct, history) => {
-      dispatch(updateCurrentProduct(merchantID, updatedProduct, history))
+    updateCurrentProductWithImage: (merchantID, formData, history) => {
+      dispatch(updateCurrentProductWithImage(merchantID, formData, history))
+    },
+    updateCurrentProduct: (merchantID, data, history) => {
+      dispatch(updateCurrentProduct(merchantID, data, history))
     },
 }};
 

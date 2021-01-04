@@ -2,71 +2,99 @@ import React, { Component } from "react";
 import "../css/TransactionStatus/TransactionStatus.css"
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Route, Switch, NavLink } from 'react-router-dom'
-import appendScript from "../../../utils/appendScript";
+import { Switch, NavLink, Link } from 'react-router-dom';
 import TransactionStatusItem from "../js/TransactionStatusItem";
+import TransactionDoneItem from "../js/TransactionDoneItem";
 import SecuredRoute from "../../../securuityUtils/securedRoute";
+import { getAllTransactions } from "../../../actions/transactionActions";
 
 class TransactionStatus extends Component {
-  componentDidMount() {
-    appendScript("https://code.jquery.com/jquery-3.2.1.slim.min.js");
-    appendScript("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
-    appendScript("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js");
+  constructor(props) {
+    super(props);
+    this.state = {
+      transactions: [],
+    };
+    this.sortBy = this.sortBy.bind(this);
   }
 
+  componentDidMount() {
+    this.props.getAllTransactions(this.props.user.user.id);
+    this.setState({
+      transactions: this.props.transactions.transactions
+    });
+  }
+
+  sortBy(e) {
+    const {transactions} = this.state
+    let newTransactions = transactions;
+    if(e.target.value === 'oldest'){
+      newTransactions = transactions.sort((a, b) => (a.id - b.id));
+    } else if(e.target.value === 'latest'){
+      newTransactions = transactions.sort((a, b) => (b.id - a.id));
+    } 
+    this.setState({transactions: newTransactions});
+  }
 
   render() {
-
     const parentPath  = this.props.match.path;
+    const {transactions} = this.state;
+    const {user} = this.props.user;
 
     const tabsData = [
         {
           label: "All Transactions",
           path: parentPath+"/all",
-          content: (<div className="tab-content">
-            <h2>All</h2>
-            <TransactionStatusItem/>
-          </div>),
+          content: (
+            <div className="tab-content">
+              {transactions.map((transaction) => {
+                return <TransactionDoneItem transaction={transaction} key={transaction.id}/>
+              })}
+            </div>),
           defaultTab: true
         },
         {
           label: "Need to Pay",
           path: parentPath+"/pay",
           content: (<div className="tab-content">
-            <h2>Pay</h2>
-            <TransactionStatusItem/>
+            {transactions.map((transaction) => {
+              return transaction.status == "Need To Pay"? <TransactionStatusItem transaction={transaction}/> : null
+            })}
           </div>),
         },
         {
           label: "Need Confirmation",
           path: parentPath+"/confirmation",
           content: (<div className="tab-content">
-            <h2>Confirmation</h2>
-            <TransactionStatusItem/>
+          {transactions.map((transaction) => {
+            return transaction.status == "Paid"? <TransactionStatusItem transaction={transaction}/> : null
+          })}
           </div>),
         },
         {
             label: "Processed",
             path: parentPath+"/processed",
             content: (<div className="tab-content">
-              <h2>Processed</h2>
-              <TransactionStatusItem/>
+            {transactions.map((transaction) => {
+              return transaction.status == "Processed"? <TransactionStatusItem transaction={transaction}/> : null
+            })}
             </div>),
           },
           {
             label: "Shipped",
             path: parentPath+"/shipped",
             content: (<div className="tab-content">
-              <h2>Shipped</h2>
-              <TransactionStatusItem/>
+            {transactions.map((transaction) => {
+              return transaction.status == "Shipped"? <TransactionStatusItem transaction={transaction}/> : null
+            })}
             </div>),
           },
           {
             label: "Finished",
             path: parentPath+"/finished",
             content: (<div className="tab-content">
-              <h2>Finished</h2>
-              <TransactionStatusItem/>
+            {transactions.map((transaction) => {
+              return transaction.status == "Finished"? <TransactionStatusItem transaction={transaction}/> : null
+            })}
             </div>),
           }
       ] 
@@ -81,7 +109,7 @@ class TransactionStatus extends Component {
                 <div className ="user-profile">
                     <img src={require("../css/TransactionStatus/def-icon.png")}/>
                     <span>
-                        <h3>Kevin Wijaya</h3>
+                        <h3>{user.username}</h3>
                         <p>Verified Account</p>
                     </span>
                 </div>
@@ -92,20 +120,14 @@ class TransactionStatus extends Component {
                 <div className ="filter-user-option">
                     <div className ="option">
                         <img src={require("../css/TransactionStatus/user-profile-icon.png")}/>
-                        <h4>Your Account</h4>
+                        <Link to={'/profile'}><h4>Your Account</h4></Link>
                     </div>
         
                     <div className ="option">
                         <img src={require("../css/TransactionStatus/user-order-icon.png")}/>
-                        <h4>Transaction</h4>
-                    </div>
-        
-                    <div className ="option">
-                        <img src={require("../css/TransactionStatus/user-wishlist-icon.png")}/>
-                        <h4>Wishlist</h4>
+                        <Link to={'/transaction'}><h4>Transaction</h4></Link>
                     </div>
                 </div>
-
             </div>
 
             <div className ="transaction-content">
@@ -134,26 +156,20 @@ class TransactionStatus extends Component {
                 </div>
 
                 <div className ="filter-side-transaction">
-                    <h6>Filter</h6>
+                    <h6>Filters</h6>
                     <div className ="filter-content">
                         <div className ="transaction-sort-filter">
                             <p>Sort by</p>
                             <div className ="dropdown show">
-                                <a className ="dropdown-toggle dropdown-transaction" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Sort Transaction
-                                </a>
-                            
-                                <div className ="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a className ="dropdown-item" href="#">Newest</a>
-                                <a className ="dropdown-item" href="#">.....</a>
-                                <a className ="dropdown-item" href="#">....</a>
-                                </div>
+                              <select
+                                className="dropdown-transaction"
+                                onChange={(e)=> this.sortBy(e)}
+                              >
+                                <option value="" disabled selected>Sort By:</option>
+                                <option value="latest">Latest</option>
+                                <option value="oldest">Oldest</option>
+                              </select>
                             </div>
-                        </div>
-
-                        <div className ="search-transaction-filter">
-                            <p>Find Transaction</p>
-                            <input placeholder="Type product, invoice, or seller name"/>
                         </div>
                     </div>
                 </div>
@@ -193,13 +209,15 @@ TransactionStatus.propTypes = {
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  transactions: state.transaction,
+  transactions: state.transactions,
   errors: state.errors
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    
+    getAllTransactions: (userID) => {
+      dispatch(getAllTransactions(userID));
+    },
   };
 };
 

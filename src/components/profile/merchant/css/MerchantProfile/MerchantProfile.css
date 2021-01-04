@@ -27,14 +27,16 @@ html {
 }
 
 .filter-side-merchant1 {
-  background-color: rgb(230, 230, 230);
-  min-width: 350px;
+  border-radius: 5px;
   width: 350px;
-  height: 100vh;
-  min-height: 100vh;
-  position: relative;
-  top: 0px;
-  margin-top: 135px;
+  height: 750px;
+  padding: 20px 20px 30px 20px;
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
+  position: sticky;
+  top: 150px;
+  min-height: 100px;
+  overflow: hidden;
 }
 
 .merchant-profile {
@@ -198,39 +200,37 @@ html {
   margin-top: 140px;
 }
 
-.top-side-merchant-profile {
+.top-side-merchant-profile1 {
   box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
     0 10px 10px 1px rgba(160, 160, 160, 0.19);
   width: 100%;
   height: 170px;
   padding: 40px 50px;
-  position: sticky;
   background-color: white;
   z-index: 3;
   top: 140px;
 }
 
-.top-side-merchant-profile h3 {
+.top-side-merchant-profile1 h3 {
   color: red;
   margin-bottom: 30px;
   font-size: 1.8em;
 }
 
-.top-side-merchant-profile .merchant-profile-option-bar {
+.top-side-merchant-profile1 .merchant-profile-option-bar {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 10px;
 }
 
-.top-side-merchant-profile .merchant-profile-option-bar a {
+.top-side-merchant-profile1 .merchant-profile-option-bar a {
   margin-right: 75px !important;
   cursor: pointer;
-  position: relative;
   text-decoration: none;
 }
 
-.top-side-merchant-profile .merchant-profile-option-bar h4 {
+.top-side-merchant-profile1 .merchant-profile-option-bar h4 {
   font-size: 1.4em;
   color: rgb(211, 211, 211);
   font-weight: 400;

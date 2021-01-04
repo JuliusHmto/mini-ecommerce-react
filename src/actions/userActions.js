@@ -5,6 +5,8 @@ import {
   GET_CURRENT_USER,
   ADD_ADDRESS,
   GET_ADDRESS,
+  UPDATE_ADDRESS,
+  DELETE_ADDRESS,
   REGISTER
 } from "./types";
 import setJWTToken from "../securuityUtils/setJWTToken";
@@ -95,12 +97,47 @@ export const addNewAddress = (userID, newAddress) => async (dispatch) => {
   }
 };
 
+export const updateAddress = (userID, updatedAddress) => async (dispatch) => {
+  try {
+    await axios.patch(
+      `/api/user/updateAddress/${userID}`,
+      updatedAddress
+    );
+    dispatch({
+      type: UPDATE_ADDRESS,
+      payload: {},
+    });
+  } catch (err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data,
+    });
+  }
+};
+
 export const loadAllAddress = () => async (dispatch) => {
   const res = await axios.get(
-    `/api/user/loadAllAddress`
+    '/api/user/loadAllAddress'
   );
   dispatch({
     type: GET_ADDRESS,
     payload: res.data,
   });
+};
+
+export const deleteAddress = (addressID, history) => async (dispatch) => {
+  try {
+    await axios.delete(`/api/user/deleteAddress/${addressID}`);
+    history.push("/profile/address/reload");
+    dispatch({
+      type: DELETE_ADDRESS,
+      payload: {},
+    });
+  } catch (err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
+  }
+  
 };

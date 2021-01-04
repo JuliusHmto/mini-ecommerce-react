@@ -27,7 +27,6 @@ import Catalog from "./components/ecommerce/js/Catalog";
 import ItemDetail from "./components/ecommerce/js/ItemDetail";
 import CartContainer from "./components/ecommerce/js/CartContainer";
 import Checkout from "./components/ecommerce/js/Checkout";
-import Invoice from "./components/ecommerce/js/Invoice";
 import UserProfile from "./components/profile/user/js/UserProfile";
 import TransactionStatus from "./components/ecommerce/js/TransactionStatus";
 
@@ -44,6 +43,7 @@ import EditProduct from "./components/profile/merchant/js/EditProduct";
 import MerchantTransaction from "./components/profile/merchant/js/MerchantTransaction";
 import MerchantProfile from "./components/profile/merchant/js/MerchantProfile";
 import MerchantDashboard from "./components/profile/merchant/js/MerchantDashboard";
+import PaymentDetails from "./components/ecommerce/js/PaymentDetails";
 
 
 const jwtToken = localStorage.jwtToken;
@@ -112,9 +112,10 @@ class App extends Component {
               <Redirect exact from="/cart/reload" to="/cart" />
               <SecuredRoute exact path="/checkout" component={Checkout}/>
               <Redirect exact from="/checkout/reload" to="/checkout" />
+              <SecuredRoute exact path="/payment" component={PaymentDetails}/>
               <SecuredRoute path="/transaction" component={TransactionStatus}/>
-              <SecuredRoute exact path="/invoice" component={Invoice} />
               <SecuredRoute path="/profile" component={UserProfile} />
+              <Redirect exact from="/profile/address/reload" to="/profile/address" />
 
               {/*merchant */}
               <SecuredRoute exact path="/my-shop/register" component={RegisterMerchant}/>

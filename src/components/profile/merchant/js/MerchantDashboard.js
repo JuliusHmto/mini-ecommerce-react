@@ -25,6 +25,8 @@ class MerchantDashboard extends Component {
   }
 
   render() {
+    const {merchant} = this.props.merchant;
+    
     return (
       <React.Fragment>
       <div class="filter-side-merchant1">
@@ -34,8 +36,8 @@ class MerchantDashboard extends Component {
 
           <div class="merchant-profile-front">
             <img src={require("../css/MerchantProfile/def-icon.png")}/>
-            <h4>Bata Shop</h4>
-            <span class="loc"><p>Jakarta Pusat</p> <p>Since 2017</p></span>
+            <h4>{merchant.merchantName}</h4>
+            <span class="loc"><p>J{merchant.merchantAddress}</p> <p>Since 2017</p></span>
 
             <div class="merchant-filter-insight">
               <span>
@@ -80,13 +82,15 @@ class MerchantDashboard extends Component {
           <div class="option">
             <span class="primary" data-toggle="collapse" href="#collapseOrder" role="button" aria-expanded="false" aria-controls="collapseOrder">
               <img src={require("../css/MerchantProfile/order-icon.png")}/>
-              <h4>Order</h4>
+              <Link to={'/my-shop/transaction'}><h4>Order</h4></Link>
               <img id="arrow-button-filter"  src={require("../css/MerchantProfile/u0.png")}/>
             </span>
 
             <ul class="collapse order-collapse" id="collapseOrder">
-              <li><Link to={'/my-shop/transaction'}><h5>New Orders</h5></Link></li>
-              <li><h5>Need To Ship</h5></li>
+              <li><Link to={'/my-shop/transaction'}><h5>All Orders</h5></Link></li>
+              <li><Link to={'/my-shop/transaction/pending'}><h5>Pending</h5></Link></li>
+              <li><Link to={'/my-shop/transaction/processing'}><h5>Processed</h5></Link></li>
+              <li><Link to={'/my-shop/transaction/finished'}><h5>Finished</h5></Link></li>
             </ul>
           </div>
         </div>

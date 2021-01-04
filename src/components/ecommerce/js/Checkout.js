@@ -3,16 +3,17 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { getCouriers, selectCourier } from "../../../actions/courierActions";
-import { getCart, processOrder, getTotal } from "../../../actions/cartActions";
+import { getCart, processOrder, getTotalPrice, getTotalItem } from "../../../actions/cartActions";
 import { loadAllAddress } from "../../../actions/userActions";
-import appendScript from "../../../utils/appendScript";
 import "../css/CheckOut/CheckOut.css";
 import CheckoutItem from './CheckoutItem';
+import AlertPopup from './AlertPopup';
 
 class Checkout extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modal: false,
       address: "",
       errors: {},
     };
@@ -30,8 +31,19 @@ class Checkout extends Component {
   componentDidMount() {
     this.props.getCouriers();
     this.props.getCart(this.props.user.user.id);
-    this.props.getTotal(this.props.user.user.id);
+    this.props.getTotalPrice(this.props.user.user.id);
+    this.props.getTotalItem(this.props.user.user.id);
     this.props.getAddress();
+  }
+
+  modalOpen() {
+    this.setState({ modal: true });
+  }
+
+  modalClose() {
+    this.setState({
+      modal: false
+    });
   }
 
   onAddressChange(event) {
@@ -50,11 +62,13 @@ class Checkout extends Component {
   }
 
   placeOrder() {
-    const orderIdentifier = this.props.user.user.trackOrder;
     const userID = this.props.user.user.id;
-    let [cartDetail] = this.props.cart.cartItems;
+    const extraDetail = {
+      userAddress: this.state.address,
+    }
     const history = this.props.history;
-    this.props.processOrder(orderIdentifier, userID, cartDetail, history);
+    this.props.processOrder(userID, extraDetail, history);
+    this.modalClose();
   }
 
   render() { 
@@ -62,7 +76,9 @@ class Checkout extends Component {
     const { courierList } = this.props.courier;
     const {user} = this.props.user;
     const {addresses} = this.props.address;
-    
+    const totalPrice = this.props.total.totalPrice;
+    const totalItem = this.props.total.totalItem;
+
     return ( 
       <React.Fragment>
         <div className="Check-Out-Page">
@@ -87,16 +103,16 @@ class Checkout extends Component {
                   return (
                     <div className="primary-address">
                       <input type="radio" id="address"
-                        value={address.address_description}
+                        value={address.addressLabel}
                         onChange={this.onAddressChange}
-                        checked={this.state.address === address.address_description}/>&nbsp; {address.address_label} 
+                        checked={this.state.address === address.addressLabel}/>&nbsp; {address.addressLabel} 
                       <div className="primary-address-detail">
                       <span><h4 className="buyer-name">{user.username}</h4><h4 className="strip-sign"> - </h4><h4 className="buyer-phone">+62894328249</h4></span>
                         <div className="buyer-address-detail">
-                          <h4>{address.address_description}</h4>
-                          <h4>{address.address_city}</h4>
-                          <h4>{address.address_province + ', ' + address.address_postalCode}</h4>
-                          <h4>{address.address_country}</h4>
+                          <h4>{address.addressDescription}</h4>
+                          <h4>{address.addressCity}</h4>
+                          <h4>{address.addressProvince + ', ' + address.addressPostalCode}</h4>
+                          <h4>{address.addressCountry}</h4>
                         </div>
                       </div>
                     </div>
@@ -120,7 +136,7 @@ class Checkout extends Component {
 
                         <div className="logistic-option">
                           <h5>Shipping Logistic</h5>
-                          <select id="logistic" name="logistic" onChange={(e) => this.chooseCourier(checkoutItem.orderIdentifier, e.target.value, checkoutItem.merchantName)}>
+                          <select id="logistic" name="logistic" onChange={(e) => this.chooseCourier(e.target.value, checkoutItem.merchantName)}>
                             <option>{checkoutItem.courierName ? checkoutItem.courierName : "Select Courier"}</option>
                             <option>---</option>
                             {courierList.map((courier) => (
@@ -135,10 +151,10 @@ class Checkout extends Component {
                       <h5>Product Summary 1</h5>
                       <div className="price">
                         <p className="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Total Rp.5.050.000,- <img src={require("../css/CheckOut/u0.png")} alt=""/></p>
+                        Total Rp.{totalPrice},- <img src={require("../css/CheckOut/u0.png")} alt=""/></p>
                         <div className="collapse" id="collapseExample">
                           <div className="total-item-price-summary">
-                            <p>Item Price ( 2 pcs )</p>
+                            <p>Item Price ( {totalItem} pcs )</p>
                             <p>Rp.5.000.000</p>
                           </div>
                           <div className="total-shipping-price-summary">
@@ -157,7 +173,7 @@ class Checkout extends Component {
                         <div className="total-payment-checkout">
                             <div className="total-product-price-checkout">
                                 <h6>Total Price</h6>
-                                <h6>Rp.5.000.000</h6>
+                                <h6>Rp.{totalPrice},-</h6>
                             </div>
                             <div className="total-shipping-price-checkout">
                                 <h6>Total Shipping</h6>
@@ -167,15 +183,19 @@ class Checkout extends Component {
                         <div className="total-price-to-pay-checkout">
                             <span>
                             <h6>Total</h6>
-                            <h6 id="total-price-amount">Rp.5.100.000</h6>
+                            <h6 id="total-price-amount">Rp.{totalPrice},-</h6>
                             </span>
                             <button className="promo-button-checkout"><h6>Add Promo Code or Voucher</h6></button>      
                         </div>
-                        <button className="proceed-button-checkout"><h6>Proceed to Payment</h6></button>
+                          <button className="proceed-button-checkout" onClick={e => this.modalOpen(e)}><h6>Proceed to Payment</h6></button>
+                          <AlertPopup show={this.state.modal} handleClose={e => this.modalClose(e)}>
+                          <h4>Continue Checkout?</h4>
+                          <button className="proceed-button-checkout" onClick={() => { this.placeOrder(this.state.address)}}><h6>Continue</h6></button>
+                          </AlertPopup>
                     </div>
                 </div>
             </div>
-            </React.Fragment> 
+        </React.Fragment> 
        );
     }
 }
@@ -192,6 +212,7 @@ Checkout.propTypes = {
 const mapStateToProps = (state) => ({
     cart: state.cart,
     user: state.user,
+    total: state.total,
     courier: state.courier,
     address: state.address,
     errors: state.errors
@@ -208,8 +229,11 @@ const mapDispatchToProps = (dispatch) => {
       getCart: (userID) => {
           dispatch(getCart(userID));
       },
-      getTotal: (userID) => {
-        dispatch(getTotal(userID));
+      getTotalPrice: (userID) => {
+        dispatch(getTotalPrice(userID));
+      },
+      getTotalItem: (userID) => {
+        dispatch(getTotalItem(userID));
       },
       selectCourier: (orderIdentifier, courierChoice, history) => {
         dispatch(selectCourier(orderIdentifier, courierChoice, history));

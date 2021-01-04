@@ -3,8 +3,9 @@ import "../css/CartStyle.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-import { getCart, checkOut, getTotal } from "../../../actions/cartActions";
+import { getCart, checkOut, getTotalPrice, getTotalItem } from "../../../actions/cartActions";
 
 class CartContainer extends Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class CartContainer extends Component {
 
   componentDidMount() {
     this.props.getCart(this.props.user.user.id);
-    this.props.getTotal(this.props.user.user.id);
+    this.props.getTotalPrice(this.props.user.user.id);
+    this.props.getTotalItem(this.props.user.user.id);
   }
 
   checkoutItems(){
@@ -31,7 +33,8 @@ class CartContainer extends Component {
 
   render() {
     const { cartItems } = this.props.cart;
-    const { total } = this.props.total;
+    const totalPrice = this.props.total.totalPrice;
+    const totalItem = this.props.total.totalItem;
 
     return (
       <React.Fragment>
@@ -61,6 +64,7 @@ class CartContainer extends Component {
             return <CartItem key={cartItem.p_id} cartItem={cartItem} />;
           })}
           <div>
+            <Link to={'/catalog'}>
               <button className="add-another-product-button">
               <img
                 className="add-img"
@@ -68,7 +72,8 @@ class CartContainer extends Component {
                 alt=""
               ></img>    
                 Add Another Product
-              </button>          
+              </button>
+            </Link>          
           </div>
         </div>
 
@@ -78,10 +83,9 @@ class CartContainer extends Component {
             <div className="total-price-summaryy">
               <h5>Sub-Total</h5>
               <span>
-                <h6>Items (2)</h6>
-                <h6><b>Rp. {cartItems.total_price}</b></h6>
+                <h6>Items ({totalItem})</h6>
+                <h6><b>Rp. {totalPrice}</b></h6>
               </span>
-              <button><h6>Add Promo Code or Voucher</h6></button>
             </div>
 
             <button className="checkout-buttonn"
@@ -126,8 +130,11 @@ const mapDispatchToProps = (dispatch) => {
     getCart: (userID) => {
       dispatch(getCart(userID));
     },
-    getTotal: (userID) => {
-      dispatch(getTotal(userID));
+    getTotalPrice: (userID) => {
+      dispatch(getTotalPrice(userID));
+    },
+    getTotalItem: (userID) => {
+      dispatch(getTotalItem(userID));
     },
     checkOut: (history) => {
       dispatch(checkOut(history));

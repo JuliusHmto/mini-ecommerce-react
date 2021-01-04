@@ -7,7 +7,8 @@ import {
   ADD_TO_CART,
   ADD_QTY,
   SUB_QTY,
-  GET_TOTAL,
+  GET_TOTAL_PRICE,
+  GET_TOTAL_ITEM,
   PROCESS_ORDER,
   CHECK_OUT,
 } from "./types";
@@ -22,12 +23,22 @@ export const getCart = (userID) => async (dispatch) => {
   });
 };
 
-export const getTotal = (userID) => async (dispatch) => {
+export const getTotalPrice = (userID) => async (dispatch) => {
   const res = await axios.get(
-    `/api/order/getTotal/${userID}`
+    `/api/cart/getTotalPrice/${userID}`
   );
   dispatch({
-    type: GET_TOTAL,
+    type: GET_TOTAL_PRICE,
+    payload: res.data
+  });
+}
+
+export const getTotalItem = (userID) => async (dispatch) => {
+  const res = await axios.get(
+    `/api/cart/getTotalItem/${userID}`
+  );
+  dispatch({
+    type: GET_TOTAL_ITEM,
     payload: res.data
   });
 }
@@ -110,16 +121,13 @@ export const checkOut = (history) => async (dispatch) => {
   });
 }
 
-export const processOrder = (
-  userID,
-  history
-) => async (dispatch) => {
+export const processOrder = (userID, extraDetail, history) => async (dispatch) => {
   try {
     await axios.post(
       `/api/order/checkout/${userID}`,
-      {}
+      extraDetail
     );
-    history.push("/transaction");
+    history.push("/payment");
     dispatch({
       type: PROCESS_ORDER,
       payload: {},

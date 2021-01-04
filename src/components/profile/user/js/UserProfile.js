@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getUserData } from "../../../../actions/userActions";
-import appendScript from "../../../../utils/appendScript";
 import "../css/UserProfile/UserProfile.css";
-import { Route, Switch, NavLink } from 'react-router-dom'
+import { Switch, NavLink, Link } from 'react-router-dom'
 import UserProfileData from "./UserProfileData";
 import UserAddress from "./UserAddress";
 import SecuredRoute from "../../../../securuityUtils/securedRoute";
@@ -56,12 +55,12 @@ class UserProfile extends Component {
               <div class="filter-user-option">
                   <div class="option">
                       <img src={require("../css/UserProfile/profile-icon.png")}/>
-                      <h4>Your Account</h4>
+                      <Link to={'/profile'}><h4>Your Account</h4></Link>
                   </div>
       
                   <div class="option">
                       <img src={require("../css/UserProfile/order-icon.png")}/>
-                      <h4>Transaction</h4>
+                      <Link to={'/transaction'}><h4>Transaction</h4></Link>
                   </div>
               </div>
 

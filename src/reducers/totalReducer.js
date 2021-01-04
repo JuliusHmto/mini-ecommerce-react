@@ -1,15 +1,21 @@
-import { GET_TOTAL } from "../actions/types";
+import { GET_TOTAL_PRICE, GET_TOTAL_ITEM } from "../actions/types";
 
 const initialState = {
-  total:[]
+  totalPrice:'',
+  totalItem: '',
 };
 export default function (state = initialState, action) {
   switch (action.type) {    
-    case GET_TOTAL:
+    case GET_TOTAL_PRICE:
       return {
         ...state,
-        total: action.payload,
+        totalPrice: action.payload,
       };
+    case GET_TOTAL_ITEM:
+      return {
+        ...state,
+        totalItem: action.payload,
+      };  
     default:
       return state;
   }

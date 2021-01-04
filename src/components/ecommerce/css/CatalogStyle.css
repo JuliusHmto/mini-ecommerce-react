@@ -9,16 +9,17 @@
   grid-template-rows: 1fr;
   min-height: 100vh;
   background-color: rgb(248, 248, 248);
+  overflow-y: hidden;
 }
 
 .filter-options {
   grid-area: filter-catalog;
   width: 340px;
   height: 750px;
-  margin-top: 155px;
-  background-color: rgb(246, 38, 38);
+  margin-top: 135px;
+  background-color: rgb(230, 230, 230);
   text-align: left;
-  padding-top: 10px;
+  padding-top: 40px;
   padding-left: 10px;
   position: sticky !important;
   top: 155px;
@@ -31,12 +32,12 @@
 }
 
 .text h5 {
-  color: rgb(255, 255, 255);
-  font-weight: 500;
+  color: black;
+  font-weight: 600;
   letter-spacing: 1.5px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid grey;
   width: 90%;
   margin-left: 15px;
 }
@@ -50,33 +51,33 @@
   padding: 10px 10px;
   font-size: 1.2em;
   font-weight: 500;
-  color: rgb(184, 184, 184);
+  color: black;
 }
 
 .categoryFilter select {
   margin-left: 20px;
-  margin-top: 2px;
+  margin-top: 5px;
   width: 75px;
   height: 40px;
   border: none;
-  border-bottom: 2px solid rgb(255, 255, 255);
-}
-
-.categoryFilter select {
-  color: white;
-  background-color: rgb(246, 38, 38);
+  background-color: rgb(248, 248, 248);
+  color: #000;
+  width: 120px;
+  height: 35px;
+  margin-left: 5px;
+  text-align: left;
 }
 
 .priceFilter h5 {
   padding: 10px 20px;
   font-size: 1.2em;
   font-weight: 500;
-  color: rgb(184, 184, 184);
+  color: black;
   text-align: left;
 }
 
 label {
-  color: white;
+  color: black;
   padding-left: 20px;
 }
 
@@ -86,11 +87,11 @@ label {
 
 .InputMin,
 .InputMax {
-  background: #f62b2b;
+  background: rgb(248, 248, 248);
   border: 0px;
   width: 150px;
-  color: white;
-  border-bottom: 1px solid white;
+  color: black;
+  border-bottom: 1px solid rgba(116, 116, 116, 0.2);
   padding: 5px;
   margin-bottom: 10px;
 }
@@ -291,7 +292,7 @@ label {
 }
 
 .bn-button {
-  background-image: linear-gradient(to right, #e43a15, #e65245);
+  background-color: #e43a15;
   color: white;
   padding: 5px;
   font-weight: 600;
@@ -304,7 +305,11 @@ label {
 }
 
 .bn-button:hover {
-  background-image: linear-gradient(to left, #cb2d3e, #ef473a);
+  background-color: #cb2d3e;
+}
+
+.bn-button:disabled {
+  background-color: rgb(177, 177, 177);
 }
 
 .addToCart-button {
@@ -328,6 +333,7 @@ label {
 .addToCart-button:hover {
   opacity: 70%;
 }
+
 /*SAMPAI SINI */
 
 @media (max-width: 1280px) {

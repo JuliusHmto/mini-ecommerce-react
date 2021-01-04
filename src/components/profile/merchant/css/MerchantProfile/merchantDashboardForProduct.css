@@ -27,13 +27,23 @@ html {
 }
 
 .filter-side-merchantt {
-  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  width: 350px;
+  height: 750px;
+  padding: 20px 20px 30px 20px;
+  box-shadow: 0 2px 5px 0 rgba(85, 85, 85, 0.2),
+    0 10px 10px 1px rgba(160, 160, 160, 0.19);
+  position: sticky;
+  top: 150px;
+  min-height: 100px;
+  overflow: hidden;
+  /* background-color: rgb(230, 230, 230);
   min-width: 350px;
   width: 350px;
-  height: 100vh;
-  min-height: 100vh;
+  min-height: 100px;
+  overflow: hidden;
   position: relative;
-  top: 0px;
+  top: 0px; */
 }
 
 .merchant-profile {

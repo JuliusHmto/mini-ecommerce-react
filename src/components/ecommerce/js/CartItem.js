@@ -5,7 +5,9 @@ import { withRouter } from "react-router";
 import {
   addQuantity,
   subQuantity,
-  removeFromCart
+  removeFromCart,
+  getTotalPrice,
+  getTotalItem
 } from "../../../actions/cartActions";
 import "../css/CartItem.css";
 
@@ -19,16 +21,24 @@ class CartItem extends Component {
     this.addQty = this.addQty.bind(this);
     this.subQty = this.subQty.bind(this);
     this.removeProduct = this.removeProduct.bind(this);
+    this.updateTotal = this.updateTotal.bind(this);
+  }
+
+  updateTotal(){
+    this.props.getTotalPrice(this.props.user.user.id);
+    this.props.getTotalItem(this.props.user.user.id);
   }
 
   addQty(productID) {
     const userID = this.props.user.user.id;
     this.props.addQuantity(productID, userID, this.props.history);
+    this.updateTotal();
   }
 
-  subQty(productID) {
+  subQty(productID, totalItem) {
     const userID = this.props.user.user.id;
-    this.props.subQuantity(productID, userID, this.props.history);
+    totalItem === 1 ? this.removeProduct(productID) : this.props.subQuantity(productID, userID, this.props.history);
+    this.updateTotal();
   }
 
   removeProduct(productID) {
@@ -61,7 +71,7 @@ class CartItem extends Component {
           </div>
 
           <div className="column3" id="qty-minplus">
-            <button className="qty-min-btn" onClick={() => {this.subQty(itemDetail.p_id);}}>-</button>
+            <button className="qty-min-btn" onClick={() => {this.subQty(itemDetail.p_id, itemDetail.quantity);}}>-</button>
             <label type="number" id="qty" name="quantity" aria-valuemin="1">{itemDetail.quantity}</label>
             <button className="qty-plus-btn" onClick={() => {this.addQty(itemDetail.p_id);}}>+</button>
           </div>
@@ -115,6 +125,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeFromCart: (productID, orderNum, history) => {
       dispatch(removeFromCart(productID, orderNum, history));
+    },
+    getTotalPrice: (userID) => {
+      dispatch(getTotalPrice(userID));
+    },
+    getTotalItem: (userID) => {
+      dispatch(getTotalItem(userID));
     },
   };
 };

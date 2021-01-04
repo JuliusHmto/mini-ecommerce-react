@@ -11,6 +11,8 @@ import cartReducer from "./cartReducer";
 import testimonialReducer from "./testimonialReducer";
 import addressReducer from "./addressReducer";
 import totalReducer from "./totalReducer";
+import merchantTransactionReducer from "./merchantTransactionReducer";
+
 
 export default combineReducers({
   errors: errorReducer,
@@ -19,10 +21,11 @@ export default combineReducers({
   courier: courierReducer,
   total: totalReducer,
   cart: cartReducer,
-  transaction: transactionReducer,
+  transactions: transactionReducer,
   user: userReducer,
   address: addressReducer,
   merchant: merchantReducer,
   merchantItem: merchantItemReducer,
+  merchantOrders: merchantTransactionReducer,
   testimonial: testimonialReducer,
 });

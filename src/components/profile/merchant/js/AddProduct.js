@@ -36,6 +36,7 @@ class AddProduct extends Component {
 
   handleUploadClick = (event) => {
     let file = event.target.files[0];
+    console.log(file);
     this.setState({
       file: file,
       imagePreview: URL.createObjectURL(file),
@@ -63,7 +64,6 @@ class AddProduct extends Component {
   render() {
     const { errors } = this.state;
     const { categories } = this.props.category;
-
     return (
       <React.Fragment>
         <div className="Add-Product-Content">
@@ -235,16 +235,6 @@ class AddProduct extends Component {
                     <div className="invalid-feedback">{errors.productStock}</div>
                   )}
                 </div>
-
-                <div className="productWeight">
-                  <p>Weight</p>
-                  <input>
-                  </input>
-                  <select>
-                    <option>Kg</option>
-                    <option>g</option>
-                  </select>
-                </div>
               </div>
 
             </div>
@@ -253,19 +243,9 @@ class AddProduct extends Component {
               <button
                 className="cancelButtonAP"
                 type="submit"
-                onClick={this.submitNewProduct}
               >
                 Cancel
               </button>
-
-              <button
-                className="SaveAndAddNew"
-                type="submit"
-                onClick={this.submitNewProduct}
-              >
-                Save and Add New
-              </button>
-
               <button
                 className="Save"
                 type="submit"

@@ -195,7 +195,6 @@ class Header extends Component {
               <li class="nav-item dropdown option">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-toggle="dropdown"
