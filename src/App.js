@@ -37,12 +37,11 @@ import { logout } from "./actions/userActions";
 
 //import merchants
 import RegisterMerchant from "./components/profile/merchant/js/RegisterMerchant";
-import MerchantCatalog from "./components/profile/merchant/js/MerchantCatalog";
+import MerchantProductCatalog from "./components/profile/merchant/js/MerchantProductCatalog";
 import AddProduct from "./components/profile/merchant/js/AddProduct";
 import EditProduct from "./components/profile/merchant/js/EditProduct";
 import MerchantTransaction from "./components/profile/merchant/js/MerchantTransaction";
 import MerchantProfile from "./components/profile/merchant/js/MerchantProfile";
-import MerchantDashboard from "./components/profile/merchant/js/MerchantDashboard";
 import PaymentDetails from "./components/ecommerce/js/PaymentDetails";
 
 
@@ -114,16 +113,18 @@ class App extends Component {
               <Redirect exact from="/checkout/reload" to="/checkout" />
               <SecuredRoute exact path="/payment" component={PaymentDetails}/>
               <SecuredRoute path="/transaction" component={TransactionStatus}/>
+              <Redirect exact from="/transaction/reload" to="/transaction" />
               <SecuredRoute path="/profile" component={UserProfile} />
               <Redirect exact from="/profile/address/reload" to="/profile/address" />
 
               {/*merchant */}
               <SecuredRoute exact path="/my-shop/register" component={RegisterMerchant}/>
-              <SecuredRoute exact path="/my-shop/catalog" component={MerchantCatalog}/>
+              <SecuredRoute exact path="/my-shop/catalog" component={MerchantProductCatalog}/>
               <Redirect exact from="/my-shop/catalog/reload" to="/my-shop/catalog" />
               <SecuredRoute exact path="/my-shop/add" component={AddProduct} />
               <SecuredRoute exact path="/my-shop/edit/:id" component={EditProduct} />
               <SecuredRoute path="/my-shop/transaction" component={MerchantTransaction} />
+              <Redirect exact from="/my-shop/transaction/reload" to="/my-shop/transaction" />
               <SecuredRoute path="/my-shop/profile" component={MerchantProfile} />
             </Switch>
           </div>

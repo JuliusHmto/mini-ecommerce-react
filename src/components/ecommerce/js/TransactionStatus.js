@@ -3,7 +3,6 @@ import "../css/TransactionStatus/TransactionStatus.css"
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Switch, NavLink, Link } from 'react-router-dom';
-import TransactionStatusItem from "../js/TransactionStatusItem";
 import TransactionDoneItem from "../js/TransactionDoneItem";
 import SecuredRoute from "../../../securuityUtils/securedRoute";
 import { getAllTransactions } from "../../../actions/transactionActions";
@@ -19,13 +18,19 @@ class TransactionStatus extends Component {
 
   componentDidMount() {
     this.props.getAllTransactions(this.props.user.user.id);
-    this.setState({
-      transactions: this.props.transactions.transactions
-    });
+    
+  }
+
+  componentDidUpdate(){
+    if(this.props.transactions.transactions !== this.state.transactions){
+      this.setState({
+        transactions: this.props.transactions.transactions
+      });
+    }
   }
 
   sortBy(e) {
-    const {transactions} = this.state
+    const {transactions} = this.state;
     let newTransactions = transactions;
     if(e.target.value === 'oldest'){
       newTransactions = transactions.sort((a, b) => (a.id - b.id));
@@ -53,38 +58,20 @@ class TransactionStatus extends Component {
           defaultTab: true
         },
         {
-          label: "Need to Pay",
-          path: parentPath+"/pay",
-          content: (<div className="tab-content">
-            {transactions.map((transaction) => {
-              return transaction.status == "Need To Pay"? <TransactionStatusItem transaction={transaction}/> : null
-            })}
-          </div>),
-        },
-        {
           label: "Need Confirmation",
           path: parentPath+"/confirmation",
           content: (<div className="tab-content">
           {transactions.map((transaction) => {
-            return transaction.status == "Paid"? <TransactionStatusItem transaction={transaction}/> : null
+            return transaction.status == "Paid"? <TransactionDoneItem transaction={transaction}/> : null
           })}
           </div>),
         },
         {
-            label: "Processed",
-            path: parentPath+"/processed",
+            label: "On Process",
+            path: parentPath+"/process",
             content: (<div className="tab-content">
             {transactions.map((transaction) => {
-              return transaction.status == "Processed"? <TransactionStatusItem transaction={transaction}/> : null
-            })}
-            </div>),
-          },
-          {
-            label: "Shipped",
-            path: parentPath+"/shipped",
-            content: (<div className="tab-content">
-            {transactions.map((transaction) => {
-              return transaction.status == "Shipped"? <TransactionStatusItem transaction={transaction}/> : null
+              return transaction.status == "Process"? <TransactionDoneItem transaction={transaction}/> : null
             })}
             </div>),
           },
@@ -93,7 +80,7 @@ class TransactionStatus extends Component {
             path: parentPath+"/finished",
             content: (<div className="tab-content">
             {transactions.map((transaction) => {
-              return transaction.status == "Finished"? <TransactionStatusItem transaction={transaction}/> : null
+              return transaction.status == "Finished"? <TransactionDoneItem transaction={transaction}/> : null
             })}
             </div>),
           }

@@ -21,6 +21,19 @@
   width: 100%;
 }
 
+.item-list {
+  padding-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, [col] 205px);
+  grid-template-rows: repeat(2, [row] auto);
+  grid-gap: 30px;
+
+  padding-bottom: 60px;
+  width: 100%;
+  min-height: 50px !important;
+  justify-content: space-between;
+}
+
 .picture-detail {
   margin-left: auto;
   margin-right: auto;
@@ -47,6 +60,13 @@
   width: 500px;
   margin-top: 10px;
   padding-left: 50px;
+}
+
+.item-button {
+  background: none;
+  outline: none;
+  text-decoration: none;
+  border: none;
 }
 
 .interaction img {
@@ -227,8 +247,6 @@
 .product-rate {
   padding-left: 20px;
   padding-right: 20px;
-  border-left: 2px solid grey;
-  border-right: 2px solid grey;
   height: 60px;
   padding-top: 2px;
   width: 210px;
@@ -751,6 +769,18 @@ input[type="number"] {
     width: 1285px;
   }
 
+  .item-list {
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(5, [col] 220px);
+    grid-template-rows: repeat(auto-fill, [row] auto);
+    grid-gap: 1rem;
+    padding-bottom: 60px;
+    width: 100%;
+    min-height: 50px !important;
+    justify-content: space-between;
+  }
+
   .picture-detail {
     padding-left: 50px;
   }
@@ -759,6 +789,15 @@ input[type="number"] {
 @media (max-width: 990px) {
   .item-detail-page {
     width: 982px;
+  }
+
+  .item-list {
+    display: grid;
+    grid-template-columns: repeat(5, [col] 170px);
+    grid-template-rows: repeat(auto-fill, [row] auto);
+    grid-gap: 1.3rem;
+    padding-bottom: 60px;
+    justify-content: left;
   }
 
   .item-detail {

@@ -52,12 +52,11 @@ class CartItem extends Component {
       return(
         <div className="product-container" key={itemDetail.cart_id}>
           <div className="column1">
-            <input id="select-item" type="checkbox"></input>
-              <img
-                className="productImage"
-                src={itemDetail.p_filePath}
-                alt="nopic"
-              ></img>                
+            <img
+              className="productImage"
+              src={itemDetail.p_filePath}
+              alt="nopic"
+            ></img>                
           </div>
 
           <div className="column2">
@@ -95,7 +94,7 @@ class CartItem extends Component {
 
     return (
       <div className="item-detail"  key={cartItem.id}>
-        <h5 className="shop-name"><input type="checkbox" id="shop-input"></input> &nbsp; {cartItem.merchantName}</h5>
+        <h5 className="shop-name"> &nbsp; {cartItem.merchantName}</h5>
         <h6 className="shop-location">Jakarta Utara</h6>
         <div className="product-to-buy">
           {cartItemDetail}

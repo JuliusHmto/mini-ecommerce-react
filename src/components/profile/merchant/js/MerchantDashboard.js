@@ -82,7 +82,7 @@ class MerchantDashboard extends Component {
           <div class="option">
             <span class="primary" data-toggle="collapse" href="#collapseOrder" role="button" aria-expanded="false" aria-controls="collapseOrder">
               <img src={require("../css/MerchantProfile/order-icon.png")}/>
-              <Link to={'/my-shop/transaction'}><h4>Order</h4></Link>
+              <h4>Order</h4>
               <img id="arrow-button-filter"  src={require("../css/MerchantProfile/u0.png")}/>
             </span>
 

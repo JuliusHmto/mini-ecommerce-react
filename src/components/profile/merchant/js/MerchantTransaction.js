@@ -19,9 +19,15 @@ class MerchantTransaction extends Component {
 
   componentDidMount() {
     this.props.loadAllMerchantOrders(this.props.merchant.merchant.merchantName);
-    this.setState({
-      merchantOrders: this.props.merchantOrders.merchantOrders
-    });
+    
+  }
+
+  componentDidUpdate(){
+    if(this.props.merchantOrders.merchantOrders !== this.state.merchantOrders){
+      this.setState({
+        merchantOrders: this.props.merchantOrders.merchantOrders
+      });
+    }
   }
 
   sortBy(e) {
@@ -59,20 +65,11 @@ class MerchantTransaction extends Component {
         </div>),
       },
       {
-          label: "Processing",
-          path: parentPath+"/processing",
+          label: "On Process",
+          path: parentPath+"/process",
           content: (<div className="tab-content">
           {merchantOrders.map((order) => {
-            return  order.status == "Processing"? <MerchantTransactionItem order={order}/> : null
-          })}
-          </div>),
-        },
-        {
-          label: "Shipping",
-          path: parentPath+"/shipping",
-          content: (<div className="tab-content">
-          {merchantOrders.map((order) => {
-            return  order.status == "Shipping"? <MerchantTransactionItem order={order}/> : null
+            return  order.status == "Process"? <MerchantTransactionItem order={order}/> : null
           })}
           </div>),
         },
@@ -84,7 +81,17 @@ class MerchantTransaction extends Component {
             return  order.status == "Finished"? <MerchantTransactionItem order={order}/> : null
           })}
           </div>),
+        },
+        {
+          label: "Rejected",
+          path: parentPath+"/rejects",
+          content: (<div className="tab-content">
+          {merchantOrders.map((order) => {
+            return  order.status == "Rejected"? <MerchantTransactionItem order={order}/> : null
+          })}
+          </div>),
         }
+        
     ] 
 
   return ( 
@@ -132,11 +139,6 @@ class MerchantTransaction extends Component {
                           <option value="oldest">Oldest</option>
                         </select>
                       </div>
-                  </div>
-
-                  <div class="search-transaction-filter">
-                      <p>Find Transaction</p>
-                      <input placeholder="Type product, invoice, or buyer name"></input>
                   </div>
               </div>
           </div>

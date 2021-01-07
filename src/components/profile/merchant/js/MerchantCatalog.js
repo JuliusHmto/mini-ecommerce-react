@@ -18,8 +18,7 @@ class MerchantCatalog extends Component {
   }
 
   componentDidMount() {
-    this.props.getMerchant(this.props.user.user.id);
-    this.props.getMerchantItems(this.props.merchant.merchant.id);
+    this.props.getMerchantItems(this.props.merchant.id);
     this.props.getCategory();
   }
 
@@ -90,24 +89,19 @@ class MerchantCatalog extends Component {
 }
 
 MerchantCatalog.propTypes = {
-  user: PropTypes.object.isRequired,
-  merchant: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired,
+  user: PropTypes.object,
+  errors: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
   category: state.category,
-  merchant: state.merchant,
   merchantItem: state.merchantItem,
   errors: state.errors,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getMerchant: (userID) => {
-      dispatch(getMerchant(userID));
-    },
     getCategory: () => {
       dispatch(getCategory());
     },

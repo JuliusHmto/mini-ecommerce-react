@@ -15,7 +15,7 @@ import {
 
 export const getCart = (userID) => async (dispatch) => {
   const res = await axios.get(
-    `/api/order/loadAllCart/${userID}`
+    `/api/cart/loadCart/${userID}`
   );
   dispatch({
     type: GET_CART,

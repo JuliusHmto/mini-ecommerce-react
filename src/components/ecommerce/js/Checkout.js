@@ -5,21 +5,25 @@ import { withRouter } from "react-router";
 import { getCouriers, selectCourier } from "../../../actions/courierActions";
 import { getCart, processOrder, getTotalPrice, getTotalItem } from "../../../actions/cartActions";
 import { loadAllAddress } from "../../../actions/userActions";
+import { loadVouchers, applyVoucher, cancelVoucher, getVoucherStatus } from "../../../actions/voucherActions";
 import "../css/CheckOut/CheckOut.css";
 import CheckoutItem from './CheckoutItem';
 import AlertPopup from './AlertPopup';
+import VoucherPopup from './VoucherPopup';
 
 class Checkout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
+      modalAlert: false,
+      modalVoucher: false,
       address: "",
       errors: {},
     };
     this.placeOrder = this.placeOrder.bind(this);
     this.chooseCourier = this.chooseCourier.bind(this);
     this.onAddressChange = this.onAddressChange.bind(this);
+    this.cancelChosenVoucher = this.cancelChosenVoucher.bind(this);
   }
     
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -34,22 +38,42 @@ class Checkout extends Component {
     this.props.getTotalPrice(this.props.user.user.id);
     this.props.getTotalItem(this.props.user.user.id);
     this.props.getAddress();
+    this.props.loadVouchers();
+    this.props.getVoucherStatus(this.props.user.user.id);
   }
 
-  modalOpen() {
-    this.setState({ modal: true });
+  modalVoucherOpen() {
+    this.setState({ modalVoucher: true });
   }
 
-  modalClose() {
-    this.setState({
-      modal: false
-    });
+  modalVoucherClose() {
+    this.setState({ modalVoucher: false });
+  }
+
+  modalAlertOpen() {
+    this.setState({ modalAlert: true });
+  }
+
+  modalAlertClose() {
+    this.setState({ modalAlert: false });
   }
 
   onAddressChange(event) {
     this.setState({
       address: event.target.value
     });
+  }
+
+  applyChosenVoucher(voucher){
+    const voucherCode = {
+      voucherCode: voucher
+    }
+    this.props.applyVoucher(this.props.user.user.id, voucherCode);
+    this.modalVoucherClose();
+  }
+
+  cancelChosenVoucher(){
+    this.props.cancelApplyVoucher(this.props.user.user.id);
   }
 
   chooseCourier(courierName, merchantName){
@@ -68,16 +92,18 @@ class Checkout extends Component {
     }
     const history = this.props.history;
     this.props.processOrder(userID, extraDetail, history);
-    this.modalClose();
+    this.modalAlertClose();
   }
 
   render() { 
     const { cartItems } = this.props.cart;
     const { courierList } = this.props.courier;
-    const {user} = this.props.user;
-    const {addresses} = this.props.address;
+    const { user } = this.props.user;
+    const { addresses } = this.props.address;
+    const { vouchers } = this.props.voucher;
     const totalPrice = this.props.total.totalPrice;
     const totalItem = this.props.total.totalItem;
+    const hasVoucher = this.props.voucher.hasVoucher;
 
     return ( 
       <React.Fragment>
@@ -107,7 +133,7 @@ class Checkout extends Component {
                         onChange={this.onAddressChange}
                         checked={this.state.address === address.addressLabel}/>&nbsp; {address.addressLabel} 
                       <div className="primary-address-detail">
-                      <span><h4 className="buyer-name">{user.username}</h4><h4 className="strip-sign"> - </h4><h4 className="buyer-phone">+62894328249</h4></span>
+                      <span><h4 className="buyer-name">{user.username}</h4></span>
                         <div className="buyer-address-detail">
                           <h4>{address.addressDescription}</h4>
                           <h4>{address.addressCity}</h4>
@@ -148,18 +174,18 @@ class Checkout extends Component {
                       );
                     })}
                     <div className="price-detail-checkout">
-                      <h5>Product Summary 1</h5>
+                      <h5>Product Summary</h5>
                       <div className="price">
                         <p className="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         Total Rp.{totalPrice},- <img src={require("../css/CheckOut/u0.png")} alt=""/></p>
                         <div className="collapse" id="collapseExample">
                           <div className="total-item-price-summary">
                             <p>Item Price ( {totalItem} pcs )</p>
-                            <p>Rp.5.000.000</p>
+                            <p>Rp.{totalPrice},-</p>
                           </div>
                           <div className="total-shipping-price-summary">
-                            <p>Shipping ( 2 kgs )</p>
-                            <p>Rp.50.000</p>
+                            <p>Shipping</p>
+                            <p>Rp.10.000,-</p>
                           </div>
                         </div>
                       </div>
@@ -167,33 +193,60 @@ class Checkout extends Component {
                   </div>
                 </div>
         
-                    <div className="total-payment-card-checkout">
-                        <h3>Total Payment</h3>
-                        <hr className="horizontal-line-checkout"/>
-                        <div className="total-payment-checkout">
-                            <div className="total-product-price-checkout">
-                                <h6>Total Price</h6>
-                                <h6>Rp.{totalPrice},-</h6>
+                <div className="total-payment-card-checkout">
+                  <h3>Total Payment</h3>
+                  <hr className="horizontal-line-checkout"/>
+                  <div className="total-payment-checkout">
+                      <div className="total-product-price-checkout">
+                          <h6>Total Price</h6>
+                          <h6>Rp.{totalPrice},-</h6>
+                      </div>
+                      <div className="total-shipping-price-checkout">
+                          <h6>Total Shipping</h6>
+                          <h6>Rp.10.000,-</h6>
+                      </div>
+                  </div>
+                  <div className="total-price-to-pay-checkout">
+                    <span>
+                      <h6>Total</h6>
+                      <h6 id="total-price-amount">Rp.{totalPrice},-</h6>
+                    </span>
+                    { hasVoucher === 'No' ? 
+                    <button className="promo-button-checkout" onClick={() => this.modalVoucherOpen()}><h6>Add Promo Code or Voucher</h6></button>
+                    :
+                    <button className="promo-button-checkout" onClick={this.cancelChosenVoucher}><h6>Cancel Voucher</h6></button>
+                    }  
+                  </div>
+
+                  <VoucherPopup show={this.state.modalVoucher} handleClose={() => this.modalVoucherClose()}>
+                    <div className="voucherStyles">
+                      <h2>Vouchers</h2>
+                    </div> 
+                    <div className="voucherModal">
+                      {vouchers.map((voucher) => {
+                        return(
+                          <div className="voucherDetail" key={voucher.id}>
+                            <div className="voucherText">
+                              <h4 className="voucher-name">{voucher.voucherName}</h4>
+                              <h6 className="voucher-code">{voucher.voucherCode}</h6>
+                              <p className="voucher-desc">{voucher.voucherDescription}</p>
                             </div>
-                            <div className="total-shipping-price-checkout">
-                                <h6>Total Shipping</h6>
-                                <h6>Rp.100.000</h6>
+                            <div className="voucherSelectButton">
+                              <button className="usePromo" onClick={() => this.applyChosenVoucher(voucher.voucherCode)}><h6>Use Promo</h6></button>
                             </div>
-                        </div>
-                        <div className="total-price-to-pay-checkout">
-                            <span>
-                            <h6>Total</h6>
-                            <h6 id="total-price-amount">Rp.{totalPrice},-</h6>
-                            </span>
-                            <button className="promo-button-checkout"><h6>Add Promo Code or Voucher</h6></button>      
-                        </div>
-                          <button className="proceed-button-checkout" onClick={e => this.modalOpen(e)}><h6>Proceed to Payment</h6></button>
-                          <AlertPopup show={this.state.modal} handleClose={e => this.modalClose(e)}>
-                          <h4>Continue Checkout?</h4>
-                          <button className="proceed-button-checkout" onClick={() => { this.placeOrder(this.state.address)}}><h6>Continue</h6></button>
-                          </AlertPopup>
+                          </div>
+                        )
+                      })}
                     </div>
+                  </VoucherPopup>
+
+                  <button className="proceed-button-checkout" onClick={() => this.modalAlertOpen()}><h6>Proceed to Payment</h6></button>
+                  <AlertPopup show={this.state.modalAlert} handleClose={() => this.modalAlertClose()}>
+                    <h4>Continue Checkout?</h4>
+                    <button className="proceed-button-checkout" onClick={() => { this.placeOrder(this.state.address)}}><h6>Continue</h6></button>
+                  </AlertPopup>
                 </div>
+              </div>
             </div>
         </React.Fragment> 
        );
@@ -215,6 +268,7 @@ const mapStateToProps = (state) => ({
     total: state.total,
     courier: state.courier,
     address: state.address,
+    voucher: state.voucher,
     errors: state.errors
 })
 
@@ -240,6 +294,18 @@ const mapDispatchToProps = (dispatch) => {
       },
       processOrder: (orderIdentifier, userID, cartDetail, history) => {
         dispatch(processOrder(orderIdentifier, userID, cartDetail, history));
+      },
+      loadVouchers: () => {
+        dispatch(loadVouchers());
+      },
+      getVoucherStatus: (userID) => {
+        dispatch(getVoucherStatus(userID));
+      },
+      applyVoucher: (userID, voucher) => {
+        dispatch(applyVoucher(userID, voucher));
+      },
+      cancelApplyVoucher: (userID) => {
+        dispatch(cancelVoucher(userID));
       },
     };
   };

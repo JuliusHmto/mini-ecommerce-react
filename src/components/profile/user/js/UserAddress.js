@@ -25,7 +25,7 @@ class UserAddress extends Component {
     this.submitNewAddress = this.submitNewAddress.bind(this);
     this.updateCurrentAddress = this.updateCurrentAddress.bind(this);
   }
-  
+
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
@@ -55,6 +55,11 @@ class UserAddress extends Component {
     this.props.getAddress();
   }
 
+  componentDidUpdate(){
+    this.props.getAddress();
+  }
+  
+
   submitNewAddress = (event) => {
     event.preventDefault();
     const newAddress = {
@@ -67,7 +72,7 @@ class UserAddress extends Component {
     };
     this.props.addNewAddress(this.props.user.user.id, newAddress);
     this.modalClose();
-    window.location.reload();
+    //window.location.reload();
   };
 
   updateCurrentAddress = (event) => {
@@ -83,12 +88,12 @@ class UserAddress extends Component {
     };
     this.props.updateAddress(this.props.user.user.id, updatedAddress);
     this.closeModalWithAddress();
-    window.location.reload();
+    //window.location.reload();
   };
 
   removeAddress(addressID) {
     this.props.deleteAddress(addressID, this.props.history);
-    window.location.reload();
+    //window.location.reload();
   }
 
   render() {

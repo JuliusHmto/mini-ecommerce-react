@@ -182,10 +182,10 @@ export const loadAllMerchantOrders = (merchantName) => async (dispatch) => {
   }
 }
 
-export const accRejOrder = (orderID, history) => async (dispatch)  => {
+export const accRejOrder = (orderID, status, history) => async (dispatch)  => {
   try {
-    await axios.post(`/api/merchant/accOrRejectOrder/${orderID}`);
-    history.push("/my-shop/catalog/reload");
+  await axios.post(`/api/order/accOrRejectOrder/${orderID}`, status);
+    history.push("/my-shop/transaction/reload");
     dispatch({
       type: ACC_REJ_ORDER,
       payload: {},
@@ -193,7 +193,7 @@ export const accRejOrder = (orderID, history) => async (dispatch)  => {
   } catch (err) {
     dispatch({
       type: GET_ERRORS,
-      payload: err.response.data,
+      payload: {}
     });
   }
 }

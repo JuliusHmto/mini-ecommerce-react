@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getItems } from "../../../actions/catalogActions";
-import { addToCart } from "../../../actions/cartActions";
 import { getCategory } from "../../../actions/categoryActions";
 import { getUserData } from "../../../actions/userActions";
+import CatalogItems from "./CatalogItems";
 
 class Catalog extends Component {
   constructor(props) {
@@ -19,7 +19,6 @@ class Catalog extends Component {
       maxPriceTemp: 0,
       catalogItems: [],
     };
-    this.addProductToCart = this.addProductToCart.bind(this);
     this.sortBy = this.sortBy.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.applyPrice = this.applyPrice.bind(this);
@@ -30,21 +29,22 @@ class Catalog extends Component {
     this.props.getUserData(this.props.user.user.id);
     this.props.getItems();
     this.props.getCategory();
-    const maxValue = Math.max.apply(Math, this.props.items.items.map(function(item) { return item.productPrice; }));
-    this.setState({
-      catalogItems: this.props.items.items,
-      maxPrice: maxValue,
-      maxPriceTemp: maxValue,
-    });
+    
   }
 
-  addProductToCart(productID) {
-    const userID = this.props.user.user.id;
-    this.props.addToCart(productID, userID, this.props.history);
+  componentDidUpdate(){
+    if(this.props.items.items !== this.state.catalogItems){
+      const maxValue = Math.max.apply(Math, this.props.items.items.map(function(item) { return item.productPrice; }));
+      this.setState({
+        catalogItems: this.props.items.items,
+        maxPrice: maxValue,
+        maxPriceTemp: maxValue,
+      });
+    }
   }
 
   sortBy(e) {
-    const {catalogItems} = this.state
+    const {catalogItems} = this.state;
     let newCatalogItems = catalogItems;
     if(e.target.value === 'lowPrice'){
       newCatalogItems = catalogItems.sort((a, b) => (a.productPrice - b.productPrice));
@@ -95,59 +95,7 @@ class Catalog extends Component {
       .filter((item) => item.productCategoryName.includes(filterStr))
       .map((item) => {
         return (
-          <div className="card" key={item.product_id}>
-            <div className="product-detail-card">
-              <Link
-                to={{
-                  pathname: `/details/${item.productName}`,
-                  state: { productID: item.product_id },
-                }}
-              >
-              <img
-                className="item-image"
-                src={item.filePath}
-                alt="nopic"
-              />
-
-                <div className="detail-button-wrapper"></div>
-                <span>
-                  <button className="view-detail-button">VIEW DETAILS</button>
-                </span>
-              </Link>
-              <div className="item-text">
-                <div className="item-text-2">
-                  <p className="productName">{item.productName}</p>
-                </div>
-                  <p className="productCategoryCat">{item.productCategoryName}</p>
-                <p className="productPrice">Rp. {item.productPrice},-</p>
-              </div>
-            </div>
-            <div className="button-product">
-              <button
-                className="bn-button"
-                disabled={Boolean(item.productStock !== 0) ? false : true}
-                onClick={() => {
-                  this.addProductToCart(item.product_id);
-                }}
-              >
-                {item.productStock !== 0 ? 'BUY NOW' : 'OUT OF STOCK'}
-              </button>
-
-              <button
-                className="addToCart-button"
-                disabled={Boolean(item.productStock !== 0) ? false : true}
-                onClick={() => {
-                  this.addProductToCart(item.product_id);
-                }}
-              >
-                <img
-                  className="ATC-image"
-                  src={require("../../layout/images/header/cart.png")}
-                  alt=""
-                ></img>
-              </button>
-            </div>
-          </div>
+          <CatalogItems key={item.product_id} item={item}/>
         );
       });
 
@@ -265,9 +213,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     getItems: () => {
       dispatch(getItems());
-    },
-    addToCart: (productID, userID, orderID, history) => {
-      dispatch(addToCart(productID, userID, orderID, history));
     },
   };
 };

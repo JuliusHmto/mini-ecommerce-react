@@ -2,9 +2,20 @@ import React, { Component } from "react";
 import "../css/MerchantTransaction/MerchantTransaction.css"
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import {accRejOrder} from '../../../../actions/merchantActions';
 
 class MerchantTransactionItem extends Component {
   
+  acceptOrReject (e, orderID){
+    const statusAcc = e.target.value === 'Accept' ? 'Accept' : e.target.value === 'Reject' ? 'Reject' : null;
+    const statusOrder = {
+      status: statusAcc,
+    }
+    console.log(orderID);
+    console.log(statusOrder);
+    this.props.accRejOrder(orderID, statusOrder, this.props.history);
+  }
+
   render() {
     const {order} = this.props;
     const orders = order.cart_detail.map((order) => {
@@ -53,16 +64,25 @@ class MerchantTransactionItem extends Component {
   
               <div>
                 <p>Status</p>
-                <h6>{order.status} <span class="respond-time">24 Hours</span></h6>
+                <h6>{order.status}</h6>
               </div>
   
-              <div class="dropdown">
-                <button class="order-detail-button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Respond Order</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Accept Order</a>
-                  <a class="dropdown-item" href="#">Reject Order</a>
+              {order.status === 'Paid' ?
+                <div class="dropdown">
+                  <select
+                    className="order-detail-button"
+                    onChange={(e)=> this.acceptOrReject(e, order.id)}
+                  >
+                    <option value="" disabled selected>Respond Order</option>
+                    <option value="Accept">Accept Order</option>
+                    <option value="Reject">Reject Order</option>
+                    
+                  </select>
                 </div>
-              </div>
+                :
+                null
+              }
+              
             </div>
   
             {orders}
@@ -82,11 +102,11 @@ class MerchantTransactionItem extends Component {
               <div class="collapse" id="collapseExample">
                 <div class="total-item-price-summary-transaction">
                   <p>Item Price ( 2 pcs )</p>
-                  <p>Rp.4,800,000</p>
+                  <p>Rp.{order.total_price},-</p>
                 </div>
                 <div class="total-shipping-price-summary-transaction">
-                  <p>Shipping ( 2 kgs )</p>
-                  <p>Rp.50,000</p>
+                  <p>Shipping</p>
+                  <p>Rp.{order.total_item},-</p>
                 </div>
               </div>
             </div>
@@ -110,7 +130,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    
+    accRejOrder: (orderID, status, history) => {
+      dispatch(accRejOrder(orderID, status, history));
+    },
   };
 };
 

@@ -1,0 +1,47 @@
+.Modal1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  z-index: 1000;
+  border-radius: 15px;
+}
+
+.Overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(194, 181, 181, 0.7);
+}
+
+.header1 {
+  padding-left: 750px;
+  display: flex;
+  padding-bottom: 5px;
+}
+
+.modalBody1 {
+  padding-left: 0;
+  text-align: center;
+}
+
+.xButton1 {
+  background-color: transparent;
+  border: none;
+}
+
+.xButton1:active {
+  background-color: transparent;
+  outline: none;
+}
+
+.closeIcon1 {
+  width: 30px;
+}

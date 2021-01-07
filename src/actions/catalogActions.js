@@ -21,3 +21,14 @@ export const getItemDetail = (productID) => async (dispatch) => {
     payload: res.data,
   });
 };
+
+export const getItemDetailWithProps = (productID, productName, history) => async (dispatch) => {
+  const res = await axios.get(
+    `/api/product/loadSpecificProduct/${productID}`
+  );
+  history.push(`/details/${productName}`);
+  dispatch({
+    type: GET_ITEM_DETAIL,
+    payload: res.data,
+  });
+};

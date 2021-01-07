@@ -12,6 +12,7 @@ import testimonialReducer from "./testimonialReducer";
 import addressReducer from "./addressReducer";
 import totalReducer from "./totalReducer";
 import merchantTransactionReducer from "./merchantTransactionReducer";
+import voucherReducer from "./voucherReducer";
 
 
 export default combineReducers({
@@ -28,4 +29,5 @@ export default combineReducers({
   merchantItem: merchantItemReducer,
   merchantOrders: merchantTransactionReducer,
   testimonial: testimonialReducer,
+  voucher: voucherReducer,
 });
