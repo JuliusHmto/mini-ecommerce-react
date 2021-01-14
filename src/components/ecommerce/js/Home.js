@@ -113,7 +113,8 @@ class Landing extends Component {
             <div className="carousel-inner">
               <div className="carousel-item active" id="container">
                 <div className="overlay"></div>
-                <img src={require("../../layout/images/dummy/Banner1.jpg")} alt=""></img>
+                <img src={require("../../layout/images/dummy/bannerDummy.png")} alt=""/>
+                {/*<img src={require("../../layout/images/dummy/Banner1.jpg")} alt=""/>*/}
                 <div className="carousel-caption d-none d-md-block">
                   <h5>First slide label</h5>
                   <p>
@@ -123,7 +124,8 @@ class Landing extends Component {
               </div>
               <div className="carousel-item" id="container">
                 <div className="overlay"></div>
-                <img src={require("../../layout/images/dummy/Banner2.jpg")} alt=""></img>
+                <img src={require("../../layout/images/dummy/bannerDummy.png")} alt=""/>
+                {/*<img src={require("../../layout/images/dummy/Banner2.jpg")} alt=""/>*/}
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Second slide label</h5>
                   <p>
@@ -133,7 +135,8 @@ class Landing extends Component {
               </div>
               <div className="carousel-item" id="container">
                 <div className="overlay"></div>
-                <img src={require("../../layout/images/dummy/Banner3.jpg")} alt=""></img>
+                <img src={require("../../layout/images/dummy/bannerDummy.png")} alt=""/>
+                {/*<img src={require("../../layout/images/dummy/Banner3.jpg")} alt=""/>*/}
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Third slide label</h5>
                   <p>
@@ -177,7 +180,7 @@ class Landing extends Component {
                   className="side-banner-img-1"
                   src={require("../../layout/images/dummy/Banner4.jpg")}
                   alt=""
-                ></img>
+                />
                 <div className="carousel-caption d-none d-md-block tes">
                   <h5>First slide label</h5>
                   <p>
@@ -192,9 +195,14 @@ class Landing extends Component {
                 <div className="overlay"></div>
                 <img
                   className="side-banner-img-2"
+                  src={require("../../layout/images/dummy/bannerDummy.png")}
+                  alt=""
+                />
+                {/*<img
+                  className="side-banner-img-2"
                   src={require("../../layout/images/dummy/Banner1.jpg")}
                   alt=""
-                ></img>
+                />*/}
                 <div className="carousel-caption d-none d-md-block captions tes">
                   <h5>First slide label</h5>
                   <p>
@@ -221,7 +229,7 @@ class Landing extends Component {
           <h4>Shop by Category</h4>
           <hr className="comp-info-hr-landing"></hr>
           <div className="category-landing-2">
-            <Link className="card">
+            <Link className="card" to={'/catalog'}>
               <div className="overlay"></div>
               <span>
                 <button className="view-detail-button-landing">
@@ -231,12 +239,12 @@ class Landing extends Component {
               <div className="card-body">
                 <h5 className="card-title">All Products</h5>
                 <p className="card-text">
-                  Find what you need in a second only at Sinarmas Market
+                  Find what you need in a second
                 </p>
               </div>
             </Link>
 
-            <Link className="card">
+            <Link className="card" to={'/catalog'}>
               <div className="overlay"></div>
               <span>
                 <button className="view-detail-button-landing">
@@ -244,15 +252,14 @@ class Landing extends Component {
                 </button>
               </span>
               <div className="card-body">
-                <h5 className="card-title">Clothes</h5>
+                <h5 className="card-title">Fashion</h5>
                 <p className="card-text">
-                  Look different from the others with new collection in Sinarmas
-                  Market
+                  Look different from the others with new collection
                 </p>
               </div>
             </Link>
 
-            <Link className="card">
+            <Link className="card" to={'/catalog'}>
               <div className="overlay"></div>
               <span>
                 <button className="view-detail-button-landing">
@@ -260,9 +267,9 @@ class Landing extends Component {
                 </button>
               </span>
               <div className="card-body">
-                <h5 className="card-title">Food</h5>
+                <h5 className="card-title">Gadgets</h5>
                 <p className="card-text">
-                  Search any kind of healthy and your favourite food in here
+                A new gadget for you to own!
                 </p>
               </div>
             </Link>
@@ -279,10 +286,6 @@ class Landing extends Component {
 
         <div className="category-option">
           <div className="product-navbar">
-            <Link className="category-for-user">
-              <h4>Your Wishlist</h4>
-              <hr className="comp-info-hr-landing-2"></hr>
-            </Link>
             <Link className="category-for-user">
               <h4>Just For You</h4>
               <hr className="comp-info-hr-landing-2"></hr>

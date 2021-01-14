@@ -258,6 +258,9 @@ label {
   margin-left: 5px;
   line-height: 17px;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .productPrice {

@@ -19,6 +19,7 @@ class CatalogItems extends Component {
 
   render() {
     const { item } = this.props;
+    console.log(item.product_id);
     return (
       <div className="card" key={item.product_id}>
         <div className="product-detail-card">

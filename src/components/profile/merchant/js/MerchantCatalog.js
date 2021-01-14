@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import { getMerchant, getMerchantItems } from "../../../../actions/merchantActions";
+import { getMerchantItems } from "../../../../actions/merchantActions";
 import MerchantItemCatalog from "./MerchantItemCatalog";
 import { getCategory } from "../../../../actions/categoryActions";
 import "../css/merchantCatalogStyle.css";

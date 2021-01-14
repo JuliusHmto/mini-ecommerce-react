@@ -61,16 +61,22 @@ class Footer extends Component {
           {/* about bank */}
           <div className="footer-content">
             <div className="company-info">
-              <h4>SINARMAS MARKET</h4>
+              <h4>XYZ MARKET</h4>
               <hr className="comp-info-hr"></hr>
               <div className="provide">
                 <p>by</p>
-                <a href="https://www.banksinarmas.com/id/index.php" target="_blank">
+                <a href="" target="_blank">
+                  <img
+                      className="logo-icon"
+                      src={require("./images/header/logoXYZ.png")}
+                      alt=""
+                    ></img></a>
+                {/*<a href="https://www.banksinarmas.com/id/index.php" target="_blank">
                 <img
                     className="logo-icon"
                     src={require("./images/header/logo.png")}
                     alt=""
-                  ></img></a>
+                  ></img></a>*/}
               </div>
               <img
                   className="download-icon"
@@ -122,10 +128,13 @@ class Footer extends Component {
                   src={require("./images/merchant/HomeIcon.png")}
                   alt=""
                 ></img>
-                <p>
+                {/*<p>
                   JL. Kiai Tapa, No. 1, RT.10/RW.10 Lower Ground D 3, Roxy Square
                   Tomang, Grogol petamburan, West Jakarta City, Jakarta 11440
-                </p>                
+                </p>  */} 
+                <p>
+                  JL. XYZ, No. 1, XYZ, XYZ, XYZ 10000
+                </p>          
               </div>
 
               <div className="mail">
@@ -134,13 +143,17 @@ class Footer extends Component {
                   src={require("./images/merchant/OrdersIcon.png")}
                   alt=""
                 ></img>
-                <a href="mailto:sinarmas-help@bank.com">
+                {/*<a href="mailto:sinarmas-help@bank.com">
                   sinarmas-help@bank.com
+              </a>*/}
+                <a href="">
+                  xyz-help@bank.com
                 </a>
               </div>
 
               <div className="phone">
-                <h4>BANK SINARMAS CARE</h4>
+                {/*<h4>BANK SINARMAS CARE</h4>*/}
+                <h4>XYZ CARE</h4>
                 <hr className="comp-info-hr"></hr>
                   <div className="phonenumber">
                     <img
@@ -148,9 +161,12 @@ class Footer extends Component {
                       src={require("./images/footer/u44.png")}
                       alt=""
                     ></img>
-                      <p>1500153</p>
+                      {/*<p>1500153</p>
                       <p>or</p>
-                      <p>(021) 501 88888</p>
+                      <p>(021) 501 88888</p>*/}
+                      <p>1500XXX</p>
+                      <p>or</p>
+                      <p>(021) XXX YYYY</p>
                   </div>
               </div>
             </div>
@@ -158,7 +174,8 @@ class Footer extends Component {
 
           <div className="copyright">
           <p>© 2020 Copyright :&nbsp;
-          <a href="https://www.banksinarmas.com/id/index.php" target="_blank">PT Bank Sinarmas, Tbk.</a>
+          {/*<a href="https://www.banksinarmas.com/id/index.php" target="_blank">PT Bank Sinarmas, Tbk.</a>*/}
+          <a href="" target="_blank">PT XYZ</a>
           &nbsp;All rights reserved.</p>
           </div>
         </footer>

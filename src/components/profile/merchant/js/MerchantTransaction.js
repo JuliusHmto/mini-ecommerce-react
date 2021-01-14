@@ -19,7 +19,10 @@ class MerchantTransaction extends Component {
 
   componentDidMount() {
     this.props.loadAllMerchantOrders(this.props.merchant.merchant.merchantName);
-    
+  }
+
+  shouldComponentUpdate(prevState) {
+    return prevState.merchantOrders.merchantOrders !== this.state.merchantOrders;
   }
 
   componentDidUpdate(){
@@ -31,7 +34,7 @@ class MerchantTransaction extends Component {
   }
 
   sortBy(e) {
-    const {merchantOrders} = this.state
+    const {merchantOrders} = this.state;
     let newMerchantOrders = merchantOrders;
     if(e.target.value === 'oldest'){
       newMerchantOrders = merchantOrders.sort((a, b) => (a.id - b.id));
@@ -44,6 +47,7 @@ class MerchantTransaction extends Component {
   render() {
     const parentPath  = this.props.match.path;
     const { merchantOrders } = this.state;
+    
     const tabsData = [
       {
         label: "All Transactions",
@@ -91,8 +95,9 @@ class MerchantTransaction extends Component {
           })}
           </div>),
         }
-        
-    ] 
+      ] 
+
+    
 
   return ( 
   <React.Fragment>

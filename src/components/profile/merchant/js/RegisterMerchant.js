@@ -50,16 +50,22 @@ class registerMerchant extends Component {
             <Link to="/" data-abc="true">
                 <img
                   className="logoHero"
-                  src={require("../../../layout/images/header/logo.png")}
+                  src={require("../../../layout/images/header/logoXYZ.png")}
                   alt=""
                 ></img>
+                {/*<img
+                  className="logoHero"
+                  src={require("../../../layout/images/header/logo.png")}
+                  alt=""
+                ></img> */}
             </Link>
             <div class="hero-reg-merch">         
               <img src={require("../../../layout/images/dummy/hero3.jpg")} alt=""/>
             </div>
             <div class="quotes-reg-merch">
                 <h1><i>"Be a man of integrity, be responsible to your family, job, and society."</i></h1>
-                <h2>Eka Tjipta - Founder Sinarmas Group</h2>
+                {/*<h2>Eka Tjipta - Founder Sinarmas Group</h2>*/}
+                <h2>XXX - YYY ZZZ</h2>
             </div>
           </div>
 
@@ -74,7 +80,7 @@ class registerMerchant extends Component {
             
             <div className="reg-merch-input">
               <h1 id="welcome-text-reg-merch">Be a <span>Our Partner</span> and <span>Merchant</span></h1>
-              <h2>Start Your Dream Here and Let Us Help You Reach Fot It</h2>
+              <h2>Start Your Dream Here and Let Us Help You Reach It</h2>
               <form>
                 <div className="merch-name">
                   <input
@@ -120,14 +126,22 @@ class registerMerchant extends Component {
 
           <div className="footer-reg-merch">
             <div class="contact-reg-merch">
-              <h2>Bank Sinarmas Care</h2>
+              <h2>XYZ Care</h2>
+              <p>&nbsp; &nbsp; Contact or Email Us on   
+                  <div class="phonenumber-reg-merch">
+                      <p> - 1500XXX</p>
+                      <p> - (021) XXX YYYYY</p>
+                  </div>
+                  <a href="">xyz-help@bank.com</a>       
+              </p>
+              {/*<h2>Bank Sinarmas Care</h2>
               <p>&nbsp; &nbsp; Contact or Email Us on   
                   <div class="phonenumber-reg-merch">
                       <p> - 1500153</p>
                       <p> - (021) 501 88888</p>
                   </div>
                   <a href="mailto:sinarmas-help@bank.com">sinarmas-help@bank.com</a>       
-              </p>
+              </p>*/}
             </div>
 
             <div class="findUs-reg-merch">

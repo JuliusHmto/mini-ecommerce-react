@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import classnames from "classnames";
 import {
   getProduct,
@@ -201,7 +201,7 @@ class editProduct extends Component {
                       "is-invalid": errors.productName,
                     })}
                     name="productName"
-                    placeholder={this.state.productName}
+                    defaultValue={this.state.productName}
                     onChange={this.handleChange}
                   />
                   {errors.productName && (
@@ -248,7 +248,7 @@ class editProduct extends Component {
                       "is-invalid": errors.productPrice,
                     })}
                     name="productPrice"
-                    placeholder={this.state.productPrice}
+                    defaultValue={this.state.productPrice}
                     onChange={this.handleChange}
                   />
                   {errors.productPrice && (
@@ -264,7 +264,7 @@ class editProduct extends Component {
                       })}
                       name="productDescription"
                       onChange={this.handleChange}
-                      placeholder={this.state.productDescription}
+                      defaultValue={this.state.productDescription}
                     />
                     {errors.productDescription && (
                       <div className="invalid-feedback">
@@ -285,7 +285,7 @@ class editProduct extends Component {
                     "is-invalid": errors.productStock,
                   })}
                   name="productStock"
-                  placeholder={this.state.productStock}
+                  defaultValue={this.state.productStock}
                   onChange={this.handleChange}
                 />{" "}
                 <p>&nbsp;&nbsp;pcs</p>
@@ -298,12 +298,12 @@ class editProduct extends Component {
           </div>
 
           <div className="ButtonAddProducts">
-            <button
+            <Link to={'/my-shop/catalog'}><button
               className="cancelButtonAP"
               type="submit"
             >
               Cancel
-            </button>
+            </button></Link>
             <button
               className="Save"
               type="submit"

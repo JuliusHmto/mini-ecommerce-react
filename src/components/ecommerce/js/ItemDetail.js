@@ -1,21 +1,26 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getItemDetail, getItemDetailWithProps,  getItems } from "../../../actions/catalogActions";
 import { addToCart } from "../../../actions/cartActions";
+import { getRatings } from "../../../actions/transactionActions";
 import "../css/ItemDetail/ItemDetail.css";
+import ItemRating from "./ItemRating";
 
 class ItemDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      findRating: 10
+    };
     this.addProductToCart = this.addProductToCart.bind(this);
+    this.searchRating = this.searchRating.bind(this);
   }
 
   componentDidMount() {
     const { productID } = this.props.location.state;
     this.props.getItemDetail(productID);
+    this.props.getRatings(productID);
     this.props.getItems();
   }
 
@@ -28,9 +33,20 @@ class ItemDetail extends Component {
     this.props.addToCart(productID, userID, this.props.history);
   }
 
+  searchRating(inputRating) {
+    this.setState({
+      findRating: inputRating
+    })
+  }
+
   render() {
     const { itemDetail } = this.props.itemDetail;
     const { items } = this.props.items;
+    const { ratings } = this.props.testimonial;
+    const { findRating } = this.state;
+    
+    const ratingList = findRating !== 10 ? ratings.filter((rating) => rating.ratingValue === findRating) : ratings;
+
     const filteredItemsList = items.map((item) => {
       return (
         <div className="card card-cont" key={item.product_id}>
@@ -119,22 +135,22 @@ class ItemDetail extends Component {
                 ></img>
                 <img
                   className="item-image-2"
-                  src={require("../css/ItemDetail/item2.jpg")}
+                  src={require("../css/ItemDetail/def-icon.png")}
                   alt="nopic"
                 ></img>
                 <img
                   className="item-image-2"
-                  src={require("../css/ItemDetail/item3.jpg")}
+                  src={require("../css/ItemDetail/def-icon.png")}
                   alt="nopic"
                 ></img>
                 <img
                   className="item-image-2"
-                  src={require("../css/ItemDetail/item4.jpg")}
+                  src={require("../css/ItemDetail/def-icon.png")}
                   alt="nopic"
                 ></img>
                 <img
                   className="item-image-2"
-                  src={require("../css/ItemDetail/item5.jpg")}
+                  src={require("../css/ItemDetail/def-icon.png")}
                   alt="nopic"
                 ></img>
               </div>
@@ -204,11 +220,11 @@ class ItemDetail extends Component {
               </div>
 
               <div className="button-item-detail">
-                <button className="buy-now-detail">
+                <button className="buy-now-detail" onClick={() => {this.addProductToCart(itemDetail.product_id);}}>
                   Buy Now
                 </button>
 
-                <button className="ATC-detail">
+                <button className="ATC-detail" onClick={() => {this.addProductToCart(itemDetail.product_id);}}>
                   Add to Cart
                 </button>
               </div>
@@ -224,7 +240,7 @@ class ItemDetail extends Component {
                 <img src={require("../css/ItemDetail/def-icon.png")} alt="nopic"/>
 
                 <div className="seller-data">
-                  <h3>Toko_SneakersKu</h3>
+                  <h3>{itemDetail.merchantName}</h3>
                   <p className="seller-city">Jakarta Pusat</p>
 
                   <div className="seller-button">
@@ -266,7 +282,6 @@ class ItemDetail extends Component {
             <div className="productDescription-detail">
               <h2>Product Description</h2>
               <hr className="horizontal-line-detail-3"></hr>
-              <p><b>Deskripsi {itemDetail.productName}</b></p>
               <p>{itemDetail.productDescription}</p>
             </div>
 
@@ -284,52 +299,23 @@ class ItemDetail extends Component {
                     <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
                     <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
     
-                    <p className="total-user-rate">From 100 review</p>
+                    <p className="total-user-rate">From 100 reviews</p>
                   </div>
                 </div>
 
                 <div className="rate-filter">
-                  <button>
-                    All Review
-                  </button>
-  
-                  <button>
-                    5 Star
-                  </button>
-  
-                  <button>
-                    4 Star
-                  </button>
-  
-                  <button>
-                    3 Star
-                  </button>
-  
-                  <button>
-                    2 Star
-                  </button>
-  
-                  <button>
-                    1 Star
-                  </button>
+                  <button onClick={() => this.searchRating(10)}>All Review</button>
+                  <button onClick={() => this.searchRating(5)}> 5 Star</button>
+                  <button onClick={() => this.searchRating(4)}> 4 Star</button>
+                  <button onClick={() => this.searchRating(3)}> 3 Star</button>
+                  <button onClick={() => this.searchRating(2)}> 2 Star</button>
+                  <button onClick={() => this.searchRating(1)}> 1 Star</button>
+                  
                 </div>
               </div>
 
-              <div className="review">
-                <img src={require("../css/ItemDetail/def-icon.png")} alt="nopic"/>
-                <div className="review-text">
-                  <h4>Alexander</h4>
-                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
-                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
-                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
-                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
-                  <img src={require("../css/ItemDetail/star-icon.png")} alt="nopic"/>
-                  <p className="review-date">Tanggal 29-07-2020</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eos ad enim natus at impedit. Culpa assumenda explicabo minus natus facere, dolorem sapiente iure, a omnis cupiditate, fugiat doloribus. Ad?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa quo commodi sapiente odit maiores? Nulla, voluptatem iure maxime magni dicta quod distinctio praesentium doloribus quis eius nesciunt autem accusantium.
-                  </p>
-                </div>
-              </div>
+              <ItemRating ratingList={ratingList}/>
+
             </div>
           </div>
 
@@ -345,15 +331,17 @@ class ItemDetail extends Component {
 }
 
 ItemDetail.propTypes = {
-  getItemDetail: PropTypes.func.isRequired,
-  addToCart: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-  itemDetail: PropTypes.object.isRequired,
+  getItemDetail: PropTypes.func,
+  addToCart: PropTypes.func,
+  user: PropTypes.object,
+  itemDetail: PropTypes.object,
+  testimonial: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   items: state.ecommerce,
   itemDetail: state.ecommerce,
+  testimonial: state.testimonial,
   user: state.user,
 });
 
@@ -371,6 +359,9 @@ const mapDispatchToProps = (dispatch) => {
     getItems: () => {
       dispatch(getItems());
     },
+    getRatings: (productID) => {
+      dispatch(getRatings(productID));
+    }
   };
 };
 

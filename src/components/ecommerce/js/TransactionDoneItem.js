@@ -2,28 +2,51 @@ import React, { Component } from "react";
 import "../css/TransactionItem/TransactionItemDone.css"
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { finishOrder } from '../../../actions/transactionActions';
+import { finishOrder, postRating } from '../../../actions/transactionActions';
 import ReactStars from "react-rating-stars-component";
 
 class TransactionDoneItem extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      rating: '',
+      comment: '',
+    }
     this.ratingChanged = this.ratingChanged.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-     
+  
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  
   ratingChanged = (newRating) => {
     console.log(newRating);
+    this.setState({
+      rating: newRating
+    });
   };
 
-  finishTransaction(orderID, status){
+  finishTransaction(orderID){
     const finishStatus = {
-      status: status
+      status: 'Finish'
     }
-  this.props.finishOrder(orderID, finishStatus, this.props.history);
+    this.props.finishOrder(orderID, finishStatus, this.props.history);
+  }
+
+  createRating(productID, userID, orderID) {
+    console.log(this.state.comment);
+    const ratingValues = {
+      ratingValue:this.state.rating,
+      comment_message: this.state.comment
+    }
+    console.log(userID);
+    this.props.postRating(productID, userID, ratingValues, orderID, this.props.history);
   }
 
   render() {
-    const {transaction} = this.props;
+    const {transaction, user} = this.props;
 
     const trxItems = transaction.cart_detail.map((trxItem) => {
       return (
@@ -37,7 +60,7 @@ class TransactionDoneItem extends Component {
             </span>
 
             <span class="quantity-transaction">
-              <h5>{trxItem.quantity} Pcs</h5>
+            <h5 id="qty">{trxItem.quantity + ' (Pcs)'}</h5>
             </span>
                       
             <span class="subtotal-transaction">
@@ -56,37 +79,48 @@ class TransactionDoneItem extends Component {
           <div className="transaction-product-detail">
             <img className="product-image-transaction" src={trxItem.p_filePath}/>
 
-            <span className="product-detail-transaction">
-              <h5>{trxItem.p_name + ' ( '+trxItem.quantity + ' pcs )'}</h5>
+            <span className="product-detail-transaction-finish">
+              <h5>{trxItem.p_name}</h5>
+              <h5 id="qty">{' ('+ trxItem.quantity + ' pcs)'}</h5>
               <h6>Rp. {trxItem.p_price} ,-</h6>
             </span>
                       
-            <span className="subtotal-transaction">
+            <span className="subtotal-transaction-finish">
               <p>Sub-Total</p>
               <h5>Rp. {trxItem.total_price} ,-</h5>
             </span>
           </div>
 
-          <div className="rating-comment">
-          <ReactStars
-            classNames="reactStars"
-            count={5}
-            onChange={this.ratingChanged}
-            size={50}
-            value={2.5}
-            isHalf={true}
-            emptyIcon={<i className="far fa-star"></i>}
-            halfIcon={<i className="fa fa-star-half-alt"></i>}
-            fullIcon={<i className="fa fa-star"></i>}
-            activeColor="#ffd700"
-          />
-          <textarea
-              name="text"
-              className="inputNotes"
-              placeholder="Testimonial..."
-            ></textarea>
-          <button className="buttonRate">Submit</button>
-        </div>
+          {trxItem.hasRating !== "Done" ? 
+            <div className="rating-comment">
+              <ReactStars
+                classNames="reactStars"
+                count={5}
+                onChange={this.ratingChanged}
+                size={50}
+                value={3}
+                emptyIcon={<i className="far fa-star"></i>}
+                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                fullIcon={<i className="fa fa-star"></i>}
+                activeColor="#ffd700"
+              />
+              <textarea
+                  name="comment"
+                  className="inputNotes"
+                  placeholder="Testimonial..."
+                  onChange={this.handleChange}
+                ></textarea>
+              <button className="buttonRate" onClick={() => this.createRating(trxItem.p_id, user.id, trxItem.cart_id)}>Submit</button>
+            </div>
+          :
+            <div className="already-submitted-rating">
+              <img src={require("../css/TransactionItem/thank-you.png")}/>
+              <p id="review-note">You've already submitted a review.</p>
+            </div>
+          }
+          
+
+          
 
         </div>
       );
@@ -117,12 +151,12 @@ class TransactionDoneItem extends Component {
                 <h6>{transaction.status}</h6>
               </div>
               {transaction.status ==='Process' 
-              ? <button class="order-detail-button" onClick={() => this.finishTransaction(transaction.id, transaction.status)}>Finish Order</button>
+              ? <button class="order-detail-button" onClick={() => this.finishTransaction(transaction.id)}>Finish Order</button>
               : null
             }
             </div>
 
-            {transaction.status !== "Finished" ? trxItems : trxItemsDone}
+            {transaction.status !== "Finish" ? trxItems : trxItemsDone}
 
             <hr/>
 
@@ -143,7 +177,7 @@ class TransactionDoneItem extends Component {
                 </div>
                 <div className="total-shipping-price-summary-transaction">
                   <p>Shipping</p>
-                  <p>Rp. 50,000,-</p>
+                  <p>Rp. 10,000,-</p>
                 </div>
               </div>
             </div>
@@ -161,7 +195,6 @@ TransactionDoneItem.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  user: state.user,
   transactions: state.transaction,
   errors: state.errors
 });
@@ -170,6 +203,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     finishOrder: (orderID, status, history) => {
       dispatch(finishOrder(orderID, status, history));
+    },
+    postRating: (productID, userID, rating, orderID, history) => {
+      dispatch(postRating(productID, userID, rating, orderID, history));
     },
   };
 };

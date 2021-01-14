@@ -4,6 +4,7 @@ import MerchantDashboard from './MerchantDashboard';
 import { getMerchant } from "../../../../actions/merchantActions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import "../css/MerchantProfile/MerchantProfile.css"
 
 class MerchantProfile extends Component {
   componentDidMount() {
@@ -81,7 +82,8 @@ class MerchantProfile extends Component {
 
                         <div class="data domain">
                             <p>Domain</p>
-                            <p>www.bank-sinarmasmarket.com /</p>
+                            <p>www.xyzmarket.com /</p>
+                            {/*<p>www.bank-sinarmasmarket.com /</p>*/}
                             <input id="domain-input" placeholder={merchant.merchantName}/>
                         </div>
 

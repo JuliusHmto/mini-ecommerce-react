@@ -80,7 +80,6 @@ class Catalog extends Component {
     const { catalogItems, filterStr, minPrice, maxPrice } = this.state;
     const searchedItem = this.props.searchValue.toLowerCase();
 
-
     //search bar item
     const searchedList = catalogItems.filter((item) =>
       item.productName.toLowerCase().includes(searchedItem)

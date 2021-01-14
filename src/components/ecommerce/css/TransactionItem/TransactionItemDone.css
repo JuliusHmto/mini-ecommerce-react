@@ -82,6 +82,20 @@
   font-size: 0.9em;
 }
 
+.product-detail-transaction-finish {
+  width: 150px;
+}
+
+.product-detail-transaction-finish h5 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.product-detail-transaction-finish h6 {
+  color: red;
+  font-size: 0.9em;
+}
+
 .quantity-transaction {
   margin-left: auto;
   margin-right: auto;
@@ -94,6 +108,11 @@
   padding-top: 5px;
 }
 
+#qty {
+  color: rgb(196, 196, 196);
+  font-size: 14px;
+}
+
 .subtotal-transaction p {
   margin-bottom: 0px;
   font-size: 0.7em;
@@ -104,6 +123,22 @@
 .subtotal-transaction h5 {
   font-size: 1em;
   color: red;
+  width: 150px;
+  text-align: end;
+}
+
+.subtotal-transaction-finish p {
+  margin-bottom: 0px;
+  font-size: 0.7em;
+  color: #999;
+  text-align: right;
+}
+
+.subtotal-transaction-finish h5 {
+  width: 150px;
+  font-size: 1em;
+  color: red;
+  text-align: end;
 }
 
 .transaction-product hr {
@@ -157,13 +192,12 @@
 .rating-comment {
   text-align: center;
   outline: none;
-  padding-left: 70px;
-  padding-right: 70px;
-  border-right: 1px solid rgba(204, 204, 204, 0.308);
+  padding-left: 100px;
 }
 
 .reactStars {
   outline: none;
+  margin-left: 12px;
 }
 
 .reactStars:active {
@@ -196,4 +230,15 @@
 
 .buttonRate:active {
   outline: none;
+}
+
+.already-submitted-rating {
+  color: rgb(150, 150, 150);
+  text-align: center;
+  padding-left: 50px;
+  margin: auto;
+}
+
+#review-note {
+  margin-top: 5px;
 }

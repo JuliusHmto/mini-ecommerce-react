@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import classnames from "classnames";
 import { createProduct } from "../../../../actions/merchantActions";
 import { getCategory } from "../../../../actions/categoryActions";
@@ -240,12 +240,12 @@ class AddProduct extends Component {
             </div>
 
             <div className="ButtonAddProducts">
-              <button
+              <Link to={'/my-shop/catalog'}><button
                 className="cancelButtonAP"
                 type="submit"
               >
                 Cancel
-              </button>
+              </button></Link>
               <button
                 className="Save"
                 type="submit"

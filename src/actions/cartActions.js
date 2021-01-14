@@ -11,6 +11,7 @@ import {
   GET_TOTAL_ITEM,
   PROCESS_ORDER,
   CHECK_OUT,
+  MAKE_PAYMENT,
 } from "./types";
 
 export const getCart = (userID) => async (dispatch) => {
@@ -117,6 +118,14 @@ export const checkOut = (history) => async (dispatch) => {
   history.push("/checkout");
   dispatch({
     type:CHECK_OUT,
+    payload: {},
+  });
+}
+
+export const makePayment = (history) => async (dispatch) => {
+  history.push("/payment");
+  dispatch({
+    type:MAKE_PAYMENT,
     payload: {},
   });
 }

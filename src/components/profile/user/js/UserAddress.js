@@ -3,7 +3,6 @@ import "../css/UserProfile/UserProfile.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import classnames from "classnames";
 import AddressPopup from "./AddressPopup";
 import { addNewAddress, loadAllAddress, updateAddress, deleteAddress } from "../../../../actions/userActions";
 
@@ -35,7 +34,15 @@ class UserAddress extends Component {
   }
 
   modalClose() {
-    this.setState({ modal: false});
+    this.setState({
+      modal: false,
+      address_id: "",
+      addressCity: "",
+      addressCountry: "",
+      addressDescription: "",
+      addressLabel: "",
+      addressProvince: "",
+      addressPostalCode: "",});
   }
 
   closeModalWithAddress() {
@@ -72,7 +79,7 @@ class UserAddress extends Component {
     };
     this.props.addNewAddress(this.props.user.user.id, newAddress);
     this.modalClose();
-    //window.location.reload();
+    this.closeModalWithAddress();
   };
 
   updateCurrentAddress = (event) => {
@@ -88,12 +95,10 @@ class UserAddress extends Component {
     };
     this.props.updateAddress(this.props.user.user.id, updatedAddress);
     this.closeModalWithAddress();
-    //window.location.reload();
   };
 
   removeAddress(addressID) {
     this.props.deleteAddress(addressID, this.props.history);
-    //window.location.reload();
   }
 
   render() {
@@ -118,7 +123,7 @@ class UserAddress extends Component {
                             <hr id="horizontal-line-transaction-active"/>
                         </div>
   
-                        <div class="address-option">
+                        <div class="addressList">
                           <div className="new-address">
                           <div className="buttonWrapper">
                             <button className="buttonUpdateAddress" onClick={() =>

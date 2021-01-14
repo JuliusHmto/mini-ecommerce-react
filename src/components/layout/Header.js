@@ -139,9 +139,14 @@ class Header extends Component {
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link to="/home" className="navbar-brand" data-abc="true">
-            <img
+          {/*<img
               className="logo"
               src={require("./images/header/logo.png")}
+              alt=""
+          ></img>*/}
+            <img
+              className="logo"
+              src={require("./images/header/logoXYZ.png")}
               alt=""
             ></img>
           </Link>
@@ -168,7 +173,7 @@ class Header extends Component {
                     onChange={this.onChange.bind(this)}
                   />
                   <Link
-                    to="/catalog"
+                    to={"/catalog"}
                     className="btn"
                     type="submit"
                     onClick={this.submitSearch.bind(this)}

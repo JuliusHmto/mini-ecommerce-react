@@ -149,7 +149,7 @@ div.overlay {
 }
 
 .category-landing-2 .card:nth-child(3) {
-  background-image: url(../../layout/images/dummy/food-card.jpg);
+  background-image: url(../../layout/images/dummy/gadgets.jpg);
   background-repeat: no-repeat;
   background-size: 350px 300px;
 }
@@ -352,6 +352,9 @@ span .view-detail-button-landing {
   line-height: 15px;
   font-weight: 600;
   margin-top: -10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .productPrice-land {

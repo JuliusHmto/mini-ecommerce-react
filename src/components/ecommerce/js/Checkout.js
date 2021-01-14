@@ -10,6 +10,7 @@ import "../css/CheckOut/CheckOut.css";
 import CheckoutItem from './CheckoutItem';
 import AlertPopup from './AlertPopup';
 import VoucherPopup from './VoucherPopup';
+import {isEqual} from "lodash";
 
 class Checkout extends Component {
   constructor(props) {
@@ -40,6 +41,18 @@ class Checkout extends Component {
     this.props.getAddress();
     this.props.loadVouchers();
     this.props.getVoucherStatus(this.props.user.user.id);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return isEqual(JSON.stringify(this.props.voucher), JSON.stringify(nextProps.voucher));
+  }
+  
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.props.getTotalPrice(this.props.user.user.id);
+      this.props.getTotalItem(this.props.user.user.id);
+      this.props.getVoucherStatus(this.props.user.user.id);
+    }
   }
 
   modalVoucherOpen() {
@@ -120,11 +133,12 @@ class Checkout extends Component {
           </div>
           <div className="check-out-content">
             <div className="left-side-check-out">
-              <div className="buyer-detail">
-              <div className="address-label">
-                <h3>Where to Send</h3>
-                <hr className="horizontal-line-checkout"/>
-              </div>
+                  
+            <div className="buyer-detail">
+                <div className="address-label">
+                  <h3>Where to Send</h3>
+                  <hr className="horizontal-line-checkout"/>
+                </div>
                 {addresses.map((address) => {
                   return (
                     <div className="primary-address">
@@ -144,54 +158,57 @@ class Checkout extends Component {
                     </div>
                   );
                 })}
-              </div>    
+              </div>
 
-                <div className="item-checkout">
-                  <span><h3>Checkout</h3> <h4 className="total-product-checkout">(2 Products)</h4></span>
-                  <hr className="horizontal-line-checkout"/>
-                        
-                  {cartItems.map((checkoutItem) => {
-                    return (
-                      <div className="product-detail-checkout" key={checkoutItem.id}>
-                        <div className="seller-detail">
-                          <h5 id="seller-name">{checkoutItem.merchantName}</h5>
-                          <h5 id="seller-address">Jakarta Pusat</h5>
-                        </div>
+              <div className="item-checkout">
+              <span><h3>Checkout</h3> <h4 className="total-product-checkout">(2 Products)</h4></span>
+              <hr className="horizontal-line-checkout"/>
+                    
+              {cartItems.map((checkoutItem) => {
+                return (
+                  <div className="product-detail-checkout" key={checkoutItem.id}>
+                    <div className="seller-detail">
+                      <h5 id="seller-name">{checkoutItem.merchantName}</h5>
+                      <h5 id="seller-address">Jakarta Pusat</h5>
+                    </div>
 
-                        <CheckoutItem key={checkoutItem.p_id} checkoutItem={checkoutItem} />
+                    <CheckoutItem key={checkoutItem.p_id} checkoutItem={checkoutItem} />
 
-                        <div className="logistic-option">
-                          <h5>Shipping Logistic</h5>
-                          <select id="logistic" name="logistic" onChange={(e) => this.chooseCourier(e.target.value, checkoutItem.merchantName)}>
-                            <option>{checkoutItem.courierName ? checkoutItem.courierName : "Select Courier"}</option>
-                            <option>---</option>
-                            {courierList.map((courier) => (
-                              <option key={courier.courier_id} value={courier.courierName}>{courier.courierName}</option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                      );
-                    })}
-                    <div className="price-detail-checkout">
-                      <h5>Product Summary</h5>
-                      <div className="price">
-                        <p className="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Total Rp.{totalPrice},- <img src={require("../css/CheckOut/u0.png")} alt=""/></p>
-                        <div className="collapse" id="collapseExample">
-                          <div className="total-item-price-summary">
-                            <p>Item Price ( {totalItem} pcs )</p>
-                            <p>Rp.{totalPrice},-</p>
-                          </div>
-                          <div className="total-shipping-price-summary">
-                            <p>Shipping</p>
-                            <p>Rp.10.000,-</p>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="logistic-option">
+                      <h5>Shipping Logistic</h5>
+                      <select id="logistic" name="logistic" onChange={(e) => this.chooseCourier(e.target.value, checkoutItem.merchantName)}>
+                        <option>{checkoutItem.courierName ? checkoutItem.courierName : "Select Courier"}</option>
+                        <option>---</option>
+                        {courierList.map((courier) => (
+                          <option key={courier.courier_id} value={courier.courierName}>{courier.courierName}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  );
+                })}
+              <div className="price-detail-checkout">
+                <h5>Product Summary</h5>
+                <div className="price">
+                  <p className="total-price-summary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Total Rp.{totalPrice},- <img src={require("../css/CheckOut/u0.png")} alt=""/></p>
+                  <div className="collapse" id="collapseExample">
+                    <div className="total-item-price-summary">
+                      <p>Item Price ( {totalItem} pcs )</p>
+                      <p>Rp.{totalPrice},-</p>
+                    </div>
+                    <div className="total-shipping-price-summary">
+                      <p>Shipping</p>
+                      <p>Rp.10.000,-</p>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+          </div>
+
+          
         
                 <div className="total-payment-card-checkout">
                   <h3>Total Payment</h3>
@@ -243,7 +260,7 @@ class Checkout extends Component {
                   <button className="proceed-button-checkout" onClick={() => this.modalAlertOpen()}><h6>Proceed to Payment</h6></button>
                   <AlertPopup show={this.state.modalAlert} handleClose={() => this.modalAlertClose()}>
                     <h4>Continue Checkout?</h4>
-                    <button className="proceed-button-checkout" onClick={() => { this.placeOrder(this.state.address)}}><h6>Continue</h6></button>
+                    <button className="proceed-button-checkout" onClick={() => {this.placeOrder(this.state.address)}}><h6>Continue</h6></button>
                   </AlertPopup>
                 </div>
               </div>

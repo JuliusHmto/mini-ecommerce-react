@@ -5,7 +5,17 @@ import { connect } from "react-redux";
 import {accRejOrder} from '../../../../actions/merchantActions';
 
 class MerchantTransactionItem extends Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      order: [],
+    };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.order != this.props.order;
+  }
+
   acceptOrReject (e, orderID){
     const statusAcc = e.target.value === 'Accept' ? 'Accept' : e.target.value === 'Reject' ? 'Reject' : null;
     const statusOrder = {
@@ -13,7 +23,7 @@ class MerchantTransactionItem extends Component {
     }
     console.log(orderID);
     console.log(statusOrder);
-    this.props.accRejOrder(orderID, statusOrder, this.props.history);
+    this.props.accRejOrder(orderID, statusOrder);
   }
 
   render() {
@@ -119,12 +129,10 @@ class MerchantTransactionItem extends Component {
 
 MerchantTransactionItem.propTypes = {
   user: PropTypes.object.isRequired,
-  transactions: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  transactions: state.transaction,
   errors: state.errors
 });
 

@@ -321,22 +321,9 @@
   margin-top: 2px;
 }
 
-.top-bar-address .address-option {
+.top-bar-address .addressList {
   display: flex;
   margin-left: auto;
-}
-
-.top-bar-address .address-option p {
-  color: #169bd5;
-  height: 20px;
-  cursor: pointer;
-  font-size: 0.8em;
-}
-
-.default-address .top-bar-address .address-option p:nth-child(1) {
-  border-right: 1px solid black;
-  padding-right: 10px;
-  margin-right: 10px;
 }
 
 .address-detail-profile span {
@@ -450,7 +437,7 @@
 
 .form-group p {
   font-size: 1.1em;
-  color: gray;
+  color: black;
   line-height: 35px;
   display: inline;
   min-width: 180px;

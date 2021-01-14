@@ -1,6 +1,14 @@
 import axios from "axios";
 
-import { GET_ITEMS, GET_ITEM_DETAIL } from "./types";
+import { GET_ITEMS, GET_ITEM_DETAIL, SEARCH_BAR } from "./types";
+
+export const searchItem = (history) => async (dispatch) => {
+  history.push("/catalog");
+  dispatch({
+    type:SEARCH_BAR,
+    payload: {},
+  });
+}
 
 export const getItems = () => async (dispatch) => {
   const res = await axios.get(

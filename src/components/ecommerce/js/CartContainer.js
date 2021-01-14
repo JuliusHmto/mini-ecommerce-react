@@ -99,12 +99,7 @@ class CartContainer extends Component {
 
     </div>
     
-      <div className="item-recommend-cart">
-        <div>
-          <h4>Recommended for You</h4>
-          <hr></hr> 
-        </div>
-      </div>
+      
         
       </React.Fragment>
     );

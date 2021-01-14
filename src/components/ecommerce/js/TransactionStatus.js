@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../css/TransactionStatus/TransactionStatus.css"
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import { Switch, NavLink, Link } from 'react-router-dom';
 import TransactionDoneItem from "../js/TransactionDoneItem";
 import SecuredRoute from "../../../securuityUtils/securedRoute";
@@ -20,6 +21,18 @@ class TransactionStatus extends Component {
     this.props.getAllTransactions(this.props.user.user.id);
     
   }
+
+  // shouldComponentUpdate(prevState) {
+  //   return prevState.transactions.transactions != this.state.transactions
+  // }
+
+  // componentDidUpdate(prevProps){
+  //   if(prevProps.transactions.transactions !== this.state.transactions){
+  //     this.setState({
+  //       transactions: this.props.transactions.transactions
+  //     });
+  //   }
+  // }
 
   componentDidUpdate(){
     if(this.props.transactions.transactions !== this.state.transactions){
@@ -52,7 +65,7 @@ class TransactionStatus extends Component {
           content: (
             <div className="tab-content">
               {transactions.map((transaction) => {
-                return <TransactionDoneItem transaction={transaction} key={transaction.id}/>
+                return <TransactionDoneItem transaction={transaction} user={user} key={transaction.id}/>
               })}
             </div>),
           defaultTab: true
@@ -62,7 +75,7 @@ class TransactionStatus extends Component {
           path: parentPath+"/confirmation",
           content: (<div className="tab-content">
           {transactions.map((transaction) => {
-            return transaction.status == "Paid"? <TransactionDoneItem transaction={transaction}/> : null
+            return transaction.status == "Paid"? <TransactionDoneItem transaction={transaction} user={user} key={transaction.id}/> : null
           })}
           </div>),
         },
@@ -71,7 +84,7 @@ class TransactionStatus extends Component {
             path: parentPath+"/process",
             content: (<div className="tab-content">
             {transactions.map((transaction) => {
-              return transaction.status == "Process"? <TransactionDoneItem transaction={transaction}/> : null
+              return transaction.status == "Process"? <TransactionDoneItem transaction={transaction} user={user} key={transaction.id}/> : null
             })}
             </div>),
           },
@@ -80,7 +93,7 @@ class TransactionStatus extends Component {
             path: parentPath+"/finished",
             content: (<div className="tab-content">
             {transactions.map((transaction) => {
-              return transaction.status == "Finished"? <TransactionDoneItem transaction={transaction}/> : null
+              return transaction.status == "Finish"? <TransactionDoneItem transaction={transaction} user={user} key={transaction.id}/> : null
             })}
             </div>),
           }
@@ -208,4 +221,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TransactionStatus);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TransactionStatus));

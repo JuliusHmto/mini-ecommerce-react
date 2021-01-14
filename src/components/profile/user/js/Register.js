@@ -56,9 +56,14 @@ class Register extends Component {
               <Link to="/" data-abc="true">
                 <img
                   className="logoHero"
-                  src={require("../../../layout/images/header/logo.png")}
+                  src={require("../../../layout/images/header/logoXYZ.png")}
                   alt=""
                 ></img>
+                {/*<img
+                  className="logoHero"
+                  src={require("../../../layout/images/header/logo.png")}
+                  alt=""
+                ></img>*/}
 
               </Link>
               <div class="HeroSU">         
@@ -79,7 +84,8 @@ class Register extends Component {
                 alt=""
               ></img>
             </Link>
-            <h1 id="welcome-text">Welcome to <span>Sinarmas</span> Market</h1>
+            {/*<h1 id="welcome-text">Welcome to <span>Sinarmas</span> Market</h1>*/}
+            <h1 id="welcome-text">Welcome to <span>XYZ</span> Market</h1>
             <h2>Create your account by filling this form below</h2>
             <div className="usernameSU">
               <input
@@ -145,7 +151,8 @@ class Register extends Component {
               )}
             </div>
 
-            <p className="term-and-cond">Dengan mendaftar, Anda setuju dengan <a>Syarat dan Ketentuan dari Bank Sinarmas</a> serta <a>Kebijakan Privasi</a></p>
+            <p className="term-and-cond">Dengan mendaftar, Anda setuju dengan <a>Syarat dan Ketentuan dari XYZ</a> serta <a>Kebijakan Privasi</a></p>
+            {/*<p className="term-and-cond">Dengan mendaftar, Anda setuju dengan <a>Syarat dan Ketentuan dari Bank Sinarmas</a> serta <a>Kebijakan Privasi</a></p>*/}
 
             <div>
               <button
@@ -164,14 +171,22 @@ class Register extends Component {
 
           <div className="footer-log-SU">
             <div class="contactSI">
-              <h2>Bank Sinarmas Care</h2>
+            <h2>XYZ Care</h2>
+              <p>&nbsp; &nbsp; Contact or Email Us on   
+                  <div class="phonenumberSI">
+                      <p> - 1500XXX</p>
+                      <p> - (021) XXX YYYY</p>
+                  </div>
+                  <a href="">xyz-help@bank.com</a>       
+              </p>
+              {/*<h2>Bank Sinarmas Care</h2>
               <p>&nbsp; &nbsp; Contact or Email Us on   
                   <div class="phonenumberSI">
                       <p> - 1500153</p>
                       <p> - (021) 501 88888</p>
                   </div>
                   <a href="mailto:sinarmas-help@bank.com">sinarmas-help@bank.com</a>       
-              </p>
+              </p>*/}
             </div>
 
             <div class="findUsSI">

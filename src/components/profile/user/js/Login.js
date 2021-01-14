@@ -57,9 +57,14 @@ class Login extends Component {
             <Link to="/" data-abc="true">
               <img
                 className="logoHero"
-                src={require("../../../layout/images/header/logo.png")}
+                src={require("../../../layout/images/header/logoXYZ.png")}
                 alt=""
               ></img>
+              {/*<img
+                className="logoHero"
+                src={require("../../../layout/images/header/logo.png")}
+                alt=""
+              ></img>*/}
 
             </Link>
             <div class="Hero">         
@@ -68,7 +73,8 @@ class Login extends Component {
 
             <div class="quotes">
                 <h1><i>"Be a man of integrity, be responsible to your family, job, and society."</i></h1>
-                <h2>Eka Tjipta - Founder Sinarmas Group</h2>
+                {/*<h2>Eka Tjipta - Founder Sinarmas Group</h2>*/}
+                <h2>XXX - YYY ZZZ</h2>
             </div>
           </div>
 
@@ -82,7 +88,8 @@ class Login extends Component {
 
             </Link>
             <div className="input">
-              <h1 id="welcome-text">Welcome to <span>Sinarmas</span> Market</h1>
+              <h1 id="welcome-text">Welcome to <span>XYZ</span> Market</h1>
+              {/*<h1 id="welcome-text">Welcome to <span>Sinarmas</span> Market</h1>*/}
               <h2>This day will be a great day</h2>
               <form>
                 <div className="email">
@@ -135,14 +142,21 @@ class Login extends Component {
 
           <div className="footer-log">
             <div class="contactSI">
-              <h2>Bank Sinarmas Care</h2>
+              <h2>XYZ Care</h2>
               <p>&nbsp; &nbsp; Contact or Email Us on   
+                  <div class="phonenumberSI">
+                      <p> - 1500XXX</p>
+                      <p> - (021) XXX YYYY</p>
+                  </div>
+                  <a href="">xyz-help@bank.com</a>       
+              </p>
+              {/*<p>&nbsp; &nbsp; Contact or Email Us on   
                   <div class="phonenumberSI">
                       <p> - 1500153</p>
                       <p> - (021) 501 88888</p>
                   </div>
                   <a href="mailto:sinarmas-help@bank.com">sinarmas-help@bank.com</a>       
-              </p>
+              </p>*/}
             </div>
             
             <div class="findUsSI">

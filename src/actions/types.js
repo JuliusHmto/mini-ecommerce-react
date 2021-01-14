@@ -12,6 +12,7 @@ export const DELETE_ADDRESS = "DELETE_ADDRESS";
 
 //CATEGORY
 export const GET_CATEGORY = "GET_CATEGORY";
+export const SEARCH_BAR = "SEARCH_BAR";
 
 //CATALOG
 export const GET_ITEMS = "GET_ITEMS";
@@ -26,6 +27,7 @@ export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const GET_TOTAL_PRICE = "GET_TOTAL_PRICE";
 export const GET_TOTAL_ITEM = "GET_TOTAL_ITEM";
 export const CHECK_OUT = "CHECK_OUT";
+export const MAKE_PAYMENT = "MAKE_PAYMENT";
 export const COURIER_SELECTED = "COURIER_SELECTED";
 export const PROCESS_ORDER = "PLACE_ORDER";
 

@@ -1,10 +1,7 @@
-import { GET_RATING, GET_COMMENT } from "../actions/types";
+import { GET_RATING } from "../actions/types";
 
 const initialState = {
   ratings: [],
-  rating: {},
-  comments: [],
-  comment: {},
 };
 
 export default function (state = initialState, action) {
@@ -13,11 +10,6 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ratings: action.payload,
-      };
-    case GET_COMMENT:
-      return {
-        ...state,
-        comments: [],
       };
     default:
       return state;

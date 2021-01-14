@@ -562,7 +562,6 @@ input[type="number"] {
   display: flex;
   padding-left: 5%;
   width: 70%;
-  padding-top: 10px;
   justify-content: space-around;
 }
 
@@ -583,7 +582,7 @@ input[type="number"] {
 }
 
 .seller-info-detail-2 h4 {
-  color: rgb(146, 146, 146);
+  color: black;
   font-size: 1.3em;
   font-weight: 100;
 }
@@ -663,6 +662,10 @@ input[type="number"] {
   color: rgb(185, 185, 185);
 }
 
+.response-time {
+  margin-bottom: 20px;
+}
+
 .value-rate {
   padding-top: 5px;
   margin-right: 50px;
@@ -701,8 +704,8 @@ input[type="number"] {
   color: rgb(250, 6, 6);
 }
 
-.review {
-  background-color: rgb(231, 231, 231);
+.revieww {
+  background-color: rgb(243, 243, 243);
   margin-top: 50px;
   padding: 20px;
   display: flex;
@@ -710,14 +713,14 @@ input[type="number"] {
   border-radius: 5px;
 }
 
-.review img {
-  width: 190px;
+.revieww img {
+  width: 65px;
   height: 65px;
   margin-right: 25px;
   margin-left: 5px;
 }
 
-.review-text h4 {
+.review-textt h4 {
   color: rgb(252, 0, 0);
   margin-top: 5px;
   margin-bottom: 0px;
@@ -725,22 +728,16 @@ input[type="number"] {
   font-weight: 600;
 }
 
-.review-text p {
+.review-textt p {
   color: rgb(128, 128, 128);
   line-height: 1.4rem;
 }
 
-.review-text img {
+.review-textt img {
   width: 15px;
   height: 15px;
   margin-left: 0px;
   margin-right: 5px;
-}
-
-.review-date {
-  color: rgb(235, 235, 235);
-  font-size: 0.7em;
-  margin-bottom: 10px;
 }
 
 .democlass {
