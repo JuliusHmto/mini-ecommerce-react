@@ -30,13 +30,14 @@ export const createNewUser = (newUser, history) => async (dispatch) => {
 };
 
 //login to find user
-export const login = (LoginRequest) => async (dispatch) => {
+export const login = (LoginRequest, history) => async (dispatch) => {
   try {
     // post => Login Request
     const res = await axios.post(
       "/api/user/login",
       LoginRequest
     );
+    history.push('/home');
     // extract token from res.data
     const { token } = res.data;
     // store the token in the localStorage

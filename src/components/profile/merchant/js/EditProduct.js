@@ -27,7 +27,7 @@ class editProduct extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.updateProductWithNewImage = this.updateProductWithNewImage.bind(this);
-    this.updateProduct = this.updateProduct.bind(this);
+    // this.updateProduct = this.updateProduct.bind(this);
     this.handleUploadClick = this.handleUploadClick.bind(this);
   }
 
@@ -95,6 +95,7 @@ class editProduct extends Component {
   updateProduct = (event) => {
     event.preventDefault();
     const merchantID = this.props.merchant.merchant.id;
+    console.log(this.state.productName);
     const data ={
       productCategoryName: this.state.productCategoryName,
       productName: this.state.productName,
@@ -307,7 +308,7 @@ class editProduct extends Component {
             <button
               className="Save"
               type="submit"
-              onClick={this.state.imagePreview !== "" ? this.updateProductWithImage : this.updateProduct}
+              onClick={this.updateProductWithImage}
             >
               Update Product
             </button>
