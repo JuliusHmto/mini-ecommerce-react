@@ -308,7 +308,7 @@ class editProduct extends Component {
             <button
               className="Save"
               type="submit"
-              onClick={this.updateProductWithImage}
+              onClick={this.updateProductWithNewImage}
             >
               Update Product
             </button>

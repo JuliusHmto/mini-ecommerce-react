@@ -114,7 +114,7 @@ export const getProduct = (productID) => async (dispatch) => {
 export const updateCurrentProductWithImage = (merchantID, formData, history) => async (dispatch) => {
   try {
     await axios.patch(
-      `/api/product/updateProductWithImage/${merchantID}`,
+      `/api/product/updateProduct/${merchantID}`,
       formData,
       { headers: { "Content-Type": "multipart/form-data" } }
     );
