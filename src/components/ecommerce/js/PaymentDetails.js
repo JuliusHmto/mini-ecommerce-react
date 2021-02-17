@@ -5,13 +5,20 @@ import { withRouter} from "react-router";
 import { Link } from "react-router-dom";
 import "../css/PaymentDetails/PaymentMethod.css";
 import { getUserData } from "../../../actions/userActions";
+import AlertPopup from './AlertPopup';
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 class PaymentDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modalAlert: false,
       errors: {},
+      buttonDisabled: false,
+      text: 'Processing Payment...'
     };
+    this.update = this.update.bind(this);
   }
     
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -22,6 +29,24 @@ class PaymentDetails extends Component {
 
   componentDidMount() {
     this.props.getUserData(this.props.user.user.id);
+  }
+
+  modalAlertOpen() {
+    this.setState({ modalAlert: true });
+    this.update();
+  }
+
+  modalAlertClose() {
+    this.setState({ modalAlert: false });
+  }
+
+  update() {
+    this.change = setTimeout(() => {
+      this.setState({
+        buttonDisabled: true,
+        text: "Payment Success!"
+      })
+    }, 3000)
   }
 
   render() {
@@ -175,22 +200,38 @@ class PaymentDetails extends Component {
             <div className="total-payment-payment">
               <div className="total-product-price-payment">
                 <h6>Total Price</h6>
-                <h6>Rp.1.000.000 ,-</h6>
+                <h6>Rp.2564100,-</h6>
               </div>
               <div className="total-shipping-price-payment">
                 <h6>Total Shipping</h6>
-                <h6>Rp.10.000 ,-</h6>
+                <h6>Rp.20000,-</h6>
               </div>
             </div>
             <div className="total-price-to-pay-payment">
               <span>
                 <h6>Total</h6>
-                <h6 id="total-price-amount">Rp.1.000.000 ,-</h6>
+                <h6 id="total-price-amount">Rp.2584100,-</h6>
               </span>   
             </div>
-            <Link to={'/transaction'}>
-              <button className="proceed-button-payment"><h6>Proceed Payment</h6></button>
-            </Link>
+            
+            <button className="proceed-button-payment" onClick={() => this.modalAlertOpen()}><h6>Proceed Payment</h6></button>
+            <AlertPopup show={this.state.modalAlert} handleClose={() => this.modalAlertClose()}>
+              <Loader
+                type="ThreeDots"
+                color="#9e9e9e"
+                height={40}
+                width={80}
+                timeout={2750}
+              />
+              <h4>{this.state.text}</h4>
+              {this.state.text === "Payment Success!" ? 
+                <Link to={'/transaction'}>
+                  <button disabled className="proceed-button-payment" onClick={() => this.modalAlertClose()}><h6>Continue</h6></button>
+                </Link>
+                :
+                null
+              }
+            </AlertPopup>
           </div>
         </div>
       </div>

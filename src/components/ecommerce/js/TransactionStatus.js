@@ -22,18 +22,6 @@ class TransactionStatus extends Component {
     
   }
 
-  // shouldComponentUpdate(prevState) {
-  //   return prevState.transactions.transactions != this.state.transactions
-  // }
-
-  // componentDidUpdate(prevProps){
-  //   if(prevProps.transactions.transactions !== this.state.transactions){
-  //     this.setState({
-  //       transactions: this.props.transactions.transactions
-  //     });
-  //   }
-  // }
-
   componentDidUpdate(){
     if(this.props.transactions.transactions !== this.state.transactions){
       this.setState({

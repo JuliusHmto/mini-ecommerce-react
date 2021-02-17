@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { finishOrder, postRating } from '../../../actions/transactionActions';
 import ReactStars from "react-rating-stars-component";
+import AlertPopup from './AlertPopup';
 
 class TransactionDoneItem extends Component {
   constructor(props) {
@@ -11,11 +12,19 @@ class TransactionDoneItem extends Component {
     this.state = {
       rating: '',
       comment: '',
+      modalAlert: false,
     }
     this.ratingChanged = this.ratingChanged.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
   
+  modalAlertOpen() {
+    this.setState({ modalAlert: true });
+  }
+
+  modalAlertClose() {
+    this.setState({ modalAlert: false });
+  }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -119,9 +128,6 @@ class TransactionDoneItem extends Component {
             </div>
           }
           
-
-          
-
         </div>
       );
     })
@@ -150,8 +156,44 @@ class TransactionDoneItem extends Component {
                 <p>Status</p>
                 <h6>{transaction.status}</h6>
               </div>
+              
+
               {transaction.status ==='Process' 
-              ? <button class="order-detail-button" onClick={() => this.finishTransaction(transaction.id)}>Finish Order</button>
+              ?
+              <div>
+              <button className="track-order-button" onClick={() => this.modalAlertOpen()}>Track Package</button>
+                <AlertPopup show={this.state.modalAlert} handleClose={() => this.modalAlertClose()}>
+                <div className="padding-track">
+                  <h3 className="track-header">Track Package</h3>
+                  <h6 className="id-track">Package ID: 588900000771</h6>
+                  <div className="horizontalLine"></div>
+
+                  <div>
+                    <p className="dateNtime">13 February . 14.49 WIB</p>
+                    <p className="track-desc"> - Package has been delivered to destination.</p>
+                    <div className="verticalLine"></div>
+                  </div>
+
+                  <div>
+                    <p className="dateNtime">13 February . 09.02 WIB</p>
+                    <p className="track-desc"> - Package is being delivered by courier to destination.</p>
+                    <div className="verticalLine"></div>
+                  </div>
+                  
+                  <div>
+                    <p className="dateNtime">12 February . 20.33 WIB</p>
+                    <p className="track-desc"> - Package has reached shipping port.</p>
+                    <div className="verticalLine"></div>
+                  </div>
+                  
+                  <div>
+                    <p className="dateNtime">12 February . 17.11 WIB</p>
+                    <p className="track-desc"> - Package has been picked up and heading to shipping port.</p>
+                  </div>
+                </div>
+                </AlertPopup>
+                <button className="order-detail-button" onClick={() => this.finishTransaction(transaction.id)}>Finish Order</button>
+              </div> 
               : null
             }
             </div>

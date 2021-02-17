@@ -111,7 +111,7 @@ class App extends Component {
               <Redirect exact from="/cart/reload" to="/cart" />
               <SecuredRoute exact path="/checkout" component={Checkout}/>
               <Redirect exact from="/checkout/reload" to="/checkout" />
-              <SecuredRoute exact path="/payment" component={PaymentDetails}/>
+              <Route exact path="/payment" component={PaymentDetails}/>
               <SecuredRoute path="/transaction" component={TransactionStatus}/>
               <Redirect exact from="/transaction/reload" to="/transaction" />
               <SecuredRoute path="/profile" component={UserProfile} />
